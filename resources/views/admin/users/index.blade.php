@@ -23,6 +23,7 @@
                         <tbody>
                             
                         @foreach ($users as $user)
+                        @if ($user->email != Auth::user()->email)
                         <tr>
                             <th scope="row">{{$user->id}}</th>
                             <td>{{$user->name}}</td>
@@ -43,6 +44,7 @@
                             @endcan
                             </td>
                           </tr>
+                        @endif
                         @endforeach
                           
                         </tbody>
