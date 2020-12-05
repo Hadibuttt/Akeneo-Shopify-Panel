@@ -1,0 +1,242 @@
+
+body {
+	font-family: "Open Sans", sans-serif;
+}
+h2 {
+	color: #000;
+	font-size: 26px;
+	font-weight: 300;
+	text-transform: uppercase;
+	position: relative;
+	margin: 30px 0 60px;
+}
+
+.carousel {
+	margin: 50px auto;
+	padding: 0 70px;
+}
+.carousel .item {
+	color: #747d89;
+	min-height: 325px;
+	text-align: center;
+	overflow: hidden;
+}
+.carousel .thumb-wrapper {
+	padding: 25px 15px;
+	background: #fff;
+	border-radius: 6px;
+	text-align: center;
+	position: relative;
+	box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+.carousel .item .img-box {
+	height: 120px;
+	margin-bottom: 20px;
+	width: 100%;
+	position: relative;
+}
+.carousel .item img {	
+	max-width: 100%;
+	max-height: 100%;
+	display: inline-block;
+	position: absolute;
+	bottom: 0;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+}
+.carousel .item h4 {
+	font-size: 80%;
+}
+.carousel .item h4, .carousel .item p, .carousel .item ul {
+	margin-bottom: 5px;
+}
+.carousel .thumb-content .btn {
+	color: #7ac400;
+	font-size: 11px;
+	text-transform: uppercase;
+	font-weight: bold;
+	background: none;
+	border: 1px solid #7ac400;
+	padding: 6px 14px;
+	margin-top: 5px;
+	line-height: 16px;
+	border-radius: 20px;
+}
+.carousel .thumb-content .btn:hover, .carousel .thumb-content .btn:focus {
+	color: #fff;
+	background: #7ac400;
+	box-shadow: none;
+}
+.carousel .thumb-content .btn i {
+	font-size: 14px;
+	font-weight: bold;
+	margin-left: 5px;
+}
+.carousel .item-price {
+	font-size: 13px;
+	padding: 2px 0;
+}
+.carousel .item-price strike {
+	opacity: 0.7;
+	margin-right: 5px;
+}
+.carousel-control-prev, .carousel-control-next {
+	height: 44px;
+	width: 40px;
+	background: #CCD3D8;	
+	margin: auto 0;
+	border-radius: 4px;
+	opacity: 0.8;
+}
+.carousel-control-prev:hover, .carousel-control-next:hover {
+	background: #5A5E60;
+	opacity: 1;
+}
+.carousel-control-prev i, .carousel-control-next i {
+	font-size: 36px;
+	position: absolute;
+	top: 50%;
+	display: inline-block;
+	margin: -19px 0 0 0;
+	z-index: 5;
+	left: 0;
+	right: 0;
+	color: #fff;
+	text-shadow: none;
+	font-weight: bold;
+}
+.carousel-control-prev i {
+	margin-left: -2px;
+}
+.carousel-control-next i {
+	margin-right: -4px;
+}		
+.carousel-indicators {
+	bottom: -50px;
+}
+.carousel-indicators li, .carousel-indicators li.active {
+	width: 10px;
+	height: 10px;
+	margin: 4px;
+	border-radius: 50%;
+	border: none;
+}
+.carousel-indicators li {	
+	background: rgba(0, 0, 0, 0.2);
+}
+.carousel-indicators li.active {	
+	background: rgba(0, 0, 0, 0.6);
+}
+.floater {
+    padding: 15px;
+    left: 50px;
+    background-color: rgba(255, 255, 255, 0.80);
+	position: absolute;
+	top:10%;
+	min-width: 300px;
+}
+.img-sm {
+     width: 80px;
+     height: 80px
+ }
+
+ .itemside .info {
+     padding-left: 15px;
+     padding-right: 7px
+ }
+
+ .table-shopping-cart .price-wrap {
+     line-height: 1.2
+ }
+
+ .table-shopping-cart .price {
+     font-weight: bold;
+     margin-right: 5px;
+     display: block
+ }
+
+ .text-muted {
+     color: #969696 !important
+ }
+
+ a {
+     text-decoration: none !important
+ }
+
+ .card {
+     position: relative;
+     display: -ms-flexbox;
+     display: flex;
+     -ms-flex-direction: column;
+     flex-direction: column;
+     min-width: 0;
+     word-wrap: break-word;
+     background-color: #fff;
+     background-clip: border-box;
+     border: 1px solid rgba(0, 0, 0, .125);
+     border-radius: 0px
+ }
+
+ .itemside {
+     position: relative;
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: flex;
+     width: 100%
+ }
+
+ .dlist-align {
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: flex
+ }
+
+ [class*="dlist-"] {
+     margin-bottom: 5px
+ }
+
+ .coupon {
+     border-radius: 1px
+ }
+
+ .price {
+     font-weight: 600;
+     color: #212529
+ }
+
+ .btn.btn-out {
+     outline: 1px solid #fff;
+     outline-offset: -5px
+ }
+
+ .btn-main {
+     border-radius: 2px;
+     text-transform: capitalize;
+     font-size: 15px;
+     padding: 10px 19px;
+     cursor: pointer;
+     color: #fff;
+     width: 100%
+ }
+
+ .btn-light {
+     color: #ffffff;
+     background-color: #F44336;
+     border-color: #f8f9fa;
+     font-size: 12px
+ }
+
+ .btn-light:hover {
+     color: #ffffff;
+     background-color: #F44336;
+     border-color: #F44336
+ }
+
+ .btn-apply {
+     font-size: 11px
+ }
+
+              

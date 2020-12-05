@@ -1,0 +1,40 @@
+ h1{
+    color: black;
+    font-size: 30px;
+}
+p{
+    font-size: 15px;
+}
+.floater {
+    padding: 15px;
+    left: 50px;
+    background-color: white;
+	position: absolute;
+	top:30%;
+	min-width: 300px
+}
+.floater2 {
+    padding: 20px 30px;
+    left: 20px;
+    background-color: white;
+	top:50%;
+    position: static;
+	min-width: 300px;
+    margin-top: 200px;
+}
+
+@media only screen and (max-width:767px)
+{
+	.floater{
+	position: static;
+		text-align: center;
+	}
+    .floater2{
+	position: static;
+        text-align: center;
+	}
+	.text-container{
+		width: 100%;
+	}
+
+}
