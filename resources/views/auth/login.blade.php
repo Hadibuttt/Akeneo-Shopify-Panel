@@ -62,10 +62,7 @@
 										Login
 									</button>
 								</div>
-								<div class="mt-4 text-center">
-									Don't have an account? <a href="{{url('register')}}">Create One</a>
-								</div>
-							</form>
+															</form>
 						</div>
 					</div>
 					

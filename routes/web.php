@@ -13,8 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/admin', function () {
-    return view('auth.signin');
+Route::get('/forgot', function () {
+    return view('auth.forgot');
+});
+
+Route::get('/reset', function () {
+    return view('auth.reset');
 });
 
 Auth::routes();
