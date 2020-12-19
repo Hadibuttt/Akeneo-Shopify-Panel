@@ -23,8 +23,29 @@ Route::get('/reset', function () {
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', function () {
+    return view('auth.login');
+});
 
+Route::get('/home', function () {
+    return view('index');
+});
+
+Route::get('/product', function () {
+    return view('product');
+});
+
+Route::get('/add-product', function () {
+    return view('add-product');
+});
+
+Route::get('/customer', function () {
+    return view('customer');
+});
+
+Route::get('/order', function () {
+    return view('order');
+});
 
 Route::prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function()
 {
