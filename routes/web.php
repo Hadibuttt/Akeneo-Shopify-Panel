@@ -35,9 +35,7 @@ Route::get('/product', function () {
     return view('product');
 });
 
-Route::get('/add-product', function () {
-    return view('add-product');
-});
+Route::get('/add-product', [App\Http\Controllers\AddProductController::class, 'index']);
 
 Route::get('/customer', function () {
     return view('customer');

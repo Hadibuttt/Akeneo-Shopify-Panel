@@ -40,6 +40,7 @@
                               <p class="Polaris-DisplayText Polaris-DisplayText--sizeSmall">Title</p>
                             </div>
                             <div style="--top-bar-background:#00848e; --top-bar-background-lighter:#1d9ba4; --top-bar-color:#f9fafb; --p-frame-offset:0px;">
+                              <form action="/home" method="post">
                               <div class="">
                                 <div class="Polaris-Connected">
                                   <div class="Polaris-Connected__Item Polaris-Connected__Item--primary">
@@ -291,7 +292,7 @@
 </div>
                                
                                
-                                <div style="--top-bar-background:#00848e; --top-bar-background-lighter:#1d9ba4; --top-bar-color:#f9fafb; --p-frame-offset:0px;">
+<div style="--top-bar-background:#00848e; --top-bar-background-lighter:#1d9ba4; --top-bar-color:#f9fafb; --p-frame-offset:0px;">
         <div class="Polaris-Banner Polaris-Banner--statusInfo Polaris-Banner--hasDismiss Polaris-Banner--withinPage" tabindex="0" role="status" aria-live="polite" aria-labelledby="PolarisBanner14Heading" aria-describedby="PolarisBanner14Content">
             <div class="Polaris-Banner__Dismiss"><button type="button" class="Polaris-Button Polaris-Button--plain Polaris-Button--iconOnly" aria-label="Dismiss notification"><span class="Polaris-Button__Content"><span class="Polaris-Button__Icon"><span class="Polaris-Icon"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true">
                                     <path d="M11.414 10l4.293-4.293a.999.999 0 1 0-1.414-1.414L10 8.586 5.707 4.293a.999.999 0 1 0-1.414 1.414L8.586 10l-4.293 4.293a.999.999 0 1 0 1.414 1.414L10 11.414l4.293 4.293a.997.997 0 0 0 1.414 0 .999.999 0 0 0 0-1.414L11.414 10z"></path>
@@ -347,44 +348,45 @@
                                 <h3 aria-label="Accounts" class=" mb-4">Main Category</h3>
                                 </div>
                                 
-                        <div class="Polaris-Select"><select id="PolarisSelect11" class="Polaris-Select__Input" aria-invalid="false">
-                            <option value="Product type">Active</option>
-                            <option value="Product type">Archieved</option>
-                            <option value="Product type">Draft</option>
+                              
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+                                
+                <div class="form-row align-items-center">
+                          <select name="category" class="custom-select mr-sm-2" id="inlineFormCustomSelect" style="height:40px;font-size:14px;">
+                            <option selected>Select Category</option>
+                            @foreach ($categorys as $category)
+                            <option value="{{$category->cat_id}}">{{$category->cat_title}}</option>
+                            @endforeach
                           </select>
-                          <div class="Polaris-Select__Content" aria-hidden="true"><span class="Polaris-Select__SelectedOption">Product type</span><span class="Polaris-Select__Icon"><span class="Polaris-Icon"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true">
-                                  <path d="M10 16l-4-4h8l-4 4zm0-12l4 4H6l4-4z"></path>
-                                </svg></span></span></div>
-                          <div class="Polaris-Select__Backdrop"></div>
-                        </div>
+               </div>
+              
+                          
                                 <div style="--top-bar-background:#00848e; --top-bar-background-lighter:#1d9ba4; --top-bar-color:#f9fafb; --p-frame-offset:0px;">
                                 <h3 aria-label="Accounts" class=" mb-4 mt-5">Sub Category</h3>
                                 </div>
                                 
-                        <div class="Polaris-Select"><select id="PolarisSelect11" class="Polaris-Select__Input" aria-invalid="false">
-                            <option value="Product type">Active</option>
-                            <option value="Product type">Archieved</option>
-                            <option value="Product type">Draft</option>
+                           <div class="form-row align-items-center">      
+                         <select name="subcategory" class="custom-select mr-sm-2" id="inlineFormCustomSelect" style="height:40px;font-size:14px;">
+                          <option selected>Select Sub-Category</option>
+                          @foreach ($sub_categorys as $sub_category)
+                     <option value="{{$sub_category->subcat_id}}">{{$sub_category->subcat_title}}</option>
+                          @endforeach
                           </select>
-                          <div class="Polaris-Select__Content" aria-hidden="true"><span class="Polaris-Select__SelectedOption">Product type</span><span class="Polaris-Select__Icon"><span class="Polaris-Icon"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true">
-                                  <path d="M10 16l-4-4h8l-4 4zm0-12l4 4H6l4-4z"></path>
-                                </svg></span></span></div>
-                          <div class="Polaris-Select__Backdrop"></div>
-                        </div>
+                       </div>
+
                                 <div style="--top-bar-background:#00848e; --top-bar-background-lighter:#1d9ba4; --top-bar-color:#f9fafb; --p-frame-offset:0px;">
-                                <h3 aria-label="Accounts" class=" mb-4 mt-5">Sub Category</h3>
+                                <h3 aria-label="Accounts" class=" mb-4 mt-5">Collection Category</h3>
                                 </div>
-                                
-                        <div class="Polaris-Select"><select id="PolarisSelect11" class="Polaris-Select__Input" aria-invalid="false">
-                            <option value="Product type">Active</option>
-                            <option value="Product type">Archieved</option>
-                            <option value="Product type">Draft</option>
-                          </select>
-                          <div class="Polaris-Select__Content" aria-hidden="true"><span class="Polaris-Select__SelectedOption">Product type</span><span class="Polaris-Select__Icon"><span class="Polaris-Icon"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true">
-                                  <path d="M10 16l-4-4h8l-4 4zm0-12l4 4H6l4-4z"></path>
-                                </svg></span></span></div>
-                          <div class="Polaris-Select__Backdrop"></div>
-                        </div>
+                 
+                          <div class="form-row align-items-center">      
+                            <select name="collection" class="custom-select mr-sm-2" id="inlineFormCustomSelect" style="height:40px;font-size:14px;">
+                             <option selected>Select Collection</option>
+                             @foreach ($collections as $collection)
+                    <option value="{{$collection->cat_item_id}}">{{$collection->cat_item_title}}</option>
+                             @endforeach
+                             </select>
+                          </div>
                                
                         </div>
                         
@@ -438,6 +440,7 @@
                                   <div class="Polaris-Connected__Item Polaris-Connected__Item--primary">
                                     <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="PolarisTextField10" class="Polaris-TextField__Input" aria-labelledby="PolarisTextField10Label" aria-invalid="false" aria-multiline="false" placeholder="UPC,EAN,etc">
                                       <div class="Polaris-TextField__Backdrop"></div>
+                                    </form>
                                     </div>
                                   </div>
                                 </div>
