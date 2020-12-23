@@ -86,7 +86,7 @@
                         <path d="M14.363 5.22a4.22 4.22 0 11-8.439 0 4.22 4.22 0 018.439 0zM2.67 14.469c1.385-1.09 4.141-2.853 7.474-2.853 3.332 0 6.089 1.764 7.474 2.853.618.486.81 1.308.567 2.056l-.333 1.02A2.11 2.11 0 0115.846 19H4.441a2.11 2.11 0 01-2.005-1.455l-.333-1.02c-.245-.748-.052-1.57.567-2.056z"/>
                         </svg></span></div><span class="Polaris-Navigation__Text">Customer</span>
                   </button></a></li>
-                <li class="Polaris-Navigation__ListItem"><a href="/order" style="text-decoration: none;"><button type="button" class="Polaris-Navigation__Item">
+                <li class="Polaris-Navigation__ListItem"><a href="/order?view=all" style="text-decoration: none;"><button type="button" class="Polaris-Navigation__Item">
                     <div class="Polaris-Navigation__Icon"><span class="Polaris-Icon"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true">
                         
                           <path d="M11 1a1 1 0 1 0-2 0v7.586L7.707 7.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l3-3a1 1 0 0 0-1.414-1.414L11 8.586V1z"></path>
