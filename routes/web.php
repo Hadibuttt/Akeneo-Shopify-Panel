@@ -41,9 +41,7 @@ Route::get('/customer', function () {
     return view('customer');
 });
 
-Route::get('/order', function () {
-    return view('order');
-});
+Route::get('/order', [App\Http\Controllers\OrderController::class, 'index']);
 
 Route::prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function()
 {

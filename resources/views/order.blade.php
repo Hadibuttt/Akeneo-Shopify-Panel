@@ -141,63 +141,69 @@
                     <th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--verticalAlignTop Polaris-DataTable__Cell--header " scope="col">Total</th>
                     <th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--verticalAlignTop Polaris-DataTable__Cell--header " scope="col">Payment</th>
                     <th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--verticalAlignTop Polaris-DataTable__Cell--header " scope="col">Fullfilment</th>
-                    <th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--verticalAlignTop Polaris-DataTable__Cell--header " scope="col">Delivery Method</th>
-                    <th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--verticalAlignTop Polaris-DataTable__Cell--header " scope="col">Tags</th>
+                    <th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--verticalAlignTop Polaris-DataTable__Cell--header " scope="col">Delivery Items</th>
+                    <th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--verticalAlignTop Polaris-DataTable__Cell--header " scope="col">Method</th>
                   </tr>
                 </thead>
                     <tbody>
                       <tr class="Polaris-DataTable__TableRow" style="text-align:center;">
+ @foreach ($orders as $order)
                         <th class="Polaris-DataTable__Cell Polaris-DataTable__Cell--verticalAlignTop Polaris-DataTable__Cell--firstColumn" scope="row">
 
                         <label class="Polaris-Choice" for="PolarisCheckbox1"><span class="Polaris-Choice__Control"><span class="Polaris-Checkbox"><input id="PolarisCheckbox1" type="checkbox" class="Polaris-Checkbox__Input" aria-invalid="false" role="checkbox" aria-checked="false" value=""><span class="Polaris-Checkbox__Backdrop"></span><span class="Polaris-Checkbox__Icon"><span class="Polaris-Icon"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true">
                         <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.436.436 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
                         </svg></span></span></span></span>
-                        #1001
+                        #{{$order->id}}
                         </label>
-
                         </th>
-                        <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--verticalAlignTop ">Dec 6 at 3:46 pm</td>
-                        <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--verticalAlignTop ">No Customer</td>
-                        <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--verticalAlignTop ">$140</td>
+
+                        <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--verticalAlignTop ">{{$order->created_at}}</td>
+
+@foreach ($order_details as $order_detail)
+@if ($order_detail->order_id == $order->id)
+                        <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--verticalAlignTop ">{{$order_detail->f_name}}  {{$order_detail->l_name}}</td>
+
+@foreach ($order_items as $order_item)
+@if ($order_item->order_id == $order->id)
+                        <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--verticalAlignTop ">${{$order_item->total}}</td>
+  
                         <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--verticalAlignTop ">
-                            <div style="--top-bar-background:#00848e; --top-bar-background-lighter:#1d9ba4; --top-bar-color:#f9fafb; --p-frame-offset:0px;"><span class="Polaris-Badge Polaris-Badge--statusWarning"><span class="Polaris-VisuallyHidden">Warning </span>Payment Pending</span>
+                          @if ($order->status == 0 )
+                          <div style="--top-bar-background:#00848e; --top-bar-background-lighter:#1d9ba4; --top-bar-color:#f9fafb; --p-frame-offset:0px;"><span class="Polaris-Badge Polaris-Badge--statusWarning"><span class="Polaris-VisuallyHidden">Warning </span>Unpaid</span>
                             <div id="PolarisPortalsContainer"></div>
                             </div>
                         </td>
-                        <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--verticalAlignTop ">
-                            <div style="--top-bar-background:#00848e; --top-bar-background-lighter:#1d9ba4; --top-bar-color:#f9fafb; --p-frame-offset:0px;"><span class="Polaris-Badge">Fulfilled</span>
+                          @else
+                          <div style="--top-bar-background:#00848e; --top-bar-background-lighter:#1d9ba4; --top-bar-color:#f9fafb; --p-frame-offset:0px;"><span class="Polaris-Badge Polaris-Badge--statusWarning"><span class="Polaris-VisuallyHidden">Warning </span>Paid</span>
                             <div id="PolarisPortalsContainer"></div>
                             </div>
                         </td>
-                        <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--verticalAlignTop ">5 items</td>
+                          @endif
+                            
+@if ($order->status == 0)
+<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--verticalAlignTop ">
+  <div style="--top-bar-background:#00848e; --top-bar-background-lighter:#1d9ba4; --top-bar-color:#f9fafb; --p-frame-offset:0px;"><span class="Polaris-Badge">Unfullfilled</span>
+  <div id="PolarisPortalsContainer"></div>
+  </div>
+</td>  
+@else
+<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--verticalAlignTop ">
+  <div style="--top-bar-background:#00848e; --top-bar-background-lighter:#1d9ba4; --top-bar-color:#f9fafb; --p-frame-offset:0px;"><span class="Polaris-Badge">Fullfilled</span>
+  <div id="PolarisPortalsContainer"></div>
+  </div>
+</td>
+@endif
+                        
+                        <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--verticalAlignTop ">{{$order_item->qty}} items</td>
+                        @endif
+                        @endforeach
+
                         <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--verticalAlignTop ">Standard Shipping</td>
-                      </tr>
-                      <tr class="Polaris-DataTable__TableRow">
-                        <th class="Polaris-DataTable__Cell Polaris-DataTable__Cell--verticalAlignTop Polaris-DataTable__Cell--firstColumn" scope="row">
+                        @endif
+                        @endforeach
+                      </tr>       
+                      @endforeach      
 
-                        <label class="Polaris-Choice" for="PolarisCheckbox1"><span class="Polaris-Choice__Control"><span class="Polaris-Checkbox"><input id="PolarisCheckbox1" type="checkbox" class="Polaris-Checkbox__Input" aria-invalid="false" role="checkbox" aria-checked="false" value=""><span class="Polaris-Checkbox__Backdrop"></span><span class="Polaris-Checkbox__Icon"><span class="Polaris-Icon"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true">
-                        <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.436.436 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
-                        </svg></span></span></span></span>
-                        #1002
-                        </label>
-
-                        </th>
-                        <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--verticalAlignTop ">Dec 6 at 3:46 pm</td>
-                        <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--verticalAlignTop ">No Customer</td>
-                        <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--verticalAlignTop ">$140</td>
-                        <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--verticalAlignTop ">
-                            <div style="--top-bar-background:#00848e; --top-bar-background-lighter:#1d9ba4; --top-bar-color:#f9fafb; --p-frame-offset:0px;"><span class="Polaris-Badge">Fulfilled</span>
-                            <div id="PolarisPortalsContainer"></div>
-                            </div>
-                        </td>
-                        <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--verticalAlignTop ">
-                            <div style="--top-bar-background:#00848e; --top-bar-background-lighter:#1d9ba4; --top-bar-color:#f9fafb; --p-frame-offset:0px;"><span class="Polaris-Badge Polaris-Badge--statusAttention"><span class="Polaris-VisuallyHidden">Attention </span>Unfulfilled</span>
-                            <div id="PolarisPortalsContainer"></div>
-                            </div>
-                        </td>
-                        <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--verticalAlignTop ">1 item</td>
-                        <td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--verticalAlignTop " style="text-decoration: line-through;">Standard Shipping</td>
-                      </tr>
                 </tbody>
                 
               </table>
