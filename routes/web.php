@@ -27,9 +27,7 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::get('/home', function () {
-    return view('index');
-});
+Route::get('/home', [App\Http\Controllers\IndexController::class, 'index']);
 
 Route::get('/product', function () {
     return view('product');

@@ -114,8 +114,9 @@
                   </svg></span>
             </div>
           </div>
+          
           <div class="Polaris-ResourceItem__Content">
-            <h3><span class="Polaris-TextStyle--variationStrong">3 orders</span> to fullfill</h3>
+            <h3><span class="Polaris-TextStyle--variationStrong">{{$PendingOrders}} orders</span> to fullfill</h3>
           </div>
           <div class="Polaris-ResourceItem__Actions">
             <div class="Polaris-ButtonGroup">
