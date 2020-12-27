@@ -355,53 +355,116 @@
          <script>
           $(document).ready(function(){
               $("select.category").change(function(){
-                  var selected = $(this).children("option:selected").val();
+                  var category = $(this).children("option:selected").val();
                   
-                  window.location.href = "add-product"+'?c='+selected;
+                  window.location.href = window.location.href+'?c='+category;
               });
           });
           </script>
 <?php 
 $c = request('c');
+$s = request('s');
+$cl = request('cl');
 ?>
            
                                 
                 <div class="form-row align-items-center">
                           <select id="category" class="custom-select mr-sm-2 category" id="inlineFormCustomSelect" style="height:40px;font-size:14px;">
-                            <option>Select Category</option>
+
+                            @if ($c == 0 )
+                            <option>Select Category</option>    
+                            @endif
+                            
+                            
                             @foreach ($categorys as $category)
-                            <option selected value="{{$category->cat_id}}">{{$category->cat_title}}</option>
+                            @if ($c == 0)
+                            <option value="{{$category->cat_id}}">{{$category->cat_title}}</option>
+                            @endif
+
+                            @if ($c == $category->cat_id)
+                            <option value="{{$category->cat_id}}">{{$category->cat_title}}</option>
+                            @endif
+
+                            
                             @endforeach
                           </select>
                </div>
                
+               <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+               <script>
+                $(document).ready(function(){
+                    $("select.subcategory").change(function(){
+                        var subcategory = $(this).children("option:selected").val();
+                        
+                        window.location.href = window.location.href+'?c='+'<?php echo $c;?>'+'&s='+subcategory;
+                    });
+                });
+                </script>
                
                                 <div style="--top-bar-background:#00848e; --top-bar-background-lighter:#1d9ba4; --top-bar-color:#f9fafb; --p-frame-offset:0px;">
                                 <h3 aria-label="Accounts" class=" mb-4 mt-5">Sub Category</h3>
                                 </div>
                                 
                            <div class="form-row align-items-center">      
-                         <select name="subcategory" class="custom-select mr-sm-2" id="inlineFormCustomSelect" style="height:40px;font-size:14px;">
-                          <option selected>Select Sub-Category</option>
-                          @foreach ($sub_categorys as $sub_category)
+                         <select name="subcategory" class="custom-select mr-sm-2 subcategory" id="inlineFormCustomSelect" style="height:40px;font-size:14px;">
                           
+                          @if ($s == 0)
+                          <option>Select Sub-Category</option>
+                          @endif
+
+                          @foreach ($sub_categorys as $sub_category)
+      
                           @if ($sub_category->cat_id == $c )
+                          @if ($s == 0)
                           <option value="{{$sub_category->subcat_id}}">{{$sub_category->subcat_title}}</option>
+                          @endif
+
+                          @if ($s == $sub_category->subcat_id)
+                          <option value="{{$sub_category->subcat_id}}">{{$sub_category->subcat_title}}</option>
+                          @endif
+
+
                           @endif
                      
                           @endforeach
                           </select>
                        </div>
 
+                      <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+               <script>
+                $(document).ready(function(){
+                    $("select.collection").change(function(){
+                        var collection = $(this).children("option:selected").val();
+                        
+   window.location.href = window.location.href+'?c='+'<?php echo $c;?>'+'&s='+'<?php echo $s;?>'+'&cl='+collection;
+                    });
+                });
+                </script> 
+
                                 <div style="--top-bar-background:#00848e; --top-bar-background-lighter:#1d9ba4; --top-bar-color:#f9fafb; --p-frame-offset:0px;">
                                 <h3 aria-label="Accounts" class=" mb-4 mt-5">Collection Category</h3>
                                 </div>
                  
                           <div class="form-row align-items-center">      
-                            <select name="collection" class="custom-select mr-sm-2" id="inlineFormCustomSelect" style="height:40px;font-size:14px;">
-                             <option selected>Select Collection</option>
+                            <select name="collection" class="custom-select mr-sm-2 collection" id="inlineFormCustomSelect" style="height:40px;font-size:14px;">
+                             
+                              @if ($cl == 0)
+                              <option>Select Collection</option>
+                              @endif
+
                              @foreach ($collections as $collection)
-                    <option value="{{$collection->cat_item_id}}">{{$collection->cat_item_title}}</option>
+                             
+                             @if ($collection->subcat_id == $s)
+                             @if ($cl == 0)
+                             <option value="{{$collection->cat_item_id}}">{{$collection->cat_item_title}}</option>
+                             @endif
+
+                             @if ($collection->cat_item_id == $cl)
+                             <option value="{{$collection->cat_item_id}}">{{$collection->cat_item_title}}</option>
+                             @endif
+
+                             @endif
+                    
                              @endforeach
                              </select>
                           </div>
