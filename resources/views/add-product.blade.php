@@ -44,7 +44,10 @@
                               <div class="">
                                 <div class="Polaris-Connected">
                                   <div class="Polaris-Connected__Item Polaris-Connected__Item--primary">
-                                    <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="PolarisTextField10" class="Polaris-TextField__Input" aria-labelledby="PolarisTextField10Label" aria-invalid="false" aria-multiline="false" placeholder="Short Sleeve T-Shirt">
+                                    <div class="Polaris-TextField Polaris-TextField--hasValue">
+                                    
+                                      <input id="PolarisTextField10" class="Polaris-TextField__Input" aria-labelledby="PolarisTextField10Label" aria-invalid="false" aria-multiline="false" name="title" placeholder="Short Sleeve T-Shirt">
+
                                       <div class="Polaris-TextField__Backdrop"></div>
                                     </div>
                                   </div>
@@ -58,7 +61,10 @@
                               <div class="">
                                 <div class="Polaris-Connected">
                                   <div class="Polaris-Connected__Item Polaris-Connected__Item--primary">
-                                    <div class="Polaris-TextField Polaris-TextField--hasValue Polaris-TextField--multiline"><textarea id="PolarisTextField20" class="Polaris-TextField__Input" aria-labelledby="PolarisTextField20Label" aria-invalid="false" aria-multiline="true" style="height: 108px;"></textarea>
+                                    <div class="Polaris-TextField Polaris-TextField--hasValue Polaris-TextField--multiline">
+
+                                      <textarea id="PolarisTextField20" class="Polaris-TextField__Input" aria-labelledby="PolarisTextField20Label" aria-invalid="false" name="description" aria-multiline="true" style="height: 108px;"></textarea>
+
                                       <div class="Polaris-TextField__Backdrop"></div>
                                       <div aria-hidden="true" class="Polaris-TextField__Resizer">
                                         <div class="Polaris-TextField__DummyInput">1776 Barnes Street<br>Orlandoundefined FL 32801<br></div>
@@ -84,9 +90,9 @@
           <div class="Polaris-Stack Polaris-Stack--vertical">
             <div class="Polaris-Stack__Item"><img width="40" src="data:image/svg+xml,%3csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M20 10a10 10 0 11-20 0 10 10 0 0120 0zM5.3 8.3l4-4a1 1 0 011.4 0l4 4a1 1 0 01-1.4 1.4L11 7.4V15a1 1 0 11-2 0V7.4L6.7 9.7a1 1 0 01-1.4-1.4z' fill='%235C5F62'/%3e%3c/svg%3e" alt=""></div>
             <div class="Polaris-Stack__Item">
-              <div class="Polaris-DropZone-FileUpload__Button">Add file</div>
+              <div class="Polaris-DropZone-FileUpload__Button"><input type="file" id="image" name="image" accept="image/*"></div>
             </div>
-            <div class="Polaris-Stack__Item"><span class="Polaris-TextStyle--variationSubdued">or drop files to upload</span></div>
+            <div class="Polaris-Stack__Item"><span class="Polaris-TextStyle--variationSubdued"></span></div>
           </div>
         </div>
       </div><span class="Polaris-VisuallyHidden"><input id="PolarisDropZone2" type="file" multiple="" autocomplete="off"></span>
@@ -111,7 +117,10 @@
                               <div class="">
                                 <div class="Polaris-Connected">
                                   <div class="Polaris-Connected__Item Polaris-Connected__Item--primary">
-                                    <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="PolarisTextField10" class="Polaris-TextField__Input" aria-labelledby="PolarisTextField10Label" aria-invalid="false" aria-multiline="false">
+                                    <div class="Polaris-TextField Polaris-TextField--hasValue">
+                                      
+                                      <input id="PolarisTextField10" name="sellprice" class="Polaris-TextField__Input" aria-labelledby="PolarisTextField10Label" aria-invalid="false" aria-multiline="false">
+
                                       <div class="Polaris-TextField__Backdrop"></div>
                                     </div>
                                   </div>
@@ -128,7 +137,10 @@
                               <div class="">
                                 <div class="Polaris-Connected">
                                   <div class="Polaris-Connected__Item Polaris-Connected__Item--primary">
-                                    <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="PolarisTextField10" class="Polaris-TextField__Input" aria-labelledby="PolarisTextField10Label" aria-invalid="false" aria-multiline="false">
+                                    <div class="Polaris-TextField Polaris-TextField--hasValue">
+                                      
+                                      <input id="PolarisTextField10" name="saleprice" class="Polaris-TextField__Input" aria-labelledby="PolarisTextField10Label" aria-invalid="false" aria-multiline="false">
+
                                       <div class="Polaris-TextField__Backdrop"></div>
                                     </div>
                                   </div>
@@ -147,7 +159,10 @@
                               <div class="">
                                 <div class="Polaris-Connected">
                                   <div class="Polaris-Connected__Item Polaris-Connected__Item--primary">
-                                    <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="PolarisTextField10" class="Polaris-TextField__Input" aria-labelledby="PolarisTextField10Label" aria-invalid="false" aria-multiline="false">
+                                    <div class="Polaris-TextField Polaris-TextField--hasValue">
+                                      
+                                      <input id="PolarisTextField10" name="assignprice" class="Polaris-TextField__Input" aria-labelledby="PolarisTextField10Label" aria-invalid="false" aria-multiline="false">
+
                                       <div class="Polaris-TextField__Backdrop"></div>
                                     </div>
                                   </div>
@@ -164,7 +179,10 @@
                                   <div class="">
                                     <div class="Polaris-Connected">
                                       <div class="Polaris-Connected__Item Polaris-Connected__Item--primary">
-                                        <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="PolarisTextField4" class="Polaris-TextField__Input" type="number" aria-labelledby="PolarisTextField4Label" aria-invalid="false" aria-multiline="false" value="1">
+                                        <div class="Polaris-TextField Polaris-TextField--hasValue">
+                                          
+                                          <input id="PolarisTextField4" name="tax" class="Polaris-TextField__Input" type="number" aria-labelledby="PolarisTextField4Label" aria-invalid="false" aria-multiline="false" value="1">
+
                                           <div class="Polaris-TextField__Spinner" aria-hidden="true">
                                             <div role="button" class="Polaris-TextField__Segment" tabindex="-1">
                                               <div class="Polaris-TextField__SpinnerIcon"><span class="Polaris-Icon"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true">
@@ -271,16 +289,46 @@
                         <div class="Polaris-Labelled__LabelWrapper">
                           <div class="Polaris-Label"><label id="PolarisSelect11Label" for="PolarisSelect11" class="Polaris-Label__Text">Collection rule type</label></div>
                         </div>
-                        <div class="Polaris-Select"><select id="PolarisSelect11" class="Polaris-Select__Input" aria-invalid="false">
-                            <option value="Product type">Active</option>
-                            <option value="Product type">Archieved</option>
-                            <option value="Product type">Draft</option>
-                          </select>
-                          <div class="Polaris-Select__Content" aria-hidden="true"><span class="Polaris-Select__SelectedOption">Product type</span><span class="Polaris-Select__Icon"><span class="Polaris-Icon"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true">
-                                  <path d="M10 16l-4-4h8l-4 4zm0-12l4 4H6l4-4z"></path>
-                                </svg></span></span></div>
-                          <div class="Polaris-Select__Backdrop"></div>
-                        </div>
+
+                        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+                        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+                        <script>
+                         $(document).ready(function(){
+                             $("select.status").change(function(){
+                                 var status = $(this).children("option:selected").text();
+                                 var statusValue = $(this).children("option:selected").val();
+                                 
+         window.location.href = window.location.href+'?status='+status+'&statusValue='+statusValue;
+                             });
+                         });
+                         </script>
+               <?php 
+               $status = request('status');
+               $statusValue =  request('statusValue');
+               ?>
+                          
+                                               
+                               <div class="form-row align-items-center">
+                                         <select class="custom-select mr-sm-2 status" id="inlineFormCustomSelect" style="height:40px;font-size:14px;">
+  @if ($statusValue == 0)
+  <option>Product type</option>
+  <option value="1">Active</option>
+ <option value="2">Archieved</option>
+ <option value="3">Draft</option>   
+  @endif
+
+  @if ($statusValue != 0)
+  <option value="<?php echo $status ?>"><?php echo $status ?></option>
+  @endif
+                                             
+                                    
+                                         </select>
+                              </div>
+
+
+                      
+
                       </div>
                     </div>
                   </div>
@@ -489,7 +537,10 @@ $cl = request('cl');
                               <div class="">
                                 <div class="Polaris-Connected">
                                   <div class="Polaris-Connected__Item Polaris-Connected__Item--primary">
-                                    <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="PolarisTextField10" class="Polaris-TextField__Input" aria-labelledby="PolarisTextField10Label" aria-invalid="false" aria-multiline="false" placeholder="45kg etc">
+                                    <div class="Polaris-TextField Polaris-TextField--hasValue">
+                                      
+                                      <input id="PolarisTextField10" name="weight" class="Polaris-TextField__Input" aria-labelledby="PolarisTextField10Label" aria-invalid="false" aria-multiline="false" placeholder="45kg etc">
+
                                       <div class="Polaris-TextField__Backdrop"></div>
                                     </div>
                                   </div>
@@ -521,7 +572,10 @@ $cl = request('cl');
                                   <div class="Polaris-Connected__Item Polaris-Connected__Item--primary">
                                     <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="PolarisTextField10" class="Polaris-TextField__Input" aria-labelledby="PolarisTextField10Label" aria-invalid="false" aria-multiline="false" placeholder="UPC,EAN,etc">
                                       <div class="Polaris-TextField__Backdrop"></div>
-                                    </form>
+
+                                      
+                                      
+                                    
                                     </div>
                                   </div>
                                 </div>
@@ -534,6 +588,9 @@ $cl = request('cl');
                 </div>
             </div>
         </div>
+        <br>
+        <button type="sybmit" class="Polaris-Button Polaris-Button--outline"><span class="Polaris-Button__Content"><span class="Polaris-Button__Text">Submit</span></span></button>
+      </form>
                         <!--Main Body----------------------------------------------------------------------------->
                         
                         
