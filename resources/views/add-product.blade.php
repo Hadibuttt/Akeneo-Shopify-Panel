@@ -351,16 +351,31 @@
                               
          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-        
+         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+         <script>
+          $(document).ready(function(){
+              $("select.category").change(function(){
+                  var selected = $(this).children("option:selected").val();
+                  
+                  window.location.href = "add-product"+'?c='+selected;
+              });
+          });
+          </script>
+<?php 
+$c = request('c');
+?>
+           
                                 
                 <div class="form-row align-items-center">
-                          <select id="category" class="custom-select mr-sm-2" id="inlineFormCustomSelect" style="height:40px;font-size:14px;">
+                          <select id="category" class="custom-select mr-sm-2 category" id="inlineFormCustomSelect" style="height:40px;font-size:14px;">
                             <option>Select Category</option>
                             @foreach ($categorys as $category)
-                            <option  value="{{$category->cat_id}}">{{$category->cat_title}}</option>
+                            <option selected value="{{$category->cat_id}}">{{$category->cat_title}}</option>
                             @endforeach
                           </select>
-               </div>               
+               </div>
+               
+               
                                 <div style="--top-bar-background:#00848e; --top-bar-background-lighter:#1d9ba4; --top-bar-color:#f9fafb; --p-frame-offset:0px;">
                                 <h3 aria-label="Accounts" class=" mb-4 mt-5">Sub Category</h3>
                                 </div>
@@ -370,7 +385,7 @@
                           <option selected>Select Sub-Category</option>
                           @foreach ($sub_categorys as $sub_category)
                           
-                          @if ($sub_category->cat_id == 1 )
+                          @if ($sub_category->cat_id == $c )
                           <option value="{{$sub_category->subcat_id}}">{{$sub_category->subcat_title}}</option>
                           @endif
                      
