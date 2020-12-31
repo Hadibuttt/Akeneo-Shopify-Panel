@@ -367,7 +367,7 @@
                                                     <div>
                                                         <ul class="Polaris-Navigation__List_yj3nl">
                                                             <li class="Polaris-Navigation__ListItem_wxd2m">
-                                                                <div class="Polaris-Navigation__ItemWrapper_1kbav"><a data-polaris-unstyled="true" class="Polaris-Navigation__Item_yiyol " tabindex="0" aria-disabled="false" href="/product"><span class="Polaris-Navigation__Text_yj3uv">All products</span></a></div>
+                                                                <div class="Polaris-Navigation__ItemWrapper_1kbav"><a data-polaris-unstyled="true" class="Polaris-Navigation__Item_yiyol " tabindex="0" aria-disabled="false" href="/add-product"><span class="Polaris-Navigation__Text_yj3uv">All products</span></a></div>
                                                             </li>
                                                             
                         <li class="Polaris-Navigation__ListItem_wxd2m">

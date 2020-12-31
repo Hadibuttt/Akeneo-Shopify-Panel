@@ -34,6 +34,7 @@ Route::get('/product', function () {
 });
 
 Route::get('/add-product', [App\Http\Controllers\AddProductController::class, 'index']);
+Route::post('submit', [App\Http\Controllers\AddProductController::class, 'save'] );
 
 Route::get('/customer', function () {
     return view('customer');

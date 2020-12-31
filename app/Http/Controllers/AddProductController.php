@@ -35,9 +35,23 @@ class AddProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function save(Request $req)
     {
-        //
+        $product= new products;
+        $product->pro_title = $req->title;
+        $product->pro_price = $req->price;
+        $product->stock = $req->stock;
+        $product->description = $req->desc;
+        $product->pro_img = $req->image;
+        $product->SEOtitle = $req->SEOtitle;
+        $product->SEOdesc = $req->SEOdescription;
+        $product->SEOurl = $req->handle;
+        $product->status = $req->status;
+        $product->cat_item_id = $req->collection;
+        $product->tags = $req->tags;
+        $product->save();
+
+        return view('Success');
     }
 
     /**
