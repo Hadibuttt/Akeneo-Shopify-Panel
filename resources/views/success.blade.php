@@ -13,5 +13,3 @@
 <p style="text-align:center;"><a href="home">Click Here to return to Home</a></p>
 </body>
 </html>
-
-
