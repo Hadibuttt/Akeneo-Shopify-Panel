@@ -14,7 +14,8 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
-        "laravel/ui": "^3.1"
+        "laravel/ui": "^3.1",
+        "ckeditor/ckeditor": "4.*"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
@@ -59,4 +60,5 @@
             "@php artisan key:generate --ansi"
         ]
     }
+    
 }
