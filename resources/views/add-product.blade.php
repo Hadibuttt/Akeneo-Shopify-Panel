@@ -53,8 +53,6 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
 <div class="Polaris-Header-Title_2qj8j">
 <h1 class="Polaris-Header-Title--newDesignLanguageTitle_1wh8d">Product</h1>
 </div>
-<div class="Polaris-Header-Title__TitleMetadata_19y17"><span class="Polaris-Badge_2qgie Polaris-Badge--statusSuccess_pc5rl"><span class="Polaris-VisuallyHidden_yrtt5">Success </span>Active</span></div>
-<div class="Polaris-Header-Title__TitleMetadata_19y17"><span class="Polaris-Badge_2qgie Polaris-Badge--statusDanger_pc5rl"><span class="Polaris-VisuallyHidden_yrtt5">Warnind</span>Draft</span></div>
 </div>
 </div>
 </div>
