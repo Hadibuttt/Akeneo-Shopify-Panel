@@ -39,10 +39,15 @@ class AddProductController extends Controller
     {
         $product= new products;
         $product->pro_title = $req->title;
-        $product->pro_price = $req->price;
-        $product->stock = $req->stock;
-        $product->description = $req->desc;
+        $product->description = $req->description;
         $product->pro_img = $req->image;
+        $product->pro_price = $req->sellprice;
+        $product->saleprice = $req->saleprice;
+        $product->purchaseprice = $req->purchaseprice;
+        $product->tax = $req->tax;
+        $product->weight = $req->weight;
+        $product->dimension = $req->dimension;
+        $product->barcode = $req->barcode;
         $product->SEOtitle = $req->SEOtitle;
         $product->SEOdesc = $req->SEOdescription;
         $product->SEOurl = $req->handle;
