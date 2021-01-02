@@ -29,9 +29,7 @@ Route::get('/', function () {
 
 Route::get('/home', [App\Http\Controllers\IndexController::class, 'index']);
 
-Route::get('/product', function () {
-    return view('product');
-});
+Route::get('/product', [App\Http\Controllers\ProductController::class, 'index']);
 
 Route::get('/add-product', [App\Http\Controllers\AddProductController::class, 'index']);
 Route::post('submit', [App\Http\Controllers\AddProductController::class, 'save'] );

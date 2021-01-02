@@ -37,6 +37,8 @@ class AddProductController extends Controller
      */
     public function save(Request $req)
     {
+        
+
         $product= new products;
         $product->pro_title = $req->title;
         $product->description = $req->description;
@@ -54,6 +56,9 @@ class AddProductController extends Controller
         $product->status = $req->status;
         $product->cat_item_id = $req->collection;
         $product->tags = $req->tags;
+        $product->vendor = $req->vendor;
+        $product->type = $req->type;
+        $product->stock = $req->stock;
         $product->save();
 
         return view('Success');

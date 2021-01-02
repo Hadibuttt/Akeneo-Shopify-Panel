@@ -780,6 +780,102 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
 </div>
 </div>
 </div>
+
+<div class="Polaris-Card__Section_1b1h1">
+    <div class="Polaris-Stack_32wu2 Polaris-Stack--spacingExtraTight_gv6hw Polaris-Stack--distributionEqualSpacing_x9cqm Polaris-Stack--alignmentBaseline_aupj5">
+    <div class="Polaris-Stack__Item_yiyol">
+    <h3 aria-label="Tags" class="Polaris-Subheading_syouu">Stock</h3>
+    </div>
+    </div>
+    <div class="_3eMy7">
+    <div>
+    <div>
+    <div class="Polaris-Labelled--hidden_riqie">
+    <div class="Polaris-Labelled__LabelWrapper_bf6ys">
+    <div class="Polaris-Label_2vd36"><label id="PolarisTextField5Label" for="PolarisTextField5" class="Polaris-Label__Text_yj3uv">Edit tags</label></div>
+    </div>
+    <div class="Polaris-Connected_wopc9 Polaris-Connected--newDesignLanguage_1rik8">
+    <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
+        <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8">
+            
+            <input name="stock" type="text" id="PolarisTextField5" placeholder="Enter Stock Number" autocomplete="off" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField5Label" aria-invalid="false" aria-multiline="false" value="" aria-autocomplete="list" role="combobox" autocapitalize="off" aria-expanded="false" aria-controls="Autocomplete4-disclosure" tabindex="0" aria-owns="Polarispopover15">
+    
+            <div class="Polaris-TextField__Backdrop_1x2i2"></div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="_2kYaN">
+    </div>
+    </div>
+    </div>
+
+
+    <div class="Polaris-Card__Section_1b1h1">
+        <div class="Polaris-Stack_32wu2 Polaris-Stack--spacingExtraTight_gv6hw Polaris-Stack--distributionEqualSpacing_x9cqm Polaris-Stack--alignmentBaseline_aupj5">
+        <div class="Polaris-Stack__Item_yiyol">
+        <h3 aria-label="Tags" class="Polaris-Subheading_syouu">Type</h3>
+        </div>
+        </div>
+        <div class="_3eMy7">
+        <div>
+        <div>
+        <div class="Polaris-Labelled--hidden_riqie">
+        <div class="Polaris-Labelled__LabelWrapper_bf6ys">
+        <div class="Polaris-Label_2vd36"><label id="PolarisTextField5Label" for="PolarisTextField5" class="Polaris-Label__Text_yj3uv">Edit tags</label></div>
+        </div>
+        <div class="Polaris-Connected_wopc9 Polaris-Connected--newDesignLanguage_1rik8">
+        <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
+            <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8">
+                
+                <input name="type" type="text" id="PolarisTextField5" placeholder="Women, Men, Kid" autocomplete="off" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField5Label" aria-invalid="false" aria-multiline="false" value="" aria-autocomplete="list" role="combobox" autocapitalize="off" aria-expanded="false" aria-controls="Autocomplete4-disclosure" tabindex="0" aria-owns="Polarispopover15">
+        
+                <div class="Polaris-TextField__Backdrop_1x2i2"></div>
+            </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class="_2kYaN">
+        </div>
+        </div>
+        </div>
+
+
+<div class="Polaris-Card__Section_1b1h1">
+    <div class="Polaris-Stack_32wu2 Polaris-Stack--spacingExtraTight_gv6hw Polaris-Stack--distributionEqualSpacing_x9cqm Polaris-Stack--alignmentBaseline_aupj5">
+    <div class="Polaris-Stack__Item_yiyol">
+    <h3 aria-label="Tags" class="Polaris-Subheading_syouu">Vendor</h3>
+    </div>
+    </div>
+    <div class="_3eMy7">
+    <div>
+    <div>
+    <div class="Polaris-Labelled--hidden_riqie">
+    <div class="Polaris-Labelled__LabelWrapper_bf6ys">
+    <div class="Polaris-Label_2vd36"><label id="PolarisTextField5Label" for="PolarisTextField5" class="Polaris-Label__Text_yj3uv">Edit tags</label></div>
+    </div>
+    <div class="Polaris-Connected_wopc9 Polaris-Connected--newDesignLanguage_1rik8">
+    <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
+        <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8">
+            
+            <input name="vendor" type="text" id="PolarisTextField5" placeholder="Gucci, Stoneage, Outfitters" autocomplete="off" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField5Label" aria-invalid="false" aria-multiline="false" value="" aria-autocomplete="list" role="combobox" autocapitalize="off" aria-expanded="false" aria-controls="Autocomplete4-disclosure" tabindex="0" aria-owns="Polarispopover15">
+    
+            <div class="Polaris-TextField__Backdrop_1x2i2"></div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="_2kYaN">
+    </div>
+    </div>
+    </div>
+
 </div>
 </div>
 <div class="Polaris-Layout__Section_1b1h1">
