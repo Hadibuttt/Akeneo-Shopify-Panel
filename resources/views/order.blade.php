@@ -789,7 +789,7 @@ $view = request('view');
                                                                                     </svg></span></span></span></span><span class="Polaris-Choice__Label_2vd36">Select Order</span></label></div>
                                                         </div>
                                                     </td>
-                                                    <td class="_2ROf4 _3k9ch" style="left: 64px;"><a data-polaris-unstyled="true" data-primary-link="true" class="_2xpuQ _2proX" href="/admin/orders/2565861802033?orderListBeta=true"><span>#{{$order->id}}</span></a></td>
+                                                    <td class="_2ROf4 _3k9ch" style="left: 64px;"><a data-polaris-unstyled="true" data-primary-link="true" class="_2xpuQ _2proX" href="/orderdetails?o_id={{$order->id}}&status={{$order->status}}"><span>#{{$order->id}}</span></a></td>
                                                     <td class="_2ROf4">
                                                         <div class="">
                                                             <div title="Monday, December 07, 2020">{{$order->created_at}}</div>
@@ -2347,7 +2347,7 @@ $view = request('view');
                                                                                     </svg></span></span></span></span><span class="Polaris-Choice__Label_2vd36">Select Order</span></label></div>
                                                         </div>
                                                     </td>
-                                                    <td class="_2ROf4 _3k9ch" style="left: 64px;"><a data-polaris-unstyled="true" data-primary-link="true" class="_2xpuQ _2proX" href="/admin/orders/2565861802033?orderListBeta=true"><span>#{{$order->id}}</span></a></td>
+                                                    <td class="_2ROf4 _3k9ch" style="left: 64px;"><a data-polaris-unstyled="true" data-primary-link="true" class="_2xpuQ _2proX" href="/orderdetails?o_id={{$order->id}}&status={{$order->status}}"><span>#{{$order->id}}</span></a></td>
                                                     <td class="_2ROf4">
                                                         <div class="">
                                                             <div title="Monday, December 07, 2020">{{$order->created_at}}</div>
@@ -3912,7 +3912,7 @@ $view = request('view');
                                                                                     </svg></span></span></span></span><span class="Polaris-Choice__Label_2vd36">Select Order</span></label></div>
                                                         </div>
                                                     </td>
-                                                    <td class="_2ROf4 _3k9ch" style="left: 64px;"><a data-polaris-unstyled="true" data-primary-link="true" class="_2xpuQ _2proX" href="/admin/orders/2565861802033?orderListBeta=true"><span>#{{$order->id}}</span></a></td>
+                                                    <td class="_2ROf4 _3k9ch" style="left: 64px;"><a data-polaris-unstyled="true" data-primary-link="true" class="_2xpuQ _2proX" href="/orderdetails?o_id={{$order->id}}&status={{$order->status}}"><span>#{{$order->id}}</span></a></td>
                                                     <td class="_2ROf4">
                                                         <div class="">
                                                             <div title="Monday, December 07, 2020">{{$order->created_at}}</div>
@@ -5466,7 +5466,7 @@ $view = request('view');
                                                                                     </svg></span></span></span></span><span class="Polaris-Choice__Label_2vd36">Select Order</span></label></div>
                                                         </div>
                                                     </td>
-                                                    <td class="_2ROf4 _3k9ch" style="left: 64px;"><a data-polaris-unstyled="true" data-primary-link="true" class="_2xpuQ _2proX" href="/admin/orders/2565861802033?orderListBeta=true"><span>#{{$order->id}}</span></a></td>
+                                                    <td class="_2ROf4 _3k9ch" style="left: 64px;"><a data-polaris-unstyled="true" data-primary-link="true" class="_2xpuQ _2proX" href="/orderdetails?o_id={{$order->id}}&status={{$order->status}}"><span>#{{$order->id}}</span></a></td>
                                                     <td class="_2ROf4">
                                                         <div class="">
                                                             <div title="Monday, December 07, 2020">{{$order->created_at}}</div>
@@ -7018,7 +7018,7 @@ $view = request('view');
                                                                                     </svg></span></span></span></span><span class="Polaris-Choice__Label_2vd36">Select Order</span></label></div>
                                                         </div>
                                                     </td>
-                                                    <td class="_2ROf4 _3k9ch" style="left: 64px;"><a data-polaris-unstyled="true" data-primary-link="true" class="_2xpuQ _2proX" href="/admin/orders/2565861802033?orderListBeta=true"><span>#{{$order->id}}</span></a></td>
+                                                    <td class="_2ROf4 _3k9ch" style="left: 64px;"><a data-polaris-unstyled="true" data-primary-link="true" class="_2xpuQ _2proX" href="/orderdetails?o_id={{$order->id}}&status={{$order->status}}"><span>#{{$order->id}}</span></a></td>
                                                     <td class="_2ROf4">
                                                         <div class="">
                                                             <div title="Monday, December 07, 2020">{{$order->created_at}}</div>
