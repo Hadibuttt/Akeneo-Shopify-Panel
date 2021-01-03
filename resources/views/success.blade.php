@@ -8,7 +8,7 @@
 </head>
 <body>
     <br><br>
-<h1 style="text-align:center;">Product Submitted Successfully</h1>
+<h1 style="text-align:center;">Submitted Successfully</h1>
 <br>
 <p style="text-align:center;"><a href="home">Click Here to return to Home</a></p>
 </body>
