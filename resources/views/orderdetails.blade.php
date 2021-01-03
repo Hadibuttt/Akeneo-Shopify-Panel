@@ -262,33 +262,52 @@
 <p class="_3EYSM">#{{$order_item->order_id}}</p>
 </div>
     
-    @endif
-    @endforeach
+  @foreach ($order_details as $order_detail)
+      
+    @if ($order_detail->order_id == $o_id)
+      <div class="_3BwLE">{{$order_detail->city}} {{$order_detail->state}}</div> 
+      @endif
+  
 
-    @endif
-    @endforeach
-<div class="_3BwLE">d-326 sector 63</div>
+@endforeach
+@endif
+@endforeach
+
+@endif
+@endforeach
+
 </div>
 </div>
 <div class="">
 <div class="Polaris-Card__Section_1b1h1">
 <div class="Polaris-Card__Subsection_197ob">
 <ul class="_1107R">
+    @foreach ($order_items as $order_item)
+      @if ($order_item->order_id == $o_id)
+          @foreach ($products as $product)
+              @if ($product->pro_title == $order_item->product_title )
+                  
+            
+
 <li class="_1XtKD">
 <div class="_2ysro _1LZu7">
 <div class="sdK5R">
 <div class="_2dXGy">
-<div class="_2E0xL"><span class="Polaris-Badge_2qgie">1</span></div><span class="Polaris-Thumbnail_15hj1 Polaris-Thumbnail--sizeSmall_7647q"><img src="https://cdn.shopify.com/s/files/1/2850/4238/products/8_252F2_252Fe_252F3_252F82e3b0c3120ecc7327e092a214738900212437ae_11134796_6865_1260b6af-8ca7-4434-a2cd-c17827262ab9_160x160.jpg?v=1606386331" alt=""></span>
+<div class="_2E0xL"><span class="Polaris-Badge_2qgie">{{$order_item->qty}}</span></div><span class="Polaris-Thumbnail_15hj1 Polaris-Thumbnail--sizeSmall_7647q">
+    
+    <img src="assets/img/{{$product->pro_img}}" alt=""></span>
+    @endif
+    @endforeach
 </div>
 </div>
 <div class="_18dua">
 <div class="_3pTEV">
 <div class="_1Hwi_">
-<div><a data-polaris-unstyled="true" class="Polaris-Link_yj5sy" href="/admin/products/4799732285489/variants/32541055942705">Approx APPMP4018GBW MP3 player &amp; recorder 11134796</a></div>
-<div><span class="Polaris-TextStyle--variationSubdued_1segu">SKU: 11134796</span></div>
+<div><a data-polaris-unstyled="true" class="Polaris-Link_yj5sy" href="/product?p={{$order_item->product_title}}">{{$order_item->product_title}}</a></div>
+<div><span class="Polaris-TextStyle--variationSubdued_1segu">Barcode: {{$product->barcode}}</span></div>
 </div>
-<div class="_15gHI">€230.00 × 1</div>
-<div class="_2cNEq">€230.00</div>
+<div class="_15gHI">€{{$order_item->total/2}}.00 × {{$order_item->qty}}</div>
+<div class="_2cNEq">€{{$order_item->total}}</div>
 </div>
 <div>
 <ul class="Polaris-List_yj3nl"></ul>
@@ -296,29 +315,8 @@
 </div>
 </div>
 </li>
-<li class="_1XtKD">
-<div class="_2ysro _1LZu7">
-<div class="sdK5R">
-<div class="_2dXGy">
-<div class="_2E0xL"><span class="Polaris-Badge_2qgie">1</span></div><span class="Polaris-Thumbnail_15hj1 Polaris-Thumbnail--sizeSmall_7647q"><img src="https://cdn.shopify.com/s/files/1/2850/4238/products/4_252Ff_252Fc_252F7_252F4fc7c41b2418b082c0e5c1c3c7c156e25fbb47b6_15743_12312165_8610_160x160.jpg?v=1606219303" alt="asdasda"></span>
-</div>
-</div>
-<div class="_18dua">
-<div class="_3pTEV">
-<div class="_1Hwi_">
-<div><a data-polaris-unstyled="true" class="Polaris-Link_yj5sy" href="">A4Tech PK-835MJ 12312165</a></div>
-<div><span class="Polaris-TextStyle--variationSubdued_1segu">Mavi / XL / mt1</span></div>
-<div><span class="Polaris-TextStyle--variationSubdued_1segu">SKU: 12312165</span></div>
-</div>
-<div class="_15gHI">€230.00 × 1</div>
-<div class="_2cNEq">€230.00</div>
-</div>
-<div>
-<ul class="Polaris-List_yj3nl"></ul>
-</div>
-</div>
-</div>
-</li>
+@endif  
+@endforeach
 </ul>
 </div>
 </div>
@@ -355,8 +353,12 @@
 <div class="_3zI3E">
 <div class="_3umNZ">
 <div class="_1BtPd">
-<p><span class="Polaris-TextStyle--variationSubdued_1segu">2 items</span></p>
-<div class="uQ1bp"><span class="">€460.00</span></div>
+    @foreach ($order_items as $order_item)
+      @if ($order_item->order_id == $o_id)
+      @foreach ($products as $product)
+      @if ($product->pro_title == $order_item->product_title )
+<p><span class="Polaris-TextStyle--variationSubdued_1segu">{{$order_item->qty}} items</span></p>
+<div class="uQ1bp"><span class="">€{{$order_item->total}}.00</span></div>
 </div>
 </div>
 </div>
@@ -365,18 +367,26 @@
 <div class="_3zI3E">
 <div class="_3umNZ">
 <div class="_1BtPd">
-<p><span class="Polaris-TextStyle--variationSubdued_1segu">IGST 18%</span></p>
-<div class="uQ1bp"><span class="">€82.80</span></div>
+    <?php 
+$orignaltax=$product->tax;
+$tax=$product->tax/100;
+$total=$order_item->total*$tax;
+    ?>
+<p><span class="Polaris-TextStyle--variationSubdued_1segu">IGST {{$product->tax}}%</span></p>
+<div class="uQ1bp"><span class="">€<?php echo $total; ?></span></div>
 </div>
 </div>
 </div>
 </div>
+
 <div class="vLfGs"><span><span class="Polaris-TextStyle--variationStrong_rpyvj">Total</span></span>
 <div class="_3zI3E">
 <div class="_3umNZ">
 <div class="_1BtPd">
 <p><span class="Polaris-TextStyle--variationSubdued_1segu"></span></p>
-<div class="uQ1bp"><span class="Polaris-TextStyle--variationStrong_rpyvj">€542.80</span></div>
+<div class="uQ1bp"><span class="Polaris-TextStyle--variationStrong_rpyvj">€{{$order_item->total+$total}}</span></div>
+@endif
+    @endforeach
 </div>
 </div>
 </div>
@@ -390,7 +400,7 @@
 <div class="_3umNZ">
 <div class="_1BtPd">
 <p><span class="Polaris-TextStyle--variationSubdued_1segu"></span></p>
-<div class="uQ1bp"><span class="">€542.80</span></div>
+<div class="uQ1bp"><span class="">€{{$order_item->total+$total}}</span></div>
 </div>
 </div>
 </div>
@@ -398,6 +408,8 @@
 </div>
 </div>
 </div>
+@endif
+    @endforeach
 <div class="vZjhm"></div>
 </div>
 </div>
@@ -681,6 +693,9 @@
 <h2 class="Polaris-Heading_1brcv">Customer</h2>
 </div>
 <div>
+    @foreach ($order_details as $order_detail)
+        
+    @endforeach
 <div class="Polaris-Card__Section_1b1h1"><span class="Polaris-TextStyle--variationSubdued_1segu">No customer</span></div>
 <div class="Polaris-Card__Section_1b1h1">
 <div class="Polaris-Card__SectionHeader_1aytf">
