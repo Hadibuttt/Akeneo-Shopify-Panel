@@ -694,9 +694,11 @@ $total=$order_item->total*$tax;
 </div>
 <div>
     @foreach ($order_details as $order_detail)
+        @if ($order_detail->order_id == $o_id)
+            
         
-    @endforeach
-<div class="Polaris-Card__Section_1b1h1"><span class="Polaris-TextStyle--variationSubdued_1segu">No customer</span></div>
+    
+<div class="Polaris-Card__Section_1b1h1"><span class="Polaris-TextStyle--variationSubdued_1segu">{{$order_detail->f_name}} {{$order_detail->l_name}}</span></div>
 <div class="Polaris-Card__Section_1b1h1">
 <div class="Polaris-Card__SectionHeader_1aytf">
 <div class="Polaris-Stack_32wu2 Polaris-Stack--alignmentBaseline_aupj5">
@@ -713,7 +715,7 @@ $total=$order_item->total*$tax;
 <div class="Polaris-Stack_32wu2 Polaris-Stack--noWrap_vecks">
 <div class="Polaris-Stack__Item_yiyol Polaris-Stack__Item--fill_vpuzt">
 <div class="Polaris-TextContainer_szg8b Polaris-TextContainer--spacingTight_1o4d6">
-<p><button type="button" class="Polaris-Link_yj5sy">obaidak123@gmail.com</button></p>
+<p><button type="button" class="Polaris-Link_yj5sy">{{$order_detail->email}}</button></p>
 </div>
 </div>
 <div class="Polaris-Stack__Item_yiyol"><span>
@@ -741,7 +743,7 @@ $total=$order_item->total*$tax;
 <div class="Polaris-Stack_32wu2 Polaris-Stack--noWrap_vecks">
 <div class="Polaris-Stack__Item_yiyol Polaris-Stack__Item--fill_vpuzt">
 <div class="Polaris-TextContainer_szg8b Polaris-TextContainer--spacingTight_1o4d6">
-<p>asdas dasdasd<br>dasdas<br>a<br>s<br>34300 istanbul <br>Turkey<br><span>+905555555555</span></p>
+<p>{{$order_detail->address}}<br>{{$order_detail->address2}}<br>{{$order_detail->city}} {{$order_detail->state}}<br>{{$order_detail->country}}<br><span>+{{$order_detail->phone}}</span></p>
 </div>
 </div>
 <div class="Polaris-Stack__Item_yiyol"><span>
@@ -756,10 +758,12 @@ $total=$order_item->total*$tax;
 <div class="Polaris-Card__Section_1b1h1">
 <div class="Polaris-Card__SectionHeader_1aytf">
 <h3 aria-label="Billing address" class="Polaris-Subheading_syouu">Billing address</h3>
-</div><span class="Polaris-TextStyle--variationSubdued_1segu">No billing address provided</span>
+</div><span class="Polaris-TextStyle--variationSubdued_1segu">{{$order_detail->address2}}</span>
 </div>
 </div>
 </div>
+@endif
+@endforeach
 <!--
     <div class="_2O_bg">
     <div class="Polaris-Card_yis1o Polaris-Card--newDesignLanguage_1rik8">
