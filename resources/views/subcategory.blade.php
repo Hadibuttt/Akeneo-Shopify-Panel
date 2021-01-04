@@ -109,8 +109,8 @@
                                             <div>
                                                 <div class="Polaris-Header-Title__TitleAndSubtitleWrapper_40sxf">
                                                     <div class="Polaris-Header-Title_2qj8j">
-                                                        <h1 class="Polaris-Header-Title--newDesignLanguageTitle_1wh8d">Category</h1>
-                                                         <div class="Polaris-Page-Header__PrimaryActionWrapper_w8or9" style="position: absolute;top: 10px;right: 0px;"><a data-polaris-unstyled="true" class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--primary_7k9zs" href="/create-category"><span class="Polaris-Button__Content_xd1mk">    <span class="Polaris-Button__Text_yj3uv">Create Category</span></span></a></div>
+                                                        <h1 class="Polaris-Header-Title--newDesignLanguageTitle_1wh8d">Sub-Category</h1>
+                                                         <div class="Polaris-Page-Header__PrimaryActionWrapper_w8or9" style="position: absolute;top: 10px;right: 0px;"><a data-polaris-unstyled="true" class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--primary_7k9zs" href="/create-subcategory"><span class="Polaris-Button__Content_xd1mk">    <span class="Polaris-Button__Text_yj3uv">Create Sub-Category</span></span></a></div>
                                                         
                                                     </div>
                                                 </div>
@@ -130,7 +130,7 @@
                                                             <div>
                                                                 <div class="Polaris-Tabs__Wrapper_mkrm3 Polaris-Tabs--newDesignLanguage_1rik8">
                                                                     <ul role="tablist" class="Polaris-Tabs_yjc8o Polaris-Tabs--fillSpace_yc42y Polaris-Tabs--newDesignLanguage_1rik8" style="width: 10%;">
-                                                                        <li class="Polaris-Tabs__TabContainer_dsj6d Polaris-Tabs--newDesignLanguage_1rik8" role="presentation"><a data-polaris-unstyled="true" id="all" role="tab" tabindex="0" class="Polaris-Tabs__Tab_375k2 Polaris-Tabs__Tab--selected_11sap" aria-selected="true" aria-controls="all-panel" aria-label="All" href="/category"><span class="Polaris-Tabs__Title_2qj8j Polaris-Tabs--newDesignLanguage_1rik8">All </span></a></li>
+                                                                        <li class="Polaris-Tabs__TabContainer_dsj6d Polaris-Tabs--newDesignLanguage_1rik8" role="presentation"><a data-polaris-unstyled="true" id="all" role="tab" tabindex="0" class="Polaris-Tabs__Tab_375k2 Polaris-Tabs__Tab--selected_11sap" aria-selected="true" aria-controls="all-panel" aria-label="All" href=""><span class="Polaris-Tabs__Title_2qj8j Polaris-Tabs--newDesignLanguage_1rik8">All </span></a></li>
                                                                         
                                                                     </ul>
                                                                 </div>
@@ -222,12 +222,12 @@
                                                                                                     <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.436.436 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
                                                                                                 </svg></span></span></span></span><span class="Polaris-Choice__Label_2vd36">Select all Orders</span></label></th>
                                                                         <th class="_4w-mh _2MTpn" data-index-table-heading="true" style="left: 64px;width: 10%;"></th>
-                                                                        <th class="_4w-mh" data-index-table-heading="true">Category Name</th>
+                                                                        <th class="_4w-mh" data-index-table-heading="true">Sub-Category Name</th>
                                                                         
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody style="overflow: scroll;">
-                                                                    @foreach ($categorys as $category)
+                                                                    @foreach ($sub_categorys as $sub_category)
                                                                         
                                                                     
                                                                     <tr class="_1Apqa _28DC1">
@@ -239,7 +239,7 @@
                                                                             </div>
                                                                         </td>
                                                                         <td class="_2ROf4 _3k9ch" style="left: 64px;padding: 20px;">
-                                                                        <div style="--top-bar-background:#00848e; --top-bar-background-lighter:#1d9ba4; --top-bar-color:#f9fafb; --p-frame-offset:0px;"><span class="Polaris-Thumbnail Polaris-Thumbnail--sizeMedium"><img src="/assets/img/{{$category->cat_img}}" alt="Black choker necklace"></span>
+                                                                        <div style="--top-bar-background:#00848e; --top-bar-background-lighter:#1d9ba4; --top-bar-color:#f9fafb; --p-frame-offset:0px;"><span class="Polaris-Thumbnail Polaris-Thumbnail--sizeMedium"><img src="/assets/img/{{$sub_category->subcat_img}}" alt="Black choker necklace"></span>
   <div id="PolarisPortalsContainer"></div>
 </div>
                                                                         
@@ -247,8 +247,8 @@
                                                                         
                                                                         <td class="_2ROf4">
                                                                             <div class="">
-                                                                                <div title="Monday, November 02, 2020" style="font-weight: 500;color: #1D1F21;"><a href="" style="color: #1D1F21;">{{$category->cat_title}}</a></div>
-                                                                                <div title="Monday, November 02, 2020">{{$category->created_at}}</div>
+                                                                                <div title="Monday, November 02, 2020" style="font-weight: 500;color: #1D1F21;"><a href="" style="color: #1D1F21;">{{$sub_category->subcat_title}}</a></div>
+                                                                                <div title="Monday, November 02, 2020">{{$sub_category->created_at}}</div>
                                                                             </div>
                                                                         </td>
                                                                         
@@ -954,4 +954,5 @@
             <div class="Polaris-Popover__FocusTracker_1y0x8" tabindex="0"></div>
         </div>
     </div>
-    @endsection
+
+@endsection

@@ -39,6 +39,12 @@ Route::get('/add-product', [App\Http\Controllers\AddProductController::class, 'i
 
 Route::get('/create-category', [App\Http\Controllers\CategoryController::class, 'create']);
 
+Route::get('/create-subcategory', [App\Http\Controllers\SubCategoryController::class, 'create']);
+
+Route::get('/subcategory', [App\Http\Controllers\SubCategoryController::class, 'index']);
+
+Route::post('submitted', [App\Http\Controllers\SubCategoryController::class, 'save'] );
+
 Route::post('submit', [App\Http\Controllers\AddProductController::class, 'save'] );
 
 Route::post('success', [App\Http\Controllers\CategoryController::class, 'save'] );
