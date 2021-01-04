@@ -202,44 +202,51 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
     }
     </script>
     
-<div class="_2ETKe"></div>
-<div class="_2wJuJ">
-<div class="Polaris-Card__Section_1b1h1">
-<div class="Polaris-Labelled--hidden_riqie">
-<div class="Polaris-Labelled__LabelWrapper_bf6ys">
-    <div class="Polaris-Label_2vd36"><label id="PolarisDropZone4Label" for="PolarisDropZone4" class="Polaris-Label__Text_yj3uv">Upload file</label></div>
-</div>
-<div class="Polaris-DropZone_1ehhx Polaris-DropZone--newDesignLanguage_1rik8 Polaris-DropZone--sizeExtraLarge_1akox" aria-disabled="false">
-    <div class="Polaris-DropZone__Container_13mbo">
-        <div class="_HQ0f">
-            <div class="_15Gq9 pyQ8u">
-                <div class="_24J4T"></div>
-                <div class="_24J4T"></div>
-                <div class="_24J4T"></div>
-                <div class="_24J4T"></div>
-                <div class="_24J4T"></div>
+    <div class="_2ETKe"></div>
+    <div class="_2wJuJ">
+    <div class="Polaris-Card__Section_1b1h1">
+    <div class="Polaris-Labelled--hidden_riqie">
+    <div class="Polaris-Labelled__LabelWrapper_bf6ys">
+        <div class="Polaris-Label_2vd36"><label id="PolarisDropZone4Label" for="PolarisDropZone4" class="Polaris-Label__Text_yj3uv">Upload file</label></div>
+    </div>
+    <div class="Polaris-DropZone_1ehhx Polaris-DropZone--newDesignLanguage_1rik8 Polaris-DropZone--sizeExtraLarge_1akox" aria-disabled="false">
+        <div class="Polaris-DropZone__Container_13mbo">
+            <div class="_HQ0f">
+                <div class="_15Gq9 pyQ8u">
+                    <div class="_24J4T"></div>
+                    <div class="_24J4T"></div>
+                    <div class="_24J4T"></div>
+                    <div class="_24J4T"></div>
+                    <div class="_24J4T"></div>
+                </div>
+                <div class="_15Gq9">
+                    
+                    
+                           
+                         
+                   
+                   
+                    <div class="HM1EI" id="Display1" style="overflow: hidden;"><button type="button" class="_1q_T1"><span class="QfaYE"><label><input type="file"  accept="image/*" name="image" id="file1"  onchange="loadFile(event)" style="display: none;">Add Media</label></span><span class="_20LrM">or drop files to upload</span><p id="output"></p></button></div>
+                    
+                    <div class="HM1EI"style="overflow: hidden;"><button type="button" class="_1q_T1"><span class="QfaYE"><label><input type="file"  accept="image/*" id="file2"  onchange="loadFile1(event)" style="display: none;">Add Media</label></span><span class="_20LrM">or drop files to upload<br><p id="output1"></p></span></button></div>
+                    
+                    <div class="HM1EI"style="overflow: hidden;"><button type="button" class="_1q_T1"><span class="QfaYE"><label><input type="file"  accept="image/*" id="file3"  onchange="loadFile2(event)" style="display: none;">Add Media</label></span><span class="_20LrM">or drop files to upload<br><p id="output2"></p></span></button></div>
+                    
+                    <div class="HM1EI"style="overflow: hidden;"><button type="button" class="_1q_T1"><span class="QfaYE"><label><input type="file"  accept="image/*" id="file4"  onchange="loadFile3(event)" style="display: none;">Add Media</label></span><span class="_20LrM">or drop files to upload<br><p id="output3"></p></span></button></div>
+                    
+                    <div class="HM1EI"style="overflow: hidden;"><button type="button" class="_1q_T1"><span class="QfaYE"><label><input type="file"  accept="image/*" id="file5"  onchange="loadFile4(event)" style="display: none;">Add Media</label></span><span class="_20LrM">or drop files to upload<br><p id="output4"></p></span></button></div>
+                </div>
             </div>
-            <div class="_15Gq9">
-                
-                
-  
-                <div class="HM1EI"><span class="QfaYE"><br><br><br><br><br><br><center><input type="file" id="img" name="image" accept="image/*"></center></span></div>
-                <div class="HM1EI"><button type="button" class="_1q_T1"><span class="QfaYE"><label><input type="file" style="display: none;">Add Media</label></span><span class="_20LrM">or drop files to upload</span></button></div>
-                <div class="HM1EI"><button type="button" class="_1q_T1"><span class="QfaYE"><label><input type="file" style="display: none;">Add Media</label></span><span class="_20LrM">or drop files to upload</span></button></div>
-                <div class="HM1EI"><button type="button" class="_1q_T1"><span class="QfaYE"><label><input type="file" style="display: none;">Add Media</label></span><span class="_20LrM">or drop files to upload</span></button></div>
-                <div class="HM1EI"><button type="button" class="_1q_T1"><span class="QfaYE"><label><input type="file" style="display: none;">Add Media</label></span><span class="_20LrM">or drop files to upload</span></button></div>
-            </div>
-        </div>
-    </div><span class="Polaris-VisuallyHidden_yrtt5"><input id="PolarisDropZone4" type="file" multiple="" autocomplete="off"></span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="_2qQgE">
+        </div><span class="Polaris-VisuallyHidden_yrtt5"><input id="PolarisDropZone4" type="file" multiple="" autocomplete="off"></span>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="_2qQgE">
 <div data-hydration-id="./app/sections/Products/components/VariantsCard/VariantsCard.tsx2">
 <div class="Polaris-Card_yis1o Polaris-Card--newDesignLanguage_1rik8">
 <div class="Polaris-Card__Header_z4uwg">
@@ -1006,6 +1013,45 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
 </div>
 </div>
 </div>
+
+<script>
+    var loadFile = function(event) {
+        var image1 = document.getElementById('output');
+        var fi1= document.getElementById("file1");
+        var img1=URL.createObjectURL(event.target.files[0]);
+        image1.innerHTML= fi1.files.item(0).name;
+        document.getElementById('Display1').style.backgroundImage= "url(" + img1 + ") no-repeat";
+    };
+    var loadFile1 = function(event) {
+        var image2 = document.getElementById('output1');
+        var fi2= document.getElementById("file2");
+        var img2=URL.createObjectURL(event.target.files[0]);
+        image2.innerHTML= fi2.files.item(0).name;
+        document.getElementById('Display2').style.backgroundImage= "url(" + img2 + ") no-repeat";
+    };
+    var loadFile2 = function(event) {
+        var image3 = document.getElementById('output2');
+        var fi3= document.getElementById("file3");
+        var img3=URL.createObjectURL(event.target.files[0]);
+        image3.innerHTML= fi3.files.item(0).name;
+        document.getElementById('Display3').style.backgroundImage= "url(" + img3 + ") no-repeat";
+    };
+    var loadFile3 = function(event) {
+        var image4 = document.getElementById('output3');
+        var fi4= document.getElementById("file4");
+        var img4=URL.createObjectURL(event.target.files[0]);
+        image4.innerHTML= fi4.files.item(0).name;
+        document.getElementById('Display4').style.backgroundImage= "url(" + img4 + ") no-repeat";
+    };
+    var loadFile4 = function(event) {
+        var image5 = document.getElementById('output4');
+        var fi5= document.getElementById("file5");
+        var img5=URL.createObjectURL(event.target.files[0]);
+        image5.innerHTML= fi5.files.item(0).name;
+        document.getElementById('Display5').style.backgroundImage= "url(" + img5+ ") no-repeat";
+    };
+    </script>
+    
 
 <script>
     function Display_Ad() {
