@@ -130,7 +130,7 @@
                                                             <div>
                                                                 <div class="Polaris-Tabs__Wrapper_mkrm3 Polaris-Tabs--newDesignLanguage_1rik8">
                                                                     <ul role="tablist" class="Polaris-Tabs_yjc8o Polaris-Tabs--fillSpace_yc42y Polaris-Tabs--newDesignLanguage_1rik8" style="width: 10%;">
-                                                                        <li class="Polaris-Tabs__TabContainer_dsj6d Polaris-Tabs--newDesignLanguage_1rik8" role="presentation"><a data-polaris-unstyled="true" id="all" role="tab" tabindex="0" class="Polaris-Tabs__Tab_375k2 Polaris-Tabs__Tab--selected_11sap" aria-selected="true" aria-controls="all-panel" aria-label="All" href="/admin/orders?selectedView=all"><span class="Polaris-Tabs__Title_2qj8j Polaris-Tabs--newDesignLanguage_1rik8">All </span></a></li>
+                                                                        <li class="Polaris-Tabs__TabContainer_dsj6d Polaris-Tabs--newDesignLanguage_1rik8" role="presentation"><a data-polaris-unstyled="true" id="all" role="tab" tabindex="0" class="Polaris-Tabs__Tab_375k2 Polaris-Tabs__Tab--selected_11sap" aria-selected="true" aria-controls="all-panel" aria-label="All" href="/category"><span class="Polaris-Tabs__Title_2qj8j Polaris-Tabs--newDesignLanguage_1rik8">All </span></a></li>
                                                                         
                                                                     </ul>
                                                                 </div>
@@ -247,7 +247,7 @@
                                                                         
                                                                         <td class="_2ROf4">
                                                                             <div class="">
-                                                                                <div title="Monday, November 02, 2020" style="font-weight: 500;color: #1D1F21;"><a href="category.html" style="color: #1D1F21;">{{$category->cat_title}}</a></div>
+                                                                                <div title="Monday, November 02, 2020" style="font-weight: 500;color: #1D1F21;"><a href="edit-category.html" style="color: #1D1F21;">{{$category->cat_title}}</a></div>
                                                                                 <div title="Monday, November 02, 2020">{{$category->created_at}}</div>
                                                                             </div>
                                                                         </td>

@@ -78,7 +78,8 @@
                 </div>
             </div>
             <div class="Polaris-Page__Content_xd1mk">
-                <form method="post">
+                <form method="post" action="success">
+                    @csrf
                     <div class="Polaris-Layout_sl20u Polaris-Layout--newDesignLanguage_1rik8">
                         <div class="Polaris-Layout__Section_1b1h1">
                             <div class="Polaris-Card_yis1o Polaris-Card--newDesignLanguage_1rik8">
@@ -91,7 +92,10 @@
                                                 </div>
                                                 <div class="Polaris-Connected_wopc9 Polaris-Connected--newDesignLanguage_1rik8">
                                                     <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
-                                                        <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8"><input name="title" id="collectionTitleTextField" placeholder="e.g. Summer collection, Under $100, Staff picks" class="Polaris-TextField__Input_30ock" aria-labelledby="collectionTitleTextFieldLabel" aria-invalid="false" aria-multiline="false" value="">
+                                                        <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8">
+                                                            
+                                                            <input name="title" id="collectionTitleTextField" placeholder="e.g. Summer collection, Under $100, Staff picks" class="Polaris-TextField__Input_30ock" aria-labelledby="collectionTitleTextFieldLabel" aria-invalid="false" aria-multiline="false" value="">
+
                                                             <div class="Polaris-TextField__Backdrop_1x2i2"></div>
                                                         </div>
                                                     </div>
@@ -127,7 +131,11 @@
                                                         <div class="Polaris-Stack_32wu2 Polaris-Stack--vertical_uiuuj Polaris-Stack--spacingTight_1o4d6">
                                                             <div class="Polaris-Stack__Item_yiyol"><img width="40" src="data:image/svg+xml,%3csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M20 10a10 10 0 11-20 0 10 10 0 0120 0zM5.3 8.3l4-4a1 1 0 011.4 0l4 4a1 1 0 01-1.4 1.4L11 7.4V15a1 1 0 11-2 0V7.4L6.7 9.7a1 1 0 01-1.4-1.4z' fill='%235C5F62'/%3e%3c/svg%3e" alt=""></div>
                                                             <div class="Polaris-Stack__Item_yiyol">
-                                                                <div class="Polaris-DropZone-FileUpload__Button_r99lw Polaris-DropZone-FileUpload--newDesignLanguage_1rik8"><button type="button" style="border: none;background: none;"><label style="margin-bottom: 0px;"><input type="file"  accept="image/*" name="image" id="file1"  onchange="loadFile(event)" style="display: none;">Add Media</label></button></div>
+                                                                <div class="Polaris-DropZone-FileUpload__Button_r99lw Polaris-DropZone-FileUpload--newDesignLanguage_1rik8"><button type="button" style="border: none;background: none;"><label style="margin-bottom: 0px;">
+                                                                    
+                                                                    <input type="file" accept="image/*" name="image" id="file1"  onchange="loadFile(event)" style="display: none;">
+                                                                    
+                                                                    Add Media</label></button></div>
                                                             </div>
                                                             <div class="Polaris-Stack__Item_yiyol">
                                                                 <p class="Polaris-Caption_1b1go"><span class="Polaris-TextStyle--variationSubdued_1segu"><p id="output"></p></span></p>
@@ -156,7 +164,7 @@
                         <div class="Polaris-Layout__Section_1b1h1">
                             <div class="Polaris-PageActions_fcnua">
                                 <div class="Polaris-Stack_32wu2 Polaris-Stack--spacingTight_1o4d6 Polaris-Stack--distributionTrailing_z5d5z">
-                                    <div class="Polaris-Stack__Item_yiyol"><button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--primary_7k9zs" type="button"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Save</span></span></button></div>
+                                    <div class="Polaris-Stack__Item_yiyol"><button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--primary_7k9zs" type="submit"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Save</span></span></button></div>
                                 </div>
                             </div>
                         </div>
