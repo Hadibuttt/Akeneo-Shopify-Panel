@@ -20,4 +20,23 @@ class CategoryController extends Controller
         return view('success');
     }
 
+    public function index()
+    {
+        $categorys = categories::all();
+
+        return view('category')->with([
+            'categorys'=> $categorys
+        ]);
+    }
+
+    public function create()
+    {
+        $categorys = categories::all();
+
+        return view('create-category')->with([
+            'categorys'=> $categorys
+        ]);
+    }
+
+
 }

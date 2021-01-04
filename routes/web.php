@@ -31,14 +31,13 @@ Route::get('/home', [App\Http\Controllers\IndexController::class, 'index']);
 
 Route::get('/product', [App\Http\Controllers\ProductController::class, 'index']);
 
-Route::get('/category', function () {
-    return view('category');
-});
-
+Route::get('/category', [App\Http\Controllers\CategoryController::class, 'index']);
 
 Route::get('/orderdetails', [App\Http\Controllers\OrderDetailsController::class, 'index']);
 
 Route::get('/add-product', [App\Http\Controllers\AddProductController::class, 'index']);
+
+Route::get('/create-category', [App\Http\Controllers\CategoryController::class, 'create']);
 
 Route::post('submit', [App\Http\Controllers\AddProductController::class, 'save'] );
 
