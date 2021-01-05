@@ -37,8 +37,6 @@ class AddProductController extends Controller
      */
     public function save(Request $req)
     {
-        
-
         $product= new products;
         $product->pro_title = $req->title;
         $product->description = $req->description;

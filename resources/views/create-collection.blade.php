@@ -78,7 +78,8 @@
                     </div>
                 </div>
                 <div class="Polaris-Page__Content_xd1mk">
-                    <form method="post">
+                    <form method="post" action="successs">
+                        @csrf
                         <div class="Polaris-Layout_sl20u Polaris-Layout--newDesignLanguage_1rik8">
                             <div class="Polaris-Layout__Section_1b1h1">
                                 <div class="Polaris-Card_yis1o Polaris-Card--newDesignLanguage_1rik8">
@@ -91,7 +92,10 @@
                                                     </div>
                                                     <div class="Polaris-Connected_wopc9 Polaris-Connected--newDesignLanguage_1rik8">
                                                         <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
-                                                            <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8"><input name="title" id="collectionTitleTextField" placeholder="e.g. Summer collection, Under $100, Staff picks" class="Polaris-TextField__Input_30ock" aria-labelledby="collectionTitleTextFieldLabel" aria-invalid="false" aria-multiline="false" value="">
+                                                            <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8">
+                                                                
+                                                                <input name="title" id="collectionTitleTextField" placeholder="e.g. Summer collection, Under $100, Staff picks" class="Polaris-TextField__Input_30ock" aria-labelledby="collectionTitleTextFieldLabel" aria-invalid="false" aria-multiline="false" value="">
+
                                                                 <div class="Polaris-TextField__Backdrop_1x2i2"></div>
                                                             </div>
                                                         </div>
@@ -103,31 +107,7 @@
                                     </div>
                                 </div>
                                 <div class="Polaris-Card_yis1o Polaris-Card--newDesignLanguage_1rik8">
-<!--
-                                    <div class="Polaris-Card__Header_z4uwg">
-                                        <h2 class="Polaris-Heading_1brcv">Collection type</h2>
-                                    </div>
-                                    <div class="Polaris-Card__Section_1b1h1">
-                                        <fieldset class="Polaris-ChoiceList_ygfuw Polaris-ChoiceList--titleHidden_14zrw" id="PolarisChoiceList1" aria-invalid="false">
-                                            <ul class="Polaris-ChoiceList__Choices_15o76">
-                                                <li>
-                                                    <div><label class="Polaris-Choice_j5gzq" for="PolarisRadioButton1"><span class="Polaris-Choice__Control_1u8vs"><span class="Polaris-RadioButton_bsatr Polaris-RadioButton--newDesignLanguage_1rik8"><input id="PolarisRadioButton1" name="PolarisChoiceList1" type="radio" class="Polaris-RadioButton__Input_30ock" aria-describedby="PolarisRadioButton1HelpText" value="manualCollection"><span class="Polaris-RadioButton__Backdrop_1x2i2"></span></span></span><span class="Polaris-Choice__Label_2vd36">Manual</span></label>
-                                                        <div class="Polaris-Choice__Descriptions_pp5ln">
-                                                            <div class="Polaris-Choice__HelpText_8qj1a" id="PolarisRadioButton1HelpText">Add products to this collection one by one. Learn more about <a target="_blank" href="https://help.shopify.com/en/manual/products/collections/manual-shopify-collection" rel="noopener noreferrer" data-polaris-unstyled="true" class="Polaris-Link_yj5sy">manual collections</a>.</div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div><label class="Polaris-Choice_j5gzq" for="PolarisRadioButton2"><span class="Polaris-Choice__Control_1u8vs"><span class="Polaris-RadioButton_bsatr Polaris-RadioButton--newDesignLanguage_1rik8"><input id="PolarisRadioButton2" name="PolarisChoiceList1" type="radio" class="Polaris-RadioButton__Input_30ock" aria-describedby="PolarisRadioButton2HelpText" value="smartCollection" checked=""><span class="Polaris-RadioButton__Backdrop_1x2i2"></span></span></span><span class="Polaris-Choice__Label_2vd36">Automated</span></label>
-                                                        <div class="Polaris-Choice__Descriptions_pp5ln">
-                                                            <div class="Polaris-Choice__HelpText_8qj1a" id="PolarisRadioButton2HelpText">Existing and future products that match the conditions you set will automatically be added to this collection. Learn more about <a target="_blank" href="https://help.shopify.com/en/manual/products/collections/automated-shopify-collection" rel="noopener noreferrer" data-polaris-unstyled="true" class="Polaris-Link_yj5sy">automated collections</a>.</div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </fieldset>
-                                    </div>
--->
+
                                     <div class="Polaris-Card__Section_1b1h1">
                                         <div class="Polaris-Card__SectionHeader_1aytf">
                                             <h3 aria-label="Conditions" class="Polaris-Subheading_syouu">Category select</h3>
@@ -146,16 +126,37 @@
                                                                                 <div class="Polaris-Labelled__LabelWrapper_bf6ys">
                                                                                     <div class="Polaris-Label_2vd36"><label id="PolarisSelect4Label" for="PolarisSelect4" class="Polaris-Label__Text_yj3uv">Condition 1 property</label></div>
                                                                                 </div>
-                                                                                <select style="width: 100%; height: 35px;border-radius: 5px;padding: 5px;">
-                                                                                    <option>Category</option>    
-                                                                                    <option>Category</option>    
-                                                                                    <option>Category</option>    
-                                                                                    <option>Category</option>    
-                                                                                    <option>Category</option>    
-                                                                                    <option>Category</option>    
-                                                                                    <option>Category</option>    
-                                                                                    <option>Category</option>    
-                                                                                </select>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+     $(document).ready(function(){
+         $("select.category").change(function(){
+             var category = $(this).children("option:selected").val();
+             
+             window.location.href = window.location.href+'?c='+category;
+         });
+     });
+     </script>
+
+                                                <?php 
+                                               $c = request('c');
+                                                  ?>                                                                    
+                                                                                <select name="category" class="category" style="width: 100%; height: 35px;border-radius: 5px;padding: 5px;">
+                                                                                    @if ($c == 0 )
+                                                                                    <option>Select Category</option>    
+                                                                                    @endif
+                                                                                    
+                                                                                    
+                                                                                    @foreach ($categorys as $category)
+                                                                                    @if ($c == 0)
+                                                                                    <option value="{{$category->cat_id}}">{{$category->cat_title}}</option>
+                                                                                    @endif
+                                                        
+                                                                                    @if ($c == $category->cat_id)
+                                                                                    <option value="{{$category->cat_id}}">{{$category->cat_title}}</option>
+                                                                                    @endif
+                                                        
+                                                                                    
+                                                                                    @endforeach                                                                                </select>
                                                                             </div>
                                                                         </div>
                                                                         <div class="Polaris-Labelled--hidden_riqie">
@@ -163,21 +164,22 @@
                                                                                 <div class="Polaris-Label_2vd36"></div>
                                                                             </div>
                                                                            
-                                                                                <select style="width: 100%; height: 35px;border-radius: 5px;padding: 5px;">
-                                                                                    <option>Sub Category</option>    
-                                                                                    <option>Sub Category</option>    
-                                                                                    <option>Sub Category</option>    
-                                                                                    <option>Sub Category</option>    
-                                                                                    <option>Sub Category</option>    
-                                                                                    <option>Sub Category</option>    
-                                                                                    <option>Sub Category</option>    
-                                                                                    <option>Sub Category</option>    
-                                                                                </select>
+                                                                                <select name="subcategory" style="width: 100%; height: 35px;border-radius: 5px;padding: 5px;">
+                                                                                    <option>Select Sub-Category</option>
+                                                                                    @foreach ($sub_categorys as $sub_category)
+        
+                            @if ($sub_category->cat_id == $c )
+                            
+                            <option value="{{$sub_category->subcat_id}}">{{$sub_category->subcat_title}}</option>
+  
+                            @endif
+                       
+                            @endforeach                                                                                </select>
                                                                         </div>
                                                                        
                                                                     </div>
                                                                 </div>
-<!--                                                                                <div><button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8" type="button"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Add another condition</span></span></button></div>-->
+
                                                             </div>
                                                         </div>
                                                     </div>
@@ -202,7 +204,10 @@
                                                     </div>
                                                     <div class="Polaris-Connected_wopc9 Polaris-Connected--newDesignLanguage_1rik8">
                                                         <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
-                                                            <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8"><input name="seoTitle" id="PolarisTextField18" placeholder="" class="Polaris-TextField__Input_30ock" aria-describedby="PolarisTextField18HelpText" aria-labelledby="PolarisTextField18Label" aria-invalid="false" aria-multiline="false" value="">
+                                                            <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8">
+                                                                
+                                                                <input name="SEOtitle" type="text" id="PolarisTextField18" placeholder="" class="Polaris-TextField__Input_30ock" aria-describedby="PolarisTextField18HelpText" aria-labelledby="PolarisTextField18Label" aria-invalid="false" aria-multiline="false" value="">
+
                                                                 <div class="Polaris-TextField__Backdrop_1x2i2"></div>
                                                             </div>
                                                         </div>
@@ -217,7 +222,11 @@
                                                     </div>
                                                     <div class="Polaris-Connected_wopc9 Polaris-Connected--newDesignLanguage_1rik8">
                                                         <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
-                                                            <div class="Polaris-TextField_1spwi Polaris-TextField--multiline_1jgfe Polaris-TextField--newDesignLanguage_1rik8"><textarea name="seoDescription" id="PolarisTextField19" placeholder="" class="Polaris-TextField__Input_30ock" aria-describedby="PolarisTextField19HelpText" aria-labelledby="PolarisTextField19Label" aria-invalid="false" aria-multiline="true" style="height: 108px;"></textarea>
+                                                            <div class="Polaris-TextField_1spwi Polaris-TextField--multiline_1jgfe Polaris-TextField--newDesignLanguage_1rik8">
+                                                                
+                                                                <textarea name="SEOdescription" id="PolarisTextField19" placeholder="" class="Polaris-TextField__Input_30ock" aria-describedby="PolarisTextField19HelpText" aria-labelledby="PolarisTextField19Label" aria-invalid="false" aria-multiline="true" style="height: 108px;"></textarea>
+
+
                                                                 <div class="Polaris-TextField__Backdrop_1x2i2"></div>
                                                                 <div aria-hidden="true" class="Polaris-TextField__Resizer_mlqsu">
                                                                     <div class="Polaris-TextField__DummyInput_1u3lq"><br></div>
@@ -237,7 +246,10 @@
                                                     <div class="Polaris-Connected_wopc9 Polaris-Connected--newDesignLanguage_1rik8">
                                                         <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
                                                             <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8">
-                                                                <div class="Polaris-TextField__Prefix_10fbz" id="PolarisTextField20Prefix">https://akeneo-shop.myshopify.com/collections/</div><input name="handle" id="PolarisTextField20" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField20Label PolarisTextField20Prefix" aria-invalid="false" aria-multiline="false" value="">
+                                                                <div class="Polaris-TextField__Prefix_10fbz" id="PolarisTextField20Prefix">https://akeneo-shop.myshopify.com/collections/</div>
+                                                                
+                                                                <input name="handle" type="text" id="PolarisTextField20" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField20Label PolarisTextField20Prefix" aria-invalid="false" aria-multiline="false" value="">
+
                                                                 <div class="Polaris-TextField__Backdrop_1x2i2"></div>
                                                             </div>
                                                         </div>
@@ -289,7 +301,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <span class="Polaris-VisuallyHidden_yrtt5"><input id="PolarisDropZone2" accept="image/*" type="file" autocomplete="off"></span>
+                                                <span class="Polaris-VisuallyHidden_yrtt5"><input type="text" id="PolarisDropZone2" accept="image/*" type="file" autocomplete="off"></span>
                                             </div>
                                         </div>
                                     </div>
@@ -298,7 +310,7 @@
                             <div class="Polaris-Layout__Section_1b1h1">
                                 <div class="Polaris-PageActions_fcnua">
                                     <div class="Polaris-Stack_32wu2 Polaris-Stack--spacingTight_1o4d6 Polaris-Stack--distributionTrailing_z5d5z">
-                                        <div class="Polaris-Stack__Item_yiyol"><button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--primary_7k9zs" type="button"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Save</span></span></button></div>
+                                        <div class="Polaris-Stack__Item_yiyol"><button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--primary_7k9zs" type="submit"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Save</span></span></button></div>
                                     </div>
                                 </div>
                             </div>

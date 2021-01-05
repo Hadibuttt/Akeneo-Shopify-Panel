@@ -49,6 +49,8 @@ Route::get('/collection', [App\Http\Controllers\CollectionController::class, 'in
 
 Route::post('submitted', [App\Http\Controllers\SubCategoryController::class, 'save'] );
 
+Route::post('successs', [App\Http\Controllers\CollectionController::class, 'save'] );
+
 Route::post('submit', [App\Http\Controllers\AddProductController::class, 'save'] );
 
 Route::post('success', [App\Http\Controllers\CategoryController::class, 'save'] );
