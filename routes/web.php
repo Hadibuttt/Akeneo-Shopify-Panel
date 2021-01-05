@@ -55,6 +55,10 @@ Route::post('submit', [App\Http\Controllers\AddProductController::class, 'save']
 
 Route::post('success', [App\Http\Controllers\CategoryController::class, 'save'] );
 
+Route::get('/settings', function () {
+    return view('settings');
+});
+
 Route::get('/customer', function () {
     return view('customer');
 });
