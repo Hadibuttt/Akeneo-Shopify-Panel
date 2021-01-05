@@ -41,7 +41,11 @@ Route::get('/create-category', [App\Http\Controllers\CategoryController::class, 
 
 Route::get('/create-subcategory', [App\Http\Controllers\SubCategoryController::class, 'create']);
 
+Route::get('/create-collection', [App\Http\Controllers\CollectionController::class, 'create']);
+
 Route::get('/subcategory', [App\Http\Controllers\SubCategoryController::class, 'index']);
+
+Route::get('/collection', [App\Http\Controllers\CollectionController::class, 'index']);
 
 Route::post('submitted', [App\Http\Controllers\SubCategoryController::class, 'save'] );
 
