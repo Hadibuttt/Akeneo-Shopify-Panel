@@ -17,4 +17,16 @@ class CollectionController extends Controller
             'collections'=> $collections
         ]);
     }
+
+    public function create()
+    {
+        $categorys = categories::all();
+        $sub_categorys = sub_categories::all();
+
+        return view('create-collection')->with([
+            'categorys'=> $categorys,
+            'sub_categorys'=> $sub_categorys
+        ]);
+    }
+
 }
