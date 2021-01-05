@@ -1521,6 +1521,9 @@ $q = request('q');
   });
   </script>
 
+<?php 
+  $q = request('q');
+  ?>
                    
 
    <div class="Polaris-TextField__Backdrop_1x2i2"></div> </div>
