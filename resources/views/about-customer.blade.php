@@ -394,10 +394,10 @@
                                                                 <div class="Polaris-Stack__Item_yiyol">
                                                                     <div class="Polaris-Stack_32wu2 Polaris-Stack--vertical_uiuuj Polaris-Stack--spacingNone_1b3d3">
                                                                         <div class="Polaris-Stack__Item_yiyol"><span data-key="0">{{$order_detail->f_name}} {{$order_detail->l_name}}<br></span></div>
-                                                                        <div class="Polaris-Stack__Item_yiyol"><span data-key="2">c-44, greater kasilash, new delhi<br></span></div>
-                                                                        <div class="Polaris-Stack__Item_yiyol"><span data-key="3">201010 Ghaziabad Uttar Pradesh<br></span></div>
-                                                                        <div class="Polaris-Stack__Item_yiyol"><span data-key="4">India<br></span></div>
-                                                                        <div class="Polaris-Stack__Item_yiyol"><span data-key="5">+91 92780 32260<br></span></div>
+                                                                        <div class="Polaris-Stack__Item_yiyol"><span data-key="2">{{$order_detail->address}}<br></span></div>
+                                                                        <div class="Polaris-Stack__Item_yiyol"><span data-key="3">{{$order_detail->address2}}<br></span></div>
+                                                                        <div class="Polaris-Stack__Item_yiyol"><span data-key="4">{{$order_detail->country}}<br></span></div>
+                                                                        <div class="Polaris-Stack__Item_yiyol"><span data-key="5">+{{$order_detail->phone}}<br></span></div>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -422,8 +422,8 @@
                                                     <div class="Polaris-Stack_32wu2 Polaris-Stack--vertical_uiuuj Polaris-Stack--spacingTight_1o4d6">
                                                         <div class="Polaris-Stack__Item_yiyol">
                                                             <div class="Polaris-Stack_32wu2 Polaris-Stack--vertical_uiuuj Polaris-Stack--spacingTight_1o4d6">
-                                                                <div class="Polaris-Stack__Item_yiyol"><span class="Polaris-Badge_2qgie">Not subscribed</span></div>
-                                                                <div class="Polaris-Stack__Item_yiyol"><span class="Polaris-TextStyle--variationSubdued_1segu">Customer hasn’t provided their email.</span></div>
+                                                                <div class="Polaris-Stack__Item_yiyol"><span class="Polaris-Badge_2qgie">Subscribed</span></div>
+                                                                <div class="Polaris-Stack__Item_yiyol"><span class="Polaris-TextStyle--variationSubdued_1segu">Customer has provided their email.</span></div>
                                                             </div>
                                                         </div>
                                                     </div>
