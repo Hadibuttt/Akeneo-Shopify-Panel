@@ -22,4 +22,18 @@ class CustomerController extends Controller
             'order_details'=> $order_details
         ]);
     }
+
+    public function about()
+    {
+        $orders = orders::all();
+        $order_items = order_items::all();
+        $order_details = order_details::all();
+
+
+        return view('about-customer')->with([
+            'orders'=> $orders,
+            'order_items'=> $order_items,
+            'order_details'=> $order_details
+        ]);
+    }
 }

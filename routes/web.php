@@ -61,6 +61,8 @@ Route::get('/settings', function () {
 
 Route::get('/customer', [App\Http\Controllers\CustomerController::class, 'index']);
 
+Route::get('/about-customer', [App\Http\Controllers\CustomerController::class, 'about']);
+
 Route::get('/order', [App\Http\Controllers\OrderController::class, 'index']);
 
 Route::prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function()
