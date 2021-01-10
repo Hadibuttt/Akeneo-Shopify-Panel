@@ -328,7 +328,7 @@
                                                                                     </div>
                                                                                     @foreach ($orders as $order)
                                                                                 @if ($order_detail->order_id == $order->id)
-                                                                                <?php $id = $order->user_id; ?>
+                                                                                
                                                                                 <div class="Polaris-Stack__Item_yiyol">
                                                                                   <p class="k-NcH"> <?php echo $TotalOrders = orders::where('user_id',"$order->user_id")->count(); ?> orders</p>
                                                                               </div> 

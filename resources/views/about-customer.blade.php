@@ -264,22 +264,50 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            
                                             <div class="Polaris-Card_yis1o Polaris-Card--newDesignLanguage_1rik8">
                                                 <div class="Polaris-Card__Header_z4uwg">
                                                     <h2 class="Polaris-Heading_1brcv">Orders placed</h2>
                                                 </div>
+
+                                                @foreach ($order_items as $order_item)
+                                            @if ($order_item->order_id == $c_id)
+                                                
+                                           
                                                 <div class="Polaris-Card__Section_1b1h1">
                                                     <div class="Polaris-Stack_32wu2 Polaris-Stack--vertical_uiuuj">
                                                         <div class="Polaris-Stack__Item_yiyol">
                                                             <div class="Polaris-Stack_32wu2 Polaris-Stack--distributionEqualSpacing_x9cqm">
-                                                                <div class="Polaris-Stack__Item_yiyol"><a data-polaris-unstyled="true" class="Polaris-Link_yj5sy" href="AboutOrder.html">Order #1080</a></div>
-                                                                <div class="Polaris-Stack__Item_yiyol"><span class="Polaris-TextStyle--variationSubdued_1segu">Yesterday at 00:04</span></div>
+                                                                @foreach ($orders as $order)
+                                                                @if ($order->id == $c_id)
+                                                                    
+                                                                
+                                                                    
+                                                                
+                                                                <div class="Polaris-Stack__Item_yiyol"><a data-polaris-unstyled="true" class="Polaris-Link_yj5sy" href="orderdetails?o_id={{$order_item->order_id}}&status={{$order->status}}">Order #{{$order_item->order_id}}</a></div>
+                                                                <div class="Polaris-Stack__Item_yiyol"><span class="Polaris-TextStyle--variationSubdued_1segu">Created at {{$order_item->created_at->toTimeString()}}</span></div>
+                                                                @endif
+                                                                @endforeach
                                                             </div>
                                                         </div>
                                                         <div class="Polaris-Stack__Item_yiyol">
                                                             <div class="Polaris-Stack_32wu2 Polaris-Stack--vertical_uiuuj Polaris-Stack--spacingExtraTight_gv6hw">
-                                                                <div class="Polaris-Stack__Item_yiyol"><span class="">€464.14 from Draft Orders</span></div>
+                                                                <div class="Polaris-Stack__Item_yiyol"><span class="">€{{$order_item->total}} from this Order</span></div>
+                                                                
+                                                                @foreach ($orders as $order)
+                                                                    
+                                                                @if ($order->id == $c_id)
+                                                                @if ($order->status == 0)
+
                                                                 <div class="Polaris-Stack__Item_yiyol"><span class="Polaris-Badge_2qgie Polaris-Badge--statusAttention_i61kn Polaris-Badge--progressIncomplete_1jg92"><span class="Polaris-Badge__Pip_375sr"><span class="Polaris-VisuallyHidden_yrtt5">Attention Incomplete</span></span>Unfulfilled</span></div>
+                                                                @else
+                                                                <div class="Polaris-Stack__Item_yiyol"><span class="Polaris-Badge_2qgie Polaris-Badge--statusAttention_i61kn Polaris-Badge--progressIncomplete_1jg92"><span class="Polaris-Badge__Pip_375sr"><span class="Polaris-VisuallyHidden_yrtt5">Attention Incomplete</span></span>Fulfilled</span></div>
+                                                                @endif
+                                                               
+
+                                                                @endif
+                                                                @endforeach
+
                                                             </div>
                                                         </div>
                                                         <div class="Polaris-Stack__Item_yiyol">
@@ -291,19 +319,31 @@
                                                                                     <path d="M2.5 1A1.5 1.5 0 0 0 1 2.5v15A1.5 1.5 0 0 0 2.5 19h15a1.5 1.5 0 0 0 1.5-1.5v-15A1.5 1.5 0 0 0 17.5 1h-15zm5 3.5c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zM16.499 17H3.497c-.41 0-.64-.46-.4-.79l3.553-4.051c.19-.21.52-.21.72-.01L9 14l3.06-4.781a.5.5 0 0 1 .84.02l4.039 7.011c.18.34-.06.75-.44.75z"></path>
                                                                                 </svg></div>
                                                                         </div>
+                                                                        @foreach ($products as $product)
+                                                                            @if ($product->pro_title == $order_item->product_title)
+                                                                                
+                                                                            @foreach ($orders as $order)
+                                                                            @if ($order->id == $c_id)     
                                                                         <div class="Polaris-Stack__Item_yiyol">
                                                                             <div class="hpLpp">
                                                                                 <div class="Polaris-TextContainer_szg8b Polaris-TextContainer--spacingTight_1o4d6">
-                                                                                    <p class="_1O65J"><a href="AboutOrder.html"><button type="button" class="Polaris-Link_yj5sy">3M MicroTouch™ Chassis 1123988</button></a></p>
+                                                                                    <p class="_1O65J"><a href="orderdetails?o_id={{$order_item->order_id}}&status={{$order->status}}"><button type="button" class="Polaris-Link_yj5sy">{{$product->pro_title}}</button></a></p>
                                                                                 </div>
+                                                                                @endif
+                                                                        @endforeach
                                                                             </div>
                                                                         </div>
+                                                                        @endif
+                                                                        @endforeach
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                @endif
+                                                
+                                                @endforeach
                                             </div>
                                         </div>
                                         <div class="Polaris-Layout__Section_1b1h1 Polaris-Layout__Section--secondary_1sx8i">
@@ -320,11 +360,18 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                @foreach ($order_details as $order_detail)
+                                                    @if ($order_detail->order_id == $c_id)
+                                                        
+                                                    
                                                 <div class="Polaris-Card__Section_1b1h1">
                                                     <div class="Polaris-Stack_32wu2 Polaris-Stack--vertical_uiuuj Polaris-Stack--spacingExtraTight_gv6hw">
-                                                        <div class="Polaris-Stack__Item_yiyol">No email provided</div>
+                                                        <div class="Polaris-Stack__Item_yiyol">{{$order_detail->email}}</div>
                                                     </div>
                                                 </div>
+
+                                                @endif
+                                                @endforeach
                                                 <div class="Polaris-Card__Section_1b1h1">
                                                     <div class="Polaris-Card__SectionHeader_1aytf">
                                                         <div class="Polaris-Stack_32wu2 Polaris-Stack--alignmentBaseline_aupj5">
@@ -338,13 +385,15 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    @foreach ($order_details as $order_detail)
+                                                    @if ($order_detail->order_id == $c_id)
+
                                                     <div class="Polaris-TextContainer_szg8b Polaris-TextContainer--spacingTight_1o4d6">
                                                         <div class="_2gzRy">
                                                             <div class="Polaris-Stack_32wu2 Polaris-Stack--vertical_uiuuj">
                                                                 <div class="Polaris-Stack__Item_yiyol">
                                                                     <div class="Polaris-Stack_32wu2 Polaris-Stack--vertical_uiuuj Polaris-Stack--spacingNone_1b3d3">
-                                                                        <div class="Polaris-Stack__Item_yiyol"><span data-key="0">chawla kumar<br></span></div>
-                                                                        <div class="Polaris-Stack__Item_yiyol"><span data-key="1">roxy<br></span></div>
+                                                                        <div class="Polaris-Stack__Item_yiyol"><span data-key="0">{{$order_detail->f_name}} {{$order_detail->l_name}}<br></span></div>
                                                                         <div class="Polaris-Stack__Item_yiyol"><span data-key="2">c-44, greater kasilash, new delhi<br></span></div>
                                                                         <div class="Polaris-Stack__Item_yiyol"><span data-key="3">201010 Ghaziabad Uttar Pradesh<br></span></div>
                                                                         <div class="Polaris-Stack__Item_yiyol"><span data-key="4">India<br></span></div>
@@ -354,6 +403,8 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    @endif
+                                                    @endforeach
                                                 </div>
                                             </div>
                                             <div class="Polaris-Card_yis1o Polaris-Card--newDesignLanguage_1rik8">
