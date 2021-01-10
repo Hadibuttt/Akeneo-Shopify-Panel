@@ -59,9 +59,7 @@ Route::get('/settings', function () {
     return view('settings');
 });
 
-Route::get('/customer', function () {
-    return view('customer');
-});
+Route::get('/customer', [App\Http\Controllers\CustomerController::class, 'index']);
 
 Route::get('/order', [App\Http\Controllers\OrderController::class, 'index']);
 
