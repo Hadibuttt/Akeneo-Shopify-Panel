@@ -41,6 +41,8 @@ Route::get('/update-product/{id}/edit', [App\Http\Controllers\AddProductControll
 
 Route::get('/update-category/{cat_id}/edit', [App\Http\Controllers\CategoryController::class, 'update']);
 
+Route::get('/update-subcategory/{subcat_id}/edit', [App\Http\Controllers\SubCategoryController::class, 'update']);
+
 Route::get('/create-category', [App\Http\Controllers\CategoryController::class, 'create']);
 
 Route::get('/create-subcategory', [App\Http\Controllers\SubCategoryController::class, 'create']);
@@ -59,6 +61,8 @@ Route::post('/update-product/{id}/updated', [App\Http\Controllers\AddProductCont
 
 Route::post('/update-category/{cat_id}/updated', [App\Http\Controllers\CategoryController::class, 'updated'] );
 
+Route::post('/update-subcategory/{subcat_id}/updated', [App\Http\Controllers\SubCategoryController::class, 'updated'] );
+
 Route::post('submit', [App\Http\Controllers\AddProductController::class, 'save'] );
 
 Route::post('success', [App\Http\Controllers\CategoryController::class, 'save'] );
@@ -67,7 +71,7 @@ Route::get('get_cat', [App\Http\Controllers\SelectionController::class, 'getcate
 
 Route::post('get_subcat', [App\Http\Controllers\SelectionController::class, 'getsubcategory'] )->name('getsubcategory');
 
-Route::get('get_subcat', [App\Http\Controllers\SelectionController::class, 'getsucategory'] )->name('getsucategory');
+Route::get('getsucategory', [App\Http\Controllers\SelectionController::class, 'getsucategory'] )->name('getsucategory');
 
 Route::get('get_subcat', [App\Http\Controllers\SelectionController::class, 'getcoll'] )->name('getcoll');
 

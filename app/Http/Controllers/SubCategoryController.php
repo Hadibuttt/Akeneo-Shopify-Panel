@@ -34,12 +34,37 @@ class SubCategoryController extends Controller
         $sub_category->subcat_title = $req->title;
         $sub_category->cat_id = $req->cat_id;
         $sub_category->page_title = $req->SEOtitle;
-        $sub_category->meta_description = $req->SEOdescription;
-        //$sub_category->handle = $req->handle;
+        //$sub_category->meta_description = $req->SEOdescription;
+        $sub_category->handle = $req->handle;
         $sub_category->subcat_img = $req->image;
         $sub_category->save();
 
         return view('success');
+    }
+
+    public function update()
+    {
+        $categorys = categories::all();
+        $sub_categorys = sub_categories::all();
+
+        return view('update-subcategory')->with([
+            'categorys'=> $categorys,
+            'sub_categorys'=> $sub_categorys
+        ]);
+    }
+
+    public function updated(Request $req,$subcat_id)
+    {
+        $sub_category=sub_categories::find($subcat_id);
+        $sub_category->subcat_title = $req->title;
+        $sub_category->cat_id = $req->cat_id;
+        $sub_category->SEOtitle = $req->SEOtitle;
+        $sub_category->SEOdescription = $req->SEOdescription;
+        $sub_category->handle = $req->handle;
+        $sub_category->subcat_img = $req->image;
+        $sub_category->save();
+
+        return redirect('/subcategory');
     }
 
 }
