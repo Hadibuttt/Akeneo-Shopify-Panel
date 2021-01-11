@@ -780,8 +780,9 @@ $view = request('view');
                                                 </tr>
                                             </thead>
                                             <tbody style="overflow: scroll;">
+                                                @foreach ($orders as $order)
                                                 <tr class="_1Apqa">
-                                                  @foreach ($orders as $order)
+                                                  
                                                     <td class="_2ROf4 _3sidR">
                                                         <div class="iUISH">
                                                             <div class="_38hQr _1ORzt"><label class="Polaris-Choice_j5gzq Polaris-Choice--labelHidden_14tn9" for="gid://shopify/Order/2565861802033"><span class="Polaris-Choice__Control_1u8vs"><span class="Polaris-Checkbox_1d6zr Polaris-Checkbox--newDesignLanguage_1rik8"><input id="gid://shopify/Order/2565861802033" type="checkbox" class="Polaris-Checkbox__Input_30ock" aria-invalid="false" role="checkbox" aria-checked="false" value=""><span class="Polaris-Checkbox__Backdrop_1x2i2"></span><span class="Polaris-Checkbox__Icon_yj27d"><span class="Polaris-Icon_yj27d Polaris-Icon--newDesignLanguage_1rik8"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">

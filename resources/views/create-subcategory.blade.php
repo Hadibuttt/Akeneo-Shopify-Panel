@@ -267,7 +267,7 @@
                         <div class="Polaris-Layout__Section_1b1h1">
                             <div class="Polaris-PageActions_fcnua">
                                 <div class="Polaris-Stack_32wu2 Polaris-Stack--spacingTight_1o4d6 Polaris-Stack--distributionTrailing_z5d5z">
-                                    <div class="Polaris-Stack__Item_yiyol"><button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--primary_7k9zs" type="submit"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Save</span></span></button></div>
+                                    <div class="Polaris-Stack__Item_yiyol"><button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--primary_7k9zs" href="{{route('addsubcat')}}" type="submit"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Save</span></span></button></div>
                                 </div>
                             </div>
                         </div>

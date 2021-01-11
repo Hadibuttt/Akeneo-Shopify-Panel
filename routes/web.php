@@ -47,13 +47,26 @@ Route::get('/subcategory', [App\Http\Controllers\SubCategoryController::class, '
 
 Route::get('/collection', [App\Http\Controllers\CollectionController::class, 'index']);
 
-Route::post('submitted', [App\Http\Controllers\SubCategoryController::class, 'save'] );
+Route::post('submitted', [App\Http\Controllers\SubCategoryController::class, 'save'] )->name('addsubcat');
 
-Route::post('successs', [App\Http\Controllers\CollectionController::class, 'save'] );
+Route::post('successs', [App\Http\Controllers\CollectionController::class, 'save'] )->name('addcollection');
 
 Route::post('submit', [App\Http\Controllers\AddProductController::class, 'save'] );
 
 Route::post('success', [App\Http\Controllers\CategoryController::class, 'save'] );
+
+Route::get('get_cat', [App\Http\Controllers\SelectionController::class, 'getcategory'] )->name('getcategory');
+
+Route::post('get_subcat', [App\Http\Controllers\SelectionController::class, 'getsubcategory'] )->name('getsubcategory');
+
+Route::get('get_subcat', [App\Http\Controllers\SelectionController::class, 'getsucategory'] )->name('getsucategory');
+
+Route::get('get_subcat', [App\Http\Controllers\SelectionController::class, 'getcoll'] )->name('getcoll');
+
+Route::post('get_coll', [App\Http\Controllers\SelectionController::class, 'getcollection'] )->name('getcollection');
+
+Route::get('get_pro', [App\Http\Controllers\SelectionController::class, 'getproduct'] )->name('livesearchh');
+
 
 Route::get('/settings', function () {
     return view('settings');

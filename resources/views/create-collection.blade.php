@@ -126,37 +126,54 @@
                                                                                 <div class="Polaris-Labelled__LabelWrapper_bf6ys">
                                                                                     <div class="Polaris-Label_2vd36"><label id="PolarisSelect4Label" for="PolarisSelect4" class="Polaris-Label__Text_yj3uv">Condition 1 property</label></div>
                                                                                 </div>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script>
-     $(document).ready(function(){
-         $("select.category").change(function(){
-             var category = $(this).children("option:selected").val();
-             
-             window.location.href = window.location.href+'?c='+category;
-         });
-     });
-     </script>
-
-                                                <?php 
-                                               $c = request('c');
-                                                  ?>                                                                    
-                                                                                <select name="category" class="category" style="width: 100%; height: 35px;border-radius: 5px;padding: 5px;">
-                                                                                    @if ($c == 0 )
+                                                     
+                                                                                <select name="category" id="category" class="category" style="width: 100%; height: 35px;border-radius: 5px;padding: 5px;">
+                                                                                   
                                                                                     <option>Select Category</option>    
-                                                                                    @endif
-                                                                                    
+                                                                                  
                                                                                     
                                                                                     @foreach ($categorys as $category)
-                                                                                    @if ($c == 0)
-                                                                                    <option value="{{$category->cat_id}}">{{$category->cat_title}}</option>
-                                                                                    @endif
-                                                        
-                                                                                    @if ($c == $category->cat_id)
-                                                                                    <option value="{{$category->cat_id}}">{{$category->cat_title}}</option>
-                                                                                    @endif
-                                                        
                                                                                     
-                                                                                    @endforeach                                                                                </select>
+                                                                                    <option value="{{$category->cat_id}}">{{$category->cat_title}}</option>
+                                                                                                                               
+                                                                                    @endforeach  
+                                                                                
+                                                                                
+                                                                                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>    
+                                                                                    <script>
+                                                                                        $(document).ready(function(){
+                                                                                            $("#category").change(function(){
+                                                                                                var query = $(this).val();
+                                                                                                
+                                                                                                    $.ajaxSetup({
+                                                                                                    headers: {
+                                                                                                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                                                                                    }
+                                                                                                    })
+                                                                                                    $.ajax({
+                                                                                                        url:"{{ route('getsubcategory') }}",
+                                                                                                        method:"post",
+                                                                                                        data:{query:query},
+                                                                                                        success:function(data){
+                                                                                                            for (n=0; n<data.length; n++){
+                                                                                                                if(n==0)
+                                                                                                                    $('#subcategory').html(data[n]);
+                                                                                                                else
+                                                                                                                    $('#subcategory').append(data[n]);
+                                                                                                                }
+                                                                                                            }
+                                                                                                        
+                                                                                                            
+                                                                                                    })
+                                                                                                
+                                                                                            });                                   
+                                                                                        })
+                                                                                        
+                                                                                    </script>
+                                                                                
+                                                                                
+                                                                                
+                                                                                </select>
                                                                             </div>
                                                                         </div>
                                                                         <div class="Polaris-Labelled--hidden_riqie">
@@ -164,17 +181,10 @@
                                                                                 <div class="Polaris-Label_2vd36"></div>
                                                                             </div>
                                                                            
-                                                                                <select name="subcategory" style="width: 100%; height: 35px;border-radius: 5px;padding: 5px;">
+                                                                                <select name="subcategory" id="subcategory" style="width: 100%; height: 35px;border-radius: 5px;padding: 5px;">
                                                                                     <option>Select Sub-Category</option>
-                                                                                    @foreach ($sub_categorys as $sub_category)
-        
-                            @if ($sub_category->cat_id == $c )
-                            
-                            <option value="{{$sub_category->subcat_id}}">{{$sub_category->subcat_title}}</option>
-  
-                            @endif
-                       
-                            @endforeach                                                                                </select>
+                                                                                   
+                                                                                </select>
                                                                         </div>
                                                                        
                                                                     </div>
@@ -310,7 +320,7 @@
                             <div class="Polaris-Layout__Section_1b1h1">
                                 <div class="Polaris-PageActions_fcnua">
                                     <div class="Polaris-Stack_32wu2 Polaris-Stack--spacingTight_1o4d6 Polaris-Stack--distributionTrailing_z5d5z">
-                                        <div class="Polaris-Stack__Item_yiyol"><button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--primary_7k9zs" type="submit"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Save</span></span></button></div>
+                                        <div class="Polaris-Stack__Item_yiyol"><button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--primary_7k9zs" href="{{route('addcollection')}}" type="submit"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Save</span></span></button></div>
                                     </div>
                                 </div>
                             </div>
