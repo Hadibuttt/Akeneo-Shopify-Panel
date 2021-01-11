@@ -30,6 +30,21 @@ class AddProductController extends Controller
         ]);
     }
 
+    public function update()
+    {
+        $categorys = categories::all();
+        $sub_categorys = sub_categories::all();
+        $collections = cat_items::all();
+        $products = products::all();
+
+        return view('update-product')->with([
+            'categorys'=> $categorys,
+            'sub_categorys'=> $sub_categorys,
+            'collections'=> $collections,
+            'products' => $products
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -62,6 +77,33 @@ class AddProductController extends Controller
         return view('Success');
     }
 
+    public function updated(Request $req,$id)
+    {
+        $product= products::find($id);
+        $product->pro_title = $req->title;
+        $product->description = $req->description;
+        $product->pro_img = $req->image;
+        $product->pro_price = $req->sellprice;
+        $product->saleprice = $req->saleprice;
+        $product->purchaseprice = $req->purchaseprice;
+        $product->tax = $req->tax;
+        $product->weight = $req->weight;
+        $product->dimension = $req->dimension;
+        $product->barcode = $req->barcode;
+        $product->SEOtitle = $req->SEOtitle;
+        $product->SEOdesc = $req->SEOdescription;
+        $product->SEOurl = $req->handle;
+        $product->status = $req->status;
+        $product->cat_item_id = $req->collection;
+        $product->tags = $req->tags;
+        $product->vendor = $req->vendor;
+        $product->type = $req->type;
+        $product->stock = $req->stock;
+        $product->save();
+
+        return redirect('/product?view=all');
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -79,21 +121,7 @@ class AddProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+    
 
     /**
      * Update the specified resource in storage.
@@ -102,10 +130,6 @@ class AddProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
-    }
 
     /**
      * Remove the specified resource from storage.
