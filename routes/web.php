@@ -39,6 +39,8 @@ Route::get('/add-product', [App\Http\Controllers\AddProductController::class, 'i
 
 Route::get('/update-product/{id}/edit', [App\Http\Controllers\AddProductController::class, 'update']);
 
+Route::get('/update-category/{cat_id}/edit', [App\Http\Controllers\CategoryController::class, 'update']);
+
 Route::get('/create-category', [App\Http\Controllers\CategoryController::class, 'create']);
 
 Route::get('/create-subcategory', [App\Http\Controllers\SubCategoryController::class, 'create']);
@@ -54,6 +56,8 @@ Route::post('submitted', [App\Http\Controllers\SubCategoryController::class, 'sa
 Route::post('successs', [App\Http\Controllers\CollectionController::class, 'save'] )->name('addcollection');
 
 Route::post('/update-product/{id}/updated', [App\Http\Controllers\AddProductController::class, 'updated'] );
+
+Route::post('/update-category/{cat_id}/updated', [App\Http\Controllers\CategoryController::class, 'updated'] );
 
 Route::post('submit', [App\Http\Controllers\AddProductController::class, 'save'] );
 

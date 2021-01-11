@@ -35,5 +35,23 @@ class CategoryController extends Controller
         ]);
     }
 
+    public function update()
+    {
+        $categorys = categories::all();
+
+        return view('update-category')->with([
+            'categorys'=> $categorys
+        ]);
+    }
+
+    public function updated(Request $req,$cat_id)
+    {
+        $category= categories::find($cat_id);
+        $category->cat_title = $req->title;
+        $category->cat_img = $req->image;
+        $category->save();
+
+        return redirect('/category');
+    }
 
 }
