@@ -34,9 +34,9 @@ class CollectionController extends Controller
         $collection = new cat_items;
         $collection->cat_item_title = $req->title;
         $collection->subcat_id = $req->subcategory;
-        $collection->SEOtitle = $req->SEOtitle;
-        $collection->SEOdescription = $req->SEOdescription;
-        $collection->handle = $req->handle;
+        $collection->page_title = $req->SEOtitle;
+        $collection->meta_description = $req->SEOdescription;
+        //$collection->handle = $req->handle;
         $collection->cat_item_img = $req->image;
         $collection->save();
 

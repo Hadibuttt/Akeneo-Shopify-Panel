@@ -612,43 +612,56 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
 <div>
 <div>
 <div class="">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script>
-     $(document).ready(function(){
-         $("select.category").change(function(){
-             var category = $(this).children("option:selected").val();
-             
-             window.location.href = window.location.href+'?c='+category;
-         });
-     });
-     </script>
-  <?php 
-  $c = request('c');
-  $s = request('s');
-  $cl = request('cl');
-  ?>
+    
   
   <div class="Polaris-Connected_wopc9 Polaris-Connected--newDesignLanguage_1rik8">
       <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
-        <select name="category" class="category" style="width: 100%; height: 40px;font-size: 16px;padding-left: 10px;font-weight: 100; border: 1px solid #C9CCCF; border-radius: 5px;color: dimgrey;">
-          @if ($c == 0 )
-                              <option>Select Category</option>    
-                              @endif
-                              
-                              
+        <select name="category" id="category" class="category" style="width: 100%; height: 40px;font-size: 16px;padding-left: 10px;font-weight: 100; border: 1px solid #C9CCCF; border-radius: 5px;color: dimgrey;">
+                              <option>Select Category</option>                          
                               @foreach ($categorys as $category)
-                              @if ($c == 0)
-                              <option value="{{$category->cat_id}}">{{$category->cat_title}}</option>
-                              @endif
-  
-                              @if ($c == $category->cat_id)
-                              <option value="{{$category->cat_id}}">{{$category->cat_title}}</option>
-                              @endif
-  
-                              
+                                <option value="{{$category->cat_id}}">{{$category->cat_title}}</option>
                               @endforeach
-          </select>
-    </div>
+        </select>
+      </div>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      
+                            <script>
+                                $(document).ready(function(){
+									$("#category").change(function(){
+										var query = $(this).val();
+										
+											$.ajaxSetup({
+											headers: {
+												'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+											}
+											})
+											$.ajax({
+												url:"{{ route('getsubcategory') }}",
+												method:"post",
+												data:{query:query},
+												success:function(data){
+													for (n=0; n<data.length; n++){
+														console.log(data[n])
+														if(n==0)
+															$('#subcategory').html(data[n]);
+														else
+															$('#subcategory').append(data[n]);
+														}
+													}
+                                                
+                                                	
+											})
+										
+									});                                   
+                                })
+                                
+							</script>
+      
+
+
+
+
 </div>
 </div>
 </div>
@@ -667,37 +680,62 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
 <div>
 <div>
 <div class="">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script>
-     $(document).ready(function(){
-         $("select.subcategory").change(function(){
-             var subcategory = $(this).children("option:selected").val();
-             
-             window.location.href = window.location.href+'?c='+'<?php echo $c;?>'+'&s='+subcategory;
-         });
-     });
-     </script>
+    
   
-    <select name="subcategory" class="subcategory" style="width: 100%; height: 40px;font-size: 16px;padding-left: 10px;font-weight: 100; border: 1px solid #C9CCCF; border-radius: 5px;color: dimgrey;">
-      @if ($s == 0)
+    <select name="subcategory" id="subcategory" class="subcategory" style="width: 100%; height: 40px;font-size: 16px;padding-left: 10px;font-weight: 100; border: 1px solid #C9CCCF; border-radius: 5px;color: dimgrey;">
+      
                             <option>Select Sub-Category</option>
-                            @endif
+                            
   
-                            @foreach ($sub_categorys as $sub_category)
+                            {{-- @foreach ($sub_categorys as $sub_category)
         
-                            @if ($sub_category->cat_id == $c )
-                            @if ($s == 0)
+                           
                             <option value="{{$sub_category->subcat_id}}">{{$sub_category->subcat_title}}</option>
-                            @endif
+                           
   
-                            @if ($s == $sub_category->subcat_id)
-                            <option value="{{$sub_category->subcat_id}}">{{$sub_category->subcat_title}}</option>
-                            @endif
-  
-  
-                            @endif
+                            
                        
-                            @endforeach
+                            @endforeach --}}
+
+
+
+
+
+                            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      
+                            <script>
+                                $(document).ready(function(){
+									$("#subcategory").change(function(){
+										var query = $(this).val();
+										
+											$.ajaxSetup({
+											headers: {
+												'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+											}
+											})
+											$.ajax({
+												url:"{{ route('getcollection') }}",
+												method:"post",
+												data:{query:query},
+												success:function(data){
+													
+                                                    for (n=0; n<data.length; n++){
+													    console.log(data[n])
+													    if(n==0)
+														    $('#collection').html(data[n]);
+													    else
+														    $('#collection').append(data[n]);
+												    }
+													
+                                                }
+                                                
+                                                	
+											})
+										
+									});                                   
+                                })
+                                
+							</script>
                            
       </select>
 </div>
@@ -717,36 +755,22 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
 <div>
 <div>
 <div class="">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script>
-     $(document).ready(function(){
-         $("select.collection").change(function(){
-             var collection = $(this).children("option:selected").val();
-             
-  window.location.href = window.location.href+'?c='+'<?php echo $c;?>'+'&s='+'<?php echo $s;?>'+'&cl='+collection;
-         });
-     });
-     </script>
+    
   
-    <select name="collection" class="collection" style="width: 100%; height: 40px;font-size: 16px;padding-left: 10px;font-weight: 100; border: 1px solid #C9CCCF; border-radius: 5px;color: dimgrey;">
-      @if ($cl == 0)
+    <select name="collection" id = "collection" class="collection" style="width: 100%; height: 40px;font-size: 16px;padding-left: 10px;font-weight: 100; border: 1px solid #C9CCCF; border-radius: 5px;color: dimgrey;">
+      
                                 <option>Select Collection</option>
-                                @endif
+                                
   
-                               @foreach ($collections as $collection)
+                               {{-- @foreach ($collections as $collection)
                                
-                               @if ($collection->subcat_id == $s)
-                               @if ($cl == 0)
+                              
                                <option value="{{$collection->cat_item_id}}">{{$collection->cat_item_title}}</option>
-                               @endif
+                              
   
-                               @if ($collection->cat_item_id == $cl)
-                               <option value="{{$collection->cat_item_id}}">{{$collection->cat_item_title}}</option>
-                               @endif
-  
-                               @endif
+                    
                       
-                               @endforeach
+                               @endforeach --}}
       </select>
 </div>
 </div>

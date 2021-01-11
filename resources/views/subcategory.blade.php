@@ -182,6 +182,39 @@
                                                                         </div>
                                                                        
 </div>
+                                                                
+
+                                                                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>    
+                                                                <script>
+                                                                    $(document).ready(function(){
+                                                                        $("#PolarisTextField25").keyup(function(){
+                                                                            var query = $(this).val();
+                                                                                            
+                                                                            $.ajaxSetup({
+                                                                            headers: {
+                                                                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                                                            }
+                                                                            })
+                                                                            $.ajax({
+                                                                            url:"{{ route('getsucategory') }}",
+                                                                            method:"get",
+                                                                            data:{query:query},
+                                                                            success:function(data){
+                                                                                console.log(data)
+                                                                                for (n=0; n<data.length; n++){
+                                                                                if(n==0)
+                                                                                    $('#result').html(data[n]);
+                                                                                else
+                                                                                    $('#result').append(data[n]);
+                                                                            }
+                                                                            }                                                                                                                                                                                                             
+                                                                                                })
+                                                                                            
+                                                                                        });                                   
+                                                                                    })
+                                                                                    
+                                                                                </script>
+
 
                                                                    
                                                                 </div><span class="Polaris-VisuallyHidden_yrtt5">
@@ -226,7 +259,7 @@
                                                                         
                                                                     </tr>
                                                                 </thead>
-                                                                <tbody style="overflow: scroll;">
+                                                                <tbody style="overflow: scroll;" id="result">
                                                                     @foreach ($sub_categorys as $sub_category)
                                                                         
                                                                     

@@ -144,16 +144,37 @@ $q = request('q');
                                                                                                 <div class="Polaris-TextField__Prefix_10fbz" id="PolarisTextField25Prefix"><span class="Polaris-Filters__SearchIcon_158og"><span class="Polaris-Icon_yj27d Polaris-Icon--newDesignLanguage_1rik8"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
                                                                                                                 <path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm9.707 4.293l-4.82-4.82A5.968 5.968 0 0 0 14 8 6 6 0 0 0 2 8a6 6 0 0 0 6 6 5.968 5.968 0 0 0 3.473-1.113l4.82 4.82a.997.997 0 0 0 1.414 0 .999.999 0 0 0 0-1.414z"></path>
                                                                                                             </svg></span></span></div>
-<input id="q" name="q" type="text" placeholder="Filter orders" class="Polaris-TextField__Input_30ock Polaris-TextField__Input--hasClearButton_15k6h" aria-labelledby="PolarisTextField25Label PolarisTextField25Prefix" aria-invalid="false" aria-multiline="false">
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script>
-  $(document).ready(function(){
-    $('#q').keyup(function(){
-     var q = this.value;
-     window.location.href = window.location.href+'&q='+q;
-    });
-  });
-  </script>
+<input id="qk" name="q" type="text" placeholder="Filter orders" class="Polaris-TextField__Input_30ock Polaris-TextField__Input--hasClearButton_15k6h" aria-labelledby="PolarisTextField25Label PolarisTextField25Prefix" aria-invalid="false" aria-multiline="false">
+                                                                                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>    
+                                                                                    <script>
+                                                                                        $(document).ready(function(){
+                                                                                            $("#qk").keyup(function(){
+                                                                                                var query = $(this).val();
+                                                                                                
+                                                                                                    $.ajaxSetup({
+                                                                                                    headers: {
+                                                                                                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                                                                                    }
+                                                                                                    })
+                                                                                                    $.ajax({
+                                                                                                        url:"{{ route('livesearchh') }}",
+                                                                                                        method:"get",
+                                                                                                        data:{query:query},
+                                                                                                        success:function(data){
+                                                                                                            console.log(data)
+                                                                                                            for (n=0; n<data.length; n++){
+                                                                                                                 if(n==0)
+                                                                                                                     $('#result').html(data[n]);
+                                                                                                                 else
+                                                                                                                     $('#result').append(data[n]);
+                                                                                                                 }
+                                                                                                            }                                                                                                                                                                                                             
+                                                                                                    })
+                                                                                                
+                                                                                            });                                   
+                                                                                        })
+                                                                                        
+                                                                                    </script>
                                                                                                 <div class="Polaris-TextField__Backdrop_1x2i2"></div>
                                                                                             </div>
                                                                                         </div>
@@ -862,7 +883,7 @@ $q = request('q');
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <ul class="v0Su5 _3jLY9" aria-live="polite" aria-busy="false">
+                                                <ul class="v0Su5 _3jLY9" id="result" aria-live="polite" aria-busy="false">
                                                   @foreach ($products as $product)  
                                                   <li class="H789X _2v98I">
                                                         <div class="_3GcfB">
@@ -894,7 +915,7 @@ $q = request('q');
                                                                                     <div class="_5wVMc">
                                                                                         <div><button type="button" class="_1iEvJ" tabindex="0" aria-controls="Polarispopover33" aria-owns="Polarispopover33" aria-expanded="false"><span>
                                                                                                     <div class="Polaris-Stack_32wu2 Polaris-Stack--spacingNone_1b3d3 Polaris-Stack--distributionEqualSpacing_x9cqm Polaris-Stack--noWrap_vecks">
-           <div class="Polaris-Stack__Item_yiyol"><span class="Polaris-Badge_2qgie Polaris-Badge--statusSuccess_pc5rl"><span class="Polaris-VisuallyHidden_yrtt5">Success </span>{{$product->status}}</span></div>
+                                                                                                        <div class="Polaris-Stack__Item_yiyol"><span class="Polaris-Badge_2qgie Polaris-Badge--statusSuccess_pc5rl"><span class="Polaris-VisuallyHidden_yrtt5">Success </span>{{$product->status}}</span></div>
                                                                                                         <div class="Polaris-Stack__Item_yiyol">
                                                                                                             <div class="_310Yx _1rMSe"><span class="Polaris-Icon_yj27d Polaris-Icon--newDesignLanguage_1rik8"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
                                                                                                                         <path d="M5 8l5 5 5-5H5z"></path>
@@ -1511,19 +1532,37 @@ $q = request('q');
                                                                                                             </svg></span></span></div>
 
 <input id="q" name="q" type="text" placeholder="Filter orders" class="Polaris-TextField__Input_30ock Polaris-TextField__Input--hasClearButton_15k6h" aria-labelledby="PolarisTextField25Label PolarisTextField25Prefix" aria-invalid="false" aria-multiline="false">
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script>
-  $(document).ready(function(){
-    $('#q').keyup(function(){
-     var q = this.value;
-     window.location.href = window.location.href+'&q='+q;
-    });
-  });
-  </script>
-
-<?php 
-  $q = request('q');
-  ?>
+{{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>    
+                                                                                    <script>
+                                                                                        $(document).ready(function(){
+                                                                                            $("#q").keyup(function(){
+                                                                                                var query = $(this).val();
+                                                                                                
+                                                                                                    $.ajaxSetup({
+                                                                                                    headers: {
+                                                                                                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                                                                                    }
+                                                                                                    })
+                                                                                                    $.ajax({
+                                                                                                        url:"{{ route('livesearch') }}",
+                                                                                                        method:"post",
+                                                                                                        data:{query:query},
+                                                                                                        success:function(data){
+                                                                                                            for (n=0; n<data.length; n++){
+                                                                                                                if(n==0)
+                                                                                                                    $('#result').html(data[n]);
+                                                                                                                else
+                                                                                                                    $('#result').append(data[n]);
+                                                                                                                }
+                                                                                                            }
+                                                                                                        
+                                                                                                            
+                                                                                                    })
+                                                                                                
+                                                                                            });                                   
+                                                                                        })
+                                                                                        
+                                                                                    </script> --}}
                    
 
    <div class="Polaris-TextField__Backdrop_1x2i2"></div> </div>
