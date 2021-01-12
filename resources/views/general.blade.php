@@ -99,14 +99,13 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
                         
                         <form action="inserted" method="post">
 @csrf
-                        
-                        
-        
                         <div class="Polaris-Connected_wopc9 Polaris-Connected--newDesignLanguage_1rik8">
                             <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
                                 <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8">
                                     
-                                    <input name="StoreName" type="text" id="InventoryCardBarcode" class="Polaris-TextField__Input_30ock" aria-labelledby="InventoryCardBarcodeLabel" aria-invalid="false" aria-multiline="false" value="">
+                                    <input name="StoreName" type="text" id="InventoryCardBarcode" class="Polaris-TextField__Input_30ock" aria-labelledby="InventoryCardBarcodeLabel" aria-invalid="false" aria-multiline="false" @foreach ($stores as $store)
+                                        
+                                     value="{{$store->StoreName}}" @endforeach>
 
                                     <div class="Polaris-TextField__Backdrop_1x2i2"></div>
                                 </div>
@@ -126,7 +125,9 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
                             <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
                                 <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8">
                                     
-                                    <input name="StoreEmail" type="text" id="InventoryCardSku" class="Polaris-TextField__Input_30ock" aria-labelledby="InventoryCardSkuLabel" aria-invalid="false" aria-multiline="false" value="">
+                                    <input name="StoreEmail" type="text" id="InventoryCardSku" class="Polaris-TextField__Input_30ock" aria-labelledby="InventoryCardSkuLabel" aria-invalid="false" aria-multiline="false" @foreach ($stores as $store)
+                                        
+                                    value="{{$store->StoreEmail}}" @endforeach>
 
                                     <div class="Polaris-TextField__Backdrop_1x2i2"></div>
                                 </div>
@@ -147,7 +148,9 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
                             <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
                                 <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8">
                                     
-                                    <input name="SenderEmail" type="text" id="InventoryCardSku" class="Polaris-TextField__Input_30ock" aria-labelledby="InventoryCardSkuLabel" aria-invalid="false" aria-multiline="false" value="">
+                                    <input name="SenderEmail" type="text" id="InventoryCardSku" class="Polaris-TextField__Input_30ock" aria-labelledby="InventoryCardSkuLabel" aria-invalid="false" aria-multiline="false" @foreach ($stores as $store)
+                                        
+                                    value="{{$store->SenderEmail}}" @endforeach>
 
                                     <div class="Polaris-TextField__Backdrop_1x2i2"></div>
                                 </div>
@@ -242,7 +245,9 @@ Your primary business location could affect which apps can be used on your store
                             <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
                                 <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8">
                                     
-                                    <input name="LegalName" id="InventoryCardBarcode" class="Polaris-TextField__Input_30ock" aria-labelledby="InventoryCardBarcodeLabel" aria-invalid="false" aria-multiline="false" value="">
+                                    <input name="LegalName" id="InventoryCardBarcode" class="Polaris-TextField__Input_30ock" aria-labelledby="InventoryCardBarcodeLabel" aria-invalid="false" aria-multiline="false" @foreach ($stores as $store)
+                                        
+                                    value="{{$store->LegalName}}" @endforeach>
 
                                     <div class="Polaris-TextField__Backdrop_1x2i2"></div>
                                 </div>
@@ -262,7 +267,9 @@ Your primary business location could affect which apps can be used on your store
                             <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
                                 <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8">
                                     
-                                    <input name="Phone" id="InventoryCardBarcode" class="Polaris-TextField__Input_30ock" aria-labelledby="InventoryCardBarcodeLabel" aria-invalid="false" aria-multiline="false" value="">
+                                    <input name="Phone" id="InventoryCardBarcode" class="Polaris-TextField__Input_30ock" aria-labelledby="InventoryCardBarcodeLabel" aria-invalid="false" aria-multiline="false" @foreach ($stores as $store)
+                                        
+                                    value="{{$store->Phone}}" @endforeach>
 
                                     <div class="Polaris-TextField__Backdrop_1x2i2"></div>
                                 </div>
@@ -282,7 +289,9 @@ Your primary business location could affect which apps can be used on your store
                             <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
                                 <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8">
                                     
-                                    <input name="Streets" id="InventoryCardBarcode" class="Polaris-TextField__Input_30ock" aria-labelledby="InventoryCardBarcodeLabel" aria-invalid="false" aria-multiline="false" value="">
+                                    <input name="Streets" id="InventoryCardBarcode" class="Polaris-TextField__Input_30ock" aria-labelledby="InventoryCardBarcodeLabel" aria-invalid="false" aria-multiline="false" @foreach ($stores as $store)
+                                        
+                                    value="{{$store->Streets}}" @endforeach>
 
                                     <div class="Polaris-TextField__Backdrop_1x2i2"></div>
                                 </div>
@@ -302,7 +311,9 @@ Your primary business location could affect which apps can be used on your store
                             <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
                                 <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8">
                                     
-                                    <input name="Apartment" id="InventoryCardBarcode" class="Polaris-TextField__Input_30ock" aria-labelledby="InventoryCardBarcodeLabel" aria-invalid="false" aria-multiline="false" value="">
+                                    <input name="Apartment" id="InventoryCardBarcode" class="Polaris-TextField__Input_30ock" aria-labelledby="InventoryCardBarcodeLabel" aria-invalid="false" aria-multiline="false" @foreach ($stores as $store)
+                                        
+                                    value="{{$store->Apartment}}" @endforeach>
 
                                     <div class="Polaris-TextField__Backdrop_1x2i2"></div>
                                 </div>
@@ -322,7 +333,9 @@ Your primary business location could affect which apps can be used on your store
                             <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
                                 <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8">
                                     
-                                    <input name="City" id="InventoryCardSku" class="Polaris-TextField__Input_30ock" aria-labelledby="InventoryCardSkuLabel" aria-invalid="false" aria-multiline="false" value="">
+                                    <input name="City" id="InventoryCardSku" class="Polaris-TextField__Input_30ock" aria-labelledby="InventoryCardSkuLabel" aria-invalid="false" aria-multiline="false" @foreach ($stores as $store)
+                                        
+                                    value="{{$store->City}}" @endforeach>
 
                                     <div class="Polaris-TextField__Backdrop_1x2i2"></div>
                                 </div>
@@ -342,7 +355,9 @@ Your primary business location could affect which apps can be used on your store
                             <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
                                 <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8">
                                     
-                                    <input name="ZipCode" id="InventoryCardSku" class="Polaris-TextField__Input_30ock" aria-labelledby="InventoryCardSkuLabel" aria-invalid="false" aria-multiline="false" value="">
+                                    <input name="ZipCode" id="InventoryCardSku" class="Polaris-TextField__Input_30ock" aria-labelledby="InventoryCardSkuLabel" aria-invalid="false" aria-multiline="false" @foreach ($stores as $store)
+                                        
+                                    value="{{$store->ZipCode}}" @endforeach>
 
                                     <div class="Polaris-TextField__Backdrop_1x2i2"></div>
                                 </div>
@@ -983,20 +998,9 @@ Your primary business location could affect which apps can be used on your store
 <button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--primary_7k9zs " type="submit"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Save</span></span></button></div>
 </form>
 
-
-
-
-
 </div>
 </div>
-</div>
-                          
-                          
-                          
-                          
-                          
-                          
-                          
+</div>    
                           
                            <script>
                                 function showper()

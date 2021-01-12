@@ -9,7 +9,7 @@ class GeneralController extends Controller
 {
     public function index()
     {
-        $stores = store::all();
+        $stores = store::all()->sortByDesc('id');
 
         return view('general')->with([
             'stores'=> $stores
@@ -36,6 +36,6 @@ class GeneralController extends Controller
         $store->Currency = $req->Currency;
         $store->save();
 
-        return view('success');
+return redirect('settings');
     }
 }
