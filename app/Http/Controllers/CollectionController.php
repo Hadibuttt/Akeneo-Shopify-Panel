@@ -43,4 +43,32 @@ class CollectionController extends Controller
         return view('success');
     }
 
+    public function update()
+    {
+        $categorys = categories::all();
+        $sub_categorys = sub_categories::all();
+        $collections = cat_items::all();
+
+        return view('update-collection')->with([
+            'categorys'=> $categorys,
+            'sub_categorys'=> $sub_categorys,
+            'collections'=> $collections
+        ]);
+    }
+
+    public function updated(Request $req,$cat_item_id)
+    {
+        $collection = cat_items::find($cat_item_id);
+        $collection->cat_item_title = $req->title;
+        $collection->subcat_id = $req->subcategory;
+        $collection->SEOtitle = $req->SEOtitle;
+        $collection->SEOdescription = $req->SEOdescription;
+        $collection->handle = $req->handle;
+        $collection->cat_item_img = $req->image;
+        $collection->save();
+
+        return redirect('/collection');
+    }
+
+
 }

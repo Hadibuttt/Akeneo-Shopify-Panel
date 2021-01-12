@@ -23,7 +23,7 @@ class SelectionController extends Controller
         if(count($data)!=0){
             foreach($data as $title)
             {
-                $dat[$n] = '<option value='.$title->id.'>'.$title->subcat_title.'</option>';
+                $dat[$n] = '<option value='.$title->subcat_id.'>'.$title->subcat_title.'</option>';
                 $n++;
             }
         

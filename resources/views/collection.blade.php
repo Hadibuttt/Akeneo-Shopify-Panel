@@ -276,7 +276,7 @@
                                                                         
                                                                         <td class="_2ROf4">
                                                                             <div class="">
-                                                                                <div title="Monday, November 02, 2020" style="font-weight: 500;color: #1D1F21;"><a href="" style="color: #1D1F21;">{{$collection->cat_item_title}}</a></div>
+                                                                                <div title="Monday, November 02, 2020" style="font-weight: 500;color: #1D1F21;"><a href="update-collection/{{$collection->cat_item_id}}/edit" style="color: #1D1F21;">{{$collection->cat_item_title}}</a></div>
                                                                                 <div title="Monday, November 02, 2020">{{$collection->created_at}}</div>
                                                                             </div>
                                                                         </td>
