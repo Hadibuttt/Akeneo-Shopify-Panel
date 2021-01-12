@@ -71,6 +71,8 @@ Route::post('submit', [App\Http\Controllers\AddProductController::class, 'save']
 
 Route::post('success', [App\Http\Controllers\CategoryController::class, 'save'] );
 
+Route::post('inserted', [App\Http\Controllers\GeneralController::class, 'save'] );
+
 Route::get('get_cat', [App\Http\Controllers\SelectionController::class, 'getcategory'] )->name('getcategory');
 
 Route::post('get_subcat', [App\Http\Controllers\SelectionController::class, 'getsubcategory'] )->name('getsubcategory');
@@ -89,6 +91,8 @@ Route::get('/settings', function () {
 });
 
 Route::get('/customer', [App\Http\Controllers\CustomerController::class, 'index']);
+
+Route::get('/general', [App\Http\Controllers\GeneralController::class, 'index']);
 
 Route::get('/about-customer', [App\Http\Controllers\CustomerController::class, 'about']);
 
