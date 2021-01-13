@@ -84,8 +84,8 @@ $id = request('cat_item_id');
                 <div class="Polaris-Page__Content_xd1mk">
                     <form method="post" action="/update-collection/{{$id}}/updated">
                         @csrf
-                        @foreach ($collections as $collection)
-                        @if ($collection->cat_item_id == $id)
+                        {{-- @foreach ($collections as $collection)
+                        @if ($collection->cat_item_id == $id) --}}
                                    
                         <div class="Polaris-Layout_sl20u Polaris-Layout--newDesignLanguage_1rik8">
                             <div class="Polaris-Layout__Section_1b1h1">
@@ -101,7 +101,7 @@ $id = request('cat_item_id');
                                                         <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
                                                             <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8">
                                                                 
-                                                                <input name="title" id="collectionTitleTextField"  class="Polaris-TextField__Input_30ock" aria-labelledby="collectionTitleTextFieldLabel" aria-invalid="false" aria-multiline="false" value="{{$collection->cat_item_title}}">
+                                                                <input name="title" id="collectionTitleTextField"  class="Polaris-TextField__Input_30ock" aria-labelledby="collectionTitleTextFieldLabel" aria-invalid="false" aria-multiline="false" value="{{$collections['cat_item_title']}}">
 
                                                                 <div class="Polaris-TextField__Backdrop_1x2i2"></div>
                                                             </div>
@@ -136,21 +136,17 @@ $id = request('cat_item_id');
                                                      
                                                                                 <select name="category" id="category" class="category" style="width: 100%; height: 35px;border-radius: 5px;padding: 5px;">
                                                                                    
-                                                                                    <option>Select Category</option>    
-                                                                                  
-                                                                                    
+                                                                                    <option value="{{$cat['cat_id']}}" selected>{{$cat['cat_title']}}</option>    
+                                                                                                                                                                      
                                                                                     @foreach ($categorys as $category)
-                                                                                    
-                                                                                    <option value="{{$category->cat_id}}">{{$category->cat_title}}</option>
-                                                                                                                               
+                                                                                        @if($category->cat_id != $cat['cat_id']) 
+                                                                                            <option value="{{$category->cat_id}}">{{$category->cat_title}}</option>
+                                                                                        @endif                                       
                                                                                     @endforeach  
                                                                                 
                                                                                 
-                                                                                    
-                                                                                
-                                                                                
-                                                                                
                                                                                 </select>
+
                                                                             </div>
                                                                         </div>
                                                                         <div class="Polaris-Labelled--hidden_riqie">
@@ -159,7 +155,12 @@ $id = request('cat_item_id');
                                                                             </div>
                                                                            
                                                                                 <select name="subcategory" id="subcategory" style="width: 100%; height: 35px;border-radius: 5px;padding: 5px;">
-                                                                                    <option>Select Sub-Category</option>
+                                                                                    <option value="{{$subcat['subcat_id']}}">{{$subcat['subcat_title']}}</option>
+                                                                                    @foreach($sub_categorys as $sub_category)
+                                                                                        @if($sub_category->subcat_id != $subcat['subcat_id'])
+                                                                                            <option value="{{$sub_category->subcat_id}}">{{$sub_category->subcat_title}}</option>   
+                                                                                        @endif                                                                                                    
+                                                                                    @endforeach
                                                                                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>    
                                                                                     <script>
                                                                                         $(document).ready(function(){
@@ -223,7 +224,7 @@ $id = request('cat_item_id');
                                                         <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
                                                             <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8">
                                                                 
-                                                                <input name="SEOtitle" type="text" id="PolarisTextField18" placeholder="" class="Polaris-TextField__Input_30ock" aria-describedby="PolarisTextField18HelpText" aria-labelledby="PolarisTextField18Label" aria-invalid="false" aria-multiline="false" value="{{$collection->SEOtitle}}">
+                                                                <input name="SEOtitle" type="text" id="PolarisTextField18" placeholder="" class="Polaris-TextField__Input_30ock" aria-describedby="PolarisTextField18HelpText" aria-labelledby="PolarisTextField18Label" aria-invalid="false" aria-multiline="false" value="{{$collections['SEOtitle']}}">
 
                                                                 <div class="Polaris-TextField__Backdrop_1x2i2"></div>
                                                             </div>
@@ -241,7 +242,7 @@ $id = request('cat_item_id');
                                                         <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
                                                             <div class="Polaris-TextField_1spwi Polaris-TextField--multiline_1jgfe Polaris-TextField--newDesignLanguage_1rik8">
                                                                 
-                                                                <textarea name="SEOdescription" id="PolarisTextField19" placeholder="" class="Polaris-TextField__Input_30ock" aria-describedby="PolarisTextField19HelpText" aria-labelledby="PolarisTextField19Label" aria-invalid="false" aria-multiline="true" style="height: 108px;">{{$collection->SEOdescription}}</textarea>
+                                                                <textarea name="SEOdescription" id="PolarisTextField19" placeholder="" class="Polaris-TextField__Input_30ock" aria-describedby="PolarisTextField19HelpText" aria-labelledby="PolarisTextField19Label" aria-invalid="false" aria-multiline="true" style="height: 108px;">{{$collections['SEOdescription']}}</textarea>
 
 
                                                                 <div class="Polaris-TextField__Backdrop_1x2i2"></div>
@@ -265,7 +266,7 @@ $id = request('cat_item_id');
                                                             <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8">
                                                                 <div class="Polaris-TextField__Prefix_10fbz" id="PolarisTextField20Prefix">https://akeneo-shop.myshopify.com/collections/</div>
                                                                 
-                                                                <input name="handle" type="text" id="PolarisTextField20" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField20Label PolarisTextField20Prefix" aria-invalid="false" aria-multiline="false" value="{{$collection->handle}}">
+                                                                <input name="handle" type="text" id="PolarisTextField20" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField20Label PolarisTextField20Prefix" aria-invalid="false" aria-multiline="false" value="{{$collections['handle']}}">
 
                                                                 <div class="Polaris-TextField__Backdrop_1x2i2"></div>
                                                             </div>
@@ -302,16 +303,17 @@ $id = request('cat_item_id');
                                                                     <div class="Polaris-DropZone-FileUpload__Button_r99lw Polaris-DropZone-FileUpload--newDesignLanguage_1rik8"><button type="button" style="border: none;background: none;"><label style="margin-bottom: 0px;"><input type="file"  accept="image/*" name="image" id="file1"  onchange="loadFile(event)" style="display: none;">Add Media</label></button></div>
                                                                 </div>
                                                                 <div class="Polaris-Stack__Item_yiyol">
-                                                                    <p class="Polaris-Caption_1b1go"><span class="Polaris-TextStyle--variationSubdued_1segu"><p id="output"></p></span></p>
+                                                                    <p class="Polaris-Caption_1b1go"><span class="Polaris-TextStyle--variationSubdued_1segu"><p id="output">{{$collections['cat_item_img']}}</p></span></p>
                                                                 </div>
                                                                 <script>
+                                                                
                                                                 var loadFile = function(event) {
                                                                 var image1 = document.getElementById('output');
                                                                 var fi1= document.getElementById("file1");
                                                                 var img1=URL.createObjectURL(event.target.files[0]);
                                                                 image1.innerHTML= fi1.files.item(0).name;
                                                                 document.getElementById('Display1').style.backgroundImage= "url(" + img1 + ") no-repeat";
-                                                            };
+                                                                };
                                                                 
                                                                 </script>
                                                             </div>
@@ -332,8 +334,8 @@ $id = request('cat_item_id');
                                 </div>
                             </div>
                         </div><span class="Polaris-VisuallyHidden_yrtt5"><button type="submit" aria-hidden="true" tabindex="-1">Submit</button></span>
-                        @endif
-                        @endforeach
+                        {{-- @endif
+                        @endforeach --}}
                     </form>
                 </div>
             </div>

@@ -42,14 +42,16 @@ class SubCategoryController extends Controller
         return view('success');
     }
 
-    public function update()
+    public function update($id)
     {
         $categorys = categories::all();
-        $sub_categorys = sub_categories::all();
+        $sub_categorys = sub_categories::where('subcat_id',$id)->first();
+        $cat = categories::where('cat_id',$sub_categorys['cat_id'])->first();
 
         return view('update-subcategory')->with([
             'categorys'=> $categorys,
-            'sub_categorys'=> $sub_categorys
+            'sub_category'=> $sub_categorys,
+            'cat' => $cat
         ]);
     }
 

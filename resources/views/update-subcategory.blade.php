@@ -85,8 +85,8 @@ $id = request('subcat_id');
             <div class="Polaris-Page__Content_xd1mk">
                 <form method="post" action="/update-subcategory/{{$id}}/updated">
                     @csrf
-                    @foreach ($sub_categorys as $sub_category)
-                    @if ($sub_category->subcat_id == $id)
+                    {{-- @foreach ($sub_categorys as $sub_category)
+                    @if ($sub_category->subcat_id == $id) --}}
                         
                     
                     <div class="Polaris-Layout_sl20u Polaris-Layout--newDesignLanguage_1rik8">
@@ -103,7 +103,7 @@ $id = request('subcat_id');
                                                     <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
                                                         <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8">
                                                             
-                                                            <input name="title" id="collectionTitleTextField"  class="Polaris-TextField__Input_30ock" aria-labelledby="collectionTitleTextFieldLabel" aria-invalid="false" aria-multiline="false" value="{{$sub_category->subcat_title}}">
+                                                            <input name="title" id="collectionTitleTextField"  class="Polaris-TextField__Input_30ock" aria-labelledby="collectionTitleTextFieldLabel" aria-invalid="false" aria-multiline="false" value="{{$sub_category['subcat_title']}}">
 
                                                             <div class="Polaris-TextField__Backdrop_1x2i2"></div>
                                                         </div>
@@ -135,9 +135,12 @@ $id = request('subcat_id');
                                                                     <div>
                                                                         <div class="Polaris-Labelled--hidden_riqie">
                                                                            <select name="cat_id" style="height: 40px; width: 100%;padding: 6px;border-radius: 5px;">
-        @foreach ($categorys as $category)
-                          <option value="{{$category->cat_id}}">{{$category->cat_title}}</option>
-        @endforeach
+                                                                            <option value="{{$cat['cat_id']}}">{{$cat['cat_title']}}</option>
+                                                                            @foreach ($categorys as $category)
+                                                                                @if($category->cat_id != $cat['cat_id'])
+                                                                                    <option value="{{$category->cat_id}}">{{$category->cat_title}}</option>
+                                                                                @endif
+                                                                            @endforeach
                                                                            </select>
                                                                         </div>
                                                                     </div>
@@ -171,7 +174,7 @@ $id = request('subcat_id');
                                                     <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
                                                         <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8">
                                                             
-    <input name="SEOtitle" type="text" placeholder="" class="Polaris-TextField__Input_30ock" aria-describedby="PolarisTextField18HelpText" aria-labelledby="PolarisTextField18Label" aria-invalid="false" aria-multiline="false" value="{{$sub_category->SEOtitle}}">
+    <input name="SEOtitle" type="text" placeholder="" class="Polaris-TextField__Input_30ock" aria-describedby="PolarisTextField18HelpText" aria-labelledby="PolarisTextField18Label" aria-invalid="false" aria-multiline="false" value="{{$sub_category['SEOtitle']}}">
 
                                                             <div class="Polaris-TextField__Backdrop_1x2i2"></div>
                                                         </div>
@@ -189,7 +192,7 @@ $id = request('subcat_id');
                                                     <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
                                                         <div class="Polaris-TextField_1spwi Polaris-TextField--multiline_1jgfe Polaris-TextField--newDesignLanguage_1rik8">
                                                             
-                                                            <textarea name="SEOdescription" placeholder="" class="Polaris-TextField__Input_30ock" aria-describedby="PolarisTextField19HelpText" aria-labelledby="PolarisTextField19Label" aria-invalid="false" aria-multiline="true" style="height: 108px;">{{$sub_category->SEOdescription}}</textarea>
+                                                            <textarea name="SEOdescription" placeholder="" class="Polaris-TextField__Input_30ock" aria-describedby="PolarisTextField19HelpText" aria-labelledby="PolarisTextField19Label" aria-invalid="false" aria-multiline="true" style="height: 108px;">{{$sub_category['SEOdescription']}}</textarea>
                                                             
                                                             <div class="Polaris-TextField__Backdrop_1x2i2"></div>
                                                             <div aria-hidden="true" class="Polaris-TextField__Resizer_mlqsu">
@@ -212,7 +215,7 @@ $id = request('subcat_id');
                                                         <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8">
                                                             <div class="Polaris-TextField__Prefix_10fbz" id="PolarisTextField20Prefix">https://akeneo-shop.myshopify.com/subcategory/</div>
                                                             
-                                                            <input name="handle" type="text" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField20Label PolarisTextField20Prefix" aria-invalid="false" aria-multiline="false" value="{{$sub_category->handle}}">
+                                                            <input name="handle" type="text" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField20Label PolarisTextField20Prefix" aria-invalid="false" aria-multiline="false" value="{{$sub_category['handle']}}">
 
                                                             <div class="Polaris-TextField__Backdrop_1x2i2"></div>
                                                         </div>
@@ -250,7 +253,7 @@ $id = request('subcat_id');
                                                                     <input type="file"  accept="image/*" name="image" id="file1"  onchange="loadFile(event)" style="display: none;">Add Media</label></button></div>
                                                             </div>
                                                             <div class="Polaris-Stack__Item_yiyol">
-                                                                <p class="Polaris-Caption_1b1go"><span class="Polaris-TextStyle--variationSubdued_1segu"><p id="output"></p></span></p>
+                                                                <p class="Polaris-Caption_1b1go"><span class="Polaris-TextStyle--variationSubdued_1segu"><p id="output">{{$sub_category['subcat_img']}}</p></span></p>
                                                             </div>
                                                             <script>
                                                             var loadFile = function(event) {
@@ -280,8 +283,8 @@ $id = request('subcat_id');
                             </div>
                         </div>
                     </div><span class="Polaris-VisuallyHidden_yrtt5"><button type="submit" aria-hidden="true" tabindex="-1">Submit</button></span>
-                    @endif   
-                    @endforeach
+                    {{-- @endif   
+                    @endforeach --}}
                 </form>
             </div>
         </div>
