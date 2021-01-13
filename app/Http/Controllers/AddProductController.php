@@ -7,6 +7,7 @@ use App\Models\products;
 use App\Models\categories;
 use App\Models\sub_categories;
 use App\Models\cat_items;
+use App\Models\product_images;
 
 class AddProductController extends Controller
 {
@@ -73,6 +74,17 @@ class AddProductController extends Controller
         $product->type = $req->type;
         $product->stock = $req->stock;
         $product->save();
+
+        $id=products::orderBy('id', 'DESC')->first();
+        $product_image= new product_images;
+        $product_image->pro_id = $id['id'];
+        $product_image->pro_img1 = $req->image;
+        $product_image->pro_img2 = $req->image2;
+        $product_image->pro_img3 = $req->image3;
+        $product_image->pro_img4 = $req->image4;
+        $product_image->pro_img5 = $req->image5;
+        $product_image->pro_img6 = $req->image;
+        $product_image->save(); 
 
         return view('Success');
     }

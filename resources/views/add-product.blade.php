@@ -228,13 +228,13 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
                    
                     <div class="HM1EI" id="Display1" style="overflow: hidden;"><button type="button" class="_1q_T1"><span class="QfaYE"><label><input type="file"  accept="image/*" name="image" id="file1"  onchange="loadFile(event)" style="display: none;">Add Media</label></span><span class="_20LrM">or drop files to upload</span><p id="output"></p></button></div>
                     
-                    <div class="HM1EI"style="overflow: hidden;"><button type="button" class="_1q_T1"><span class="QfaYE"><label><input type="file"  accept="image/*" id="file2"  onchange="loadFile1(event)" style="display: none;">Add Media</label></span><span class="_20LrM">or drop files to upload<br><p id="output1"></p></span></button></div>
+                    <div class="HM1EI"style="overflow: hidden;"><button type="button" class="_1q_T1"><span class="QfaYE"><label><input type="file" name="image2" accept="image/*" id="file2"  onchange="loadFile1(event)" style="display: none;">Add Media</label></span><span class="_20LrM">or drop files to upload<br><p id="output1"></p></span></button></div>
                     
-                    <div class="HM1EI"style="overflow: hidden;"><button type="button" class="_1q_T1"><span class="QfaYE"><label><input type="file"  accept="image/*" id="file3"  onchange="loadFile2(event)" style="display: none;">Add Media</label></span><span class="_20LrM">or drop files to upload<br><p id="output2"></p></span></button></div>
+                    <div class="HM1EI"style="overflow: hidden;"><button type="button" class="_1q_T1"><span class="QfaYE"><label><input type="file" name="image3" accept="image/*" id="file3"  onchange="loadFile2(event)" style="display: none;">Add Media</label></span><span class="_20LrM">or drop files to upload<br><p id="output2"></p></span></button></div>
                     
-                    <div class="HM1EI"style="overflow: hidden;"><button type="button" class="_1q_T1"><span class="QfaYE"><label><input type="file"  accept="image/*" id="file4"  onchange="loadFile3(event)" style="display: none;">Add Media</label></span><span class="_20LrM">or drop files to upload<br><p id="output3"></p></span></button></div>
+                    <div class="HM1EI"style="overflow: hidden;"><button type="button" class="_1q_T1"><span class="QfaYE"><label><input type="file" name="image4" accept="image/*" id="file4"  onchange="loadFile3(event)" style="display: none;">Add Media</label></span><span class="_20LrM">or drop files to upload<br><p id="output3"></p></span></button></div>
                     
-                    <div class="HM1EI"style="overflow: hidden;"><button type="button" class="_1q_T1"><span class="QfaYE"><label><input type="file"  accept="image/*" id="file5"  onchange="loadFile4(event)" style="display: none;">Add Media</label></span><span class="_20LrM">or drop files to upload<br><p id="output4"></p></span></button></div>
+                    <div class="HM1EI"style="overflow: hidden;"><button type="button" class="_1q_T1"><span class="QfaYE"><label><input type="file" name="image5" accept="image/*" id="file5"  onchange="loadFile4(event)" style="display: none;">Add Media</label></span><span class="_20LrM">or drop files to upload<br><p id="output4"></p></span></button></div>
                 </div>
             </div>
         </div><span class="Polaris-VisuallyHidden_yrtt5"><input id="PolarisDropZone4" type="file" multiple="" autocomplete="off"></span>
