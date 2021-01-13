@@ -78,7 +78,7 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
 <div class="_1j4h2">
 
     
-    <form action="/update-product/{{$p_id}}/updated" method="POST">
+    <form action="/update-product/{{$p_id}}/updated" method="POST" enctype="multipart/form-data">
         @csrf
         
         @foreach ($products as $product)

@@ -83,7 +83,7 @@ $id = request('subcat_id');
                 </div>
             </div>
             <div class="Polaris-Page__Content_xd1mk">
-                <form method="post" action="/update-subcategory/{{$id}}/updated">
+                <form method="post" action="/update-subcategory/{{$id}}/updated" enctype="multipart/form-data">
                     @csrf
                     {{-- @foreach ($sub_categorys as $sub_category)
                     @if ($sub_category->subcat_id == $id) --}}

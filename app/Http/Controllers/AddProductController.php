@@ -105,7 +105,8 @@ class AddProductController extends Controller
         $product= products::find($id);
         $product->pro_title = $req->title;
         $product->description = $req->description;
-        $product->pro_img = $req->image;
+        $imageName = time().'.'.$req->image->getClientOriginalExtension();
+        $product->pro_img =  $req->image->move(public_path('assets\img'), $imageName);
         $product->pro_price = $req->sellprice;
         $product->saleprice = $req->saleprice;
         $product->purchaseprice = $req->purchaseprice;
@@ -122,7 +123,7 @@ class AddProductController extends Controller
         $product->vendor = $req->vendor;
         $product->type = $req->type;
         $product->stock = $req->stock;
-        $product->save();
+        $product->save(); 
 
         return redirect('/product?view=all');
     }

@@ -78,7 +78,7 @@
                 </div>
             </div>
             <div class="Polaris-Page__Content_xd1mk">
-                <form method="post" action="success">
+                <form method="post" action="success" enctype="multipart/form-data">
                     @csrf
                     <div class="Polaris-Layout_sl20u Polaris-Layout--newDesignLanguage_1rik8">
                         <div class="Polaris-Layout__Section_1b1h1">

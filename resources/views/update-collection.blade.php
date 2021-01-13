@@ -82,7 +82,7 @@ $id = request('cat_item_id');
                     </div>
                 </div>
                 <div class="Polaris-Page__Content_xd1mk">
-                    <form method="post" action="/update-collection/{{$id}}/updated">
+                    <form method="post" action="/update-collection/{{$id}}/updated" enctype="multipart/form-data">
                         @csrf
                         {{-- @foreach ($collections as $collection)
                         @if ($collection->cat_item_id == $id) --}}

@@ -33,10 +33,13 @@ class SubCategoryController extends Controller
         $sub_category= new sub_categories;
         $sub_category->subcat_title = $req->title;
         $sub_category->cat_id = $req->cat_id;
-        $sub_category->page_title = $req->SEOtitle;
+        $sub_category->SEOtitle = $req->SEOtitle;
+        //$sub_category->page_title = $req->SEOtitle;
+        $sub_category->SEOdescription = $req->SEOdescription;
         //$sub_category->meta_description = $req->SEOdescription;
         $sub_category->handle = $req->handle;
-        $sub_category->subcat_img = $req->image;
+        $imageName = time().'.'.$req->image->getClientOriginalExtension();
+        $sub_category->subcat_img =  $req->image->move(public_path('assets\img'), $imageName);
         $sub_category->save();
 
         return view('success');
@@ -63,7 +66,10 @@ class SubCategoryController extends Controller
         $sub_category->SEOtitle = $req->SEOtitle;
         $sub_category->SEOdescription = $req->SEOdescription;
         $sub_category->handle = $req->handle;
-        $sub_category->subcat_img = $req->image;
+        
+        $imageName = time().'.'.$req->image->getClientOriginalExtension();
+        $sub_category->subcat_img =  $req->image->move(public_path('assets\img'), $imageName);
+
         $sub_category->save();
 
         return redirect('/subcategory');

@@ -82,7 +82,7 @@
                 </div>
             </div>
             <div class="Polaris-Page__Content_xd1mk">
-                <form method="post" action="/update-category/{{$id}}/updated">
+                <form method="post" action="/update-category/{{$id}}/updated" enctype="multipart/form-data">
                     @csrf
                     @foreach ($categorys as $category)
                         @if ($category->cat_id == $id)

@@ -11,7 +11,8 @@ class CategoryController extends Controller
     {
         $category= new categories;
         $category->cat_title = $req->title;
-        $category->cat_img = $req->image;
+        $imageName = time().'.'.$req->image->getClientOriginalExtension();
+        $category->cat_img =  $req->image->move(public_path('assets\img'), $imageName);
         $category->save();
         return view('success');
     }
@@ -48,7 +49,10 @@ class CategoryController extends Controller
     {
         $category= categories::find($cat_id);
         $category->cat_title = $req->title;
-        $category->cat_img = $req->image;
+
+        $imageName = time().'.'.$req->image->getClientOriginalExtension();
+        $category->cat_img =  $req->image->move(public_path('assets\img'), $imageName);
+
         $category->save();
 
         return redirect('/category');

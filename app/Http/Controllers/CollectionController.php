@@ -37,7 +37,9 @@ class CollectionController extends Controller
         $collection->page_title = $req->SEOtitle;
         $collection->meta_description = $req->SEOdescription;
         //$collection->handle = $req->handle;
-        $collection->cat_item_img = $req->image;
+        $imageName = time().'.'.$req->image->getClientOriginalExtension();
+        $collection->cat_item_img =  $req->image->move(public_path('assets\img'), $imageName);
+
         $collection->save();
 
         return view('success');
@@ -70,7 +72,8 @@ class CollectionController extends Controller
         $collection->SEOtitle = $req->SEOtitle;
         $collection->SEOdescription = $req->SEOdescription;
         $collection->handle = $req->handle;
-        $collection->cat_item_img = $req->image;
+        $imageName = time().'.'.$req->image->getClientOriginalExtension();
+        $collection->cat_item_img =  $req->image->move(public_path('assets\img'), $imageName);
         $collection->save();
 
         return redirect('/collection');
