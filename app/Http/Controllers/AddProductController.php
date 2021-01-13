@@ -56,7 +56,6 @@ class AddProductController extends Controller
         $product= new products;
         $product->pro_title = $req->title;
         $product->description = $req->description;
-        $product->pro_img = $req->image;
         $product->pro_price = $req->sellprice;
         $product->saleprice = $req->saleprice;
         $product->purchaseprice = $req->purchaseprice;
@@ -73,18 +72,30 @@ class AddProductController extends Controller
         $product->vendor = $req->vendor;
         $product->type = $req->type;
         $product->stock = $req->stock;
+
+        $imageName = time().'.'.$req->image->getClientOriginalExtension();
+        $product->pro_img =  $req->image->move(public_path('assets\img'), $imageName);
+
         $product->save();
 
         $id=products::orderBy('id', 'DESC')->first();
         $product_image= new product_images;
         $product_image->pro_id = $id['id'];
-        $product_image->pro_img1 = $req->image;
-        $product_image->pro_img2 = $req->image2;
-        $product_image->pro_img3 = $req->image3;
-        $product_image->pro_img4 = $req->image4;
-        $product_image->pro_img5 = $req->image5;
-        $product_image->pro_img6 = $req->image;
+
+        $imageName2 = time().'.'.$req->image2->getClientOriginalExtension();
+        $product_image->pro_img2 = $req->image2->move(public_path('assets\img'), $imageName2);
+
+        $imageName3 = time().'.'.$req->image3->getClientOriginalExtension();
+        $product_image->pro_img3 = $req->image3->move(public_path('assets\img'), $imageName3);
+
+        $imageName4 = time().'.'.$req->image4->getClientOriginalExtension();
+        $product_image->pro_img4 = $req->image4->move(public_path('assets\img'), $imageName4);
+
+        $imageName5 = time().'.'.$req->image5->getClientOriginalExtension();
+        $product_image->pro_img5 = $req->image5->move(public_path('assets\img'), $imageName5);
+        
         $product_image->save(); 
+
 
         return view('Success');
     }
