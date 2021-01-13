@@ -43,16 +43,22 @@ class CollectionController extends Controller
         return view('success');
     }
 
-    public function update()
+    public function update($id)
     {
         $categorys = categories::all();
         $sub_categorys = sub_categories::all();
-        $collections = cat_items::all();
+        $collections = cat_items::where('cat_item_id',$id)->first();
+        $subcat = sub_categories::where('subcat_id',$collections['subcat_id'])->first();
+        $cat = categories::where('cat_id',$subcat['cat_id'])->first();
 
         return view('update-collection')->with([
+
             'categorys'=> $categorys,
             'sub_categorys'=> $sub_categorys,
-            'collections'=> $collections
+            'collections'=> $collections,
+            'subcat' => $subcat,
+            'cat' => $cat
+        
         ]);
     }
 

@@ -13,7 +13,6 @@ class CategoryController extends Controller
         $category->cat_title = $req->title;
         $category->cat_img = $req->image;
         $category->save();
-
         return view('success');
     }
 
@@ -35,9 +34,10 @@ class CategoryController extends Controller
         ]);
     }
 
-    public function update()
+    public function update($id)
     {
         $categorys = categories::all();
+        $cat = categories::where('cat_id',$id)->first();
 
         return view('update-category')->with([
             'categorys'=> $categorys

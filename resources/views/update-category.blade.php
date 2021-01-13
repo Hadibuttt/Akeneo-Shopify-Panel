@@ -146,7 +146,7 @@
                                                                     Add Media</label></button></div>
                                                             </div>
                                                             <div class="Polaris-Stack__Item_yiyol">
-                                                                <p class="Polaris-Caption_1b1go"><span class="Polaris-TextStyle--variationSubdued_1segu"><p id="output"></p></span></p>
+                                                                <p class="Polaris-Caption_1b1go"><span class="Polaris-TextStyle--variationSubdued_1segu"><p id="output">{{$category->cat_img}}</p></span></p>
                                                             </div>
                                                             <script>
                                                             var loadFile = function(event) {
