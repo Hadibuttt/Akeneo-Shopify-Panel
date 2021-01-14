@@ -1,5 +1,12 @@
-<html lang="en-US" style="--global-ribbon-height:0px;">
+<?php 
+use App\Models\User; 
+use App\Models\store; 
 
+$users = User::all();
+$store = store::orderBy('id', 'DESC')->first();
+?>
+
+<html lang="en-US" style="--global-ribbon-height:0px;">
 <head>
     <title data-react-html="true">Dashboard</title>
     <meta charset="utf-8">
@@ -71,7 +78,7 @@
                                                                             </svg></div>
                                                                     </div>
                                                                     <div class="_1u5M3">
-                                                                        <div class="_1cICO"><span class="Polaris-TextStyle--variationStrong_rpyvj">akeneo-shop</span></div>
+                                                                        <div class="_1cICO"><span class="Polaris-TextStyle--variationStrong_rpyvj">{{$store->StoreName}}</span></div>
                                                                     </div>
                                                                 </div>
                                                             </button></div>
@@ -155,7 +162,7 @@
                                             <div>
                                                 <div class="Polaris-TopBar-Menu__ActivatorWrapper_1gxxh"><button type="button" class="Polaris-TopBar-Menu__Activator_e3w0d" tabindex="0" aria-controls="Polarispopover1" aria-owns="Polarispopover1" aria-expanded="false" onclick="Display_Ad()">
                                                         <div class="Polaris-MessageIndicator__MessageIndicatorWrapper_152yb"><span aria-label="Avatar with initials D E" role="img" class="Polaris-Avatar_z763p Polaris-Avatar--sizeSmall_7647q Polaris-Avatar--styleFour_16hgi Polaris-Avatar--hasImage_1hz8x"><img src="https://mir-s3-cdn-cf.behance.net/user/115/248bc1144803971.5f5595eecddb3.png" class="Polaris-Avatar__Image_2qgms" alt="" role="presentation"></span></div><span class="Polaris-TopBar-UserMenu__Details_1bdkj">
-                                                            <p class="Polaris-TopBar-UserMenu__Name_yisp9">Graphty</p>
+                                                            <p class="Polaris-TopBar-UserMenu__Name_yisp9">{{Auth::user()->name}}</p>
                                                             <p class="Polaris-TopBar-UserMenu__Detail_nhg1f"></p>
                                                         </span>
                                                     </button></div>
@@ -348,6 +355,13 @@
                                                             </svg></span></div><span class="Polaris-Navigation__Text_yj3uv">Home</span>
                                                 </a></div>
                                         </li>
+                                       {{-- @foreach ($users as $user)
+                                            @if (Auth::user()->email == $user->email)
+                                                
+                                            @if ($user->OrderPage == 1) --}}
+                                                
+                                            
+                                        
                                         <li class="Polaris-Navigation__ListItem_wxd2m">
                                             <div class="Polaris-Navigation__ItemWrapper_1kbav"><a data-polaris-unstyled="true" class="Polaris-Navigation__Item_yiyol" tabindex="0" aria-disabled="false" href="/order?view=all">
                                                     <div class="Polaris-Navigation__Icon_yj27d"><span class="Polaris-Icon_yj27d Polaris-Icon--newDesignLanguage_1rik8"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
@@ -357,6 +371,11 @@
                                                     <div class="Polaris-Navigation__Badge_2qgie"><span class="Polaris-Badge_2qgie Polaris-Badge--statusNew_cj8gz Polaris-Badge--sizeSmall_7647q"><span class="Polaris-VisuallyHidden_yrtt5">New </span>11</span></div>
                                                 </a></div>
                                         </li>
+                                        {{--
+                                        @endif
+                                        @endif
+                                        @endforeach
+                                        --}}
                                         <li class="Polaris-Navigation__ListItem_wxd2m">
                                             <div class="Polaris-Navigation__ItemWrapper_1kbav"><a data-polaris-unstyled="true" class="Polaris-Navigation__Item_yiyol " tabindex="0" aria-disabled="false" href="/product?view=all">
                                                     <div class="Polaris-Navigation__Icon_yj27d"><span class="Polaris-Icon_yj27d Polaris-Icon--newDesignLanguage_1rik8"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
