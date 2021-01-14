@@ -73,8 +73,12 @@ class AddProductController extends Controller
         $product->type = $req->type;
         $product->stock = $req->stock;
 
-        $imageName = time().'.'.$req->image->getClientOriginalExtension();
-        $product->pro_img =  $req->image->move(public_path('assets\img'), $imageName);
+        $req->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
+        ]);
+
+        $imageName = time().'.'.$req->image->extension();
+        $product->pro_img =   $req->image->storeAs('', $imageName, ['disk' => 'my']);
 
         $product->save();
 
@@ -82,17 +86,30 @@ class AddProductController extends Controller
         $product_image= new product_images;
         $product_image->pro_id = $id['id'];
 
-        $imageName2 = time().'.'.$req->image2->getClientOriginalExtension();
-        $product_image->pro_img2 = $req->image2->move(public_path('assets\img'), $imageName2);
+        //$imageName2 = time().'.'.$req->image2->getClientOriginalExtension();
+        //$product_image->pro_img2 = $req->image2->move(public_path('assets\img'), $imageName2);
 
-        $imageName3 = time().'.'.$req->image3->getClientOriginalExtension();
-        $product_image->pro_img3 = $req->image3->move(public_path('assets\img'), $imageName3);
+        $req->validate([
+            'image2' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
+            'image3' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
+            'image4' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
+            'image5' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
+        ]);
 
-        $imageName4 = time().'.'.$req->image4->getClientOriginalExtension();
-        $product_image->pro_img4 = $req->image4->move(public_path('assets\img'), $imageName4);
+        $imageName2 = time().'.'.$req->image2->extension();
+        $product_image->pro_img2 =   $req->image2->storeAs('', $imageName2, ['disk' => 'my']);
 
-        $imageName5 = time().'.'.$req->image5->getClientOriginalExtension();
-        $product_image->pro_img5 = $req->image5->move(public_path('assets\img'), $imageName5);
+
+        $imageName3 = time().'.'.$req->image3->extension();
+        $product_image->pro_img3 =   $req->image3->storeAs('', $imageName3, ['disk' => 'my']);
+
+
+        $imageName4 = time().'.'.$req->image4->extension();
+        $product_image->pro_img4 =   $req->image4->storeAs('', $imageName4, ['disk' => 'my']);
+
+
+        $imageName5 = time().'.'.$req->image5->extension();
+        $product_image->pro_img5 =   $req->image5->storeAs('', $imageName5, ['disk' => 'my']);
         
         $product_image->save(); 
 
@@ -105,8 +122,12 @@ class AddProductController extends Controller
         $product= products::find($id);
         $product->pro_title = $req->title;
         $product->description = $req->description;
-        $imageName = time().'.'.$req->image->getClientOriginalExtension();
-        $product->pro_img =  $req->image->move(public_path('assets\img'), $imageName);
+        $req->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
+        ]);
+
+        $imageName = time().'.'.$req->image->extension();
+        $product->pro_img =   $req->image->storeAs('', $imageName, ['disk' => 'my']);
         $product->pro_price = $req->sellprice;
         $product->saleprice = $req->saleprice;
         $product->purchaseprice = $req->purchaseprice;

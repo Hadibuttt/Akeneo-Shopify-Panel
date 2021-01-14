@@ -268,7 +268,7 @@
                                                                             </div>
                                                                         </td>
                                                                         <td class="_2ROf4 _3k9ch" style="left: 64px;padding: 20px;">
-                                                                        <div style="--top-bar-background:#00848e; --top-bar-background-lighter:#1d9ba4; --top-bar-color:#f9fafb; --p-frame-offset:0px;"><span class="Polaris-Thumbnail Polaris-Thumbnail--sizeMedium"><img src="assets/img/{{$collection->cat_item_img}}"></span>
+                                                                        <div style="--top-bar-background:#00848e; --top-bar-background-lighter:#1d9ba4; --top-bar-color:#f9fafb; --p-frame-offset:0px;"><span class="Polaris-Thumbnail Polaris-Thumbnail--sizeMedium"><img src="/assets/img/{{$collection->cat_item_img}}"></span>
   <div id="PolarisPortalsContainer"></div>
 </div>
                                                                         
