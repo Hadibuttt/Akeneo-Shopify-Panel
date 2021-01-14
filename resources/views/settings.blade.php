@@ -85,7 +85,7 @@
                                                                 <p class="_2f-D-">Manage notifications sent to you and your customers</p>
                                                             </div>
                                                         </a></li>
-                                                    <li class="_21VNU"><a aria-disabled="false" class="_3zeWe">
+                                                    <li class="_21VNU"><a href="/staffaccounts" aria-disabled="false" class="_3zeWe">
                                                             <div class="_2xj6B"><span class="Polaris-Icon_yj27d Polaris-Icon--newDesignLanguage_1rik8"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
                                                                 <path d="M14.363 5.22a4.22 4.22 0 1 1-8.439 0 4.22 4.22 0 0 1 8.439 0zM2.67 14.469c1.385-1.09 4.141-2.853 7.474-2.853 3.332 0 6.089 1.764 7.474 2.853.618.486.81 1.308.567 2.056l-.333 1.02A2.11 2.11 0 0 1 15.846 19H4.441a2.11 2.11 0 0 1-2.005-1.455l-.333-1.02c-.245-.748-.052-1.57.567-2.056z"></path>
                                                                     </svg></span></div>

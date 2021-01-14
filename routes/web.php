@@ -51,6 +51,10 @@ Route::get('/create-subcategory', [App\Http\Controllers\SubCategoryController::c
 
 Route::get('/create-collection', [App\Http\Controllers\CollectionController::class, 'create']);
 
+Route::get('/staffaccounts', [App\Http\Controllers\StaffController::class, 'index']);
+
+Route::get('/staffarea', [App\Http\Controllers\StaffController::class, 'create']);
+
 Route::get('/subcategory', [App\Http\Controllers\SubCategoryController::class, 'index']);
 
 Route::get('/collection', [App\Http\Controllers\CollectionController::class, 'index']);
