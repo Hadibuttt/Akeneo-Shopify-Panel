@@ -93,12 +93,19 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
             <div class="Polaris-FormLayout__Items_38lvu">
                 <div class="Polaris-FormLayout__Item_yiyol">
                     <div class="">
+
+                        <form action="successed" method="post">
+                            @csrf
+
                         <div class="Polaris-Labelled__LabelWrapper_bf6ys">
                             <div class="Polaris-Label_2vd36"><label id="InventoryCardSkuLabel" for="InventoryCardSku" class="Polaris-Label__Text_yj3uv">First Name</label></div>
                         </div>
                         <div class="Polaris-Connected_wopc9 Polaris-Connected--newDesignLanguage_1rik8">
                             <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
-                                <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8"><input name="sku" id="InventoryCardSku" class="Polaris-TextField__Input_30ock" aria-labelledby="InventoryCardSkuLabel" aria-invalid="false" aria-multiline="false" value="">
+                                <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8">
+                                    
+                                    <input name="f_name" id="InventoryCardSku" class="Polaris-TextField__Input_30ock" aria-labelledby="InventoryCardSkuLabel" aria-invalid="false" aria-multiline="false" value="">
+
                                     <div class="Polaris-TextField__Backdrop_1x2i2"></div>
                                 </div>
                             </div>
@@ -113,7 +120,10 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
      
                         <div class="Polaris-Connected_wopc9 Polaris-Connected--newDesignLanguage_1rik8">
                             <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
-                                <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8"><input name="sku" id="InventoryCardSku" class="Polaris-TextField__Input_30ock" aria-labelledby="InventoryCardSkuLabel" aria-invalid="false" aria-multiline="false" value="">
+                                <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8">
+                                    
+                                    <input name="l_name" id="InventoryCardSku" class="Polaris-TextField__Input_30ock" aria-labelledby="InventoryCardSkuLabel" aria-invalid="false" aria-multiline="false" value="">
+
                                     <div class="Polaris-TextField__Backdrop_1x2i2"></div>
                                 </div>
                             </div>
@@ -131,7 +141,23 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
                         </div>
                         <div class="Polaris-Connected_wopc9 Polaris-Connected--newDesignLanguage_1rik8">
                             <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
-                                <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8"><input name="barcode" id="InventoryCardBarcode" class="Polaris-TextField__Input_30ock" aria-labelledby="InventoryCardBarcodeLabel" aria-invalid="false" aria-multiline="false" value="">
+                                <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8">
+                                    
+                                    <input type="email" required="" name="email" id="InventoryCardBarcode" class="Polaris-TextField__Input_30ock" aria-labelledby="InventoryCardBarcodeLabel" aria-invalid="false" aria-multiline="false" value="">
+
+                                    <div class="Polaris-TextField__Backdrop_1x2i2"></div>
+                                </div>
+                            </div>
+                        </div><br>
+                        <div class="Polaris-Labelled__LabelWrapper_bf6ys">
+                            <div class="Polaris-Label_2vd36"><label id="InventoryCardBarcodeLabel" for="InventoryCardBarcode" class="Polaris-Label__Text_yj3uv">Password</label></div>
+                        </div>
+                        <div class="Polaris-Connected_wopc9 Polaris-Connected--newDesignLanguage_1rik8">
+                            <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
+                                <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8">
+                                    
+                                    <input name="password" id="InventoryCardBarcode" class="Polaris-TextField__Input_30ock" aria-labelledby="InventoryCardBarcodeLabel" aria-invalid="false" aria-multiline="false" value="">
+
                                     <div class="Polaris-TextField__Backdrop_1x2i2"></div>
                                 </div>
                             </div>
@@ -188,42 +214,118 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
             </div>
                      <div style="width: 33%; display:inline-block;float: left;">
                         <div>
-                         <label class="Polaris-Choice" for="PolarisCheckboxvarient"><input type="checkbox" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Pages</span></label>
-                        </div> <div>
-                         <label class="Polaris-Choice" for="PolarisCheckboxvarient"><input type="checkbox" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Pages</span></label>
-                        </div> <div>
-                         <label class="Polaris-Choice" for="PolarisCheckboxvarient"><input type="checkbox" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Pages</span></label>
-                        </div> <div>
-                         <label class="Polaris-Choice" for="PolarisCheckboxvarient"><input type="checkbox" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Pages</span></label>
+                         <label class="Polaris-Choice" for="PolarisCheckboxvarient">
+                             
+                            <input type="hidden" value="0" name="OrderPage">
+                            <input name="OrderPage" value="1" type="checkbox" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()">
+                            
+                            <span class="Polaris-Choice__Label">Order</span></label>
+
                         </div>
-                         
-                         
+                        
+                        <div>
+                            <label class="Polaris-Choice" for="PolarisCheckboxvarient">
+                                
+                               <input type="checkbox" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Order Details</span></label>
+   
+                           </div>
+                        
+                        <div>
+                         <label class="Polaris-Choice" for="PolarisCheckboxvarient">
+                             
+                            <input type="hidden" value="0" name="ProductPage">
+                            <input name="ProductPage" type="checkbox" value="1" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()">
+                            
+                            <span class="Polaris-Choice__Label">Product</span></label>
+
+                        </div> <div>
+                         <label class="Polaris-Choice" for="PolarisCheckboxvarient">
+                             
+                            <input type="checkbox" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Add Product</span></label>
+
+                        </div> <div>
+                         <label class="Polaris-Choice" for="PolarisCheckboxvarient">
+                             
+                            <input type="checkbox" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Update Product</span></label>
+
+                        </div>   
+                     </div>
+                     <div style="width: 33%; display:inline-block;float: left;">
+                       <div>
+                         <label class="Polaris-Choice" for="PolarisCheckboxvarient">
+                             
+                            <input type="checkbox" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Category</span></label>
+
+                        </div> <div>
+                         <label class="Polaris-Choice" for="PolarisCheckboxvarient">
+                             
+                            <input type="checkbox" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Add Category</span></label>
+
+                        </div> <div>
+                         <label class="Polaris-Choice" for="PolarisCheckboxvarient">
+                             
+                            <input type="checkbox" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Update Category</span></label>
+
+                        </div>
                      </div>
                      <div style="width: 33%; display:inline-block;">
                       <div>
-                         <label class="Polaris-Choice" for="PolarisCheckboxvarient"><input type="checkbox" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Pages</span></label>
+                         <label class="Polaris-Choice" for="PolarisCheckboxvarient">
+                             
+                            <input type="checkbox" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Subcategory</span></label>
+
                         </div> <div>
-                         <label class="Polaris-Choice" for="PolarisCheckboxvarient"><input type="checkbox" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Pages</span></label>
+                         <label class="Polaris-Choice" for="PolarisCheckboxvarient">
+                             
+                            <input type="checkbox" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Add Subcategory</span></label>
+
                         </div> <div>
-                         <label class="Polaris-Choice" for="PolarisCheckboxvarient"><input type="checkbox" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Pages</span></label>
+                         <label class="Polaris-Choice" for="PolarisCheckboxvarient">
+                             
+                            <input type="checkbox" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Update Subcategory</span></label>
+
                         </div> <div>
-                         <label class="Polaris-Choice" for="PolarisCheckboxvarient"><input type="checkbox" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Pages</span></label>
+                         <label class="Polaris-Choice" for="PolarisCheckboxvarient">
+                             
+                            <input type="checkbox" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Collection</span></label>
+
                         </div>
-                     </div>
-                     <div style="width: 33%; display:inline-block;">
-                      <div>
-                         <label class="Polaris-Choice" for="PolarisCheckboxvarient"><input type="checkbox" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Pages</span></label>
-                        </div> <div>
-                         <label class="Polaris-Choice" for="PolarisCheckboxvarient"><input type="checkbox" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Pages</span></label>
-                        </div> <div>
-                         <label class="Polaris-Choice" for="PolarisCheckboxvarient"><input type="checkbox" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Pages</span></label>
-                        </div> <div>
-                         <label class="Polaris-Choice" for="PolarisCheckboxvarient"><input type="checkbox" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Pages</span></label>
-                        </div>
+
+                        <div>
+                            <label class="Polaris-Choice" for="PolarisCheckboxvarient">
+                                
+                               <input type="checkbox" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Add Collection</span></label>
+   
+                           </div>
+
+                           <div>
+                            <label class="Polaris-Choice" for="PolarisCheckboxvarient">
+                                
+                               <input type="checkbox" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Update Collection</span></label>
+   
+                           </div>
+
+                           <div>
+                            <label class="Polaris-Choice" for="PolarisCheckboxvarient">
+                                
+                               <input type="checkbox" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Customers</span></label>
+   
+                           </div>
+
+                           <div>
+                            <label class="Polaris-Choice" for="PolarisCheckboxvarient">
+                                
+                               <input type="checkbox" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Settings</span></label>
+   
+                           </div>
+
+                          
+
+
                      </div>
                      <div class="Polaris-Stack__Item_yiyol">
                         <button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--primary_7k9zs" type="submit"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Save</span></span></button></div>
-          
+                    </form>
                     </div>
                 
                </div> 

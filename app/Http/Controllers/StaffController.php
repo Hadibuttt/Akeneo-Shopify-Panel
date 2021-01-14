@@ -3,26 +3,38 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\categories;
+use App\Models\staffarea;
 
 class StaffController extends Controller
 {
     public function index()
     {
-        $categorys = categories::all();
+        $staffs = staffarea::all();
 
         return view('staffaccounts')->with([
-            'categorys'=> $categorys
+            'staffs'=> $staffs
         ]);
     }
 
     public function create()
     {
-        $categorys = categories::all();
+        $staffs = staffarea::all();
 
         return view('staffarea')->with([
-            'categorys'=> $categorys
+            'staffs'=> $staffs
         ]);
     }
 
+    public function save(Request $req)
+    {
+        $staff = new staffarea;
+        $staff->f_name = $req->f_name;
+        $staff->l_name = $req->l_name;
+        $staff->email = $req->email;
+        $staff->password = $req->password;
+        $staff->OrderPage = $req->OrderPage;
+        $staff->ProductPage = $req->ProductPage;
+        $staff->save();
+        return view('success');
+    }
 }
