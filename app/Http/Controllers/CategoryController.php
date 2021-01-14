@@ -11,8 +11,12 @@ class CategoryController extends Controller
     {
         $category= new categories;
         $category->cat_title = $req->title;
-        $imageName = time().'.'.$req->image->getClientOriginalExtension();
-        $category->cat_img =  $req->image->move(public_path('assets\img'), $imageName);
+        $req->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
+        ]);
+
+        $imageName = time().'.'.$req->image->extension();
+        $category->cat_img =   $req->image->storeAs('', $imageName, ['disk' => 'my']);
         $category->save();
         return view('success');
     }
@@ -50,8 +54,12 @@ class CategoryController extends Controller
         $category= categories::find($cat_id);
         $category->cat_title = $req->title;
 
-        $imageName = time().'.'.$req->image->getClientOriginalExtension();
-        $category->cat_img =  $req->image->move(public_path('assets\img'), $imageName);
+        $req->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
+        ]);
+
+        $imageName = time().'.'.$req->image->extension();
+        $category->cat_img =   $req->image->storeAs('', $imageName, ['disk' => 'my']);
 
         $category->save();
 

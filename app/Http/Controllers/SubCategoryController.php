@@ -38,10 +38,13 @@ class SubCategoryController extends Controller
         $sub_category->SEOdescription = $req->SEOdescription;
         //$sub_category->meta_description = $req->SEOdescription;
         $sub_category->handle = $req->handle;
-        $imageName = time().'.'.$req->image->getClientOriginalExtension();
-        $sub_category->subcat_img =  $req->image->move(public_path('assets\img'), $imageName);
-        $sub_category->save();
+        $req->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
+        ]);
 
+        $imageName = time().'.'.$req->image->extension();
+        $sub_category->subcat_img =   $req->image->storeAs('', $imageName, ['disk' => 'my']);
+        $sub_category->save();
         return view('success');
     }
 
@@ -67,8 +70,12 @@ class SubCategoryController extends Controller
         $sub_category->SEOdescription = $req->SEOdescription;
         $sub_category->handle = $req->handle;
         
-        $imageName = time().'.'.$req->image->getClientOriginalExtension();
-        $sub_category->subcat_img =  $req->image->move(public_path('assets\img'), $imageName);
+        $req->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
+        ]);
+
+        $imageName = time().'.'.$req->image->extension();
+        $sub_category->subcat_img =   $req->image->storeAs('', $imageName, ['disk' => 'my']);
 
         $sub_category->save();
 

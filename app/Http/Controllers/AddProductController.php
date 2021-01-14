@@ -79,7 +79,6 @@ class AddProductController extends Controller
 
         $imageName = time().'.'.$req->image->extension();
         $product->pro_img =   $req->image->storeAs('', $imageName, ['disk' => 'my']);
-
         $product->save();
 
         $id=products::orderBy('id', 'DESC')->first();

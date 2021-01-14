@@ -34,9 +34,11 @@ class CollectionController extends Controller
         $collection = new cat_items;
         $collection->cat_item_title = $req->title;
         $collection->subcat_id = $req->subcategory;
-        $collection->page_title = $req->SEOtitle;
-        $collection->meta_description = $req->SEOdescription;
-        //$collection->handle = $req->handle;
+        $collection->SEOtitle = $req->SEOtitle;
+        $collection->SEOdescription = $req->SEOdescription;
+        //$collection->page_title = $req->SEOtitle;
+        //$collection->meta_description = $req->SEOdescription;
+        $collection->handle = $req->handle;
         
         $req->validate([
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
