@@ -52,6 +52,10 @@ class StaffController extends Controller
         $user->AddCollectionPage = $req->AddCollectionPage;
         $user->UpdateCollectionPage = $req->UpdateCollectionPage;
         $user->SettingsPage = $req->SettingsPage;
+        $user->GeneralPage = $req->GeneralPage;
+        $user->StaffAccountPage = $req->StaffAccountPage;
+        $user->StaffAreaPage = $req->StaffAreaPage;
+
         $user->save();
         return redirect('staffaccounts');
     }

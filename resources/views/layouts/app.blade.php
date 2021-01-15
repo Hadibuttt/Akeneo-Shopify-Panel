@@ -400,18 +400,63 @@ $store = store::orderBy('id', 'DESC')->first();
                                                     <div>
                                                         <ul class="Polaris-Navigation__List_yj3nl">
                                                             <li class="Polaris-Navigation__ListItem_wxd2m">
-                                                                <div class="Polaris-Navigation__ItemWrapper_1kbav"><a data-polaris-unstyled="true" class="Polaris-Navigation__Item_yiyol " tabindex="0" aria-disabled="false" href="/add-product"><span class="Polaris-Navigation__Text_yj3uv">Add Product</span></a></div>
+                                                                <div class="Polaris-Navigation__ItemWrapper_1kbav"><a data-polaris-unstyled="true" class="Polaris-Navigation__Item_yiyol " tabindex="0" aria-disabled="false" 
+                                                                    @foreach ($users as $user)
+                                                                    @if (Auth::user()->email == $user->email)    
+                                                                    @if ($user->AddProductPage == 1) 
+                                                                    href="/add-product"
+                                                                    @else
+                                                                    href="/restricted"
+                                                                    @endif
+                                                                    @endif
+                                                                    @endforeach
+                                                                    
+                                                                    ><span class="Polaris-Navigation__Text_yj3uv">Add Product</span></a></div>
                                                             </li>
                                                             
                         <li class="Polaris-Navigation__ListItem_wxd2m">
-                                     <div class="Polaris-Navigation__ItemWrapper_1kbav"><a data-polaris-unstyled="true" class="Polaris-Navigation__Item_yiyol Polaris-Navigation--subNavigationActive_e2t9" tabindex="0" aria-disabled="false" href="/category"><span class="Polaris-Navigation__Text_yj3uv">Category</span></a></div>
+                                     <div class="Polaris-Navigation__ItemWrapper_1kbav"><a data-polaris-unstyled="true" class="Polaris-Navigation__Item_yiyol Polaris-Navigation--subNavigationActive_e2t9" tabindex="0" aria-disabled="false" 
+                                        
+                                        @foreach ($users as $user)
+                                        @if (Auth::user()->email == $user->email)    
+                                        @if ($user->CategoryPage == 1)
+                                        href="/category"
+                                        @else
+                                        href="/restricted"
+                                        @endif
+                                        @endif
+                                        @endforeach
+                                        
+                                        
+                                        ><span class="Polaris-Navigation__Text_yj3uv">Category</span></a></div>
                                                             </li>
                                                             <li class="Polaris-Navigation__ListItem_wxd2m">
-                                                                <div class="Polaris-Navigation__ItemWrapper_1kbav"><a data-polaris-unstyled="true" class="Polaris-Navigation__Item_yiyol Polaris-Navigation--subNavigationActive_e2t9" tabindex="0" aria-disabled="false" href="/subcategory"><span class="Polaris-Navigation__Text_yj3uv">Sub Category</span></a></div>
+                                                                <div class="Polaris-Navigation__ItemWrapper_1kbav"><a data-polaris-unstyled="true" class="Polaris-Navigation__Item_yiyol Polaris-Navigation--subNavigationActive_e2t9" tabindex="0" aria-disabled="false" 
+                                                                    @foreach ($users as $user)
+                                                                    @if (Auth::user()->email == $user->email)    
+                                                                    @if ($user->SubcategoryPage == 1)    
+                                                                    href="/subcategory"
+                                                                    @else
+                                                                    href="/restricted"
+                                                                    @endif
+                                                                    @endif
+                                                                    @endforeach
+                                                                    
+                                                                    ><span class="Polaris-Navigation__Text_yj3uv">Sub Category</span></a></div>
                                                             </li>
                                                             
                                                             <li class="Polaris-Navigation__ListItem_wxd2m">
-                                                                <div class="Polaris-Navigation__ItemWrapper_1kbav"><a data-polaris-unstyled="true" class="Polaris-Navigation__Item_yiyol Polaris-Navigation--subNavigationActive_e2t9x" tabindex="0" aria-disabled="false" href="/collection"><span class="Polaris-Navigation__Text_yj3uv">Collection</span></a></div>
+                                                                <div class="Polaris-Navigation__ItemWrapper_1kbav"><a data-polaris-unstyled="true" class="Polaris-Navigation__Item_yiyol Polaris-Navigation--subNavigationActive_e2t9x" tabindex="0" aria-disabled="false" 
+                                                                    @foreach ($users as $user)
+                                                                    @if (Auth::user()->email == $user->email)    
+                                                                    @if ($user->CollectionPage == 1)    
+                                                                    href="/collection"
+                                                                    @else
+                                                                    href="/restricted"
+                                                                    @endif
+                                                                    @endif
+                                                                    @endforeach    
+                                                                    ><span class="Polaris-Navigation__Text_yj3uv">Collection</span></a></div>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -419,7 +464,18 @@ $store = store::orderBy('id', 'DESC')->first();
                                             </div>
                                         </li>
                                         <li class="Polaris-Navigation__ListItem_wxd2m">
-                                            <div class="Polaris-Navigation__ItemWrapper_1kbav"><a data-polaris-unstyled="true" class="Polaris-Navigation__Item_yiyol" tabindex="0" aria-disabled="false" href="/customer">
+                                            <div class="Polaris-Navigation__ItemWrapper_1kbav"><a data-polaris-unstyled="true" class="Polaris-Navigation__Item_yiyol" tabindex="0" aria-disabled="false" 
+                                                
+                                                @foreach ($users as $user)
+                                                @if (Auth::user()->email == $user->email)    
+                                                @if ($user->CustomerPage == 1)    
+                                                href="/customer"
+                                                @else
+                                                href="/restricted"
+                                                @endif
+                                                @endif
+                                                @endforeach    
+                                                >
                                                     <div class="Polaris-Navigation__Icon_yj27d"><span class="Polaris-Icon_yj27d Polaris-Icon--newDesignLanguage_1rik8"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
                                                                 <path d="M14.363 5.22a4.22 4.22 0 1 1-8.439 0 4.22 4.22 0 0 1 8.439 0zM2.67 14.469c1.385-1.09 4.141-2.853 7.474-2.853 3.332 0 6.089 1.764 7.474 2.853.618.486.81 1.308.567 2.056l-.333 1.02A2.11 2.11 0 0 1 15.846 19H4.441a2.11 2.11 0 0 1-2.005-1.455l-.333-1.02c-.245-.748-.052-1.57.567-2.056z"></path>
                                                             </svg></span></div><span class="Polaris-Navigation__Text_yj3uv">Customers</span>
@@ -457,7 +513,17 @@ $store = store::orderBy('id', 'DESC')->first();
                                     </ul>
                                     <ul class="Polaris-Navigation__Section_1b1h1">
                                         <li class="Polaris-Navigation__ListItem_wxd2m">
-                                            <div class="Polaris-Navigation__ItemWrapper_1kbav"><a data-polaris-unstyled="true" class="Polaris-Navigation__Item_yiyol" tabindex="0" href="/settings">
+                                            <div class="Polaris-Navigation__ItemWrapper_1kbav"><a data-polaris-unstyled="true" class="Polaris-Navigation__Item_yiyol" tabindex="0" 
+                                                @foreach ($users as $user)
+                                                @if (Auth::user()->email == $user->email)    
+                                                @if ($user->SettingsPage == 1)    
+                                                href="/settings"
+                                                @else
+                                                href="/restricted"
+                                                @endif
+                                                @endif
+                                                @endforeach    
+                                                >
                                                     <div class="Polaris-Navigation__Icon_yj27d"><span class="Polaris-Icon_yj27d Polaris-Icon--newDesignLanguage_1rik8"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
                                                                 <path fill-rule="evenodd" d="M9.027 0a1 1 0 0 0-.99.859l-.37 2.598A6.993 6.993 0 0 0 5.742 4.57l-2.437-.98a1 1 0 0 0-1.239.428L.934 5.981a1 1 0 0 0 .248 1.287l2.066 1.621a7.06 7.06 0 0 0 0 2.222l-2.066 1.621a1 1 0 0 0-.248 1.287l1.132 1.962a1 1 0 0 0 1.239.428l2.438-.979a6.995 6.995 0 0 0 1.923 1.113l.372 2.598a1 1 0 0 0 .99.859h2.265a1 1 0 0 0 .99-.859l.371-2.598a6.995 6.995 0 0 0 1.924-1.112l2.438.978a1 1 0 0 0 1.238-.428l1.133-1.962a1 1 0 0 0-.249-1.287l-2.065-1.621a7.063 7.063 0 0 0 0-2.222l2.065-1.621a1 1 0 0 0 .249-1.287l-1.133-1.962a1 1 0 0 0-1.239-.428l-2.437.979a6.994 6.994 0 0 0-1.924-1.113L12.283.86a1 1 0 0 0-.99-.859H9.027zm1.133 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
                                                             </svg></span></div><span class="Polaris-Navigation__Text_yj3uv">Settings</span>

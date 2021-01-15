@@ -251,7 +251,24 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
                             <input type="hidden" value="0" name="UpdateProductPage">
                             <input type="checkbox" value="1" name="UpdateProductPage" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Update Product</span></label>
 
-                        </div>   
+                        </div>
+                        
+                        <div>
+                            <label class="Polaris-Choice" for="PolarisCheckboxvarient">
+                                
+                               <input type="hidden" value="0" name="GeneralPage">
+                               <input type="checkbox" value="1" name="GeneralPage" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">General</span></label>
+   
+                           </div>
+
+                           <div>
+                            <label class="Polaris-Choice" for="PolarisCheckboxvarient">
+                                
+                               <input type="hidden" value="0" name="StaffAccountPage">
+                               <input type="checkbox" value="1" name="StaffAccountPage" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Staff Accounts</span></label>
+   
+                           </div>
+
                      </div>
                      <div style="width: 33%; display:inline-block;float: left;">
                        <div>
@@ -287,6 +304,22 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
                                
                                 <input type="hidden" value="0" name="AboutCustomerPage">
                                <input type="checkbox" value="1" name="AboutCustomerPage" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">About Customers</span></label>
+   
+                           </div>
+
+                           <div>
+                            <label class="Polaris-Choice" for="PolarisCheckboxvarient">
+                                
+                                <input type="hidden" value="0" name="SettingsPage"> 
+                               <input type="checkbox" value="1" name="SettingsPage" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Settings</span></label>
+   
+                           </div>
+
+                           <div>
+                            <label class="Polaris-Choice" for="PolarisCheckboxvarient">
+                                
+                                <input type="hidden" value="0" name="StaffAreaPage"> 
+                               <input type="checkbox" value="1" name="StaffAreaPage" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Add Staff Accounts</span></label>
    
                            </div>
 
@@ -334,15 +367,17 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
    
                            </div>
 
-                           
-
                            <div>
                             <label class="Polaris-Choice" for="PolarisCheckboxvarient">
                                 
-                                <input type="hidden" value="0" name="SettingsPage"> 
-                               <input type="checkbox" value="1" name="SettingsPage" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Settings</span></label>
+                                <input type="hidden" value="0" name="UpdateStaffAreaPage"> 
+                               <input type="checkbox" value="1" name="UpdateStaffAreaPage" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Update Staff Accounts</span></label>
    
                            </div>
+
+                           
+
+                           
 
                           
 
