@@ -96,6 +96,10 @@ Route::get('/settings', function () {
     return view('settings');
 });
 
+Route::get('/restricted', function () {
+    return view('restricted');
+});
+
 Route::get('/customer', [App\Http\Controllers\CustomerController::class, 'index']);
 
 Route::get('/general', [App\Http\Controllers\GeneralController::class, 'index']);

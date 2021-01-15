@@ -225,8 +225,9 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
                         
                         <div>
                             <label class="Polaris-Choice" for="PolarisCheckboxvarient">
-                                
-                               <input type="checkbox" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Order Details</span></label>
+                               
+                               <input type="hidden" value="0" name="OrderDetailsPage">
+                               <input type="checkbox" name="OrderDetailsPage" value="1" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Order Details</span></label>
    
                            </div>
                         

@@ -162,7 +162,7 @@ $store = store::orderBy('id', 'DESC')->first();
                                             <div>
                                                 <div class="Polaris-TopBar-Menu__ActivatorWrapper_1gxxh"><button type="button" class="Polaris-TopBar-Menu__Activator_e3w0d" tabindex="0" aria-controls="Polarispopover1" aria-owns="Polarispopover1" aria-expanded="false" onclick="Display_Ad()">
                                                         <div class="Polaris-MessageIndicator__MessageIndicatorWrapper_152yb"><span aria-label="Avatar with initials D E" role="img" class="Polaris-Avatar_z763p Polaris-Avatar--sizeSmall_7647q Polaris-Avatar--styleFour_16hgi Polaris-Avatar--hasImage_1hz8x"><img src="https://mir-s3-cdn-cf.behance.net/user/115/248bc1144803971.5f5595eecddb3.png" class="Polaris-Avatar__Image_2qgms" alt="" role="presentation"></span></div><span class="Polaris-TopBar-UserMenu__Details_1bdkj">
-                                                            <p class="Polaris-TopBar-UserMenu__Name_yisp9">{{Auth::user()->name}}</p>
+                                                            <p class="Polaris-TopBar-UserMenu__Name_yisp9">{{Auth::user()->f_name}} {{Auth::user()->l_name}}</p>
                                                             <p class="Polaris-TopBar-UserMenu__Detail_nhg1f"></p>
                                                         </span>
                                                     </button></div>
@@ -355,15 +355,21 @@ $store = store::orderBy('id', 'DESC')->first();
                                                             </svg></span></div><span class="Polaris-Navigation__Text_yj3uv">Home</span>
                                                 </a></div>
                                         </li>
-                                       {{-- @foreach ($users as $user)
-                                            @if (Auth::user()->email == $user->email)
-                                                
-                                            @if ($user->OrderPage == 1) --}}
+                                         
                                                 
                                             
                                         
                                         <li class="Polaris-Navigation__ListItem_wxd2m">
-                                            <div class="Polaris-Navigation__ItemWrapper_1kbav"><a data-polaris-unstyled="true" class="Polaris-Navigation__Item_yiyol" tabindex="0" aria-disabled="false" href="/order?view=all">
+                                            <div class="Polaris-Navigation__ItemWrapper_1kbav"><a data-polaris-unstyled="true" class="Polaris-Navigation__Item_yiyol" tabindex="0" aria-disabled="false" 
+                                                @foreach ($users as $user)
+                                                @if (Auth::user()->email == $user->email)    
+                                                @if ($user->OrderPage == 1) 
+                                                href="/order?view=all"  
+                                                @else
+                                                href="/restricted"
+                                                @endif
+                                                @endif
+                                                @endforeach>
                                                     <div class="Polaris-Navigation__Icon_yj27d"><span class="Polaris-Icon_yj27d Polaris-Icon--newDesignLanguage_1rik8"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
                                                                 <path d="M11 1a1 1 0 1 0-2 0v7.586L7.707 7.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l3-3a1 1 0 0 0-1.414-1.414L11 8.586V1z"></path>
                                                                 <path d="M3 14V3h4V1H2.5A1.5 1.5 0 0 0 1 2.5v15A1.5 1.5 0 0 0 2.5 19h15a1.5 1.5 0 0 0 1.5-1.5v-15A1.5 1.5 0 0 0 17.5 1H13v2h4v11h-3.5c-.775 0-1.388.662-1.926 1.244l-.11.12A1.994 1.994 0 0 1 10 16a1.994 1.994 0 0 1-1.463-.637l-.111-.12C7.888 14.664 7.275 14 6.5 14H3z"></path>
@@ -371,13 +377,20 @@ $store = store::orderBy('id', 'DESC')->first();
                                                     <div class="Polaris-Navigation__Badge_2qgie"><span class="Polaris-Badge_2qgie Polaris-Badge--statusNew_cj8gz Polaris-Badge--sizeSmall_7647q"><span class="Polaris-VisuallyHidden_yrtt5">New </span>11</span></div>
                                                 </a></div>
                                         </li>
-                                        {{--
-                                        @endif
-                                        @endif
-                                        @endforeach
-                                        --}}
+                                        
+                                       
+                                        
                                         <li class="Polaris-Navigation__ListItem_wxd2m">
-                                            <div class="Polaris-Navigation__ItemWrapper_1kbav"><a data-polaris-unstyled="true" class="Polaris-Navigation__Item_yiyol " tabindex="0" aria-disabled="false" href="/product?view=all">
+                                            <div class="Polaris-Navigation__ItemWrapper_1kbav"><a data-polaris-unstyled="true" class="Polaris-Navigation__Item_yiyol " tabindex="0" aria-disabled="false" 
+                                                @foreach ($users as $user)
+                                                @if (Auth::user()->email == $user->email)    
+                                                @if ($user->ProductPage == 1)
+                                                href="/product?view=all"
+                                                @else
+                                                href="/restricted"
+                                                @endif
+                                                @endif
+                                                @endforeach>
                                                     <div class="Polaris-Navigation__Icon_yj27d"><span class="Polaris-Icon_yj27d Polaris-Icon--newDesignLanguage_1rik8"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
                                                                 <path d="M10.293 1.293A1 1 0 0 1 11 1h7a1 1 0 0 1 1 1v7a1 1 0 0 1-.293.707l-9 9a1 1 0 0 1-1.414 0l-7-7a1 1 0 0 1 0-1.414l9-9zM15.5 6a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path>
                                                             </svg></span></div><span class="Polaris-Navigation__Text_yj3uv">Products</span>
