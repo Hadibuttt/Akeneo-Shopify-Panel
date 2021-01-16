@@ -10,6 +10,11 @@ use App\Models\cat_items;
 
 class CollectionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         $collections = cat_items::all();

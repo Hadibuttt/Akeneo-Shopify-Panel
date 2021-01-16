@@ -9,6 +9,11 @@ use App\Models\sub_categories;
 
 class SubCategoryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         $categorys = categories::all();

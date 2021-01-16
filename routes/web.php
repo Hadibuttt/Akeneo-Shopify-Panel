@@ -23,9 +23,7 @@ Route::get('/reset', function () {
 
 Auth::routes();
 
-Route::get('/', function () {
-    return view('auth.login');
-});
+Route::get('/', [App\Http\Controllers\IndexController::class, 'index']);
 
 Route::get('/home', [App\Http\Controllers\IndexController::class, 'index']);
 

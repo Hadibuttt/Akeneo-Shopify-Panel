@@ -7,6 +7,12 @@ use App\Models\store;
 
 class GeneralController extends Controller
 {
+    
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         $stores = store::all()->sortByDesc('id');

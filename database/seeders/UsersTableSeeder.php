@@ -4,8 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use\Illuminate\Support\Facades\Hash;
-use App\Models\Role;
-use App\Models\User;
+use App\Models\AdminLogin;
 use DB;
 
 class UsersTableSeeder extends Seeder
@@ -13,32 +12,43 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         
-        DB::table('role_user')->truncate();
+        DB::table('admin_logins')->truncate();
 
-        $adminRole = Role::where('name','admin')->first();
-        $moderatorRole = Role::where('name','moderator')->first();
-        $userRole = Role::where('name','user')->first();
-
-        $admin = User::create([
-            'name' => 'Admin User',
+        $admin = AdminLogin::create([
+            'f_name' => 'Admin User',
+            'l_name' => 'Admin User',
             'email' => 'admin@admin.com',
-            'password' => Hash::make('password')
-        ]);
+            'password' => Hash::make('password'),
+            'OrderPage' => 1,
+            'ProductPage' => 1,
+            'AddProductPage' => 1,
+            'OrderDetailsPage' => 1,
+            'UpdateProductPage' => 1,
+            'CategoryPage' => 1,
+            'AddCategory' => 1,
+            'CustomerPage' => 1,
+            'AboutCustomerPage' => 1,
+            'SubcategoryPage' => 1,
+            'AddSubcategoryPage' => 1,
+            'UpdateSubcategoryPage' => 1,
+            'CollectionPage' => 1,
+            'AddCollectionPage' => 1,
+            'UpdateCollectionPage' => 1,
+            'SettingsPage' => 1,
+            'GeneralPage' => 1,
+            'StaffAccountPage' => 1,
+            'StaffAreaPage' => 1,
+            'UpdateStaffAreaPage' => 1,
+            'TaxPage' => 1,
+            'PaymentPage' => 1,
+            'NotificationPage' => 1,
+            'TranslationPage' => 1,
+            'UpdateCategory' => 1,
 
-        $moderator = User::create([
-            'name' => 'Moderator User',
-            'email' => 'moderator@moderator.com',
-            'password' => Hash::make('password')
-        ]);
 
-        $user = User::create([
-            'name' => 'Generic User',
-            'email' => 'user@user.com',
-            'password' => Hash::make('password')
-        ]);
 
-        $admin->roles()->attach($adminRole);
-        $moderator->roles()->attach($moderatorRole);
-        $user->roles()->attach($userRole);
+
+
+        ]);       
     }
 }
