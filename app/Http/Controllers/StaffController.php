@@ -3,16 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\Models\AdminLogin;
+use\Illuminate\Support\Facades\Hash;
 
 class StaffController extends Controller
 {
+    
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
-        $users = User::all();
-        $checks = User::all();
+        $users = AdminLogin::all();
+        $checks = AdminLogin::all();
 
-        $admin = User::orderBy('id', 'asc')->first();
+        $admin = AdminLogin::orderBy('id', 'asc')->first();
 
         return view('staffaccounts')->with([
             'users' => $users,
@@ -28,11 +35,12 @@ class StaffController extends Controller
 
     public function save(Request $req)
     {
-        $user = new User;
+        $hash = Hash::make($req->password);
+        $user = new AdminLogin;
         $user->f_name = $req->f_name;
         $user->l_name = $req->l_name;
         $user->email = $req->email;
-        $user->password = $req->password;
+        $user->password = $hash;
         $user->OrderPage = $req->OrderPage;
         $user->OrderDetailsPage = $req->OrderDetailsPage;
         $user->ProductPage = $req->ProductPage;
@@ -54,6 +62,10 @@ class StaffController extends Controller
         $user->StaffAccountPage = $req->StaffAccountPage;
         $user->StaffAreaPage = $req->StaffAreaPage;
         $user->UpdateStaffAreaPage = $req->UpdateStaffAreaPage;
+        $user->TaxPage = $req->TaxPage;
+        $user->PaymentPage = $req->PaymentPage;
+        $user->NotificationPage = $req->NotificationPage;
+        $user->TranslationPage = $req->TranslationPage;
         
 
         $user->save();
@@ -62,7 +74,7 @@ class StaffController extends Controller
 
     public function update($id)
     {
-        $user = User::where('id',$id)->first();
+        $user = AdminLogin::where('id',$id)->first();
         return view('update-staffarea')->with([
             'user'=> $user
         ]);
@@ -70,7 +82,7 @@ class StaffController extends Controller
 
     public function updated(Request $req,$id)
     {
-        $user = User::find($id);
+        $user = AdminLogin::find($id);
         $user->f_name = $req->f_name;
         $user->l_name = $req->l_name;
         $user->email = $req->email;

@@ -8,6 +8,11 @@ use App\Models\categories;
 
 class CategoryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function save(Request $req)
     {
         $category= new categories;

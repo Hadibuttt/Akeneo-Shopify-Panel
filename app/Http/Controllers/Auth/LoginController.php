@@ -36,5 +36,10 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    
+    }
+
+    public function username(){
+        return 'email'; // this string is column of accounts table which we are going use for login
     }
 }

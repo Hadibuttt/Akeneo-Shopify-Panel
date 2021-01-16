@@ -1,7 +1,7 @@
 <?php 
-use App\Models\User; 
+use App\Models\AdminLogin; 
 
-$users = User::all();
+$users = AdminLogin::all();
 ?>
 
 @extends('layouts.app')

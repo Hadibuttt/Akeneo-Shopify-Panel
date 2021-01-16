@@ -322,6 +322,21 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
                                <input type="checkbox" value="1" name="StaffAreaPage" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Add Staff Accounts</span></label>
    
                            </div>
+                           <div>
+                            <label class="Polaris-Choice" for="PolarisCheckboxvarient">
+                                
+                                <input type="hidden" value="0" name="UpdateStaffAreaPage"> 
+                               <input type="checkbox" value="1" name="PaymentPage" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Payments</span></label>
+   
+                           </div>
+                           <div>
+                            <label class="Polaris-Choice" for="PolarisCheckboxvarient">
+                                
+                                <input type="hidden" value="0" name="UpdateStaffAreaPage"> 
+                               <input type="checkbox" value="1" name="TranslationPage" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Translation</span></label>
+   
+                           </div>
+
 
                      </div>
                      <div style="width: 33%; display:inline-block;">
@@ -374,6 +389,22 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
                                <input type="checkbox" value="1" name="UpdateStaffAreaPage" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Update Staff Accounts</span></label>
    
                            </div>
+
+                           <div>
+                            <label class="Polaris-Choice" for="PolarisCheckboxvarient">
+                                
+                                <input type="hidden" value="0" name="UpdateStaffAreaPage"> 
+                               <input type="checkbox" value="1" name="TaxPage" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Tax</span></label>
+   
+                           </div>
+                           <div>
+                            <label class="Polaris-Choice" for="PolarisCheckboxvarient">
+                                
+                                <input type="hidden" value="0" name="UpdateStaffAreaPage"> 
+                               <input type="checkbox" value="1" name="NotificationPage" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Notification</span></label>
+   
+                           </div>
+                           
 
                            
 
