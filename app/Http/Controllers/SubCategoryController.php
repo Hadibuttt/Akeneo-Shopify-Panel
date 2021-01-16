@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\categories;
 use App\Models\User;
 use App\Models\sub_categories;
+use App\Models\AdminLogin;
+use Auth;
+
 
 class SubCategoryController extends Controller
 {
@@ -18,22 +21,26 @@ class SubCategoryController extends Controller
     {
         $categorys = categories::all();
         $sub_categorys = sub_categories::all();
-        $users = User::all();
-
+        $users = AdminLogin::all();
+        if(Auth::user()->SubcategoryPage == 1)
         return view('subcategory')->with([
             'categorys'=> $categorys,
             'sub_categorys'=> $sub_categorys,
             'users' => $users
         ]);
+        else    
+            return view('restricted');
     }
 
     public function create()
     {
         $categorys = categories::all();
-
+        if(Auth::user()->AddSubcategoryPage == 1)
         return view('create-subcategory')->with([
             'categorys'=> $categorys
         ]);
+        else    
+            return view('restricted');
     }
 
     public function save(Request $req)
@@ -61,12 +68,14 @@ class SubCategoryController extends Controller
         $categorys = categories::all();
         $sub_categorys = sub_categories::where('subcat_id',$id)->first();
         $cat = categories::where('cat_id',$sub_categorys['cat_id'])->first();
-
+        if(Auth::user()->UpdateSubcategoryPage == 1)
         return view('update-subcategory')->with([
             'categorys'=> $categorys,
             'sub_category'=> $sub_categorys,
             'cat' => $cat
         ]);
+        else    
+            return view('restricted');
     }
 
     public function updated(Request $req,$subcat_id)

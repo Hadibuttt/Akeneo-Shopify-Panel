@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -93,13 +94,15 @@ Route::post('get_coll', [App\Http\Controllers\SelectionController::class, 'getco
 
 Route::get('get_pro', [App\Http\Controllers\SelectionController::class, 'getproduct'] )->name('livesearchh');
 
-
-Route::get('/settings', function () {
-    return view('settings');
-});
-
 Route::get('/restricted', function () {
     return view('restricted');
+});
+
+Route::get('/settings', function () {
+    if(Auth::user()->SettingsPage == 1)
+    return view('settings');
+    else    
+            return view('restricted');
 });
 
 Route::get('/customer', [App\Http\Controllers\CustomerController::class, 'index']);

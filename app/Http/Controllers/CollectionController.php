@@ -7,6 +7,9 @@ use App\Models\categories;
 use App\Models\sub_categories;
 use App\Models\User;
 use App\Models\cat_items;
+use App\Models\AdminLogin;
+use Auth;
+
 
 class CollectionController extends Controller
 {
@@ -18,23 +21,27 @@ class CollectionController extends Controller
     public function index()
     {
         $collections = cat_items::all();
-        $users = User::all();
-
+        $users = AdminLogin::all();
+        if(Auth::user()->CollectionPage == 1)
         return view('collection')->with([
             'collections'=> $collections,
             'users' => $users
         ]);
+        else    
+            return view('restricted');
     }
 
     public function create()
     {
         $categorys = categories::all();
         $sub_categorys = sub_categories::all();
-
+        if(Auth::user()->AddCollectionPage == 1)
         return view('create-collection')->with([
             'categorys'=> $categorys,
             'sub_categorys'=> $sub_categorys
         ]);
+        else    
+            return view('restricted');
     }
 
     public function save(Request $req)
@@ -67,7 +74,7 @@ class CollectionController extends Controller
         $collections = cat_items::where('cat_item_id',$id)->first();
         $subcat = sub_categories::where('subcat_id',$collections['subcat_id'])->first();
         $cat = categories::where('cat_id',$subcat['cat_id'])->first();
-
+        if(Auth::user()->UpdateCollectionPage == 1)
         return view('update-collection')->with([
 
             'categorys'=> $categorys,
@@ -75,8 +82,9 @@ class CollectionController extends Controller
             'collections'=> $collections,
             'subcat' => $subcat,
             'cat' => $cat
-        
         ]);
+        else    
+            return view('restricted');
     }
 
     public function updated(Request $req,$cat_item_id)

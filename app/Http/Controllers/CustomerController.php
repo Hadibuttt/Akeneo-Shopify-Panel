@@ -8,6 +8,8 @@ use App\Models\order_items;
 use App\Models\order_details;
 use App\Models\User;
 use App\Models\products;
+use App\Models\AdminLogin;
+use Auth;
 
 class CustomerController extends Controller
 {
@@ -22,15 +24,17 @@ class CustomerController extends Controller
         $orders = orders::all();
         $order_items = order_items::all();
         $order_details = order_details::all();
-        $users = User::all();
+        $users = AdminLogin::all();
 
-
+        if(Auth::user()->CustomerPage == 1)
         return view('customer')->with([
             'orders'=> $orders,
             'order_items'=> $order_items,
             'order_details'=> $order_details,
             'users' => $users
         ]);
+        else    
+            return view('restricted');
     }
 
     public function about()
@@ -40,12 +44,14 @@ class CustomerController extends Controller
         $order_details = order_details::all();
         $products = products::all();
 
-
+        if(Auth::user()->AboutCustomerPage == 1)
         return view('about-customer')->with([
             'orders'=> $orders,
             'order_items'=> $order_items,
             'order_details'=> $order_details,
             'products' => $products
         ]);
+        else    
+            return view('restricted');
     }
 }

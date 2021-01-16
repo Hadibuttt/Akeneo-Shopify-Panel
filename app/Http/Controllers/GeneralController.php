@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\store;
+use App\Models\AdminLogin;
+use Auth;
 
 class GeneralController extends Controller
 {
@@ -16,10 +18,13 @@ class GeneralController extends Controller
     public function index()
     {
         $stores = store::all()->sortByDesc('id');
+        if(Auth::user()->GeneralPage == 1)
 
         return view('general')->with([
             'stores'=> $stores
         ]);
+        else    
+            return view('restricted');
     }
 
     public function save(Request $req)

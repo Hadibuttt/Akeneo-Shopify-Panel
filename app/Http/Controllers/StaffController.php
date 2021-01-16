@@ -21,12 +21,14 @@ class StaffController extends Controller
         $checks = AdminLogin::all();
 
         $admin = AdminLogin::orderBy('id', 'asc')->first();
-
+        if(Auth::user()->StaffAccountPage == 1)
         return view('staffaccounts')->with([
             'users' => $users,
             'admin' => $admin,
             'checks' => $checks
         ]);
+        else    
+            return view('restricted');
     }
 
     public function create()
@@ -79,18 +81,22 @@ class StaffController extends Controller
     public function update($id)
     {
         $user = AdminLogin::where('id',$id)->first();
+        if(Auth::user()->UpdateStaffAreaPage == 1)
         return view('update-staffarea')->with([
             'user'=> $user
         ]);
+        else    
+            return view('restricted');
     }
 
     public function updated(Request $req,$id)
     {
         $user = AdminLogin::find($id);
+        $hash = Hash::make($req->password);
         $user->f_name = $req->f_name;
         $user->l_name = $req->l_name;
         $user->email = $req->email;
-        $user->password = $req->password;
+        $user->password = $hash;
         $user->OrderPage = $req->OrderPage;
         $user->OrderDetailsPage = $req->OrderDetailsPage;
         $user->ProductPage = $req->ProductPage;
