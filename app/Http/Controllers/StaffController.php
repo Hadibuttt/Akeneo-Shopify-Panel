@@ -33,7 +33,7 @@ class StaffController extends Controller
 
     public function create()
     {
-        if(Auth::user()->StafAreaPage == 1)
+        if(Auth::user()->StaffAreaPage == 1)
             return view('staffarea');
         else    
             return view('restricted');
@@ -118,6 +118,10 @@ class StaffController extends Controller
         $user->StaffAccountPage = $req->StaffAccountPage;
         $user->StaffAreaPage = $req->StaffAreaPage;
         $user->UpdateStaffAreaPage = $req->UpdateStaffAreaPage;
+        $user->TaxPage = $req->TaxPage;
+        $user->PaymentPage = $req->PaymentPage;
+        $user->NotificationPage = $req->NotificationPage;
+        $user->TranslationPage = $req->TranslationPage;
         $user->save();
 
         return redirect('/staffaccounts');

@@ -324,6 +324,21 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
    
                            </div>
 
+                           <div>
+                            <label class="Polaris-Choice" for="PolarisCheckboxvarient">
+                                
+                                <input type="hidden" value="0" name="PaymentPage"> 
+                               <input type="checkbox" value="1" @if ($user->PaymentPage == 1) checked @endif name="PaymentPage" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Payments</span></label>
+   
+                           </div>
+                           <div>
+                            <label class="Polaris-Choice" for="PolarisCheckboxvarient">
+                                
+                                <input type="hidden" value="0" name="TranslationPage"> 
+                               <input type="checkbox" value="1" @if ($user->TranslationPage == 1) checked @endif name="TranslationPage" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Translation</span></label>
+   
+                           </div>
+
                      </div>
                      <div style="width: 33%; display:inline-block;">
                       <div>
@@ -373,6 +388,21 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
                                 
                                 <input type="hidden" value="0" name="UpdateStaffAreaPage"> 
                                <input type="checkbox" value="1" @if ($user->UpdateStaffAreaPage == 1) checked @endif name="UpdateStaffAreaPage" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Update Staff Accounts</span></label>
+   
+                           </div>
+
+                           <div>
+                            <label class="Polaris-Choice" for="PolarisCheckboxvarient">
+                                
+                                <input type="hidden" value="0" name="TaxPage"> 
+                               <input type="checkbox" value="1" @if ($user->TaxPage == 1) checked @endif name="TaxPage" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Tax</span></label>
+   
+                           </div>
+                           <div>
+                            <label class="Polaris-Choice" for="PolarisCheckboxvarient">
+                                
+                                <input type="hidden" value="0" name="NotificationPage"> 
+                               <input type="checkbox" value="1" @if ($user->NotificationPage == 1) checked @endif name="NotificationPage" id="varientCheckbox" style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Notification</span></label>
    
                            </div>
 
