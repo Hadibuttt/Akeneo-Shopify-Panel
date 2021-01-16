@@ -72,7 +72,17 @@ $q = request('q');
                                                         <div class="Polaris-ButtonGroup__Item_yiyol"><span class="Polaris-ActionMenu-SecondaryAction_1dl4i Polaris-ActionMenu-SecondaryAction--newDesignLanguage_1rik8"><button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8" type="button" onclick="Display_import()"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Import</span></span></button></span></div>
                                                     </div>
                                                     </div>
-                                                <div class="Polaris-Page-Header__PrimaryActionWrapper_w8or9"><a data-polaris-unstyled="true" class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--primary_7k9zs" href="/add-product"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Add product</span></span></a></div>
+                                                <div class="Polaris-Page-Header__PrimaryActionWrapper_w8or9"><a data-polaris-unstyled="true" class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--primary_7k9zs" @foreach ($users as $user)
+                                                    @if (Auth::user()->email == $user->email)    
+                                                    @if ($user->AddProductPage == 1) href="/add-product"
+                                                    @else
+                                                    href="/restricted"
+                                                    @endif
+                                                    @endif
+                                                    @endforeach
+                                                    >
+                                                    
+                                                    <span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Add product</span></span></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -903,7 +913,16 @@ $q = request('q');
                                                                     <div class="Go8ev">
                                                                         <div class="jkDBs">
                                                                             <div class="_3Qht4">
-                                                                                <div class="_1Koso" testid="ProductTitles"><span><a style="color:black;" href="update-product/{{$product->id}}/edit" data-polaris-unstyled="true" class="addp"><span class="_3ffC6">{{$product->pro_title}}</span></a></span></div>
+                                                                                <div class="_1Koso" testid="ProductTitles"><span><a style="color:black;" 
+                                                                                    @foreach ($users as $user)
+                                                                                    @if (Auth::user()->email == $user->email)    
+                                                                                    @if ($user->UpdateProductPage == 1) 
+                                                                                    href="update-product/{{$product->id}}/edit" data-polaris-unstyled="true" class="addp" 
+                                                                                    @else
+                                                                                    href="/restricted"
+                                                                                    @endif
+                                                                                    @endif
+                                                                                    @endforeach><span class="_3ffC6">{{$product->pro_title}}</span></a></span></div>
                                                                                 <div class="_2rEIF"><span><a target="_blank" href="addProduct.html" rel="noopener noreferrer" data-polaris-unstyled="true" class="Polaris-Link_yj5sy" tabindex="0" aria-describedby="PolarisTooltipContent18"><span class="Polaris-Icon_yj27d Polaris-Icon--newDesignLanguage_1rik8" aria-label="View on Online Store"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
                                                                                                     <path d="M17.928 9.628C17.837 9.399 15.611 4 10 4S2.162 9.399 2.07 9.628a1.017 1.017 0 0 0 0 .744C2.163 10.601 4.389 16 10 16s7.837-5.399 7.928-5.628a1.017 1.017 0 0 0 0-.744zM10 14a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-6a2 2 0 1 0 .002 4.001A2 2 0 0 0 9.999 8z"></path>
                                                                                                 </svg></span></a></span></div>
@@ -1458,7 +1477,16 @@ $q = request('q');
                                                         <div class="Polaris-ButtonGroup__Item_yiyol"><span class="Polaris-ActionMenu-SecondaryAction_1dl4i Polaris-ActionMenu-SecondaryAction--newDesignLanguage_1rik8"><button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8" type="button" onclick="Display_import()"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Import</span></span></button></span></div>
                                                     </div>
                                                     </div>
-                                                <div class="Polaris-Page-Header__PrimaryActionWrapper_w8or9"><a data-polaris-unstyled="true" class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--primary_7k9zs" href="/add-product"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Add product</span></span></a></div>
+                                                <div class="Polaris-Page-Header__PrimaryActionWrapper_w8or9"><a data-polaris-unstyled="true" class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--primary_7k9zs" @foreach ($users as $user)
+                                                    @if (Auth::user()->email == $user->email)    
+                                                    @if ($user->AddProductPage == 1) 
+                                                    href="/add-product"
+                                                    @else
+                                                    href="/restricted"
+                                                    @endif
+                                                    @endif
+                                                    @endforeach
+                                                    ><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Add product</span></span></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -2294,7 +2322,19 @@ $q = request('q');
                                                                     <div class="Go8ev">
                                                                         <div class="jkDBs">
                                                                             <div class="_3Qht4">
-                                                                                <div class="_1Koso" testid="ProductTitles"><span><a data-polaris-unstyled="true" class="addp"><span class="_3ffC6">{{$product->pro_title}}</span></a></span></div>
+                                                                                <div class="_1Koso" testid="ProductTitles"><span><a style="color:black;" 
+                                                                                    @foreach ($users as $user)
+                                                                                    @if (Auth::user()->email == $user->email)    
+                                                                                    @if ($user->UpdateProductPage == 1) 
+                                                                                    href="update-product/{{$product->id}}/edit" data-polaris-unstyled="true" class="addp"
+                                                                                    @else
+                                                                                    href="/restricted"
+                                                                                    @endif
+                                                                                    @endif
+                                                                                    @endforeach    
+                                                                                    >
+                                                                                    
+                                                                                    <span class="_3ffC6">{{$product->pro_title}}</span></a></span></div>
                                                                                 <div class="_2rEIF"><span><a target="_blank" href="addProduct.html" rel="noopener noreferrer" data-polaris-unstyled="true" class="Polaris-Link_yj5sy" tabindex="0" aria-describedby="PolarisTooltipContent18"><span class="Polaris-Icon_yj27d Polaris-Icon--newDesignLanguage_1rik8" aria-label="View on Online Store"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
                                                                                                     <path d="M17.928 9.628C17.837 9.399 15.611 4 10 4S2.162 9.399 2.07 9.628a1.017 1.017 0 0 0 0 .744C2.163 10.601 4.389 16 10 16s7.837-5.399 7.928-5.628a1.017 1.017 0 0 0 0-.744zM10 14a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-6a2 2 0 1 0 .002 4.001A2 2 0 0 0 9.999 8z"></path>
                                                                                                 </svg></span></a></span></div>

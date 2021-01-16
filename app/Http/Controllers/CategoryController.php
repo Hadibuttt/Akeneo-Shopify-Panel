@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 use App\Models\categories;
 
 class CategoryController extends Controller
@@ -24,9 +25,11 @@ class CategoryController extends Controller
     public function index()
     {
         $categorys = categories::all();
+        $users = User::all();
 
         return view('category')->with([
-            'categorys'=> $categorys
+            'categorys'=> $categorys,
+            'users' => $users
         ]);
     }
 

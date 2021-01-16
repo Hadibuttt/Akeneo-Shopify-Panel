@@ -110,7 +110,18 @@
                                                 <div class="Polaris-Header-Title__TitleAndSubtitleWrapper_40sxf">
                                                     <div class="Polaris-Header-Title_2qj8j">
                                                         <h1 class="Polaris-Header-Title--newDesignLanguageTitle_1wh8d">Category</h1>
-                                                         <div class="Polaris-Page-Header__PrimaryActionWrapper_w8or9" style="position: absolute;top: 10px;right: 0px;"><a data-polaris-unstyled="true" class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--primary_7k9zs" href="/create-category"><span class="Polaris-Button__Content_xd1mk">    <span class="Polaris-Button__Text_yj3uv">Create Category</span></span></a></div>
+                                                         <div class="Polaris-Page-Header__PrimaryActionWrapper_w8or9" style="position: absolute;top: 10px;right: 0px;"><a data-polaris-unstyled="true" class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--primary_7k9zs" @foreach ($users as $user)
+                                                            @if (Auth::user()->email == $user->email)    
+                                                            @if ($user->AddCategoryPage == 1) 
+                                                            href="/create-category"
+                                                            @else
+                                                            href="/restricted"
+                                                            @endif
+                                                            @endif
+                                                            @endforeach    
+                                                            >
+                                                            
+                                                            <span class="Polaris-Button__Content_xd1mk">    <span class="Polaris-Button__Text_yj3uv">Create Category</span></span></a></div>
                                                         
                                                     </div>
                                                 </div>
@@ -280,7 +291,17 @@
                                                                         
                                                                         <td class="_2ROf4">
                                                                             <div class="">
-                                                                                <div title="Monday, November 02, 2020" style="font-weight: 500;color: #1D1F21;"><a href="update-category/{{$category->cat_id}}/edit" style="color: #1D1F21;">{{$category->cat_title}}</a></div>
+                                                                                <div title="Monday, November 02, 2020" style="font-weight: 500;color: #1D1F21;"><a 
+                                                                                    @foreach ($users as $user)
+                                                                                    @if (Auth::user()->email == $user->email)    
+                                                                                    @if ($user->UpdateCategoryPage == 1) 
+                                                                                    href="update-category/{{$category->cat_id}}/edit" 
+                                                                                    @else
+                                                                                    href="/restricted"
+                                                                                    @endif
+                                                                                    @endif
+                                                                                    @endforeach style="color: black;" 
+                                                                                     >{{$category->cat_title}}</a></div>
                                                                                 <div title="Monday, November 02, 2020">{{$category->created_at}}</div>
                                                                             </div>
                                                                         </td>
