@@ -147,9 +147,9 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
 
 <div style="--top-bar-background:#00848e; --top-bar-background-lighter:#1d9ba4; --top-bar-color:#f9fafb; --p-frame-offset:0px; display: inline-block; margin-left: 10px;overflow: hidden;">
     <div class="Polaris-TextContainer Polaris-TextContainer--spacingTight">
-        <div style="--top-bar-background:#00848e; --top-bar-background-lighter:#1d9ba4; --top-bar-color:#f9fafb; --p-frame-offset:0px;bottom: 40px;width"><button class="Polaris-Button Polaris-Button--plain" type="button" style="padding-top: 0;padding-bottom: 0;"><span class="Polaris-Button__Content"><span class="Polaris-Button__Text">
+        <div style="--top-bar-background:#00848e; --top-bar-background-lighter:#1d9ba4; --top-bar-color:#f9fafb; --p-frame-offset:0px;bottom: 40px;width"><button class="Polaris-Button Polaris-Button--plain" type="button" style="padding-top: 0;padding-bottom: 0;"><a href="update-staffarea/{{$user->id}}/edit" style="color:#006fbb;"><span class="Polaris-Button__Content"><span class="Polaris-Button__Text">
             
-        {{$user->f_name}} {{$user->l_name}} </span></span></button>
+        {{$user->f_name}} {{$user->l_name}} </span></a></span></button>
 
             <p>Last login was Monday, 4 January 2021, 04:39 -0500</p>
         </div>

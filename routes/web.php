@@ -45,6 +45,8 @@ Route::get('/update-subcategory/{subcat_id}/edit', [App\Http\Controllers\SubCate
 
 Route::get('/update-collection/{cat_item_id}/edit', [App\Http\Controllers\CollectionController::class, 'update']);
 
+Route::get('/update-staffarea/{id}/edit', [App\Http\Controllers\StaffController::class, 'update']);
+
 Route::get('/create-category', [App\Http\Controllers\CategoryController::class, 'create']);
 
 Route::get('/create-subcategory', [App\Http\Controllers\SubCategoryController::class, 'create']);

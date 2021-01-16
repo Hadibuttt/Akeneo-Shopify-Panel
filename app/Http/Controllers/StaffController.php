@@ -10,12 +10,10 @@ class StaffController extends Controller
 {
     public function index()
     {
-        $staffs = staffarea::all();
         $users = User::all();
         $admin = User::orderBy('id', 'asc')->first();
 
         return view('staffaccounts')->with([
-            'staffs'=> $staffs,
             'users' => $users,
             'admin' => $admin
         ]);
@@ -61,4 +59,14 @@ class StaffController extends Controller
         $user->save();
         return redirect('staffaccounts');
     }
+
+    public function update($id)
+    {
+        $user = User::where('id',$id)->first();
+        return view('update-staffarea')->with([
+
+            'user'=> $user
+        ]);
+    }
+
 }
