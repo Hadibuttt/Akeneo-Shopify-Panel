@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\categories;
+use App\Models\User;
 use App\Models\sub_categories;
 
 class SubCategoryController extends Controller
@@ -12,10 +13,12 @@ class SubCategoryController extends Controller
     {
         $categorys = categories::all();
         $sub_categorys = sub_categories::all();
+        $users = User::all();
 
         return view('subcategory')->with([
             'categorys'=> $categorys,
-            'sub_categorys'=> $sub_categorys
+            'sub_categorys'=> $sub_categorys,
+            'users' => $users
         ]);
     }
 

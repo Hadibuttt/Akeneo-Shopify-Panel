@@ -1,3 +1,9 @@
+<?php 
+use App\Models\User; 
+
+$users = User::all();
+?>
+
 @extends('layouts.app')
 @section('content')
 
@@ -40,7 +46,17 @@
                                         <div class="Polaris-Layout__Section_1b1h1">
                                             <div class="Polaris-Card_yis1o Polaris-Card--newDesignLanguage_1rik8">
                                                 <ul class="XYWZh" style="--med-width-rows:6;--max-width-rows:4">
-                                                    <li class="_21VNU"><a href="/general" style="text-decoration: none;" aria-disabled="false" class="_3zeWe">
+                                                    <li class="_21VNU"><a 
+                                                        @foreach ($users as $user)
+                                                        @if (Auth::user()->email == $user->email)    
+                                                        @if ($user->GeneralPage == 1) 
+                                                        href="/general" 
+                                                        @else
+                                                        href="/restricted"
+                                                        @endif
+                                                        @endif
+                                                        @endforeach    
+                                                        style="text-decoration: none;" aria-disabled="false" class="_3zeWe">
                                                             <div class="_2xj6B"><span class="Polaris-Icon_yj27d Polaris-Icon--newDesignLanguage_1rik8"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
                                                                         <path fill-rule="evenodd" d="M9.027 0a1 1 0 0 0-.99.859l-.37 2.598A6.993 6.993 0 0 0 5.742 4.57l-2.437-.98a1 1 0 0 0-1.239.428L.934 5.981a1 1 0 0 0 .248 1.287l2.066 1.621a7.06 7.06 0 0 0 0 2.222l-2.066 1.621a1 1 0 0 0-.248 1.287l1.132 1.962a1 1 0 0 0 1.239.428l2.438-.979a6.995 6.995 0 0 0 1.923 1.113l.372 2.598a1 1 0 0 0 .99.859h2.265a1 1 0 0 0 .99-.859l.371-2.598a6.995 6.995 0 0 0 1.924-1.112l2.438.978a1 1 0 0 0 1.238-.428l1.133-1.962a1 1 0 0 0-.249-1.287l-2.065-1.621a7.063 7.063 0 0 0 0-2.222l2.065-1.621a1 1 0 0 0 .249-1.287l-1.133-1.962a1 1 0 0 0-1.239-.428l-2.437.979a6.994 6.994 0 0 0-1.924-1.113L12.283.86a1 1 0 0 0-.99-.859H9.027zm1.133 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
                                                                     </svg></span></div>
@@ -85,7 +101,17 @@
                                                                 <p class="_2f-D-">Manage notifications sent to you and your customers</p>
                                                             </div>
                                                         </a></li>
-                                                    <li class="_21VNU"><a href="/staffaccounts" aria-disabled="false" class="_3zeWe">
+                                                    <li class="_21VNU"><a 
+                                                        @foreach ($users as $user)
+                                                        @if (Auth::user()->email == $user->email)    
+                                                        @if ($user->StaffAccountPage == 1) 
+                                                        href="/staffaccounts"
+                                                        @else
+                                                        href="/restricted"
+                                                        @endif
+                                                        @endif
+                                                        @endforeach    
+                                                        aria-disabled="false" class="_3zeWe">
                                                             <div class="_2xj6B"><span class="Polaris-Icon_yj27d Polaris-Icon--newDesignLanguage_1rik8"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
                                                                 <path d="M14.363 5.22a4.22 4.22 0 1 1-8.439 0 4.22 4.22 0 0 1 8.439 0zM2.67 14.469c1.385-1.09 4.141-2.853 7.474-2.853 3.332 0 6.089 1.764 7.474 2.853.618.486.81 1.308.567 2.056l-.333 1.02A2.11 2.11 0 0 1 15.846 19H4.441a2.11 2.11 0 0 1-2.005-1.455l-.333-1.02c-.245-.748-.052-1.57.567-2.056z"></path>
                                                                     </svg></span></div>

@@ -110,7 +110,18 @@
                                                 <div class="Polaris-Header-Title__TitleAndSubtitleWrapper_40sxf">
                                                     <div class="Polaris-Header-Title_2qj8j">
                                                         <h1 class="Polaris-Header-Title--newDesignLanguageTitle_1wh8d">Collections</h1>
-                                                         <div class="Polaris-Page-Header__PrimaryActionWrapper_w8or9" style="position: absolute;top: 10px;right: 0px;"><a data-polaris-unstyled="true" class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--primary_7k9zs" href="/create-collection"><span class="Polaris-Button__Content_xd1mk">    <span class="Polaris-Button__Text_yj3uv">Create Collection</span></span></a></div>
+                                                         <div class="Polaris-Page-Header__PrimaryActionWrapper_w8or9" style="position: absolute;top: 10px;right: 0px;"><a data-polaris-unstyled="true" class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--primary_7k9zs" 
+                                                            @foreach ($users as $user)
+                                                            @if (Auth::user()->email == $user->email)    
+                                                            @if ($user->AddCollectionPage == 1) 
+                                                            href="/create-collection"
+                                                            @else
+                                                            href="/restricted"
+                                                            @endif
+                                                            @endif
+                                                            @endforeach    
+                                                            >
+                                                            <span class="Polaris-Button__Content_xd1mk">    <span class="Polaris-Button__Text_yj3uv">Create Collection</span></span></a></div>
                                                         
                                                     </div>
                                                 </div>
@@ -276,7 +287,17 @@
                                                                         
                                                                         <td class="_2ROf4">
                                                                             <div class="">
-                                                                                <div title="Monday, November 02, 2020" style="font-weight: 500;color: #1D1F21;"><a href="update-collection/{{$collection->cat_item_id}}/edit" style="color: #1D1F21;">{{$collection->cat_item_title}}</a></div>
+                                                                                <div title="Monday, November 02, 2020" style="font-weight: 500;color: #1D1F21;"><a 
+                                                                                    @foreach ($users as $user)
+                                                                                    @if (Auth::user()->email == $user->email)    
+                                                                                    @if ($user->UpdateCollectionPage == 1) 
+                                                                                    href="update-collection/{{$collection->cat_item_id}}/edit" 
+                                                                                    @else
+                                                                                    href="/restricted"
+                                                                                    @endif
+                                                                                    @endif
+                                                                                    @endforeach    
+                                                                                    style="color: #1D1F21;">{{$collection->cat_item_title}}</a></div>
                                                                                 <div title="Monday, November 02, 2020">{{$collection->created_at}}</div>
                                                                             </div>
                                                                         </td>

@@ -354,7 +354,18 @@
 
                                                                 <div class="Polaris-ResourceItem__Actions_17m67">
                                                                     <div class="Polaris-ButtonGroup_yy85z Polaris-ButtonGroup--segmented_150jh" data-buttongroup-segmented="true">
-                                                                        <div class="Polaris-ButtonGroup__Item_yiyol"><a data-polaris-unstyled="true" class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--sizeSlim_1p6ue" aria-label="View latest order (#1060)" href="about-customer?c_id={{$order_detail->order_id}}"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">View Profile</span></span></a></div>
+                                                                        <div class="Polaris-ButtonGroup__Item_yiyol"><a data-polaris-unstyled="true" class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--sizeSlim_1p6ue" aria-label="View latest order (#1060)" 
+                                                                            @foreach ($users as $user)
+                                                                            @if (Auth::user()->email == $user->email)    
+                                                                            @if ($user->AboutCustomerPage == 1) 
+                                                                            href="about-customer?c_id={{$order_detail->order_id}}"
+                                                                            @else
+                                                                            href="/restricted"
+                                                                            @endif
+                                                                            @endif
+                                                                            @endforeach    
+                                                                            >
+                                                                            <span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">View Profile</span></span></a></div>
                                                                     </div>
                                                                 </div>
                                                             </div>
