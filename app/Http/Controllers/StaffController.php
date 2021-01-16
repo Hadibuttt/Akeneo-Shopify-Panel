@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\AdminLogin;
 use\Illuminate\Support\Facades\Hash;
+use Auth;
 
 class StaffController extends Controller
 {
@@ -30,7 +31,10 @@ class StaffController extends Controller
 
     public function create()
     {
-        return view('staffarea');
+        if(Auth::user()->StafAreaPage == 1)
+            return view('staffarea');
+        else    
+            return view('restricted');
     }
 
     public function save(Request $req)

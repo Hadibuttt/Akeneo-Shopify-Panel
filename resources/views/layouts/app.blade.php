@@ -566,10 +566,10 @@ $store = store::orderBy('id', 'DESC')->first();
                                                                   <path d="M10 19a8 8 0 1 0 0-16 8 8 0 0 0 0 16zM9.293 8.707a1 1 0 0 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3a1 1 0 0 1-1.414-1.414L10.586 12H7a1 1 0 1 1 0-2h3.586L9.293 8.707z"></path>
                                                               </svg></span></div>
                                                       <div class="Polaris-ActionList__Text_yj3uv">Sign out</div>
-                                                       
-                    
                                                   </div>
-                                              </a><form method="POST" id="logout-form" action={{route('logout')}}>@csrf</form></li>
+                                              </a></li>
+                                              <form method="POST" id="logout-form" action={{route('logout')}}>
+                                                @csrf
                                           <li><button type="button" class="Polaris-ActionList__Item_yiyol Polaris-ActionList--newDesignLanguage_1rik8" onclick="Close_Ad()">
                                                   <div class="Polaris-ActionList__Content_xd1mk">
                                                       <div class="Polaris-ActionList__Prefix_10fbz Polaris-ActionList--newDesignLanguage_1rik8"><span class="Polaris-Icon_yj27d Polaris-Icon--newDesignLanguage_1rik8"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
@@ -577,7 +577,7 @@ $store = store::orderBy('id', 'DESC')->first();
                                                               </svg></span></div>
                                                       <div class="Polaris-ActionList__Text_yj3uv">Close</div>
                                                   </div>
-                                              </button></li>
+                                              </button></li></form>
                                       </ul>
                                   </div>
                               </li>

@@ -8,6 +8,8 @@ use App\Models\categories;
 use App\Models\sub_categories;
 use App\Models\cat_items;
 use App\Models\product_images;
+use App\Models\AdminLogin;
+use Auth;
 
 class AddProductController extends Controller
 {
@@ -28,13 +30,16 @@ class AddProductController extends Controller
         $sub_categorys = sub_categories::all();
         $collections = cat_items::all();
         $products = products::all();
-
+        
+        if(Auth::user()->AddProductPage == 1)
         return view('add-product')->with([
             'categorys'=> $categorys,
             'sub_categorys'=> $sub_categorys,
             'collections'=> $collections,
             'products' => $products
         ]);
+        else    
+        return view('restricted');
     }
 
     public function update()
@@ -43,13 +48,15 @@ class AddProductController extends Controller
         $sub_categorys = sub_categories::all();
         $collections = cat_items::all();
         $products = products::all();
-
+        if(Auth::user()->UpdateProductPage == 1)
         return view('update-product')->with([
             'categorys'=> $categorys,
             'sub_categorys'=> $sub_categorys,
             'collections'=> $collections,
             'products' => $products
         ]);
+        else    
+        return view('restricted');
     }
 
     /**

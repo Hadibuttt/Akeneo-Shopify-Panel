@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\orders;
 use App\Models\order_items;
 use App\Models\order_details;
-use App\Models\User;
+use App\Models\AdminLogin;
+use Auth;
 
 class OrderController extends Controller
 {
@@ -26,14 +27,17 @@ class OrderController extends Controller
         $orders = orders::all();
         $order_items = order_items::all();
         $order_details = order_details::all();
-        $users = User::all();
+        $users = AdminLogin::all();
 
+        if(Auth::user()->OrderPage == 1)
         return view('order')->with([
             'orders'=> $orders,
             'order_items'=> $order_items,
             'order_details'=> $order_details,
             'users' => $users
         ]);
+        else    
+            return view('restricted');
     }
 
     /**

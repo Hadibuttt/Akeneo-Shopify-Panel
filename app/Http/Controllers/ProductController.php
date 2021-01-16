@@ -8,6 +8,8 @@ use App\Models\categories;
 use App\Models\sub_categories;
 use App\Models\cat_items;
 use App\Models\User;
+use App\Models\AdminLogin;
+use Auth;
 
 
 class ProductController extends Controller
@@ -23,8 +25,9 @@ class ProductController extends Controller
         $sub_categorys = sub_categories::all();
         $collections = cat_items::all();
         $products = products::all();
-        $users = User::all();
+        $users = AdminLogin::all();
 
+        if(Auth::user()->ProductPage == 1)
         return view('product')->with([
             'categorys'=> $categorys,
             'sub_categorys'=> $sub_categorys,
@@ -32,5 +35,7 @@ class ProductController extends Controller
             'products' => $products,
             'users' => $users
         ]);
+        else    
+        return view('restricted');
     }
 }
