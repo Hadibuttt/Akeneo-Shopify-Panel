@@ -12,10 +12,12 @@ class StaffController extends Controller
     {
         $staffs = staffarea::all();
         $users = User::all();
+        $admin = User::orderBy('id', 'asc')->first();
 
         return view('staffaccounts')->with([
             'staffs'=> $staffs,
-            'users' => $users
+            'users' => $users,
+            'admin' => $admin
         ]);
     }
 
