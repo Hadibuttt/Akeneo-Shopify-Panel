@@ -48,7 +48,7 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
                                 <div class="Polaris-Page-Header_z4uwg Polaris-Page-Header--hasNavigation_gfpa8 Polaris-Page-Header--hasActionMenu_1wx04 Polaris-Page-Header--mobileView_i07vm Polaris-Page-Header--newDesignLanguage_1rik8 Polaris-Page-Header--mediumTitle_bfol6" style="margin-bottom: 40px;" >
                                     <div class="Polaris-Page-Header__Row_375v7 Polaris-Page-Header__RowCondensed_1gexu">
                                         <div class="Polaris-Page-Header__BreadcrumbWrapper_1tgwk Polaris-Page-Header--newDesignLanguage_1rik8">
-                                            <nav role="navigation"><a data-polaris-unstyled="true" class="Polaris-Breadcrumbs__Breadcrumb_llsun Polaris-Breadcrumbs--newDesignLanguage_1rik8" href="setting.html"><span class="Polaris-Breadcrumbs__ContentWrapper_1yvfo"><span class="Polaris-Breadcrumbs__Icon_yj27d"><span class="Polaris-Icon_yj27d Polaris-Icon--newDesignLanguage_1rik8"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
+                                            <nav role="navigation"><a data-polaris-unstyled="true" class="Polaris-Breadcrumbs__Breadcrumb_llsun Polaris-Breadcrumbs--newDesignLanguage_1rik8" href="/settings"><span class="Polaris-Breadcrumbs__ContentWrapper_1yvfo"><span class="Polaris-Breadcrumbs__Icon_yj27d"><span class="Polaris-Icon_yj27d Polaris-Icon--newDesignLanguage_1rik8"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
                                                                     <path d="M17 9H5.414l3.293-3.293a.999.999 0 1 0-1.414-1.414l-5 5a.999.999 0 0 0 0 1.414l5 5a.997.997 0 0 0 1.414 0 .999.999 0 0 0 0-1.414L5.414 11H17a1 1 0 1 0 0-2z"></path>
                                                                 </svg></span></span><span class="Polaris-VisuallyHidden_yrtt5">Products</span></span></a></nav>
                                         </div>
@@ -95,7 +95,7 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
           <div class="Polaris-TextContainer">
             <h2 class="Polaris-Heading">Permissions</h2>
             <div class="Polaris-Layout__AnnotationDescription">
-              <p>Manage what staff can     see or do in your store.</p>
+              <p>Manage what staff can see or do in your store.</p>
             </div>
           </div>
         </div>
@@ -113,11 +113,11 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
                                       <span aria-label="Farrah" role="img" class="Polaris-Avatar Polaris-Avatar--sizeMedium" style="display: inline-block;top: 5px;"><span class="Polaris-Avatar__Initials"><svg class="Polaris-Avatar__Svg" viewBox="0 0 40 40">
                                        <path fill="currentColor" d="M8.28 27.5A14.95 14.95 0 0120 21.8c4.76 0 8.97 2.24 11.72 5.7a14.02 14.02 0 01-8.25 5.91 14.82 14.82 0 01-6.94 0 14.02 14.02 0 01-8.25-5.9zM13.99 12.78a6.02 6.02 0 1112.03 0 6.02 6.02 0 01-12.03 0z"></path>
                                    </svg></span></span>
-                       
+                                   <p style="text-align: right;float:right; ">Full Access</p> 
 
                        <div style="--top-bar-background:#00848e; --top-bar-background-lighter:#1d9ba4; --top-bar-color:#f9fafb; --p-frame-offset:0px; display: inline-block; margin-left: 10px;">
                            <div class="Polaris-TextContainer Polaris-TextContainer--spacingTight">
-                               <div style="--top-bar-background:#00848e; --top-bar-background-lighter:#1d9ba4; --top-bar-color:#f9fafb; --p-frame-offset:0px;bottom: 40px;"><button class="Polaris-Button Polaris-Button--plain" type="button" style="padding-top: 0;padding-bottom: 0;"><span class="Polaris-Button__Content"><span class="Polaris-Button__Text">{{$admin->f_name}} {{$admin->l_name}}</span></span></button>
+                               <div style="--top-bar-background:#00848e; --top-bar-background-lighter:#1d9ba4; --top-bar-color:#f9fafb; --p-frame-offset:0px;bottom: 40px;"><button class="Polaris-Button Polaris-Button--plain" type="button" style="padding-top: 0;padding-bottom: 0;text-decoration:none;"><span class="Polaris-Button__Content"><span class="Polaris-Button__Text">{{$admin->f_name}} {{$admin->l_name}}</span></span></button>
                                    <p>Last login was Monday, 4 January 2021, 04:39 -0500</p>
                                </div>
                            </div>
@@ -143,11 +143,23 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
             <path fill="currentColor" d="M8.28 27.5A14.95 14.95 0 0120 21.8c4.76 0 8.97 2.24 11.72 5.7a14.02 14.02 0 01-8.25 5.91 14.82 14.82 0 01-6.94 0 14.02 14.02 0 01-8.25-5.9zM13.99 12.78a6.02 6.02 0 1112.03 0 6.02 6.02 0 01-12.03 0z"></path>
         </svg></span></span>
 
-<p style="text-align: right;float:right; ">Full Access</p>
+
 
 <div style="--top-bar-background:#00848e; --top-bar-background-lighter:#1d9ba4; --top-bar-color:#f9fafb; --p-frame-offset:0px; display: inline-block; margin-left: 10px;overflow: hidden;">
     <div class="Polaris-TextContainer Polaris-TextContainer--spacingTight">
-        <div style="--top-bar-background:#00848e; --top-bar-background-lighter:#1d9ba4; --top-bar-color:#f9fafb; --p-frame-offset:0px;bottom: 40px;width"><button class="Polaris-Button Polaris-Button--plain" type="button" style="padding-top: 0;padding-bottom: 0;"><a href="update-staffarea/{{$user->id}}/edit" style="color:#006fbb;"><span class="Polaris-Button__Content"><span class="Polaris-Button__Text">
+        <div style="--top-bar-background:#00848e; --top-bar-background-lighter:#1d9ba4; --top-bar-color:#f9fafb; --p-frame-offset:0px;bottom: 40px;width"><button class="Polaris-Button Polaris-Button--plain" type="button" style="padding-top: 0;padding-bottom: 0;"><a 
+            @foreach ($checks as $check)
+            @if (Auth::user()->email == $check->email)    
+            @if ($check->UpdateStaffAreaPage == 1) 
+            href="update-staffarea/{{$user->id}}/edit"
+            @else
+            href="/restricted"
+            @endif
+            @endif
+            @endforeach
+            style="color:#006fbb;">
+            
+            <span class="Polaris-Button__Content"><span class="Polaris-Button__Text">
             
         {{$user->f_name}} {{$user->l_name}} </span></a></span></button>
 

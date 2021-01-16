@@ -73,6 +73,8 @@ Route::post('/update-subcategory/{subcat_id}/updated', [App\Http\Controllers\Sub
 
 Route::post('/update-collection/{cat_item_id}/updated', [App\Http\Controllers\CollectionController::class, 'updated'] );
 
+Route::post('/update-staffarea/{id}/updated', [App\Http\Controllers\StaffController::class, 'updated'] );
+
 Route::post('submit', [App\Http\Controllers\AddProductController::class, 'save'] );
 
 Route::post('successed', [App\Http\Controllers\StaffController::class, 'save'] );

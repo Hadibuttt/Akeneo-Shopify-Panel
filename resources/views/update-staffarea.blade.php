@@ -94,7 +94,7 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
                 <div class="Polaris-FormLayout__Item_yiyol">
                     <div class="">
 
-                        <form action="successed" method="post">
+                        <form action="/update-staffarea/{{$user->id}}/updated" method="post">
                             @csrf
 
                         <div class="Polaris-Labelled__LabelWrapper_bf6ys">
@@ -205,7 +205,7 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
                                       <div class="Polaris-ResourceList__CheckableButtonWrapper_1mxl4">
                                      
                                       
-             <label class="Polaris-Choice" for="PolarisCheckboxvarient"><input type="checkbox" id="varientCheckbox" onchange="showper()"style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">This staff account will have full permissions</span></label>
+             <label class="Polaris-Choice" for="PolarisCheckboxvarient"><input type="checkbox" id="varientCheckbox" onchange="showper()"style="height: 15px; width:15px; border: solid 4px;" onclick="varient()"><span class="Polaris-Choice__Label">Check the checkbox to give staff account permission to different pages</span></label>
              <div >
                  <div  id="Polaris-Manage"><hr>    
                  <div class="Polaris-TextContainer" style="margin-top: 20px;">
@@ -385,7 +385,7 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
 
                      </div>
                      <div class="Polaris-Stack__Item_yiyol">
-                        <button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--primary_7k9zs" type="submit"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Save</span></span></button></div>
+                        <button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--primary_7k9zs" type="submit"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Update</span></span></button></div>
                     </form>
                     </div>
                 
