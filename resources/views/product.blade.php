@@ -146,7 +146,7 @@ $q = request('q');
                                                                             <div class="Polaris-Filters-ConnectedFilterControl__Item_yiyol">
                                                                                 <div class="Polaris-Labelled--hidden_riqie">
                                                                                     <div class="Polaris-Labelled__LabelWrapper_bf6ys">
-                                                                                        <div class="Polaris-Label_2vd36"><label id="PolarisTextField25Label" for="PolarisTextField25" class="Polaris-Label__Text_yj3uv">Filter orders</label></div>
+                                                                                        <div class="Polaris-Label_2vd36"><label id="PolarisTextField25Label" for="PolarisTextField25" class="Polaris-Label__Text_yj3uv">Filter Products</label></div>
                                                                                     </div>
                                                                                     <div class="Polaris-Connected_wopc9 Polaris-Connected--newDesignLanguage_1rik8">
                                                                                         <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
@@ -154,7 +154,7 @@ $q = request('q');
                                                                                                 <div class="Polaris-TextField__Prefix_10fbz" id="PolarisTextField25Prefix"><span class="Polaris-Filters__SearchIcon_158og"><span class="Polaris-Icon_yj27d Polaris-Icon--newDesignLanguage_1rik8"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
                                                                                                                 <path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm9.707 4.293l-4.82-4.82A5.968 5.968 0 0 0 14 8 6 6 0 0 0 2 8a6 6 0 0 0 6 6 5.968 5.968 0 0 0 3.473-1.113l4.82 4.82a.997.997 0 0 0 1.414 0 .999.999 0 0 0 0-1.414z"></path>
                                                                                                             </svg></span></span></div>
-<input id="qk" name="q" type="text" placeholder="Filter orders" class="Polaris-TextField__Input_30ock Polaris-TextField__Input--hasClearButton_15k6h" aria-labelledby="PolarisTextField25Label PolarisTextField25Prefix" aria-invalid="false" aria-multiline="false">
+<input id="qk" name="q" type="text" placeholder="Filter Producs" class="Polaris-TextField__Input_30ock Polaris-TextField__Input--hasClearButton_15k6h" aria-labelledby="PolarisTextField25Label PolarisTextField25Prefix" aria-invalid="false" aria-multiline="false">
                                                                                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>    
                                                                                     <script>
                                                                                         $(document).ready(function(){
@@ -1550,7 +1550,7 @@ $q = request('q');
                                                                             <div class="Polaris-Filters-ConnectedFilterControl__Item_yiyol">
                                                                                 <div class="Polaris-Labelled--hidden_riqie">
                                                                                     <div class="Polaris-Labelled__LabelWrapper_bf6ys">
-                                                                                        <div class="Polaris-Label_2vd36"><label id="PolarisTextField25Label" for="PolarisTextField25" class="Polaris-Label__Text_yj3uv">Filter orders</label></div>
+                                                                                        <div class="Polaris-Label_2vd36"><label id="PolarisTextField25Label" for="PolarisTextField25" class="Polaris-Label__Text_yj3uv">Filter Products</label></div>
                                                                                     </div>
                                                                                     <div class="Polaris-Connected_wopc9 Polaris-Connected--newDesignLanguage_1rik8">
                                                                                         <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
@@ -1559,7 +1559,7 @@ $q = request('q');
                                                                                                                 <path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm9.707 4.293l-4.82-4.82A5.968 5.968 0 0 0 14 8 6 6 0 0 0 2 8a6 6 0 0 0 6 6 5.968 5.968 0 0 0 3.473-1.113l4.82 4.82a.997.997 0 0 0 1.414 0 .999.999 0 0 0 0-1.414z"></path>
                                                                                                             </svg></span></span></div>
 
-<input id="q" name="q" type="text" placeholder="Filter orders" class="Polaris-TextField__Input_30ock Polaris-TextField__Input--hasClearButton_15k6h" aria-labelledby="PolarisTextField25Label PolarisTextField25Prefix" aria-invalid="false" aria-multiline="false">
+<input id="q" name="q" type="text" placeholder="Filter Products" class="Polaris-TextField__Input_30ock Polaris-TextField__Input--hasClearButton_15k6h" aria-labelledby="PolarisTextField25Label PolarisTextField25Prefix" aria-invalid="false" aria-multiline="false">
 {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>    
                                                                                     <script>
                                                                                         $(document).ready(function(){

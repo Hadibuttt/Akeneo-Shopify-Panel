@@ -90,7 +90,7 @@ class SelectionController extends Controller
                                                                     <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.436.436 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
                                                                 </svg></span></span></span></span><span class="Polaris-Choice__Label_2vd36">Select: 3M MicroTouch™ Chassis 1123988</span></label></span></div>
                                 </div>
-                                <div class="h7HU2" testid="Media"><span class="Polaris-Thumbnail_15hj1 Polaris-Thumbnail--sizeMedium_5f35p"><img src="assets\img\$title->pro_img" alt="3M MicroTouch™ Chassis 1123988"></span></div>
+                                <div class="h7HU2" testid="Media"><span class="Polaris-Thumbnail_15hj1 Polaris-Thumbnail--sizeMedium_5f35p"><img src="assets/img/'.$title->pro_img.'" alt="3M MicroTouch™ Chassis 1123988"></span></div>
                             </div>
                             
                                 
@@ -98,7 +98,7 @@ class SelectionController extends Controller
                             <div class="Go8ev">
                                 <div class="jkDBs">
                                     <div class="_3Qht4">
-                                        <div class="_1Koso" testid="ProductTitles"><span><a data-polaris-unstyled="true" class="addp"><span class="_3ffC6">'.$title->pro_title.'</span></a></span></div>
+                                        <div class="_1Koso" testid="ProductTitles"><span><a data-polaris-unstyled="true" style="color:black;" href="update-product/'.$title->id.'/edit" class="addp"><span class="_3ffC6">'.$title->pro_title.'</span></a></span></div>
                                         <div class="_2rEIF"><span><a target="_blank" href="addProduct.html" rel="noopener noreferrer" data-polaris-unstyled="true" class="Polaris-Link_yj5sy" tabindex="0" aria-describedby="PolarisTooltipContent18"><span class="Polaris-Icon_yj27d Polaris-Icon--newDesignLanguage_1rik8" aria-label="View on Online Store"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
                                                             <path d="M17.928 9.628C17.837 9.399 15.611 4 10 4S2.162 9.399 2.07 9.628a1.017 1.017 0 0 0 0 .744C2.163 10.601 4.389 16 10 16s7.837-5.399 7.928-5.628a1.017 1.017 0 0 0 0-.744zM10 14a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-6a2 2 0 1 0 .002 4.001A2 2 0 0 0 9.999 8z"></path>
                                                         </svg></span></a></span></div>
@@ -177,7 +177,7 @@ class SelectionController extends Controller
                 
                 <td class="_2ROf4">
                     <div class="">
-                        <div title="Monday, November 02, 2020" style="font-weight: 500;color: #1D1F21;"><a href="" style="color: #1D1F21;">'.$title->cat_title.'</a></div>
+                        <div title="Monday, November 02, 2020" style="font-weight: 500;color: #1D1F21;"><a href="/update-category/'.$title->cat_id.'/edit" style="color: #1D1F21;">'.$title->cat_title.'</a></div>
                         <div title="Monday, November 02, 2020">'.$title->created_at.'</div>
                     </div>
                 </td>
@@ -228,7 +228,7 @@ class SelectionController extends Controller
                 
                 <td class="_2ROf4">
                     <div class="">
-                        <div title="Monday, November 02, 2020" style="font-weight: 500;color: #1D1F21;"><a href="" style="color: #1D1F21;">'.$title->subcat_title.'</a></div>
+                        <div title="Monday, November 02, 2020" style="font-weight: 500;color: #1D1F21;"><a href="update-subcategory/'.$title->subcat_id.'/edit" style="color: #1D1F21;">'.$title->subcat_title.'</a></div>
                         <div title="Monday, November 02, 2020">'.$title->created_at.'</div>
                     </div>
                 </td>
@@ -281,7 +281,7 @@ class SelectionController extends Controller
                 
                 <td class="_2ROf4">
                     <div class="">
-                        <div title="Monday, November 02, 2020" style="font-weight: 500;color: #1D1F21;"><a href="" style="color: #1D1F21;">'.$title->cat_item_title.'</a></div>
+                        <div title="Monday, November 02, 2020" style="font-weight: 500;color: #1D1F21;"><a href="update-collection/'.$title->cat_item_id.'/edit" style="color: #1D1F21;">'.$title->cat_item_title.'</a></div>
                         <div title="Monday, November 02, 2020">'.$title->created_at.'</div>
                     </div>
                 </td>
