@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MollieController;
 
 
 /*
@@ -112,6 +113,9 @@ Route::get('/general', [App\Http\Controllers\GeneralController::class, 'index'])
 Route::get('/about-customer', [App\Http\Controllers\CustomerController::class, 'about']);
 
 Route::get('/order', [App\Http\Controllers\OrderController::class, 'index']);
+
+Route::get('/mollie-paymnet',[MollieController::Class,'preparePayment'])->name('mollie.payment');
+Route::get('/payment-success',[MollieController::Class, 'paymentSuccess'])->name('payment.success');
 
 Route::prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function()
 {
