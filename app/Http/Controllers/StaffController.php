@@ -118,6 +118,29 @@ class StaffController extends Controller
 
     public function updated(Request $req,$id)
     {
+        
+        $data = $req->all();
+       
+        $rule = array(
+         'f_name' => 'required', 'string', 'max:255',
+         'l_name' => 'required', 'string', 'max:255',
+         'email' => 'required', 'string', 'email', 'max:255', 'unique:users',
+         'password' => 'required|string|min:8|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/',
+         );
+         
+         $messages = [    
+         'password.regex' => 'Your password must be more than 8 characters long, should contain at-least 1 Uppercase, 1 Lowercase, 1 Numeric and 1 Special character!'
+         ];
+ 
+          $validator = Validator::make($data,$rule,$messages);
+ 
+     if ($validator->fails())
+     {
+         return Redirect::back()->withErrors($validator->errors());
+     } 
+        
+     else
+     {    
         $user = AdminLogin::find($id);
         $hash = Hash::make($req->password);
         $user->f_name = $req->f_name;
@@ -152,6 +175,7 @@ class StaffController extends Controller
         $user->save();
 
         return redirect('/staffaccounts');
+     }
     }
 
 }

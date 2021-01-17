@@ -110,6 +110,9 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
                                 </div>
                             </div>
                         </div>
+                        @error('f_name')
+                                        <div class="error" style="color:red;">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
                 <div class="Polaris-FormLayout__Item_yiyol">
@@ -128,6 +131,9 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
                                 </div>
                             </div>
                         </div>
+                        @error('l_name')
+                                        <div class="error" style="color:red;">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
             </div>
@@ -143,12 +149,16 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
                             <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
                                 <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8">
                                     
-                                    <input type="email" required="" name="email" id="InventoryCardBarcode" class="Polaris-TextField__Input_30ock" aria-labelledby="InventoryCardBarcodeLabel" aria-invalid="false" aria-multiline="false" value="{{$user->email}}">
+                                    <input type="email" name="email" id="InventoryCardBarcode" class="Polaris-TextField__Input_30ock" aria-labelledby="InventoryCardBarcodeLabel" aria-invalid="false" aria-multiline="false" value="{{$user->email}}">
 
                                     <div class="Polaris-TextField__Backdrop_1x2i2"></div>
                                 </div>
                             </div>
-                        </div><br>
+                        </div>
+                        @error('email')
+                        <div class="error" style="color:red;">{{ $message }}</div>
+        @enderror
+        <br>
                         <div class="Polaris-Labelled__LabelWrapper_bf6ys">
                             <div class="Polaris-Label_2vd36"><label id="InventoryCardBarcodeLabel" for="InventoryCardBarcode" class="Polaris-Label__Text_yj3uv">Password</label></div>
                         </div>
@@ -160,6 +170,9 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
 
                                     <div class="Polaris-TextField__Backdrop_1x2i2"></div>
                                 </div>
+                                @error('password')
+                                        <div class="error" style="color:red;">{{ $message }}</div>
+                                @enderror
                             </div>
                         </div>
                     </div>
