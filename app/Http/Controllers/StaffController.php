@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\AdminLogin;
 use\Illuminate\Support\Facades\Hash;
 use Auth;
+use Redirect;
+use Validator;
 
 class StaffController extends Controller
 {
@@ -40,6 +42,29 @@ class StaffController extends Controller
     }
 
     public function save(Request $req)
+
+    {
+       $data = $req->all();
+       
+       $rule = array(
+        'f_name' => 'required', 'string', 'max:255',
+        'l_name' => 'required', 'string', 'max:255',
+        'email' => 'required', 'string', 'email', 'max:255', 'unique:users',
+        'password' => 'required|string|min:8|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/',
+        );
+        
+        $messages = [    
+        'password.regex' => 'Your password must be more than 8 characters long, should contain at-least 1 Uppercase, 1 Lowercase, 1 Numeric and 1 Special character!'
+        ];
+
+         $validator = Validator::make($data,$rule,$messages);
+
+    if ($validator->fails())
+    {
+        return Redirect::back()->withErrors($validator->errors());
+    }
+    
+    else
     {
         $hash = Hash::make($req->password);
         $user = new AdminLogin;
@@ -76,6 +101,8 @@ class StaffController extends Controller
 
         $user->save();
         return redirect('staffaccounts');
+    }
+
     }
 
     public function update($id)
