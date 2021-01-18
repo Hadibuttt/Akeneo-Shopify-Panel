@@ -9,6 +9,7 @@ use App\Models\sub_categories;
 use App\Models\cat_items;
 use App\Models\product_images;
 use App\Models\AdminLogin;
+use App\Models\tax;
 use Auth;
 
 class AddProductController extends Controller
@@ -30,13 +31,15 @@ class AddProductController extends Controller
         $sub_categorys = sub_categories::all();
         $collections = cat_items::all();
         $products = products::all();
+        $tax = tax::orderBy('id', 'desc')->first();
         
         if(Auth::user()->AddProductPage == 1)
         return view('add-product')->with([
             'categorys'=> $categorys,
             'sub_categorys'=> $sub_categorys,
             'collections'=> $collections,
-            'products' => $products
+            'products' => $products,
+            'tax'=> $tax
         ]);
         else    
         return view('restricted');
@@ -48,12 +51,14 @@ class AddProductController extends Controller
         $sub_categorys = sub_categories::all();
         $collections = cat_items::all();
         $products = products::all();
+        $tax = tax::orderBy('id', 'desc')->first();
         if(Auth::user()->UpdateProductPage == 1)
         return view('update-product')->with([
             'categorys'=> $categorys,
             'sub_categorys'=> $sub_categorys,
             'collections'=> $collections,
-            'products' => $products
+            'products' => $products,
+            'tax'=> $tax
         ]);
         else    
         return view('restricted');

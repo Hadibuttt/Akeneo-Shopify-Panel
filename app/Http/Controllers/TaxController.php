@@ -10,7 +10,7 @@ class TaxController extends Controller
 {
     public function index()
     {
-        $tax = tax::all()->sortByDesc('id');
+        $tax = tax::orderBy('id', 'desc')->first();
         if(Auth::user()->TaxPage == 1)
         return view('tax')->with([
             'tax'=> $tax

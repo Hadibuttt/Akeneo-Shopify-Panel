@@ -43,7 +43,7 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
                                 <div class="Polaris-Page-Header_z4uwg Polaris-Page-Header--hasNavigation_gfpa8 Polaris-Page-Header--hasActionMenu_1wx04 Polaris-Page-Header--mobileView_i07vm Polaris-Page-Header--newDesignLanguage_1rik8 Polaris-Page-Header--mediumTitle_bfol6" style="margin-bottom: 40px;" >
                                     <div class="Polaris-Page-Header__Row_375v7 Polaris-Page-Header__RowCondensed_1gexu">
                                         <div class="Polaris-Page-Header__BreadcrumbWrapper_1tgwk Polaris-Page-Header--newDesignLanguage_1rik8">
-                                            <nav role="navigation"><a data-polaris-unstyled="true" class="Polaris-Breadcrumbs__Breadcrumb_llsun Polaris-Breadcrumbs--newDesignLanguage_1rik8" href="setting.html"><span class="Polaris-Breadcrumbs__ContentWrapper_1yvfo"><span class="Polaris-Breadcrumbs__Icon_yj27d"><span class="Polaris-Icon_yj27d Polaris-Icon--newDesignLanguage_1rik8"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
+                                            <nav role="navigation"><a data-polaris-unstyled="true" class="Polaris-Breadcrumbs__Breadcrumb_llsun Polaris-Breadcrumbs--newDesignLanguage_1rik8" href="/settings"><span class="Polaris-Breadcrumbs__ContentWrapper_1yvfo"><span class="Polaris-Breadcrumbs__Icon_yj27d"><span class="Polaris-Icon_yj27d Polaris-Icon--newDesignLanguage_1rik8"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
                                                                     <path d="M17 9H5.414l3.293-3.293a.999.999 0 1 0-1.414-1.414l-5 5a.999.999 0 0 0 0 1.414l5 5a.997.997 0 0 0 1.414 0 .999.999 0 0 0 0-1.414L5.414 11H17a1 1 0 1 0 0-2z"></path>
                                                                 </svg></span></span><span class="Polaris-VisuallyHidden_yrtt5">Staff Account</span></span></a></nav>
                                         </div>
@@ -52,7 +52,7 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
                                                 <div class="Polaris-Header-Title__TitleAndSubtitleWrapper_40sxf">
                                                     <div class="Polaris-Header-Title__TitleWithMetadataWrapper_pdqv7 Polaris-Header-Title--newDesignLanguage_1rik8">
                                                         <div class="Polaris-Header-Title_2qj8j">
-                                                            <h1 class="Polaris-Header-Title--newDesignLanguageTitle_1wh8d">Tax About</h1>
+                                                            <h1 class="Polaris-Header-Title--newDesignLanguageTitle_1wh8d">Tax</h1>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -186,8 +186,8 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
               <div class="Polaris-Connected__Item Polaris-Connected__Item--primary">
                 <div class="Polaris-TextField">
                     
-                    <input name="digital" id="PolarisTextField13" required="" class="Polaris-TextField__Input" aria-labelledby="PolarisTextField13Label" aria-invalid="false" aria-multiline="false" placeholder="%">
-
+                    <input name="digital" value="{{$tax->digital}}" id="PolarisTextField13" required="" class="Polaris-TextField__Input" aria-labelledby="PolarisTextField13Label" aria-invalid="false" aria-multiline="false" placeholder="%">
+                    <div class="Polaris-TextField__Prefix_10fbz" id="PolarisTextField17Prefix">%</div>
                   <div class="Polaris-TextField__Backdrop"></div>
                 </div>
               </div>
@@ -239,7 +239,8 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
               <div class="Polaris-Connected__Item Polaris-Connected__Item--primary">
                 <div class="Polaris-TextField">
                     
-                    <input name="food" required="" id="PolarisTextField13" class="Polaris-TextField__Input" aria-labelledby="PolarisTextField13Label" aria-invalid="false" aria-multiline="false" placeholder="%">
+                    <input name="food" required="" value="{{$tax->food}}" id="PolarisTextField13" class="Polaris-TextField__Input" aria-labelledby="PolarisTextField13Label" aria-invalid="false" aria-multiline="false" placeholder="%">
+                    <div class="Polaris-TextField__Prefix_10fbz" id="PolarisTextField17Prefix">%</div>    
 
                   <div class="Polaris-TextField__Backdrop"></div>
                 </div>
@@ -292,7 +293,8 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
               <div class="Polaris-Connected__Item Polaris-Connected__Item--primary">
                 <div class="Polaris-TextField">
                     
-                    <input name="nonfood" required="" id="PolarisTextField13" class="Polaris-TextField__Input" aria-labelledby="PolarisTextField13Label" aria-invalid="false" aria-multiline="false" placeholder="%">
+                    <input name="nonfood" value="{{$tax->nonfood}}" required="" id="PolarisTextField13" class="Polaris-TextField__Input" aria-labelledby="PolarisTextField13Label" aria-invalid="false" aria-multiline="false" placeholder="%">
+                    <div class="Polaris-TextField__Prefix_10fbz" id="PolarisTextField17Prefix">%</div>
 
                   <div class="Polaris-TextField__Backdrop"></div>
                 </div>

@@ -330,9 +330,9 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
                         </div>
      <select name="tax" style="width: 100%; height: 38px;font-size: 16px;padding-left: 10px;font-weight: 100; border: 1px solid #C9CCCF; border-radius: 5px;color: dimgrey;overflow: scroll;">
         <option value="{{$product->tax}}">Current Tax:{{$product->tax}}%</option>
-        <option value="0">0%</option>
-<option value="9">9%</option>
-<option value="21">21%</option>
+<option value="{{$tax->digital}}">{{$tax->digital}}%</option>
+<option value="{{$tax->food}}">{{$tax->food}}%</option>
+<option value="{{$tax->nonfood}}">{{$tax->nonfood}}%</option>
 </select>
                     </div>
                 </div>
