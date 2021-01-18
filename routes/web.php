@@ -110,6 +110,8 @@ Route::get('/customer', [App\Http\Controllers\CustomerController::class, 'index'
 
 Route::get('/general', [App\Http\Controllers\GeneralController::class, 'index']);
 
+Route::get('/tax', [App\Http\Controllers\TaxController::class, 'index']);
+
 Route::get('/about-customer', [App\Http\Controllers\CustomerController::class, 'about']);
 
 Route::get('/order', [App\Http\Controllers\OrderController::class, 'index']);
