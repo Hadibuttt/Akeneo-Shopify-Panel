@@ -158,7 +158,8 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
                                    
                                    
                            
-                                   
+    <form action="succesed" method="post">
+        @csrf                               
     <div role="group" class="Polaris-FormLayout--condensed">
      
                                 <div role="group" class="Polaris-FormLayout--grouped_17srt" >
@@ -183,7 +184,10 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
            
             <div class="Polaris-Connected">
               <div class="Polaris-Connected__Item Polaris-Connected__Item--primary">
-                <div class="Polaris-TextField"><input id="PolarisTextField13" class="Polaris-TextField__Input" aria-labelledby="PolarisTextField13Label" aria-invalid="false" aria-multiline="false" placeholder="%">
+                <div class="Polaris-TextField">
+                    
+                    <input name="digital" id="PolarisTextField13" required="" class="Polaris-TextField__Input" aria-labelledby="PolarisTextField13Label" aria-invalid="false" aria-multiline="false" placeholder="%">
+
                   <div class="Polaris-TextField__Backdrop"></div>
                 </div>
               </div>
@@ -233,7 +237,10 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
            
             <div class="Polaris-Connected">
               <div class="Polaris-Connected__Item Polaris-Connected__Item--primary">
-                <div class="Polaris-TextField"><input id="PolarisTextField13" class="Polaris-TextField__Input" aria-labelledby="PolarisTextField13Label" aria-invalid="false" aria-multiline="false" placeholder="%">
+                <div class="Polaris-TextField">
+                    
+                    <input name="food" required="" id="PolarisTextField13" class="Polaris-TextField__Input" aria-labelledby="PolarisTextField13Label" aria-invalid="false" aria-multiline="false" placeholder="%">
+
                   <div class="Polaris-TextField__Backdrop"></div>
                 </div>
               </div>
@@ -283,7 +290,10 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
            
             <div class="Polaris-Connected">
               <div class="Polaris-Connected__Item Polaris-Connected__Item--primary">
-                <div class="Polaris-TextField"><input id="PolarisTextField13" class="Polaris-TextField__Input" aria-labelledby="PolarisTextField13Label" aria-invalid="false" aria-multiline="false" placeholder="%">
+                <div class="Polaris-TextField">
+                    
+                    <input name="nonfood" required="" id="PolarisTextField13" class="Polaris-TextField__Input" aria-labelledby="PolarisTextField13Label" aria-invalid="false" aria-multiline="false" placeholder="%">
+
                   <div class="Polaris-TextField__Backdrop"></div>
                 </div>
               </div>
@@ -555,6 +565,7 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
 </div>
 <div class="Polaris-Stack__Item_yiyol">
 <button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--primary_7k9zs " type="submit"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Save</span></span></button></div>
+</form>
 </div>
 </div>
 </div>
