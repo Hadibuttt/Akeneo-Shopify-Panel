@@ -95,7 +95,7 @@ $view = request('view');
                                                                         <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8">
                                                                             <div class="Polaris-TextField__Prefix_10fbz" id="PolarisTextField25Prefix"><span class="Polaris-Filters__SearchIcon_158og"><span class="Polaris-Icon_yj27d Polaris-Icon--newDesignLanguage_1rik8"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
                                                                                             <path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm9.707 4.293l-4.82-4.82A5.968 5.968 0 0 0 14 8 6 6 0 0 0 2 8a6 6 0 0 0 6 6 5.968 5.968 0 0 0 3.473-1.113l4.82 4.82a.997.997 0 0 0 1.414 0 .999.999 0 0 0 0-1.414z"></path>
-                                                                                        </svg></span></span></div><input id="PolarisTextField25" placeholder="Filter orders" class="Polaris-TextField__Input_30ock Polaris-TextField__Input--hasClearButton_15k6h" aria-labelledby="PolarisTextField25Label PolarisTextField25Prefix" aria-invalid="false" aria-multiline="false" value="">
+                                                                                        </svg></span></span></div><input id="order" name="order" placeholder="Filter orders" class="Polaris-TextField__Input_30ock Polaris-TextField__Input--hasClearButton_15k6h" aria-labelledby="PolarisTextField25Label PolarisTextField25Prefix" aria-invalid="false" aria-multiline="false" value="">
                                                                             <div class="Polaris-TextField__Backdrop_1x2i2"></div>
                                                                         </div>
                                                                     </div>
@@ -103,6 +103,37 @@ $view = request('view');
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>    
+                                                    <script>
+                                                        $(document).ready(function(){
+                                                            $("#order").keyup(function(){
+                                                                var query = $(this).val();
+                                                                                
+                                                                $.ajaxSetup({
+                                                                headers: {
+                                                                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                                                }
+                                                                })
+                                                                $.ajax({
+                                                                url:"{{ route('getorder') }}",
+                                                                method:"get",
+                                                                data:{query:query},
+                                                                success:function(data){
+                                                                    console.log(data)
+                                                                    for (n=0; n<data.length; n++){
+                                                                    if(n==0)
+                                                                        $('#result').html(data[n]);
+                                                                    else
+                                                                        $('#result').append(data[n]);
+                                                                }
+                                                                }                                                                                                                                                                                                             
+                                                                                    })
+                                                                                
+                                                                            });                                   
+                                                                        })
+                                                                        
+                                                                    </script>
+
                                                     <div class="Polaris-Filters-ConnectedFilterControl__RightContainer_x3ra5">
                                                         <div class="Polaris-Filters-ConnectedFilterControl__Item_yiyol">
                                                             <div><button id="Activator-status" class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8" type="button" tabindex="0" aria-controls="Polarispopover147" aria-owns="Polarispopover147" aria-expanded="false" onclick="popshow()"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Status</span><span class="Polaris-Button__Icon_yj27d">
@@ -794,7 +825,7 @@ $view = request('view');
                                                         @foreach ($users as $user)
                                                         @if (Auth::user()->email == $user->email)    
                                                         @if ($user->OrderDetailsPage == 1)    
-                                                        href="/orderdetails?o_id={{$order->id}}&status={{$order->status}}">
+                                                        href="/orderdetails/{{$order->id}}/{{$order->status}}">
                                                         @else
                                                         href="/restricted"
                                                         @endif
@@ -2416,7 +2447,7 @@ $view = request('view');
                                                         @foreach ($users as $user)
                                                         @if (Auth::user()->email == $user->email)    
                                                         @if ($user->OrderDetailsPage == 1)    
-                                                        href="/orderdetails?o_id={{$order->id}}&status={{$order->status}}"
+                                                        href="/orderdetails/{{$order->id}}/{{$order->status}}"
                                                         @else
                                                         href="/restricted"
                                                         @endif
@@ -3292,7 +3323,7 @@ $view = request('view');
                                                                         <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8">
                                                                             <div class="Polaris-TextField__Prefix_10fbz" id="PolarisTextField25Prefix"><span class="Polaris-Filters__SearchIcon_158og"><span class="Polaris-Icon_yj27d Polaris-Icon--newDesignLanguage_1rik8"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
                                                                                             <path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm9.707 4.293l-4.82-4.82A5.968 5.968 0 0 0 14 8 6 6 0 0 0 2 8a6 6 0 0 0 6 6 5.968 5.968 0 0 0 3.473-1.113l4.82 4.82a.997.997 0 0 0 1.414 0 .999.999 0 0 0 0-1.414z"></path>
-                                                                                        </svg></span></span></div><input id="PolarisTextField25" placeholder="Filter orders" class="Polaris-TextField__Input_30ock Polaris-TextField__Input--hasClearButton_15k6h" aria-labelledby="PolarisTextField25Label PolarisTextField25Prefix" aria-invalid="false" aria-multiline="false" value="">
+                                                                                        </svg></span></span></div><input id="" name="" placeholder="Filter orders" class="Polaris-TextField__Input_30ock Polaris-TextField__Input--hasClearButton_15k6h" aria-labelledby="PolarisTextField25Label PolarisTextField25Prefix" aria-invalid="false" aria-multiline="false" value="">
                                                                             <div class="Polaris-TextField__Backdrop_1x2i2"></div>
                                                                         </div>
                                                                     </div>
@@ -3300,6 +3331,9 @@ $view = request('view');
                                                             </div>
                                                         </div>
                                                     </div>
+
+                                                    
+                                                                                            
                                                     <div class="Polaris-Filters-ConnectedFilterControl__RightContainer_x3ra5">
                                                         <div class="Polaris-Filters-ConnectedFilterControl__Item_yiyol">
                                                             <div><button id="Activator-status" class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8" type="button" tabindex="0" aria-controls="Polarispopover147" aria-owns="Polarispopover147" aria-expanded="false" onclick="popshow()"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Status</span><span class="Polaris-Button__Icon_yj27d">
@@ -3991,7 +4025,7 @@ $view = request('view');
                                                         @foreach ($users as $user)
                                                         @if (Auth::user()->email == $user->email)    
                                                         @if ($user->OrderDetailsPage == 1)    
-                                                        href="/orderdetails?o_id={{$order->id}}&status={{$order->status}}"
+                                                        href="/orderdetails/{{$order->id}}/{{$order->status}}"
                                                         @else
                                                         href="/restricted"
                                                         @endif
@@ -5555,7 +5589,7 @@ $view = request('view');
                                                         @foreach ($users as $user)
                                                         @if (Auth::user()->email == $user->email)    
                                                         @if ($user->OrderDetailsPage == 1)    
-                                                        href="/orderdetails?o_id={{$order->id}}&status={{$order->status}}"
+                                                        href="/orderdetails/{{$order->id}}/{{$order->status}}"
                                                         @else
                                                         href="/restricted"
                                                         @endif
@@ -7117,7 +7151,7 @@ $view = request('view');
                                                         @foreach ($users as $user)
                                                         @if (Auth::user()->email == $user->email)    
                                                         @if ($user->OrderDetailsPage == 1)    
-                                                        href="/orderdetails?o_id={{$order->id}}&status={{$order->status}}"
+                                                        href="/orderdetails/{{$order->id}}/{{$order->status}}"
                                                         @else
                                                         href="/restricted"
                                                         @endif

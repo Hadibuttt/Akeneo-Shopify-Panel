@@ -33,7 +33,7 @@ Route::get('/product', [App\Http\Controllers\ProductController::class, 'index'])
 
 Route::get('/category', [App\Http\Controllers\CategoryController::class, 'index']);
 
-Route::get('/orderdetails', [App\Http\Controllers\OrderDetailsController::class, 'index']);
+Route::get('/orderdetails/{id}/{s_id}', [App\Http\Controllers\OrderDetailsController::class, 'index']);
 
 Route::get('/add-product', [App\Http\Controllers\AddProductController::class, 'index']);
 
@@ -86,6 +86,8 @@ Route::post('success', [App\Http\Controllers\CategoryController::class, 'save'] 
 Route::post('inserted', [App\Http\Controllers\GeneralController::class, 'save'] );
 
 Route::get('get_cat', [App\Http\Controllers\SelectionController::class, 'getcategory'] )->name('getcategory');
+
+Route::get('getorder', [App\Http\Controllers\SelectionController::class, 'getorder'] )->name('getorder');
 
 Route::post('get_subcat', [App\Http\Controllers\SelectionController::class, 'getsubcategory'] )->name('getsubcategory');
 

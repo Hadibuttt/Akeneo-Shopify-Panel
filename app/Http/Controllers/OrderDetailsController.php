@@ -18,7 +18,7 @@ class OrderDetailsController extends Controller
         $this->middleware('auth');
     }
     
-    public function index()
+    public function index($id,$s_id)
     {
         $orders = orders::all();
         $order_items = order_items::all();

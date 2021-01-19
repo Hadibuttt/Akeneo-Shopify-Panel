@@ -170,8 +170,8 @@
     <script charset="utf-8" src="https://cdn.shopify.com/shopifycloud/web/assets/v1/latest/EditCustomerContactInfoModal-7b1e2147ff0e93ef11765fc3494f438b89286981a9337322fe2d1ce60ae1e626.js"></script>
 
     <?php 
-    $o_id = request('o_id');
-    $status = request('status');
+    $o_id = request('id');
+    $status = request('u_id');
     ?>
 
 <div class="Polaris-Frame__ContextualSaveBar_14m7v Polaris-Frame-CSSAnimation--startFade_1gu4x"></div>
@@ -303,7 +303,7 @@
 <div class="_18dua">
 <div class="_3pTEV">
 <div class="_1Hwi_">
-<div><a data-polaris-unstyled="true" class="Polaris-Link_yj5sy" href="/product?p={{$order_item->product_title}}">{{$order_item->product_title}}</a></div>
+<div><a data-polaris-unstyled="true" class="Polaris-Link_yj5sy" href="/product?view=all&p={{$order_item->product_title}}">{{$order_item->product_title}}</a></div>
 <div><span class="Polaris-TextStyle--variationSubdued_1segu">Barcode: {{$product->barcode}}</span></div>
 </div>
 <div class="_15gHI">€{{$order_item->total}}.00 × {{$order_item->qty}}</div>

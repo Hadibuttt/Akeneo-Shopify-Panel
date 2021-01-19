@@ -7,6 +7,8 @@ use App\Models\categories;
 use App\Models\sub_categories;
 use App\Models\cat_items;
 use App\Models\products;
+use App\Models\order_details;
+
 
 
 class SelectionController extends Controller
@@ -183,6 +185,119 @@ class SelectionController extends Controller
                 </td>
                 
             </tr>';
+            $n++;
+            }
+        
+            return $dat;  
+        }
+        else
+        {            
+            $dat[$n] = "Not Found";          
+            return $dat;
+        }
+     return $query;   
+    }
+
+
+    public function getorder(Request $request)
+    {
+        
+        $query = $request->get('query');
+        
+        $data = order_details::where('f_name', 'LIKE', "%{$query}%")->get();  
+        
+        $dat = array();
+        $n = 0;
+
+
+        if(count($data)!=0){
+            
+            foreach($data as $title)
+            {
+                $dat[$n] = '<tr class="_1Apqa">
+                                                  @foreach ($orders as $order)
+                                                  @if ($order->status == 0)
+                                                    <td class="_2ROf4 _3sidR">
+                                                        <div class="iUISH">
+                                                            <div class="_38hQr _1ORzt"><label class="Polaris-Choice_j5gzq Polaris-Choice--labelHidden_14tn9" for="gid://shopify/Order/2565861802033"><span class="Polaris-Choice__Control_1u8vs"><span class="Polaris-Checkbox_1d6zr Polaris-Checkbox--newDesignLanguage_1rik8"><input id="gid://shopify/Order/2565861802033" type="checkbox" class="Polaris-Checkbox__Input_30ock" aria-invalid="false" role="checkbox" aria-checked="false" value=""><span class="Polaris-Checkbox__Backdrop_1x2i2"></span><span class="Polaris-Checkbox__Icon_yj27d"><span class="Polaris-Icon_yj27d Polaris-Icon--newDesignLanguage_1rik8"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
+                                                                                        <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.436.436 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
+                                                                                    </svg></span></span></span></span><span class="Polaris-Choice__Label_2vd36">Select Order</span></label></div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="_2ROf4 _3k9ch" style="left: 64px;"><a data-polaris-unstyled="true" data-primary-link="true" class="_2xpuQ _2proX" 
+                                                        @foreach ($users as $user)
+                                                        @if (Auth::user()->email == $user->email)    
+                                                        @if ($user->OrderDetailsPage == 1)    
+                                                        href="/orderdetails/{{$order->id}}/{{$order->status}}"
+                                                        @else
+                                                        href="/restricted"
+                                                        @endif
+                                                        @endif
+                                                        @endforeach    
+                                                        ><span>#{{$order->id}}</span></a></td>
+                                                    <td class="_2ROf4">
+                                                        <div class="">
+                                                            <div title="Monday, December 07, 2020">{{$order->created_at}}</div>
+                                                        </div>
+                                                    </td>
+ @foreach ($order_details as $order_detail)
+@if ($order_detail->order_id == $order->id)
+                                                    <td class="_2ROf4">
+                                                        <div class="_1wT-_"><span class="Polaris-TextStyle--variationSubdued_1segu"><span class="">{{$order_detail->f_name}}  {{$order_detail->l_name}}</span></span></div>
+                                                    </td>
+           @foreach ($order_items as $order_item)
+           @if ($order_item->order_id == $order->id)
+                                                    <td class="_2ROf4">
+                                                        <div><span title="€271.40"><span class="Polaris-Truncate_4qxoo">€{{$order_item->total}}</span></span></div>
+                                                    </td>
+                                                    @if ($order->status == 0 )
+                                                    <td class="_2ROf4"> 
+                                                        <div class="Polaris-Stack_32wu2 Polaris-Stack--noWrap_vecks">
+                                                            <div class="Polaris-Stack__Item_yiyol"><span class="Polaris-Badge_2qgie Polaris-Badge--statusWarning_1x66d Polaris-Badge--progressIncomplete_1jg92"><span class="Polaris-Badge__Pip_375sr"><span class="Polaris-VisuallyHidden_yrtt5">Warning Incomplete</span></span>Payment pending</span></div>
+                                                        </div>
+                                                    </td>
+                                                    @else
+                                                    <td class="_2ROf4"> 
+                                                      <div class="Polaris-Stack_32wu2 Polaris-Stack--noWrap_vecks">
+                                                          <div class="Polaris-Stack__Item_yiyol"><span class="Polaris-Badge_2qgie Polaris-Badge--statusWarning_1x66d Polaris-Badge--progressIncomplete_1jg92"><span class="Polaris-Badge__Pip_375sr"><span class="Polaris-VisuallyHidden_yrtt5">Warning Incomplete</span></span>Paid</span></div>
+                                                      </div>
+                                                  </td>
+                                                  @endif
+
+                                                  @if ($order->status == 0)
+                                                    <td class="_2ROf4">
+                                                        <div class="Polaris-Stack_32wu2 Polaris-Stack--spacingExtraTight_gv6hw Polaris-Stack--alignmentCenter_1rtaw Polaris-Stack--noWrap_vecks">
+                                                            <div class="Polaris-Stack__Item_yiyol"><span class="Polaris-Badge_2qgie Polaris-Badge--progressComplete_189p5"><span class="Polaris-Badge__Pip_375sr"><span class="Polaris-VisuallyHidden_yrtt5"> Complete</span></span>Unfulfilled</span></div>
+                                                        </div>
+                                                    </td>
+                                                    @else
+                                                    <td class="_2ROf4">
+                                                      <div class="Polaris-Stack_32wu2 Polaris-Stack--spacingExtraTight_gv6hw Polaris-Stack--alignmentCenter_1rtaw Polaris-Stack--noWrap_vecks">
+                                                          <div class="Polaris-Stack__Item_yiyol"><span class="Polaris-Badge_2qgie Polaris-Badge--progressComplete_189p5"><span class="Polaris-Badge__Pip_375sr"><span class="Polaris-VisuallyHidden_yrtt5"> Complete</span></span>Fulfilled</span></div>
+                                                      </div>
+                                                  </td>
+                                                  @endif
+                                                    <td class="_2ROf4 _1rOTG">
+                                                        <div class="_1f2FU">
+                                                            <div><button class="knAxF _3IERU" type="button" tabindex="0" aria-controls="Polarispopover83" aria-owns="Polarispopover83" aria-expanded="false">
+                                                                    <div class="_23Wnx">{{$order_item->qty}} items</div>
+                                                                    @endif
+                        @endforeach
+                                                                    <div class="NM9pT"><span class="Polaris-Icon_yj27d Polaris-Icon--colorInkLighter_2s08r Polaris-Icon--isColored_uhqnf Polaris-Icon--newDesignLanguage_1rik8"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
+                                                                                <path d="M5 8l5 5 5-5H5z"></path>
+                                                                            </svg></span></div>
+                                                                </button></div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="_2ROf4"><span class=""><span>{{$order_detail->dmethod}}</span></span></td>
+                                                    <td class="_2ROf4">
+                                                        <div class="Polaris-Stack_32wu2 Polaris-Stack--spacingExtraTight_gv6hw Polaris-Stack--noWrap_vecks"></div>
+                                                    </td>
+                                                    @endif
+                        @endforeach
+                                                </tr>
+                                                @endif
+                                                @endforeach';
             $n++;
             }
         
