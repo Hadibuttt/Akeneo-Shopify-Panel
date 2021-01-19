@@ -19,14 +19,11 @@ class CategoryController extends Controller
     {
         $category= new categories;
         $category->cat_title = $req->title;
-        $req->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
-        ]);
-
-        $imageName = time().'.'.$req->image->extension();
-        $category->cat_img =   $req->image->storeAs('', $imageName, ['disk' => 'my']);
+        $name = $req->image->getClientOriginalName();
+        $image=$req->image->move(public_path().'/assets/img/', $name); 
+        $category->cat_img = $name;
         $category->save();
-        return view('success');
+        return view('category');
     }
 
     public function index()
@@ -70,14 +67,9 @@ class CategoryController extends Controller
     {
         $category= categories::find($cat_id);
         $category->cat_title = $req->title;
-
-        $req->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
-        ]);
-
-        $imageName = time().'.'.$req->image->extension();
-        $category->cat_img =   $req->image->storeAs('', $imageName, ['disk' => 'my']);
-
+        $name = $req->image->getClientOriginalName();
+        $image=$req->image->move(public_path().'/assets/img/', $name); 
+        $category->cat_img = $name;
         $category->save();
 
         return redirect('/category');

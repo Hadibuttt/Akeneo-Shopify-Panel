@@ -51,20 +51,15 @@ class CollectionController extends Controller
         $collection->subcat_id = $req->subcategory;
         $collection->SEOtitle = $req->SEOtitle;
         $collection->SEOdescription = $req->SEOdescription;
+        $collection->handle = $req->handle;
         //$collection->page_title = $req->SEOtitle;
         //$collection->meta_description = $req->SEOdescription;
-        $collection->handle = $req->handle;
-        
-        $req->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
-        ]);
-
-        $imageName = time().'.'.$req->image->extension();
-        $collection->cat_item_img =  $req->image->storeAs('', $imageName, ['disk' => 'my']);
-
+        $name = $req->image->getClientOriginalName();
+        $image=$req->image->move(public_path().'/assets/img/', $name); 
+        $collection->cat_item_img = $name;
         $collection->save();
 
-        return view('success');
+        return view('collection');
     }
 
     public function update($id)
@@ -95,13 +90,9 @@ class CollectionController extends Controller
         $collection->SEOtitle = $req->SEOtitle;
         $collection->SEOdescription = $req->SEOdescription;
         $collection->handle = $req->handle;
-        
-        $req->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
-        ]);
-
-        $imageName = time().'.'.$req->image->extension();
-        $collection->cat_item_img =  $req->image->storeAs('', $imageName, ['disk' => 'my']);
+        $name = $req->image->getClientOriginalName();
+        $image=$req->image->move(public_path().'/assets/img/', $name); 
+        $collection->cat_item_img = $name;
         $collection->save();
 
         return redirect('/collection');
