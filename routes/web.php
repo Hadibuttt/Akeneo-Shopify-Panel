@@ -103,6 +103,10 @@ Route::get('/restricted', function () {
     return view('restricted');
 });
 
+Route::get('/menu', function () {
+    return view('menu');
+});
+
 Route::get('/settings', function () {
     if(Auth::user()->SettingsPage == 1)
     return view('settings');
