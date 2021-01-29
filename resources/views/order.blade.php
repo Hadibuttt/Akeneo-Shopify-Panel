@@ -825,7 +825,7 @@ $view = request('view');
                                                         @foreach ($users as $user)
                                                         @if (Auth::user()->email == $user->email)    
                                                         @if ($user->OrderDetailsPage == 1)    
-                                                        href="/orderdetails/{{$order->id}}/{{$order->status}}">
+                                                        href="/orderdetails/{{$order->id}}">
                                                         @else
                                                         href="/restricted"
                                                         @endif
@@ -840,7 +840,7 @@ $view = request('view');
  @foreach ($order_details as $order_detail)
 @if ($order_detail->order_id == $order->id)
                                                     <td class="_2ROf4">
-                                                        <div class="_1wT-_"><span class="Polaris-TextStyle--variationSubdued_1segu"><span class="">{{$order_detail->f_name}}  {{$order_detail->l_name}}</span></span></div>
+                                                        <div class="_1wT-_"><span class="Polaris-TextStyle--variationSubdued_1segu"><span class="">{{$order_detail->name}}</span></span></div>
                                                     </td>
            @foreach ($order_items as $order_item)
            @if ($order_item->order_id == $order->id)
@@ -2447,7 +2447,7 @@ $view = request('view');
                                                         @foreach ($users as $user)
                                                         @if (Auth::user()->email == $user->email)    
                                                         @if ($user->OrderDetailsPage == 1)    
-                                                        href="/orderdetails/{{$order->id}}/{{$order->status}}"
+                                                        href="/orderdetails/{{$order->id}}"
                                                         @else
                                                         href="/restricted"
                                                         @endif
@@ -2462,7 +2462,7 @@ $view = request('view');
  @foreach ($order_details as $order_detail)
 @if ($order_detail->order_id == $order->id)
                                                     <td class="_2ROf4">
-                                                        <div class="_1wT-_"><span class="Polaris-TextStyle--variationSubdued_1segu"><span class="">{{$order_detail->f_name}}  {{$order_detail->l_name}}</span></span></div>
+                                                        <div class="_1wT-_"><span class="Polaris-TextStyle--variationSubdued_1segu"><span class="">{{$order_detail->name}}</span></span></div>
                                                     </td>
            @foreach ($order_items as $order_item)
            @if ($order_item->order_id == $order->id)
@@ -4025,7 +4025,7 @@ $view = request('view');
                                                         @foreach ($users as $user)
                                                         @if (Auth::user()->email == $user->email)    
                                                         @if ($user->OrderDetailsPage == 1)    
-                                                        href="/orderdetails/{{$order->id}}/{{$order->status}}"
+                                                        href="/orderdetails/{{$order->id}}"
                                                         @else
                                                         href="/restricted"
                                                         @endif
@@ -4040,7 +4040,7 @@ $view = request('view');
  @foreach ($order_details as $order_detail)
 @if ($order_detail->order_id == $order->id)
                                                     <td class="_2ROf4">
-                                                        <div class="_1wT-_"><span class="Polaris-TextStyle--variationSubdued_1segu"><span class="">{{$order_detail->f_name}}  {{$order_detail->l_name}}</span></span></div>
+                                                        <div class="_1wT-_"><span class="Polaris-TextStyle--variationSubdued_1segu"><span class="">{{$order_detail->name}}</span></span></div>
                                                     </td>
            @foreach ($order_items as $order_item)
            @if ($order_item->order_id == $order->id)
@@ -5589,7 +5589,7 @@ $view = request('view');
                                                         @foreach ($users as $user)
                                                         @if (Auth::user()->email == $user->email)    
                                                         @if ($user->OrderDetailsPage == 1)    
-                                                        href="/orderdetails/{{$order->id}}/{{$order->status}}"
+                                                        href="/orderdetails/{{$order->id}}"
                                                         @else
                                                         href="/restricted"
                                                         @endif
@@ -5604,7 +5604,7 @@ $view = request('view');
  @foreach ($order_details as $order_detail)
 @if ($order_detail->order_id == $order->id)
                                                     <td class="_2ROf4">
-                                                        <div class="_1wT-_"><span class="Polaris-TextStyle--variationSubdued_1segu"><span class="">{{$order_detail->f_name}}  {{$order_detail->l_name}}</span></span></div>
+                                                        <div class="_1wT-_"><span class="Polaris-TextStyle--variationSubdued_1segu"><span class="">{{$order_detail->name}}</span></span></div>
                                                     </td>
            @foreach ($order_items as $order_item)
            @if ($order_item->order_id == $order->id)
@@ -7151,7 +7151,7 @@ $view = request('view');
                                                         @foreach ($users as $user)
                                                         @if (Auth::user()->email == $user->email)    
                                                         @if ($user->OrderDetailsPage == 1)    
-                                                        href="/orderdetails/{{$order->id}}/{{$order->status}}"
+                                                        href="/orderdetails/{{$order->id}}"
                                                         @else
                                                         href="/restricted"
                                                         @endif
@@ -7166,7 +7166,7 @@ $view = request('view');
  @foreach ($order_details as $order_detail)
 @if ($order_detail->order_id == $order->id)
                                                     <td class="_2ROf4">
-                                                        <div class="_1wT-_"><span class="Polaris-TextStyle--variationSubdued_1segu"><span class="">{{$order_detail->f_name}}  {{$order_detail->l_name}}</span></span></div>
+                                                        <div class="_1wT-_"><span class="Polaris-TextStyle--variationSubdued_1segu"><span class="">{{$order_detail->name}}</span></span></div>
                                                     </td>
            @foreach ($order_items as $order_item)
            @if ($order_item->order_id == $order->id)

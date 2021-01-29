@@ -18,7 +18,7 @@ class OrderDetailsController extends Controller
         $this->middleware('auth');
     }
     
-    public function index($id,$s_id)
+    public function index($id)
     {
         $orders = orders::all();
         $order_items = order_items::all();
@@ -34,6 +34,39 @@ class OrderDetailsController extends Controller
         ]);
         else    
             return view('restricted');
+    }
+
+    public function NoteUpdated(Request $req,$id)
+    {
+        $note = $req->note;
+        order_details::where('order_id',$id)->update(['note'=> $note]);
+
+        return redirect("/orderdetails/$id");
+    }
+
+    public function EmailUpdated(Request $req,$id)
+    {
+        $email = $req->email;
+        order_details::where('order_id',$id)->update(['email'=> $email]);
+
+        return redirect("/orderdetails/$id");
+    }
+
+    public function InformationUpdated(Request $req,$id)
+    {
+        $name = $req->name;
+        $address = $req->address;
+        $city = $req->city;
+        $state = $req->state;
+        $phone = $req->phone;
+
+        order_details::where('order_id',$id)->update(['name'=> $name,
+        'address'=> $address,
+        'city'=> $city,
+        'state'=> $state,
+        'phone'=> $phone]);
+
+        return redirect("/orderdetails/$id");
     }
 
 }

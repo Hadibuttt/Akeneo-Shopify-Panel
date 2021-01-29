@@ -33,7 +33,7 @@ Route::get('/product', [App\Http\Controllers\ProductController::class, 'index'])
 
 Route::get('/category', [App\Http\Controllers\CategoryController::class, 'index']);
 
-Route::get('/orderdetails/{id}/{s_id}', [App\Http\Controllers\OrderDetailsController::class, 'index']);
+Route::get('/orderdetails/{id}', [App\Http\Controllers\OrderDetailsController::class, 'index']);
 
 Route::get('/add-product', [App\Http\Controllers\AddProductController::class, 'index']);
 
@@ -66,6 +66,12 @@ Route::post('submitted', [App\Http\Controllers\SubCategoryController::class, 'sa
 Route::post('successs', [App\Http\Controllers\CollectionController::class, 'save'] )->name('addcollection');
 
 Route::post('/update-product/{id}/updated', [App\Http\Controllers\AddProductController::class, 'updated'] );
+
+Route::post('/orderdetails/{id}/note/updated', [App\Http\Controllers\OrderDetailsController::class, 'NoteUpdated'] );
+
+Route::post('/orderdetails/{id}/email/updated', [App\Http\Controllers\OrderDetailsController::class, 'EmailUpdated'] );
+
+Route::post('/orderdetails/{id}/updated', [App\Http\Controllers\OrderDetailsController::class, 'InformationUpdated'] );
 
 Route::post('/update-category/{cat_id}/updated', [App\Http\Controllers\CategoryController::class, 'updated'] );
 

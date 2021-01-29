@@ -171,7 +171,6 @@
 
     <?php 
     $o_id = request('id');
-    $status = request('u_id');
     ?>
 
 <div class="Polaris-Frame__ContextualSaveBar_14m7v Polaris-Frame-CSSAnimation--startFade_1gu4x"></div>
@@ -198,7 +197,7 @@
 <h1 class="Polaris-Header-Title--newDesignLanguageTitle_1wh8d">#{{$order->id}}</h1>
 
 </div>
-@if ($status == 0)
+@if ($order->status == 0)
 <div class="Polaris-Stack_32wu2 Polaris-Stack--spacingExtraTight_gv6hw Polaris-Stack--alignmentCenter_1rtaw Polaris-Stack--noWrap_vecks">
     <div class="Polaris-Stack__Item_yiyol"><span class="Polaris-Badge_2qgie Polaris-Badge--progressComplete_189p5"><span class="Polaris-Badge__Pip_375sr"><span class="Polaris-VisuallyHidden_yrtt5"> Complete</span></span>Unfulfilled</span></div>
 </div>    
@@ -250,7 +249,7 @@
     @foreach ($order_items as $order_item)
      @if ($order_item->order_id == $o_id)
   
-    @if ($status == 0)
+    @if ($order->status == 0)
     <h2 class="Polaris-Heading_1brcv">Unfulfilled ({{$order_item->qty}})</h2>
     
     @else
@@ -295,7 +294,7 @@
 <div class="_2dXGy">
 <div class="_2E0xL"><span class="Polaris-Badge_2qgie">{{$order_item->qty}}</span></div><span class="Polaris-Thumbnail_15hj1 Polaris-Thumbnail--sizeSmall_7647q">
     
-    <img src="assets/img/{{$product->pro_img}}" alt=""></span>
+    <img src="\assets\img\{{$order_item->product_image}}" alt=""></span>
     @endif
     @endforeach
 </div>
@@ -306,7 +305,7 @@
 <div><a data-polaris-unstyled="true" class="Polaris-Link_yj5sy" href="/product?view=all&p={{$order_item->product_title}}">{{$order_item->product_title}}</a></div>
 <div><span class="Polaris-TextStyle--variationSubdued_1segu">Barcode: {{$product->barcode}}</span></div>
 </div>
-<div class="_15gHI">€{{$order_item->total}}.00 × {{$order_item->qty}}</div>
+<div class="_15gHI">€{{$order_item->product_price}} × {{$order_item->qty}}</div>
 <div class="_2cNEq">€{{$order_item->total}}</div>
 </div>
 <div>
@@ -358,7 +357,7 @@
       @foreach ($products as $product)
       @if ($product->pro_title == $order_item->product_title )
 <p><span class="Polaris-TextStyle--variationSubdued_1segu">{{$order_item->qty}} items</span></p>
-<div class="uQ1bp"><span class="">€{{$order_item->total}}.00</span></div>
+<div class="uQ1bp"><span class="">€{{$order_item->total}}</span></div>
 </div>
 </div>
 </div>
@@ -684,7 +683,11 @@ $total=$order_item->total*$tax;
 </div>
 </div>
 <div class="Polaris-Card__Section_1b1h1">
-<div class="zlQnq"><span class="Polaris-TextStyle--variationSubdued_1segu">No notes from customer</span></div>
+    @foreach ($order_details as $order_detail)
+    @if ($order_detail->order_id == $o_id)
+<div class="zlQnq"><span class="Polaris-TextStyle--variationSubdued_1segu">{{$order_detail->note}}</span></div>
+    @endif
+    @endforeach
 </div>
 </div>
 </div>
@@ -698,7 +701,7 @@ $total=$order_item->total*$tax;
             
         
     
-<div class="Polaris-Card__Section_1b1h1"><span class="Polaris-TextStyle--variationSubdued_1segu">{{$order_detail->f_name}} {{$order_detail->l_name}}</span></div>
+<div class="Polaris-Card__Section_1b1h1"><span class="Polaris-TextStyle--variationSubdued_1segu">{{$order_detail->name}}</span></div>
 <div class="Polaris-Card__Section_1b1h1">
 <div class="Polaris-Card__SectionHeader_1aytf">
 <div class="Polaris-Stack_32wu2 Polaris-Stack--alignmentBaseline_aupj5">
@@ -758,7 +761,7 @@ $total=$order_item->total*$tax;
 <div class="Polaris-Card__Section_1b1h1">
 <div class="Polaris-Card__SectionHeader_1aytf">
 <h3 aria-label="Billing address" class="Polaris-Subheading_syouu">Billing address</h3>
-</div><span class="Polaris-TextStyle--variationSubdued_1segu">{{$order_detail->address2}}</span>
+</div><span class="Polaris-TextStyle--variationSubdued_1segu">{{$order_detail->address}}</span>
 </div>
 </div>
 </div>
@@ -978,6 +981,8 @@ $total=$order_item->total*$tax;
                                             </svg></span></button>
 
                                 </div>
+                            <form action="/orderdetails/{{$o_id}}/note/updated" method="post">
+                            @csrf     
                                 <div class="Polaris-Modal__BodyWrapper_1kb1f">
                                     <div class="Polaris-Modal__Body_yjdx1 Polaris-Scrollable_1ed9o Polaris-Scrollable--vertical_uiuuj" data-polaris-scrollable="true">
                                         <section class="Polaris-Modal-Section_1b1h1">
@@ -988,7 +993,13 @@ $total=$order_item->total*$tax;
                                                     </div>
                                                     <div class="Polaris-Connected_wopc9 Polaris-Connected--newDesignLanguage_1rik8">
                                                         <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
-                                                            <div class="Polaris-TextField_1spwi Polaris-TextField--multiline_1jgfe Polaris-TextField--newDesignLanguage_1rik8"><textarea id="PolarisTextField7" class="Polaris-TextField__Input_30ock" maxlength="5000" aria-labelledby="PolarisTextField7Label" aria-invalid="false" aria-multiline="true" style="height: 36px;"></textarea>
+                                                                <div class="Polaris-TextField_1spwi Polaris-TextField--multiline_1jgfe Polaris-TextField--newDesignLanguage_1rik8">
+                                                            @foreach ($order_details as $order_detail)
+                                                            @if ($order_detail->order_id == $o_id)                                                     
+                                                                <input value="{{$order_detail->note}}"  name="note" id="PolarisTextField7" class="Polaris-TextField__Input_30ock" maxlength="5000" aria-labelledby="PolarisTextField7Label" aria-invalid="false" aria-multiline="true" style="height: 36px;">
+                                                            @endif
+                                                            @endforeach
+
                                                                 <div class="Polaris-TextField__Backdrop_1x2i2"></div>
                                                                 <div aria-hidden="true" class="Polaris-TextField__Resizer_mlqsu">
                                                                     <div class="Polaris-TextField__DummyInput_1u3lq"><br></div>
@@ -1013,7 +1024,8 @@ $total=$order_item->total*$tax;
                                             <div class="Polaris-Stack__Item_yiyol">
                                                 <div class="Polaris-ButtonGroup_yy85z">
                                                     <div class="Polaris-ButtonGroup__Item_yiyol"><button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8" type="button" onclick="Close_Call()"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Cancel</span></span></button></div>
-                                                    <div class="Polaris-ButtonGroup__Item_yiyol"><button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--primary_7k9zs" type="button" onclick="Close_Call();"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Save</span></span></button></div>
+                                                    <div class="Polaris-ButtonGroup__Item_yiyol"><button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--primary_7k9zs" type="submit"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Save</span></span></button>
+                                                    </form></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -1135,6 +1147,9 @@ $total=$order_item->total*$tax;
                                                 <path d="M11.414 10l6.293-6.293a1 1 0 1 0-1.414-1.414L10 8.586 3.707 2.293a1 1 0 0 0-1.414 1.414L8.586 10l-6.293 6.293a1 1 0 1 0 1.414 1.414L10 11.414l6.293 6.293A.998.998 0 0 0 18 17a.999.999 0 0 0-.293-.707L11.414 10z"></path>
                                             </svg></span></button>
                                 </div>
+
+                                <form action="/orderdetails/{{$o_id}}/email/updated" method="post">
+                                    @csrf 
                                 <div class="Polaris-Modal__BodyWrapper_1kb1f">
                                     <div class="Polaris-Modal__Body_yjdx1 Polaris-Scrollable_1ed9o Polaris-Scrollable--vertical_uiuuj" data-polaris-scrollable="true">
                                         <section class="Polaris-Modal-Section_1b1h1">
@@ -1146,7 +1161,13 @@ $total=$order_item->total*$tax;
                                                         </div>
                                                         <div class="Polaris-Connected_wopc9 Polaris-Connected--newDesignLanguage_1rik8">
                                                             <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
-                                                                <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8"><input id="PolarisTextField16" style="border: 1px solid #DFE3E8;border-radius: 0.2rem;" class="Polaris-TextField__Input_30ock" type="email" aria-labelledby="PolarisTextField16Label" aria-invalid="false" aria-multiline="false" value="">
+                                                                <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8">
+                                                                               
+                                                                    @foreach ($order_details as $order_detail)
+                                                                    @if ($order_detail->order_id == $o_id)                                                
+                                                                    <input name="email" id="PolarisTextField16" style="border: 1px solid #DFE3E8;border-radius: 0.2rem;" class="Polaris-TextField__Input_30ock" type="email" aria-labelledby="PolarisTextField16Label" aria-invalid="false" aria-multiline="false" value="{{$order_detail->email}}">
+@endif
+@endforeach
                                                                     <div class="Polaris-TextField__Backdrop_1x2i2"></div>
                                                                 </div>
                                                             </div>
@@ -1164,7 +1185,8 @@ $total=$order_item->total*$tax;
                                             <div class="Polaris-Stack__Item_yiyol">
                                                 <div class="Polaris-ButtonGroup_yy85z">
                                                     <div class="Polaris-ButtonGroup__Item_yiyol"><button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8" type="button" onclick="Close_Contact()"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Cancel</span></span></button></div>
-                                                    <div class="Polaris-ButtonGroup__Item_yiyol"><button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--primary_7k9zs Polaris-Button--disabled_hcuh9" type="button" disabled="" onclick="Close_Contact()"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Save</span></span></button></div>
+                                                    <div class="Polaris-ButtonGroup__Item_yiyol"><button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--primary_7k9zs" type="submit"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Save</span></span></button>
+                                                    </form></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -1192,6 +1214,12 @@ $total=$order_item->total*$tax;
         <div data-portal-id="modal-Polarisportal6">
             <div></div>
         </div>
+
+    
+        
+        @foreach ($order_details as $order_detail)
+        @if ($order_detail->order_id == $o_id)
+
         <div data-portal-id="modal-Polarisportal7">
             <div>
                 <div class="Polaris-Modal-Dialog__Container_13mbo" data-polaris-layer="true" data-polaris-overlay="true">
@@ -1205,10 +1233,12 @@ $total=$order_item->total*$tax;
                                                 <path d="M11.414 10l6.293-6.293a1 1 0 1 0-1.414-1.414L10 8.586 3.707 2.293a1 1 0 0 0-1.414 1.414L8.586 10l-6.293 6.293a1 1 0 1 0 1.414 1.414L10 11.414l6.293 6.293A.998.998 0 0 0 18 17a.999.999 0 0 0-.293-.707L11.414 10z"></path>
                                             </svg></span></button>
                                 </div>
+                                <form action="/orderdetails/{{$o_id}}/updated" method="post">
+                                    @csrf    
                                 <div class="Polaris-Modal__BodyWrapper_1kb1f">
                                     <div class="Polaris-Modal__Body_yjdx1 Polaris-Scrollable_1ed9o Polaris-Scrollable--vertical_uiuuj Polaris-Scrollable--hasBottomShadow_all2n Polaris-Scrollable--verticalHasScrolling_1n2r8" data-polaris-scrollable="true">
                                         <section class="Polaris-Modal-Section_1b1h1">
-                                            <form method="post">
+                                            
                                                 <div class="Polaris-FormLayout_1wntl">
                                                     <div class="Polaris-FormLayout__Item_yiyol">
                                                         <div class="Polaris-FormLayout_1wntl">
@@ -1221,31 +1251,21 @@ $total=$order_item->total*$tax;
                                                                                     <div class="Polaris-FormLayout__Item_yiyol">
                                                                                         <div class="">
                                                                                             <div class="Polaris-Labelled__LabelWrapper_bf6ys">
-                                                                                                <div class="Polaris-Label_2vd36"><label id="PolarisTextField2Label" for="PolarisTextField2" class="Polaris-Label__Text_yj3uv">First name</label></div>
+                                                                                                <div class="Polaris-Label_2vd36"><label id="PolarisTextField2Label" for="PolarisTextField2" class="Polaris-Label__Text_yj3uv">Name</label></div>
                                                                                             </div>
                                                                                             <div class="Polaris-Connected_wopc9 Polaris-Connected--newDesignLanguage_1rik8">
                                                                                                 <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
-                                                                                                    <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8"><input name="firstName" id="PolarisTextField2" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField2Label" aria-invalid="false" aria-multiline="false" value="">
+                                                                                                    <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8">
+                                                                                                        
+                                                                                                        <input name="name" id="PolarisTextField2" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField2Label" aria-invalid="false" aria-multiline="false" value="{{$order_detail->name}}">
+
                                                                                                         <div class="Polaris-TextField__Backdrop_1x2i2"></div>
                                                                                                     </div>
                                                                                                 </div>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
-                                                                                    <div class="Polaris-FormLayout__Item_yiyol">
-                                                                                        <div class="">
-                                                                                            <div class="Polaris-Labelled__LabelWrapper_bf6ys">
-                                                                                                <div class="Polaris-Label_2vd36"><label id="PolarisTextField3Label" for="PolarisTextField3" class="Polaris-Label__Text_yj3uv">Last name</label></div>
-                                                                                            </div>
-                                                                                            <div class="Polaris-Connected_wopc9 Polaris-Connected--newDesignLanguage_1rik8">
-                                                                                                <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
-                                                                                                    <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8"><input name="lastName" id="PolarisTextField3" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField3Label" aria-invalid="false" aria-multiline="false" value="">
-                                                                                                        <div class="Polaris-TextField__Backdrop_1x2i2"></div>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
+                                                                                    
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -1254,28 +1274,7 @@ $total=$order_item->total*$tax;
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="Polaris-FormLayout__Item_yiyol">
-                                                        <div class="Polaris-FormLayout_1wntl">
-                                                            <div role="group" class="Polaris-FormLayout--condensed_b60cb">
-                                                                <div class="Polaris-FormLayout__Items_38lvu">
-                                                                    <div class="Polaris-FormLayout__Item_yiyol">
-                                                                        <div class="">
-                                                                            <div class="Polaris-Labelled__LabelWrapper_bf6ys">
-                                                                                <div class="Polaris-Label_2vd36"><label id="PolarisTextField4Label" for="PolarisTextField4" class="Polaris-Label__Text_yj3uv">Company</label></div>
-                                                                            </div>
-                                                                            <div class="Polaris-Connected_wopc9 Polaris-Connected--newDesignLanguage_1rik8">
-                                                                                <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
-                                                                                    <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8"><input name="company" id="PolarisTextField4" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField4Label" aria-invalid="false" aria-multiline="false" value="">
-                                                                                        <div class="Polaris-TextField__Backdrop_1x2i2"></div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    
                                                     <div class="Polaris-FormLayout__Item_yiyol">
                                                         <div class="Polaris-FormLayout_1wntl">
                                                             <div role="group" class="Polaris-FormLayout--condensed_b60cb">
@@ -1289,7 +1288,7 @@ $total=$order_item->total*$tax;
                                                                                     </div>
                                                                                     <div class="Polaris-Connected_wopc9 Polaris-Connected--newDesignLanguage_1rik8">
                                                                                         <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
-                                                                                            <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8"><input name="address1" id="PolarisTextField5" autocomplete="no" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField5Label" aria-invalid="false" aria-multiline="false" value="" tabindex="0" aria-controls="Polarispopover12" aria-owns="Polarispopover12" aria-expanded="false">
+                                                                                            <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8"><input name="address" id="PolarisTextField5" autocomplete="no" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField5Label" aria-invalid="false" aria-multiline="false" value="{{$order_detail->address}}" tabindex="0" aria-controls="Polarispopover12" aria-owns="Polarispopover12" aria-expanded="false">
                                                                                                 <div class="Polaris-TextField__Backdrop_1x2i2"></div>
                                                                                             </div>
                                                                                         </div>
@@ -1302,28 +1301,7 @@ $total=$order_item->total*$tax;
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="Polaris-FormLayout__Item_yiyol">
-                                                        <div class="Polaris-FormLayout_1wntl">
-                                                            <div role="group" class="Polaris-FormLayout--condensed_b60cb">
-                                                                <div class="Polaris-FormLayout__Items_38lvu">
-                                                                    <div class="Polaris-FormLayout__Item_yiyol">
-                                                                        <div class="">
-                                                                            <div class="Polaris-Labelled__LabelWrapper_bf6ys">
-                                                                                <div class="Polaris-Label_2vd36"><label id="PolarisTextField6Label" for="PolarisTextField6" class="Polaris-Label__Text_yj3uv">Apartment, suite, etc.</label></div>
-                                                                            </div>
-                                                                            <div class="Polaris-Connected_wopc9 Polaris-Connected--newDesignLanguage_1rik8">
-                                                                                <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
-                                                                                    <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8"><input name="address2" id="PolarisTextField6" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField6Label" aria-invalid="false" aria-multiline="false" value="">
-                                                                                        <div class="Polaris-TextField__Backdrop_1x2i2"></div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    
                                                     <div class="Polaris-FormLayout__Item_yiyol">
                                                         <div class="Polaris-FormLayout_1wntl">
                                                             <div role="group" class="Polaris-FormLayout--condensed_b60cb">
@@ -1335,7 +1313,7 @@ $total=$order_item->total*$tax;
                                                                             </div>
                                                                             <div class="Polaris-Connected_wopc9 Polaris-Connected--newDesignLanguage_1rik8">
                                                                                 <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
-                                                                                    <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8"><input name="city" id="PolarisTextField7" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField7Label" aria-invalid="false" aria-multiline="false" value="">
+                                                                                    <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8"><input name="city" id="PolarisTextField7" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField7Label" aria-invalid="false" aria-multiline="false" value="{{$order_detail->city}}">
                                                                                         <div class="Polaris-TextField__Backdrop_1x2i2"></div>
                                                                                     </div>
                                                                                 </div>
@@ -1355,12 +1333,12 @@ $total=$order_item->total*$tax;
                                                                     <div class="Polaris-FormLayout__Item_yiyol">
                                                                         <div class="">
                                                                             <div class="Polaris-Labelled__LabelWrapper_bf6ys">
-                                                                                <div class="Polaris-Label_2vd36"><label id="PolarisSelect1Label" for="PolarisSelect1" class="Polaris-Label__Text_yj3uv">Country/Region</label></div>
+                                                                                <div class="Polaris-Label_2vd36"><label id="PolarisSelect1Label" for="PolarisSelect1" class="Polaris-Label__Text_yj3uv">Region</label></div>
                                                                             </div>
                                                                             
                                                                             <div class="Polaris-Connected_wopc9 Polaris-Connected--newDesignLanguage_1rik8">
                                                                                 <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
-                                                                                    <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8"><input name="city" id="PolarisTextField7" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField7Label" aria-invalid="false" aria-multiline="false" value="">
+                                                                                    <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8"><input name="state" id="PolarisTextField7" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField7Label" aria-invalid="false" aria-multiline="false" value="{{$order_detail->state}}">
                                                                                         <div class="Polaris-TextField__Backdrop_1x2i2"></div>
                                                                                     </div>
                                                                                 </div>
@@ -1385,7 +1363,7 @@ $total=$order_item->total*$tax;
                                                                                 </div>
                                                                                 <div class="Polaris-Connected_wopc9 Polaris-Connected--newDesignLanguage_1rik8">
                                                                                     <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
-                                                                                        <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8"><input id="PolarisTextField8" placeholder="" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField8Label" aria-invalid="false" aria-multiline="false" value="">
+                                                                                        <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8"><input name="phone" id="PolarisTextField8" placeholder="" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField8Label" aria-invalid="false" aria-multiline="false" value="{{$order_detail->phone}}">
                                                                                             <div class="Polaris-TextField__Backdrop_1x2i2"></div>
                                                                                         </div>
                                                                                     </div>
@@ -1397,8 +1375,8 @@ $total=$order_item->total*$tax;
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div><span class="Polaris-VisuallyHidden_yrtt5"><button type="submit" aria-hidden="true" tabindex="-1">Submit</button></span>
-                                            </form>
+                                                </div>
+                                            
                                         </section>
                                     </div>
                                 </div>
@@ -1409,7 +1387,8 @@ $total=$order_item->total*$tax;
                                             <div class="Polaris-Stack__Item_yiyol">
                                                 <div class="Polaris-ButtonGroup_yy85z">
                                                     <div class="Polaris-ButtonGroup__Item_yiyol"><button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8" type="button" onclick="Close_Shipping()"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv" >Cancel</span></span></button></div>
-                                                    <div class="Polaris-ButtonGroup__Item_yiyol"><button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--primary_7k9zs" type="button"onclick="Close_Shipping()"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Save</span></span></button></div>
+                                                    <div class="Polaris-ButtonGroup__Item_yiyol"><button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--primary_7k9zs" type="submit"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Save</span></span></button>
+                                                    </form></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -1420,6 +1399,8 @@ $total=$order_item->total*$tax;
                     </div>
                 </div>
             </div>
+            @endif
+            @endforeach
             <div class="Polaris-Backdrop_1x2i2"></div>
         </div>
         <div data-portal-id="modal-Polarisportal8">
