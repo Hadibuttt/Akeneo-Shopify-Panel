@@ -39,6 +39,8 @@ Route::get('/add-product', [App\Http\Controllers\AddProductController::class, 'i
 
 Route::get('/update-product/{id}/edit', [App\Http\Controllers\AddProductController::class, 'update']);
 
+Route::get('/update-page/{id}/edit', [App\Http\Controllers\AddPageController::class, 'update']);
+
 Route::get('/update-category/{cat_id}/edit', [App\Http\Controllers\CategoryController::class, 'update']);
 
 Route::get('/update-subcategory/{subcat_id}/edit', [App\Http\Controllers\SubCategoryController::class, 'update']);
@@ -68,6 +70,8 @@ Route::post('submitted', [App\Http\Controllers\SubCategoryController::class, 'sa
 Route::post('successs', [App\Http\Controllers\CollectionController::class, 'save'] )->name('addcollection');
 
 Route::post('/update-product/{id}/updated', [App\Http\Controllers\AddProductController::class, 'updated'] );
+
+Route::post('/update-page/{id}/updated', [App\Http\Controllers\AddPageController::class, 'updated'] );
 
 Route::post('/orderdetails/{id}/note/updated', [App\Http\Controllers\OrderDetailsController::class, 'NoteUpdated'] );
 
@@ -113,9 +117,9 @@ Route::get('/restricted', function () {
     return view('restricted');
 });
 
-Route::get('/pages', function () {
-    return view('pages');
-});
+Route::get('/pages', [App\Http\Controllers\AddPageController::class, 'pages']);
+
+Route::get('/custom-pages/{id}/show', [App\Http\Controllers\AddPageController::class, 'CustomPages']);
 
 Route::get('/menu', function () {
     return view('menu');

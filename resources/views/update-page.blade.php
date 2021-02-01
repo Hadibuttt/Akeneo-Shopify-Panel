@@ -1,10 +1,9 @@
 @extends('layouts.app')
 @section('content')
 
-<script src="assets/ckeditor/ckeditor.js" type="text/javascript"></script>
-<script>
-    CKEDITOR.replace( 'article-ckeditor' );
-</script>
+<?php 
+    $id = request('id');
+?>
 
 <link rel="stylesheet" type="text/css" href="https://cdn.shopify.com/shopifycloud/web/assets/v1/latest/vendors~Admin~internal~section-flow~section-flow-summary~section-flow-template-installer~section-flo~67560caa-da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="https://cdn.shopify.com/shopifycloud/web/assets/v1/latest/vendors~Admin~internal~section-apps~section-apps-app-details~section-flow~section-flow-connector~sec~886ec812-d399c7a88b9def638f0e6090adbf93c63487fd48f111f883b928fd01a9f7724f.css" crossorigin="anonymous">
@@ -45,7 +44,7 @@
 <div class="Polaris-Page-Header_z4uwg Polaris-Page-Header--hasNavigation_gfpa8 Polaris-Page-Header--hasActionMenu_1wx04 Polaris-Page-Header--newDesignLanguage_1rik8 Polaris-Page-Header--mediumTitle_bfol6">
 <div class="Polaris-Page-Header__Row_375v7 Polaris-Page-Header__RowCondensed_1gexu">
 <div class="Polaris-Page-Header__BreadcrumbWrapper_1tgwk Polaris-Page-Header--newDesignLanguage_1rik8">
-<nav role="navigation"><a href="pages" data-polaris-unstyled="true" class="Polaris-Breadcrumbs__Breadcrumb_llsun Polaris-Breadcrumbs--newDesignLanguage_1rik8"><span class="Polaris-Breadcrumbs__ContentWrapper_1yvfo"><span class="Polaris-Breadcrumbs__Icon_yj27d"><span class="Polaris-Icon_yj27d Polaris-Icon--newDesignLanguage_1rik8"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
+<nav role="navigation"><a href="/pages" data-polaris-unstyled="true" class="Polaris-Breadcrumbs__Breadcrumb_llsun Polaris-Breadcrumbs--newDesignLanguage_1rik8"><span class="Polaris-Breadcrumbs__ContentWrapper_1yvfo"><span class="Polaris-Breadcrumbs__Icon_yj27d"><span class="Polaris-Icon_yj27d Polaris-Icon--newDesignLanguage_1rik8"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
 <path d="M17 9H5.414l3.293-3.293a.999.999 0 1 0-1.414-1.414l-5 5a.999.999 0 0 0 0 1.414l5 5a.997.997 0 0 0 1.414 0 .999.999 0 0 0 0-1.414L5.414 11H17a1 1 0 1 0 0-2z"></path>
 </svg></span></span><span class="Polaris-VisuallyHidden_yrtt5">Pages</span></span></a></nav>
 </div>
@@ -63,26 +62,19 @@
 <div class="Polaris-ActionMenu_1hlnt Polaris-ActionMenu--newDesignLanguage_1rik8">
 <div class="Polaris-ActionMenu-Actions__ActionsLayout_w56ri Polaris-ActionMenu-Actions--newDesignLanguage_1rik8">
 <div class="Polaris-ButtonGroup_yy85z Polaris-ButtonGroup--extraTight_1xh3x">
-
-    
-    <!--<div class="Polaris-ButtonGroup__Item_yiyol"><span class="Polaris-ActionMenu-SecondaryAction_1dl4i Polaris-ActionMenu-SecondaryAction--newDesignLanguage_1rik8"><button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8" type="button"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Icon_yj27d"><span class="Polaris-Icon_yj27d Polaris-Icon--newDesignLanguage_1rik8"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
+<div class="Polaris-ButtonGroup__Item_yiyol"><span class="Polaris-ActionMenu-SecondaryAction_1dl4i Polaris-ActionMenu-SecondaryAction--newDesignLanguage_1rik8"><button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8" type="button"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Icon_yj27d"><span class="Polaris-Icon_yj27d Polaris-Icon--newDesignLanguage_1rik8"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
 <path d="M7.5 2A1.5 1.5 0 0 0 6 3.5V13a1 1 0 0 0 1 1h9.5a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 16.5 2h-9zm-4 4H4v10h10v.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 16.5v-9A1.5 1.5 0 0 1 3.5 6z"></path>
-</svg></span></span><span class="Polaris-Button__Text_yj3uv">Duplicate</span></span></button></span></div>-->
-
-
-<!--<div class="Polaris-ButtonGroup__Item_yiyol"><span class="Polaris-ActionMenu-SecondaryAction_1dl4i Polaris-ActionMenu-SecondaryAction--newDesignLanguage_1rik8"><a href="https://akeneo-shop.myshopify.com/pages/faq" data-polaris-unstyled="true" class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8" target="_blank" rel="noopener noreferrer"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Icon_yj27d"><span class="Polaris-Icon_yj27d Polaris-Icon--newDesignLanguage_1rik8"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
+</svg></span></span><span class="Polaris-Button__Text_yj3uv">Duplicate</span></span></button></span></div>
+<div class="Polaris-ButtonGroup__Item_yiyol"><span class="Polaris-ActionMenu-SecondaryAction_1dl4i Polaris-ActionMenu-SecondaryAction--newDesignLanguage_1rik8"><a href="/custom-pages/{{$id}}/show" data-polaris-unstyled="true" class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8" target="_blank" rel="noopener noreferrer"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Icon_yj27d"><span class="Polaris-Icon_yj27d Polaris-Icon--newDesignLanguage_1rik8"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
 <path d="M17.928 9.628C17.837 9.399 15.611 4 10 4S2.162 9.399 2.07 9.628a1.017 1.017 0 0 0 0 .744C2.163 10.601 4.389 16 10 16s7.837-5.399 7.928-5.628a1.017 1.017 0 0 0 0-.744zM10 14a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-6a2 2 0 1 0 .002 4.001A2 2 0 0 0 9.999 8z"></path>
-</svg></span></span><span class="Polaris-Button__Text_yj3uv">View page</span></span></a></span></div>-->
-
-
-<!--<div class="Polaris-ButtonGroup__Item_yiyol">
+</svg></span></span><span class="Polaris-Button__Text_yj3uv">View page</span></span></a></span></div>
+<div class="Polaris-ButtonGroup__Item_yiyol">
 <div><span class="Polaris-ActionMenu-SecondaryAction_1dl4i Polaris-ActionMenu-SecondaryAction--newDesignLanguage_1rik8"><button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8" type="button" tabindex="0" aria-controls="Polarispopover49" aria-owns="Polarispopover49" aria-expanded="false"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">More actions</span><span class="Polaris-Button__Icon_yj27d">
 <div class="Polaris-Button__DisclosureIcon_j5n4l"><span class="Polaris-Icon_yj27d Polaris-Icon--newDesignLanguage_1rik8"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
 <path d="M5 8l5 5 5-5H5z"></path>
 </svg></span></div>
 </span></span></button></span></div>
-</div>-->
-
+</div>
 </div>
 </div>
 </div>
@@ -104,7 +96,7 @@
 </div>
 <div class="Polaris-Page__Content_xd1mk">
 <div class="_1j4h2">
-<form action="/addedPage" method="post">
+<form action="/update-page/{{$id}}/updated" method="post">
     @csrf
 <div class="Polaris-Layout_sl20u Polaris-Layout--newDesignLanguage_1rik8">
 <div class="Polaris-Layout__Section_1b1h1"></div>
@@ -121,7 +113,7 @@
 <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
 <div class="Polaris-TextField_1spwi Polaris-TextField--hasValue_1mx8d Polaris-TextField--newDesignLanguage_1rik8">
     
-    <input name="title" id="PolarisTextField1" value="3M MicroTouch™ Chassis 1123988" placeholder="Short sleeve t-shirt" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField1Label" aria-invalid="false" aria-multiline="false">
+    <input name="title" id="PolarisTextField1" value="{{$cpage->title}}" placeholder="Short sleeve t-shirt" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField1Label" aria-invalid="false" aria-multiline="false">
 
     <div class="Polaris-TextField__Backdrop_1x2i2"></div>
 </div>
@@ -140,7 +132,7 @@
 <div class="_1K4u4">
 <div id="product-description_parent">
 </div>
-<textarea name="description" id="article-ckeditor" placeholder="" class="Polaris-TextField__Input_30ock ckeditor" aria-describedby="PolarisTextField16HelpText" aria-labelledby="PolarisTextField16Label" aria-invalid="false" aria-multiline="true" style="height: 108px;"></textarea>
+<textarea name="description" placeholder="" class="Polaris-TextField__Input_30ock ckeditor" aria-describedby="PolarisTextField16HelpText" aria-labelledby="PolarisTextField16Label" aria-invalid="false" aria-multiline="true" style="height: 108px;">{!!$cpage->description!!}</textarea>
 </div>
 </div>
 </div>
@@ -167,7 +159,7 @@
 <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
 <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8">
     
-    <input name="SEOtitle" id="PolarisTextField15" placeholder="" class="Polaris-TextField__Input_30ock" aria-describedby="PolarisTextField15HelpText" aria-labelledby="PolarisTextField15Label" aria-invalid="false" aria-multiline="false" value="">
+    <input name="SEOtitle" id="PolarisTextField15" placeholder="" class="Polaris-TextField__Input_30ock" aria-describedby="PolarisTextField15HelpText" aria-labelledby="PolarisTextField15Label" aria-invalid="false" aria-multiline="false" value="{{$cpage->SEOtitle}}">
 
     <div class="Polaris-TextField__Backdrop_1x2i2"></div>
 </div>
@@ -185,7 +177,7 @@
 <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
 <div class="Polaris-TextField_1spwi Polaris-TextField--multiline_1jgfe Polaris-TextField--newDesignLanguage_1rik8">
     
-    <textarea name="SEOdescription" id="PolarisTextField16" placeholder="" class="Polaris-TextField__Input_30ock" aria-describedby="PolarisTextField16HelpText" aria-labelledby="PolarisTextField16Label" aria-invalid="false" aria-multiline="true" style="height: 108px;"></textarea>
+    <textarea name="SEOdescription" id="PolarisTextField16" placeholder="" class="Polaris-TextField__Input_30ock" aria-describedby="PolarisTextField16HelpText" aria-labelledby="PolarisTextField16Label" aria-invalid="false" aria-multiline="true" style="height: 108px;">{{$cpage->SEOdescription}}</textarea>
 
     <div class="Polaris-TextField__Backdrop_1x2i2"></div>
     <div aria-hidden="true" class="Polaris-TextField__Resizer_mlqsu">
@@ -208,7 +200,7 @@
 <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8">
     <div class="Polaris-TextField__Prefix_10fbz" id="PolarisTextField17Prefix">https://akeneo-shop.myshopify.com/products/</div>
     
-    <input name="SEOurl" id="PolarisTextField17" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField17Label PolarisTextField17Prefix" aria-invalid="false" aria-multiline="false" value="">
+    <input name="SEOurl" id="PolarisTextField17" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField17Label PolarisTextField17Prefix" aria-invalid="false" aria-multiline="false" value="{{$cpage->SEOurl}}">
 
     <div class="Polaris-TextField__Backdrop_1x2i2"></div>
 </div>
@@ -235,12 +227,12 @@
 <ul class="Polaris-ChoiceList__Choices_15o76">
 <li><label class="Polaris-Choice_j5gzq" for="PolarisRadioButton1"><span class="Polaris-Choice__Control_1u8vs"><span class="Polaris-RadioButton_bsatr Polaris-RadioButton--newDesignLanguage_1rik8">
     
-    <input id="PolarisRadioButton1" name="visibility" type="radio" class="Polaris-RadioButton__Input_30ock" value="visible"><span class="Polaris-RadioButton__Backdrop_1x2i2">
+    <input id="PolarisRadioButton1" @if ($cpage->visibility == "1") checked="" @endif name="visibility" type="radio" class="Polaris-RadioButton__Input_30ock" value="visible"><span class="Polaris-RadioButton__Backdrop_1x2i2">
         
     </span></span></span><span class="Polaris-Choice__Label_2vd36">Visible (Displays the Page)</span></label></li>
 <li><label class="Polaris-Choice_j5gzq" for="PolarisRadioButton2"><span class="Polaris-Choice__Control_1u8vs"><span class="Polaris-RadioButton_bsatr Polaris-RadioButton--newDesignLanguage_1rik8">
     
-    <input id="PolarisRadioButton2" name="visibility" type="radio" class="Polaris-RadioButton__Input_30ock" value="hidden">
+    <input id="PolarisRadioButton2" @if ($cpage->visibility == "0") checked="" @endif name="visibility" type="radio" class="Polaris-RadioButton__Input_30ock" value="hidden">
     
     <span class="Polaris-RadioButton__Backdrop_1x2i2"></span></span></span><span class="Polaris-Choice__Label_2vd36">Hidden</span></label></li>
 </ul>
@@ -287,7 +279,7 @@
 </div>
 </div>
 <div class="Polaris-Stack__Item_yiyol">
-    <button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--primary_7k9zs" type="submit"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Save</span></span></button></div>
+    <button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--primary_7k9zs" type="submit"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Update</span></span></button></div>
 </div>
 </div>
 </div><span class="Polaris-VisuallyHidden_yrtt5"><input type="submit"></span>

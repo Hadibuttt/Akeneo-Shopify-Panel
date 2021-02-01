@@ -9,7 +9,18 @@ class AddPageController extends Controller
 {
     public function index()
     {
-        return view('addPage');
+        $cpages = cpages::all();
+        return view('addPage')->with([
+            'cpages'=> $cpages
+        ]);    
+    }
+
+    public function pages()
+    {
+        $cpages = cpages::all();
+        return view('pages')->with([
+            'cpages'=> $cpages
+        ]);    
     }
 
     public function save(Request $req)
@@ -34,4 +45,49 @@ class AddPageController extends Controller
 
         return redirect('pages');
     }
+
+    public function update($id)
+    {
+        $cpage = cpages::where('id',$id)->first();
+        return view('update-page')->with([
+            'cpage'=> $cpage
+        ]);
+    }
+
+    public function updated(Request $req,$id)
+    {
+        $title = $req->title;
+        $description = $req->description;
+        $SEOtitle = $req->SEOtitle;
+        $SEOdescription = $req->SEOdescription;
+        $SEOurl = $req->SEOurl;
+
+        if($req->visibility == 'visible')
+        {
+            $visibility = 1;   
+        } 
+        else 
+        {
+            $visibility = 0; 
+        }
+
+        cpages::where('id',$id)->update(['title'=> $title,
+        'description'=> $description,
+        'SEOtitle'=> $SEOtitle,
+        'SEOdescription'=> $SEOdescription,
+        'SEOurl'=> $SEOurl,
+        'visibility'=> $visibility
+        ]);
+
+        return redirect("/pages");
+    }
+
+    public function CustomPages($id)
+    {
+        $cpage = cpages::where('id',$id)->first();
+        return view('custom-page')->with([
+            'cpage'=> $cpage
+        ]);
+    }
+
 }

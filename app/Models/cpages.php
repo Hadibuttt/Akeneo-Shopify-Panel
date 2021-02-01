@@ -10,5 +10,4 @@ class cpages extends Model
     use HasFactory;
     protected $table='cpages';
     protected $primaryKey = 'id';
-    public $timestamps = false;
 }

@@ -151,6 +151,8 @@
 </div>
 </div>
 <ul class="Polaris-ResourceList_r589e" aria-live="polite" aria-busy="false">
+
+@foreach ($cpages as $cpage)
 <li class="Polaris-ResourceItem__ListItem_wxd2m Polaris-ResourceItem--newDesignLanguage_1rik8">
 <div class="Polaris-ResourceItem__ItemWrapper_1kbav">
 <div class="Polaris-ResourceItem_1uu16 Polaris-ResourceItem--newDesignLanguage_1rik8 Polaris-ResourceItem--selectable_1tkx2" data-href="https://akeneo-shop.myshopify.com/admin/pages/52569767985"><a href="https://akeneo-shop.myshopify.com/admin/pages/52569767985" data-polaris-unstyled="true" aria-describedby="gid://shopify/OnlineStorePage/52569767985" aria-label="View details" class="Polaris-ResourceItem__Link_yj5sy" tabindex="0" id="PolarisResourceListItemOverlay2"></a>
@@ -169,13 +171,14 @@
 <div class="Polaris-Stack__Item_yiyol">
 <div class="Polaris-TextContainer_szg8b Polaris-TextContainer--spacingTight_1o4d6">
 <div class="_3-akN">
-<h3><span class="Polaris-TextStyle--variationStrong_rpyvj">FAQ</span> </h3>
+<h3><span class="Polaris-TextStyle--variationStrong_rpyvj"><a style="color:rgba(32, 34, 35, 1);" href="update-page/{{$cpage->id}}/edit">{{$cpage->title}}</a></span></h3>
 </div>
-<div><span class="Polaris-TextStyle--variationSubdued_1segu">FAQ Question</span></div>
+<div><span class="Polaris-TextStyle--variationSubdued_1segu"><span class="Polaris-TextStyle--variationSubdued_1segu">
+    @if ($cpage->visibility == "1") Visible</span></div>  @else Hidden</span></div>   @endif
 </div>
 </div>
 <div class="Polaris-Stack__Item_yiyol">
-<div class="SM-k0"><span class="Polaris-TextStyle--variationSubdued_1segu">Nov 24 at 02:43&nbsp;am EST</span></div>
+<div class="SM-k0"><span class="Polaris-TextStyle--variationSubdued_1segu">{{$cpage->created_at->format('l j F Y')}}</span></div>
 </div>
 </div>
 </div>
@@ -183,6 +186,8 @@
 </div>
 </div>
 </li>
+@endforeach
+
 </ul>
 </div>
 </div>
