@@ -92,7 +92,8 @@
 </div>
 <div class="Polaris-Page__Content_xd1mk">
 <div class="_1j4h2">
-<form autocomplete="off" method="post">
+<form action="/addedPage" method="post">
+    @csrf
 <div class="Polaris-Layout_sl20u Polaris-Layout--newDesignLanguage_1rik8">
 <div class="Polaris-Layout__Section_1b1h1"></div>
 <div class="Polaris-Layout__Section_1b1h1">
@@ -106,7 +107,10 @@
 </div>
 <div class="Polaris-Connected_wopc9 Polaris-Connected--newDesignLanguage_1rik8">
 <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
-<div class="Polaris-TextField_1spwi Polaris-TextField--hasValue_1mx8d Polaris-TextField--newDesignLanguage_1rik8"><input name="title" id="PolarisTextField1" value="3M MicroTouch™ Chassis 1123988" placeholder="Short sleeve t-shirt" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField1Label" aria-invalid="false" aria-multiline="false">
+<div class="Polaris-TextField_1spwi Polaris-TextField--hasValue_1mx8d Polaris-TextField--newDesignLanguage_1rik8">
+    
+    <input name="title" id="PolarisTextField1" value="3M MicroTouch™ Chassis 1123988" placeholder="Short sleeve t-shirt" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField1Label" aria-invalid="false" aria-multiline="false">
+
     <div class="Polaris-TextField__Backdrop_1x2i2"></div>
 </div>
 </div>
@@ -226,7 +230,7 @@
 </div>
 <div class="_1K4u4">
 <div id="product-description_parent">
-</div><textarea id="product-description" class="_2LZUF" aria-hidden="true" style="display:;"></textarea>
+</div><textarea id="description" class="_2LZUF" aria-hidden="true" style="display:;"></textarea>
 </div>
 </div>
 </div>
@@ -251,7 +255,10 @@
 </div>
 <div class="Polaris-Connected_wopc9 Polaris-Connected--newDesignLanguage_1rik8">
 <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
-<div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8"><input name="seoTitle" id="PolarisTextField15" placeholder="" class="Polaris-TextField__Input_30ock" aria-describedby="PolarisTextField15HelpText" aria-labelledby="PolarisTextField15Label" aria-invalid="false" aria-multiline="false" value="">
+<div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8">
+    
+    <input name="SEOtitle" id="PolarisTextField15" placeholder="" class="Polaris-TextField__Input_30ock" aria-describedby="PolarisTextField15HelpText" aria-labelledby="PolarisTextField15Label" aria-invalid="false" aria-multiline="false" value="">
+
     <div class="Polaris-TextField__Backdrop_1x2i2"></div>
 </div>
 </div>
@@ -266,7 +273,10 @@
 </div>
 <div class="Polaris-Connected_wopc9 Polaris-Connected--newDesignLanguage_1rik8">
 <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
-<div class="Polaris-TextField_1spwi Polaris-TextField--multiline_1jgfe Polaris-TextField--newDesignLanguage_1rik8"><textarea name="seoDescription" id="PolarisTextField16" placeholder="" class="Polaris-TextField__Input_30ock" aria-describedby="PolarisTextField16HelpText" aria-labelledby="PolarisTextField16Label" aria-invalid="false" aria-multiline="true" style="height: 108px;"></textarea>
+<div class="Polaris-TextField_1spwi Polaris-TextField--multiline_1jgfe Polaris-TextField--newDesignLanguage_1rik8">
+    
+    <textarea name="SEOdescription" id="PolarisTextField16" placeholder="" class="Polaris-TextField__Input_30ock" aria-describedby="PolarisTextField16HelpText" aria-labelledby="PolarisTextField16Label" aria-invalid="false" aria-multiline="true" style="height: 108px;"></textarea>
+
     <div class="Polaris-TextField__Backdrop_1x2i2"></div>
     <div aria-hidden="true" class="Polaris-TextField__Resizer_mlqsu">
         <div class="Polaris-TextField__DummyInput_1u3lq"><br></div>
@@ -286,7 +296,10 @@
 <div class="Polaris-Connected_wopc9 Polaris-Connected--newDesignLanguage_1rik8">
 <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
 <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8">
-    <div class="Polaris-TextField__Prefix_10fbz" id="PolarisTextField17Prefix">https://akeneo-shop.myshopify.com/products/</div><input name="handle" id="PolarisTextField17" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField17Label PolarisTextField17Prefix" aria-invalid="false" aria-multiline="false" value="">
+    <div class="Polaris-TextField__Prefix_10fbz" id="PolarisTextField17Prefix">https://akeneo-shop.myshopify.com/products/</div>
+    
+    <input name="SEOurl" id="PolarisTextField17" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField17Label PolarisTextField17Prefix" aria-invalid="false" aria-multiline="false" value="">
+
     <div class="Polaris-TextField__Backdrop_1x2i2"></div>
 </div>
 </div>
@@ -310,12 +323,20 @@
 <fieldset class="Polaris-ChoiceList_ygfuw Polaris-ChoiceList--titleHidden_14zrw" id="PolarisChoiceList1" aria-invalid="false">
 <legend class="Polaris-ChoiceList__Title_2qj8j">Visibility</legend>
 <ul class="Polaris-ChoiceList__Choices_15o76">
-<li><label class="Polaris-Choice_j5gzq" for="PolarisRadioButton1"><span class="Polaris-Choice__Control_1u8vs"><span class="Polaris-RadioButton_bsatr Polaris-RadioButton--newDesignLanguage_1rik8"><input id="PolarisRadioButton1" name="PolarisChoiceList1" type="radio" class="Polaris-RadioButton__Input_30ock" value="visible" checked=""><span class="Polaris-RadioButton__Backdrop_1x2i2"></span></span></span><span class="Polaris-Choice__Label_2vd36">Visible (as of 11/24/2020, 2:43 AM EST)</span></label></li>
-<li><label class="Polaris-Choice_j5gzq" for="PolarisRadioButton2"><span class="Polaris-Choice__Control_1u8vs"><span class="Polaris-RadioButton_bsatr Polaris-RadioButton--newDesignLanguage_1rik8"><input id="PolarisRadioButton2" name="PolarisChoiceList1" type="radio" class="Polaris-RadioButton__Input_30ock" value="hidden"><span class="Polaris-RadioButton__Backdrop_1x2i2"></span></span></span><span class="Polaris-Choice__Label_2vd36">Hidden</span></label></li>
+<li><label class="Polaris-Choice_j5gzq" for="PolarisRadioButton1"><span class="Polaris-Choice__Control_1u8vs"><span class="Polaris-RadioButton_bsatr Polaris-RadioButton--newDesignLanguage_1rik8">
+    
+    <input id="PolarisRadioButton1" name="visibility" type="radio" class="Polaris-RadioButton__Input_30ock" value="visible"><span class="Polaris-RadioButton__Backdrop_1x2i2">
+        
+    </span></span></span><span class="Polaris-Choice__Label_2vd36">Visible (Displays the Page)</span></label></li>
+<li><label class="Polaris-Choice_j5gzq" for="PolarisRadioButton2"><span class="Polaris-Choice__Control_1u8vs"><span class="Polaris-RadioButton_bsatr Polaris-RadioButton--newDesignLanguage_1rik8">
+    
+    <input id="PolarisRadioButton2" name="visibility" type="radio" class="Polaris-RadioButton__Input_30ock" value="hidden">
+    
+    <span class="Polaris-RadioButton__Backdrop_1x2i2"></span></span></span><span class="Polaris-Choice__Label_2vd36">Hidden</span></label></li>
 </ul>
 </fieldset>
 </div>
-<div class="Polaris-Stack__Item_yiyol"><button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--plain_2z97r" type="button"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Set visibility date</span></span></button></div>
+
 </div>
 </div>
 </div>
@@ -352,10 +373,11 @@
 <div class="Polaris-Stack_32wu2 Polaris-Stack--spacingTight_1o4d6 Polaris-Stack--distributionEqualSpacing_x9cqm">
 <div class="Polaris-Stack__Item_yiyol">
 <div class="Polaris-ButtonGroup_yy85z">
-<div class="Polaris-ButtonGroup__Item_yiyol"><button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--outline_1urzi Polaris-Button--destructive_zy6o5" type="button"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Delete Page</span></span></button></div>
+
 </div>
 </div>
-<div class="Polaris-Stack__Item_yiyol"><button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--primary_7k9zs Polaris-Button--disabled_hcuh9" type="button" disabled=""><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Save</span></span></button></div>
+<div class="Polaris-Stack__Item_yiyol">
+    <button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--primary_7k9zs" type="submit"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Save</span></span></button></div>
 </div>
 </div>
 </div><span class="Polaris-VisuallyHidden_yrtt5"><input type="submit"></span>
