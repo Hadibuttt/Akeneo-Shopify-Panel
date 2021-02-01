@@ -55,6 +55,8 @@ Route::get('/create-collection', [App\Http\Controllers\CollectionController::cla
 
 Route::get('/staffaccounts', [App\Http\Controllers\StaffController::class, 'index']);
 
+Route::get('/addPage', [App\Http\Controllers\AddPageController::class, 'index']);
+
 Route::get('/staffarea', [App\Http\Controllers\StaffController::class, 'create']);
 
 Route::get('/subcategory', [App\Http\Controllers\SubCategoryController::class, 'index']);
@@ -107,6 +109,10 @@ Route::get('get_pro', [App\Http\Controllers\SelectionController::class, 'getprod
 
 Route::get('/restricted', function () {
     return view('restricted');
+});
+
+Route::get('/pages', function () {
+    return view('pages');
 });
 
 Route::get('/menu', function () {

@@ -496,7 +496,7 @@ $store = store::orderBy('id', 'DESC')->first();
                                     <ul class="Polaris-Navigation__Section_1b1h1 Polaris-Navigation__Section--fill_kzgyz">
                                         <li class="Polaris-Navigation__SectionHeading_1h851"><span class="Polaris-Navigation__Text_yj3uv">Sales channels</span></li>
                                        <li class="Polaris-Navigation__ListItem_wxd2m Polaris-Navigation__ListItem--hasAction_11n18">
-    <div class="Polaris-Navigation__ItemWrapper_1kbav"><a data-polaris-unstyled="true" class="Polaris-Navigation__Item_yiyol " tabindex="0" aria-disabled="false" href="pages.html">
+    <div class="Polaris-Navigation__ItemWrapper_1kbav"><a data-polaris-unstyled="true" class="Polaris-Navigation__Item_yiyol " tabindex="0" aria-disabled="false" href="">
             <div class="Polaris-Navigation__Icon_yj27d"><span class="Polaris-Icon_yj27d Polaris-Icon--newDesignLanguage_1rik8"><img class="Polaris-Icon__Img_375hq" src="data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 20 20&quot;><path d=&quot;M2.971 1.545A1 1 0 013.861 1h12.277a1 1 0 01.89.545l1.669 3.128c.03.062.063.138.094.224.09.228.153.47.185.722.015.098.024.189.024.263V6a2.992 2.992 0 01-1.092 2.315A2.988 2.988 0 0116 9c-.617 0-1.19-.186-1.666-.505A2.997 2.997 0 0113 6v.02A2.997 2.997 0 0110 9a2.986 2.986 0 01-1.677-.512A2.997 2.997 0 017 6.019 2.997 2.997 0 014 9c-.768 0-1.47-.289-2-.764C1.386 7.686 1 6.888 1 6v-.118c0-.063.007-.137.019-.218.049-.443.194-.856.415-1.219l1.537-2.9zM18 17.5v-6.916A4.983 4.983 0 0116 11a4.978 4.978 0 01-3-1c-.836.628-1.874 1-3 1a4.978 4.978 0 01-3-1c-.836.628-1.874 1-3 1a4.983 4.983 0 01-2-.416V17.5A1.5 1.5 0 003.5 19h2A1.5 1.5 0 007 17.5v-3A1.5 1.5 0 018.5 13h3a1.5 1.5 0 011.5 1.5v3a1.5 1.5 0 001.5 1.5h2a1.5 1.5 0 001.5-1.5z&quot;/></svg>" alt="" aria-hidden="true"></span></div><span class="Polaris-Navigation__Text_yj3uv">Online Store</span>
         </a></div>
     <div class="Polaris-Navigation__SecondaryNavigation_na5at">
@@ -504,7 +504,7 @@ $store = store::orderBy('id', 'DESC')->first();
             <div>
                 <ul class="Polaris-Navigation__List_yj3nl">
                     <li class="Polaris-Navigation__ListItem_wxd2m">
-                        <div class="Polaris-Navigation__ItemWrapper_1kbav"><a data-polaris-unstyled="true" class="Polaris-Navigation__Item_yiyol  Polaris-Navigation--subNavigationActive_e2t9x" tabindex="0" aria-disabled="false" href="pages.html"><span class="Polaris-Navigation__Text_yj3uv">Pages</span></a></div>
+                        <div class="Polaris-Navigation__ItemWrapper_1kbav"><a data-polaris-unstyled="true" class="Polaris-Navigation__Item_yiyol  Polaris-Navigation--subNavigationActive_e2t9x" tabindex="0" aria-disabled="false" href="/pages"><span class="Polaris-Navigation__Text_yj3uv">Pages</span></a></div>
                     </li>
                     <li class="Polaris-Navigation__ListItem_wxd2m">
                         <div class="Polaris-Navigation__ItemWrapper_1kbav"><a data-polaris-unstyled="true" class="Polaris-Navigation__Item_yiyol" tabindex="0" aria-disabled="false" href="/menu"><span class="Polaris-Navigation__Text_yj3uv">Navigation</span></a></div>
