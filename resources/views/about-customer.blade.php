@@ -161,7 +161,7 @@
                                                                 </svg></span></span><span class="Polaris-VisuallyHidden_yrtt5">Customers</span></span></a></nav>
                                         </div>
                                         <?php 
-                                        $c_id = request('c_id');
+                                        $c_id = request('id');
                                         ?>
 
 @foreach ($order_details as $order_detail)
@@ -170,7 +170,7 @@
                                             <div>
                                                 <div class="Polaris-Header-Title__TitleAndSubtitleWrapper_40sxf">
                                                     <div class="Polaris-Header-Title_2qj8j">
-                                                        <h1 class="Polaris-Header-Title--newDesignLanguageTitle_1wh8d">{{$order_detail->f_name}} {{$order_detail->l_name}}</h1>
+                                                        <h1 class="Polaris-Header-Title--newDesignLanguageTitle_1wh8d">{{$order_detail->name}}</h1>
                                                     </div>
                                                 </div>
                                             </div>
@@ -201,9 +201,9 @@
                                                         <div class="Polaris-Stack__Item_yiyol">
                                                             <div class="Polaris-TextContainer_szg8b Polaris-TextContainer--spacingTight_1o4d6">
                                                                 <div class="_1qu9s">
-                                                                    <h3 class="Polaris-Heading_1brcv">{{$order_detail->f_name}} {{$order_detail->l_name}}</h3>
-                                                                    <p><span class="Polaris-TextStyle--variationSubdued_1segu">{{$order_detail->city}}, {{$order_detail->state}}, {{$order_detail->country}}</span></p>
-                                                                    <p><span class="Polaris-TextStyle--variationSubdued_1segu">Customer for about {{$order_detail->created_at}}</span></p>
+                                                                    <h3 class="Polaris-Heading_1brcv">{{$order_detail->name}}</h3>
+                                                                    <p><span class="Polaris-TextStyle--variationSubdued_1segu">{{$order_detail->city}}, {{$order_detail->state}}</span></p>
+                                                                    <p><span class="Polaris-TextStyle--variationSubdued_1segu">Customer since {{$order_detail->created_at->format('l j F Y')}}</span></p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -284,7 +284,7 @@
                                                                 
                                                                     
                                                                 
-                                                                <div class="Polaris-Stack__Item_yiyol"><a data-polaris-unstyled="true" class="Polaris-Link_yj5sy" href="orderdetails?o_id={{$order_item->order_id}}&status={{$order->status}}">Order #{{$order_item->order_id}}</a></div>
+                                                                <div class="Polaris-Stack__Item_yiyol"><a data-polaris-unstyled="true" class="Polaris-Link_yj5sy" href="/orderdetails/{{$order_item->order_id}}">Order #{{$order_item->order_id}}</a></div>
                                                                 <div class="Polaris-Stack__Item_yiyol"><span class="Polaris-TextStyle--variationSubdued_1segu">Created at {{$order_item->created_at->toTimeString()}}</span></div>
                                                                 @endif
                                                                 @endforeach
@@ -327,7 +327,7 @@
                                                                         <div class="Polaris-Stack__Item_yiyol">
                                                                             <div class="hpLpp">
                                                                                 <div class="Polaris-TextContainer_szg8b Polaris-TextContainer--spacingTight_1o4d6">
-                                                                                    <p class="_1O65J"><a href="orderdetails?o_id={{$order_item->order_id}}&status={{$order->status}}"><button type="button" class="Polaris-Link_yj5sy">{{$product->pro_title}}</button></a></p>
+                                                                                    <p class="_1O65J"><a href="/orderdetails/{{$order_item->order_id}}"><button type="button" class="Polaris-Link_yj5sy">{{$product->pro_title}}</button></a></p>
                                                                                 </div>
                                                                                 @endif
                                                                         @endforeach
@@ -393,10 +393,9 @@
                                                             <div class="Polaris-Stack_32wu2 Polaris-Stack--vertical_uiuuj">
                                                                 <div class="Polaris-Stack__Item_yiyol">
                                                                     <div class="Polaris-Stack_32wu2 Polaris-Stack--vertical_uiuuj Polaris-Stack--spacingNone_1b3d3">
-                                                                        <div class="Polaris-Stack__Item_yiyol"><span data-key="0">{{$order_detail->f_name}} {{$order_detail->l_name}}<br></span></div>
+                                                                        <div class="Polaris-Stack__Item_yiyol"><span data-key="0">{{$order_detail->name}}<br></span></div>
                                                                         <div class="Polaris-Stack__Item_yiyol"><span data-key="2">{{$order_detail->address}}<br></span></div>
-                                                                        <div class="Polaris-Stack__Item_yiyol"><span data-key="3">{{$order_detail->address2}}<br></span></div>
-                                                                        <div class="Polaris-Stack__Item_yiyol"><span data-key="4">{{$order_detail->country}}<br></span></div>
+                                                                        <div class="Polaris-Stack__Item_yiyol"><span data-key="4">{{$order_detail->state}}<br></span></div>
                                                                         <div class="Polaris-Stack__Item_yiyol"><span data-key="5">+{{$order_detail->phone}}<br></span></div>
                                                                     </div>
                                                                 </div>

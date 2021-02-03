@@ -37,10 +37,11 @@ class CustomerController extends Controller
             return view('restricted');
     }
 
-    public function about()
+    public function about($id)
     {
         $orders = orders::all();
         $order_items = order_items::all();
+        $item = order_items::where('order_id',$id)->first();
         $order_details = order_details::all();
         $products = products::all();
 
@@ -49,7 +50,8 @@ class CustomerController extends Controller
             'orders'=> $orders,
             'order_items'=> $order_items,
             'order_details'=> $order_details,
-            'products' => $products
+            'products' => $products,
+            'item' => $item
         ]);
         else    
             return view('restricted');

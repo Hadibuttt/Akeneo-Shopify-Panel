@@ -287,7 +287,7 @@
                                                                             <div class="Polaris-Stack__Item_yiyol">
                                                                                 <div class="Polaris-Stack_32wu2 Polaris-Stack--distributionEqualSpacing_x9cqm Polaris-Stack--noWrap_vecks">
                                                                                     <div class="Polaris-Stack__Item_yiyol"><span class="Polaris-TextStyle--variationStrong_rpyvj">
-                                                                                            <div class="_3enmF">{{$order_detail->f_name}} {{$order_detail->l_name}}</div>
+                                                                                            <div class="_3enmF">{{$order_detail->name}}</div>
                                                                                         </span></div>
                                                                                     <div class="Polaris-Stack__Item_yiyol">
                                                                                         <div class="_3pr6R"><span class="Polaris-Badge_2qgie Polaris-Badge--statusSuccess_pc5rl"><span class="Polaris-VisuallyHidden_yrtt5">Success </span>Subscribed</span></div>
@@ -295,7 +295,7 @@
                                                                                 </div>
                                                                             </div>
                                                                             <div class="Polaris-Stack__Item_yiyol">
-                                                                                <p class="_2JgJn">{{$order_detail->city}}, {{$order_detail->state}}, {{$order_detail->country}}</p>
+                                                                                <p class="_2JgJn">{{$order_detail->city}}, {{$order_detail->state}}</p>
                                                                             </div>
                                                                             
                                                                             
@@ -314,10 +314,10 @@
                                                                             <div class="Polaris-Stack__Item_yiyol">
                                                                                 <div class="Polaris-Stack_32wu2 Polaris-Stack--vertical_uiuuj Polaris-Stack--spacingExtraTight_gv6hw Polaris-Stack--distributionLeading_rudtn">
                                                                                     <div class="Polaris-Stack__Item_yiyol"><span class="Polaris-TextStyle--variationStrong_rpyvj">
-                                                                                            <div class="_3enmF">{{$order_detail->f_name}} {{$order_detail->l_name}}</div>
+                                                                                            <div class="_3enmF">{{$order_detail->name}}</div>
                                                                                         </span></div>
                                                                                     <div class="Polaris-Stack__Item_yiyol">
-                                                                                        <p class="_2JgJn">{{$order_detail->city}}, {{$order_detail->state}}, {{$order_detail->country}}</p>
+                                                                                        <p class="_2JgJn">{{$order_detail->city}}, {{$order_detail->state}}</p>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -358,7 +358,7 @@
                                                                             @foreach ($users as $user)
                                                                             @if (Auth::user()->email == $user->email)    
                                                                             @if ($user->AboutCustomerPage == 1) 
-                                                                            href="about-customer?c_id={{$order_detail->order_id}}"
+                                                                            href="about-customer/{{$order_detail->order_id}}"
                                                                             @else
                                                                             href="/restricted"
                                                                             @endif
