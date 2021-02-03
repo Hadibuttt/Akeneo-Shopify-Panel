@@ -43,6 +43,7 @@ class CustomerController extends Controller
         $order_items = order_items::all();
         $item = order_items::where('order_id',$id)->first();
         $order_details = order_details::all();
+        $detail = order_details::where('order_id',$id)->first();
         $products = products::all();
 
         if(Auth::user()->AboutCustomerPage == 1)
@@ -51,9 +52,35 @@ class CustomerController extends Controller
             'order_items'=> $order_items,
             'order_details'=> $order_details,
             'products' => $products,
-            'item' => $item
+            'item' => $item,
+            'detail' => $detail
         ]);
         else    
             return view('restricted');
     }
+
+    public function CustomerUpdated(Request $req,$id)
+    {
+        $email = $req->email;
+        $name = $req->name;
+        order_details::where('order_id',$id)->update(['email'=> $email,'name'=> $name]);
+
+        return redirect("/about-customer/$id");
+    }
+
+    public function AddressUpdated(Request $req,$id)
+    {
+        $address = $req->address;
+        $name = $req->name;
+        $city = $req->city;
+        $state = $req->state;
+        $phone = $req->phone;
+
+
+
+        order_details::where('order_id',$id)->update(['address'=> $address,'name'=> $name,'city'=> $city,'state'=> $state,'phone'=> $phone]);
+
+        return redirect("/about-customer/$id");
+    }
+
 }

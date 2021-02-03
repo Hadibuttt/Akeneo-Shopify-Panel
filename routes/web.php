@@ -79,6 +79,10 @@ Route::post('/orderdetails/{id}/email/updated', [App\Http\Controllers\OrderDetai
 
 Route::post('/orderdetails/{id}/updated', [App\Http\Controllers\OrderDetailsController::class, 'InformationUpdated'] );
 
+Route::post('/about-customer/{id}/updated', [App\Http\Controllers\CustomerController::class, 'CustomerUpdated'] );
+
+Route::post('/about-customer/{id}/address/updated', [App\Http\Controllers\CustomerController::class, 'AddressUpdated']);
+
 Route::post('/update-category/{cat_id}/updated', [App\Http\Controllers\CategoryController::class, 'updated'] );
 
 Route::post('/update-subcategory/{subcat_id}/updated', [App\Http\Controllers\SubCategoryController::class, 'updated'] );
