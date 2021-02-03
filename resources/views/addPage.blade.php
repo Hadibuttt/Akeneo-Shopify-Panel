@@ -235,7 +235,7 @@
 <ul class="Polaris-ChoiceList__Choices_15o76">
 <li><label class="Polaris-Choice_j5gzq" for="PolarisRadioButton1"><span class="Polaris-Choice__Control_1u8vs"><span class="Polaris-RadioButton_bsatr Polaris-RadioButton--newDesignLanguage_1rik8">
     
-    <input id="PolarisRadioButton1" name="visibility" type="radio" class="Polaris-RadioButton__Input_30ock" value="visible"><span class="Polaris-RadioButton__Backdrop_1x2i2">
+    <input id="PolarisRadioButton1" checked="" name="visibility" type="radio" class="Polaris-RadioButton__Input_30ock" value="visible"><span class="Polaris-RadioButton__Backdrop_1x2i2">
         
     </span></span></span><span class="Polaris-Choice__Label_2vd36">Visible (Displays the Page)</span></label></li>
 <li><label class="Polaris-Choice_j5gzq" for="PolarisRadioButton2"><span class="Polaris-Choice__Control_1u8vs"><span class="Polaris-RadioButton_bsatr Polaris-RadioButton--newDesignLanguage_1rik8">

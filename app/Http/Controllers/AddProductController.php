@@ -123,8 +123,7 @@ class AddProductController extends Controller
         
         $product_image->save(); 
 
-
-        return view('success');
+        return redirect('/product?view=all');
     }
 
     public function updated(Request $req,$id)
