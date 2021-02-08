@@ -8,6 +8,7 @@ use App\Models\order_items;
 use App\Models\order_details;
 use App\Models\User;
 use App\Models\products;
+use App\Models\ctimeline;
 use App\Models\AdminLogin;
 use Auth;
 
@@ -45,6 +46,8 @@ class CustomerController extends Controller
         $order_details = order_details::all();
         $detail = order_details::where('order_id',$id)->first();
         $products = products::all();
+        $comments = ctimeline::where('c_id',$id)->get();
+        $comment = ctimeline::where('c_id',$id)->count();
 
         if(Auth::user()->AboutCustomerPage == 1)
         return view('about-customer')->with([
@@ -53,7 +56,9 @@ class CustomerController extends Controller
             'order_details'=> $order_details,
             'products' => $products,
             'item' => $item,
-            'detail' => $detail
+            'detail' => $detail,
+            'comments' => $comments,
+            'comment' => $comment
         ]);
         else    
             return view('restricted');
@@ -79,6 +84,19 @@ class CustomerController extends Controller
 
 
         order_details::where('order_id',$id)->update(['address'=> $address,'name'=> $name,'city'=> $city,'state'=> $state,'phone'=> $phone]);
+
+        return redirect("/about-customer/$id");
+    }
+
+
+    public function CommentAdded(Request $req,$id)
+    {
+        $timeline= new ctimeline;
+        $timeline->comment = $req->comment;
+        $timeline->c_id = $id;
+        $timeline->u_id = Auth::user()->id;
+
+        $timeline->save();
 
         return redirect("/about-customer/$id");
     }

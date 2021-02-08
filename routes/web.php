@@ -83,6 +83,8 @@ Route::post('/about-customer/{id}/updated', [App\Http\Controllers\CustomerContro
 
 Route::post('/about-customer/{id}/address/updated', [App\Http\Controllers\CustomerController::class, 'AddressUpdated']);
 
+Route::post('about-customer/{id}/comment/added', [App\Http\Controllers\CustomerController::class, 'CommentAdded']);
+
 Route::post('/update-category/{cat_id}/updated', [App\Http\Controllers\CategoryController::class, 'updated'] );
 
 Route::post('/update-subcategory/{subcat_id}/updated', [App\Http\Controllers\SubCategoryController::class, 'updated'] );

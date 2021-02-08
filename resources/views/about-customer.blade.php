@@ -435,14 +435,18 @@
                                                 <h2 class="Polaris-Heading_1brcv">Timeline</h2>
                                                
                                             </div>
+                                            <form action="/about-customer/{{$c_id}}/comment/added" method="post">
+                                                @csrf
                                             <div class="pxnRY _1ErHn">
                                                 <div class="PMONs _1ErHn _36KPg">
                                                     <div class="_167Be"><span aria-label="Avatar with initials D E" role="img" class="Polaris-Avatar_z763p Polaris-Avatar--sizeMedium_5f35p Polaris-Avatar--styleFour_16hgi Polaris-Avatar--hasImage_1hz8x"><img src="https://cdn.shopify.com/s/files/1/2850/4238/users/avatar_250x250_crop_center_a56f7106-bba0-474d-ad6c-8c62e3b62713_50x50@3x.png?v=1609587931" class="Polaris-Avatar__Image_2qgms" alt="" role="presentation"></span></div>
+                                                    
                                                     <div class="_3isSS">
                                                         <div>
                                                             <div>
                                                                 <div class="_3y343">
                                                                     <div class="zCLkB"><label for="TimelineEditor2" class="_3ujpI">Comment</label>
+                                                                        
                                                                         <div class="_38_Ci">
                                                                             <trix-toolbar id="trix-toolbar-2" style="display: none;">
                                                                                 <div class="trix-button-row">
@@ -475,63 +479,66 @@
                                                                                     </div>
                                                                                 </div>
                                                                             </trix-toolbar>
-                                                                            <trix-editor input="trix-input-TimelineEditor2" id="TimelineEditor2" class="_17KGv" placeholder="Leave a comment..." aria-describedby="TimelineEditor2HelpText" contenteditable="" role="textbox" trix-id="2" toolbar="trix-toolbar-2"></trix-editor><input id="trix-input-TimelineEditor2" type="hidden">
+                                                                            <div class="Polaris-TextField_1spwi Polaris-TextField--hasValue_1mx8d Polaris-TextField--newDesignLanguage_1rik8">
+                                                                                <input name="comment" id="PolarisTextField12" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField12Label" aria-invalid="false" aria-multiline="false">                                                
+                                                                            </div>
                                                                         </div>
                                                                         <div class="_2Kd6e">
                                                                           
                                                                             </div>
                                                                             <div class="_14594">
                                                                                 <div class="Polaris-ButtonGroup_yy85z">
-                                                                                    <div class="Polaris-ButtonGroup__Item_yiyol"><button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--primary_7k9zs " type="button" disabled=""><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Post</span></span></button></div>
+                                                                                    <div class="Polaris-Stack__Item_yiyol">
+                                                                                        <button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--primary_7k9zs" type="submit"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Post</span></span></button></div>
                                                                                 </div>
                                                                             </div>
+                                                                        
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                        
                                                             <div class="_11mGF" id="TimelineEditor2HelpText">Only you and other staff can see comments</div>
                                                         </div>
                                                     </div>
+                                                
                                                 </div>
                                                 <div class="GQL4J">
                                                     <div class="_2AMGd">
                                                         <div class="_1Dy_7">
                                                             <div class="_3JpYM mK7Dg">
-                                                                <h3 aria-label="Yesterday" class="Polaris-Subheading_syouu">Yesterday</h3>
+                                                                <h3 aria-label="Yesterday" class="Polaris-Subheading_syouu">Comments</h3>
                                                             </div>
                                                             <ul class="_1A02w">
+                        @if ($comment == 0)
+                        <li class="_2uqdv">
+                            <div class="qUtBd _3ohI1">
+                                <div class="pUfF9">
+                                    <div class="_1WAyL _2253w"></div>
+                                    <p class="_2f2zg">No Comments to display!</p>
+                                    <p class="_3NuG1">0:00</p>
+                                </div>
+                            </div>
+                        </li>        
+                        @else
+                                                                @foreach ($comments as $comment)
                                                                 <li class="_2uqdv">
                                                                     <div class="qUtBd _3ohI1">
                                                                         <div class="pUfF9">
                                                                             <div class="_1WAyL _2253w"></div>
-                                                                            <p class="_2f2zg">You created order <a href="https://akeneo-shop.myshopify.com/admin/orders/2602175922225">#1080</a> for this customer from draft order <a href="https://akeneo-shop.myshopify.com/admin/draft_orders/587702927409">#D79</a>.</p>
-                                                                            <p class="_3NuG1">0:04</p>
+                                                                            <p class="_2f2zg">{{$comment->comment}}</p>
+                                                                            <p class="_3NuG1">{{$comment->created_at->format('i:s')}}</p>
                                                                         </div>
                                                                     </div>
                                                                 </li>
-                                                                <li class="_2uqdv">
-                                                                    <div class="qUtBd _3ohI1">
-                                                                        <div class="pUfF9">
-                                                                            <div class="_1WAyL _2253w"></div>
-                                                                            <p class="_2f2zg">You created order <a href="https://akeneo-shop.myshopify.com/admin/orders/2602175627313">#1079</a> for this customer from draft order <a href="https://akeneo-shop.myshopify.com/admin/draft_orders/587702763569">#D78</a>.</p>
-                                                                            <p class="_3NuG1">0:03</p>
-                                                                        </div>
-                                                                    </div>
-                                                                </li>
-                                                                <li class="_2uqdv">
-                                                                    <div class="qUtBd _3ohI1">
-                                                                        <div class="pUfF9">
-                                                                            <div class="_1WAyL _2253w"></div>
-                                                                            <p class="_2f2zg">You created this customer.</p>
-                                                                            <p class="_3NuG1">0:03</p>
-                                                                        </div>
-                                                                    </div>
-                                                                </li>
+                                                                @endforeach
+@endif
                                                             </ul>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                        </form>
                                             <div class="_1OP6w"></div>
                                         </div>
                                     </div>
