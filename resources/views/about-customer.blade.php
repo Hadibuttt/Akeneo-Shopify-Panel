@@ -480,7 +480,7 @@
                                                                                 </div>
                                                                             </trix-toolbar>
                                                                             <div class="Polaris-TextField_1spwi Polaris-TextField--hasValue_1mx8d Polaris-TextField--newDesignLanguage_1rik8">
-                                                                                <input name="comment" id="PolarisTextField12" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField12Label" aria-invalid="false" aria-multiline="false">                                                
+                                                                                <input name="comment" id="PolarisTextField12" class="Polaris-TextField__Input_30ock" required="" placeholder="Leave a comment.." aria-labelledby="PolarisTextField12Label" aria-invalid="false" aria-multiline="false">                                                
                                                                             </div>
                                                                         </div>
                                                                         <div class="_2Kd6e">

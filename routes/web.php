@@ -79,6 +79,8 @@ Route::post('/orderdetails/{id}/email/updated', [App\Http\Controllers\OrderDetai
 
 Route::post('/orderdetails/{id}/updated', [App\Http\Controllers\OrderDetailsController::class, 'InformationUpdated'] );
 
+Route::post('/orderdetails/{id}/comment/added', [App\Http\Controllers\OrderDetailsController::class, 'CommentAdded'] );
+
 Route::post('/about-customer/{id}/updated', [App\Http\Controllers\CustomerController::class, 'CustomerUpdated'] );
 
 Route::post('/about-customer/{id}/address/updated', [App\Http\Controllers\CustomerController::class, 'AddressUpdated']);

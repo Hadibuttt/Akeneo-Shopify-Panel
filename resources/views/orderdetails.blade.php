@@ -419,6 +419,8 @@ $total=$order_item->total*$tax;
 <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.436.436 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
 </svg></span></span></span></span><span class="Polaris-Choice__Label_2vd36">Show comments</span></label></div>
 </div>
+<form action="/orderdetails/{{$o_id}}/comment/added" method="post">
+    @csrf
 <div class="pxnRY _1ErHn">
 <div class="PMONs _1ErHn _36KPg">
 <div class="_167Be"><span aria-label="Avatar with initials D E" role="img" class="Polaris-Avatar_z763p Polaris-Avatar--sizeMedium_5f35p Polaris-Avatar--styleFour_16hgi Polaris-Avatar--hasImage_1hz8x"><img src="https://mir-s3-cdn-cf.behance.net/user/115/248bc1144803971.5f5595eecddb3.png" class="Polaris-Avatar__Image_2qgms" alt="" role="presentation"></span></div>
@@ -471,7 +473,11 @@ $total=$order_item->total*$tax;
 </div>
 </div>
 </trix-toolbar>
-<trix-editor input="trix-input-TimelineEditor1" id="TimelineEditor1" class="_17KGv" placeholder="Leave a comment..." aria-describedby="TimelineEditor1HelpText" contenteditable="" role="textbox" trix-id="3" toolbar="trix-toolbar-3"></trix-editor><input id="trix-input-TimelineEditor1" type="hidden">
+
+<div class="Polaris-TextField_1spwi Polaris-TextField--hasValue_1mx8d Polaris-TextField--newDesignLanguage_1rik8">
+    <input name="comment" id="PolarisTextField12" class="Polaris-TextField__Input_30ock" required="" placeholder="Leave a comment..." aria-labelledby="PolarisTextField12Label" aria-invalid="false" aria-multiline="false">                                                
+</div>
+
 </div>
 <div class="_2Kd6e">
 <div class="R5T_p">
@@ -494,7 +500,9 @@ $total=$order_item->total*$tax;
 </div>
 <div class="_14594">
 <div class="Polaris-ButtonGroup_yy85z">
-<div class="Polaris-ButtonGroup__Item_yiyol"><button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--primary_7k9zs Polaris-Button--disabled_hcuh9" type="button" disabled=""><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Post</span></span></button></div>
+
+    <div class="Polaris-ButtonGroup__Item_yiyol"><button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--primary_7k9zs" type="submit"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Post</span></span></button></div>
+    
 </div>
 </div>
 </div>
@@ -509,162 +517,42 @@ $total=$order_item->total*$tax;
 <div class="_2AMGd">
 <div class="_1Dy_7">
 <div class="_3JpYM mK7Dg">
-<h3 aria-label="Yesterday" class="Polaris-Subheading_syouu">Yesterday</h3>
+<h3 aria-label="Yesterday" class="Polaris-Subheading_syouu">Comments</h3>
 </div>
 <ul class="_1A02w">
-<li class="_2uqdv">
-<div class="qUtBd _3ohI1">
-<div class="pUfF9">
-<div class="_1WAyL"></div>
-<p class="_2f2zg">This order was archived.</p>
-<p class="_3NuG1">6:27 AM</p>
-</div>
-</div>
-</li>
-<li class="_2uqdv">
-<div class="_3Gh76">
-<div class="bBN3t _3UEGX">
-<div class="pcrSk _2UaKP"></div>
-<div class="_1SlAd"><button class="_1r-F9" type="button"><span class="">You fulfilled 2 items from d-326 sector 63.</span>
-<div class="_1oXo0 _182xi"><span class="Polaris-Icon_yj27d Polaris-Icon--colorBase_nqlaq Polaris-Icon--isColored_uhqnf Polaris-Icon--newDesignLanguage_1rik8"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
-<path d="M5 8l5 5 5-5H5z"></path>
-</svg></span></div>
-</button>
-<p class="_3X8e9">6:27 AM</p>
-</div>
-</div>
-</div>
-</li>
-<li class="_2uqdv">
-<div class="_3Gh76">
-<div class="bBN3t _3UEGX">
-<div class="pcrSk _2UaKP"></div>
-<div class="_1SlAd"><button class="_1r-F9" type="button"><span class="">You canceled fulfillment via Manual for 2 items.</span>
-<div class="_1oXo0 _182xi"><span class="Polaris-Icon_yj27d Polaris-Icon--colorBase_nqlaq Polaris-Icon--isColored_uhqnf Polaris-Icon--newDesignLanguage_1rik8"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
-<path d="M5 8l5 5 5-5H5z"></path>
-</svg></span></div>
-</button>
-<p class="_3X8e9">6:26 AM</p>
-</div>
-</div>
-</div>
-</li>
-<li class="_2uqdv">
-<div class="qUtBd _3ohI1">
-<div class="pUfF9">
-<div class="_1WAyL _2253w"></div>
-<p class="_2f2zg">You unarchived this order.</p>
-<p class="_3NuG1">6:26 AM</p>
-</div>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="_2AMGd">
-<div class="_1Dy_7">
-<div class="_3JpYM mK7Dg">
-<h3 aria-label="December 7" class="Polaris-Subheading_syouu">December 7</h3>
-</div>
-<ul class="_1A02w">
-<li class="_2uqdv">
-<div class="qUtBd _3ohI1">
-<div class="pUfF9">
-<div class="_1WAyL"></div>
-<p class="_2f2zg">This order was archived.</p>
-<p class="_3NuG1">4:51 AM</p>
-</div>
-</div>
-</li>
-<li class="_2uqdv">
-<div class="_3Gh76">
-<div class="bBN3t _3UEGX">
-<div class="pcrSk _2UaKP"></div>
-<div class="_1SlAd"><button class="_1r-F9" type="button"><span class="">You fulfilled 2 items from d-326 sector 63.</span>
-<div class="_1oXo0 _182xi"><span class="Polaris-Icon_yj27d Polaris-Icon--colorBase_nqlaq Polaris-Icon--isColored_uhqnf Polaris-Icon--newDesignLanguage_1rik8"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
-<path d="M5 8l5 5 5-5H5z"></path>
-</svg></span></div>
-</button>
-<p class="_3X8e9">4:51 AM</p>
-</div>
-</div>
-</div>
-</li>
-<li class="_2uqdv">
-<div class="_3Gh76">
-<div class="bBN3t _3UEGX">
-<div class="pcrSk _2UaKP"></div>
-<div class="_1SlAd"><button class="_1r-F9" type="button"><span class="">You added a shipping address to this order.</span>
-<div class="_1oXo0 _182xi"><span class="Polaris-Icon_yj27d Polaris-Icon--colorBase_nqlaq Polaris-Icon--isColored_uhqnf Polaris-Icon--newDesignLanguage_1rik8"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
-<path d="M5 8l5 5 5-5H5z"></path>
-</svg></span></div>
-</button>
-<p class="_3X8e9">4:50 AM</p>
-</div>
-</div>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="_2AMGd">
-<div class="_1Dy_7">
-<div class="_3JpYM mK7Dg">
-<h3 aria-label="December 6" class="Polaris-Subheading_syouu">December 6</h3>
-</div>
-<ul class="_1A02w">
-<li class="_2uqdv">
-<div class="_3Gh76">
-<div class="bBN3t _3UEGX">
-<div class="pcrSk _2UaKP"></div>
-<div class="_1SlAd"><button class="_1r-F9" type="button"><span class="">A €542,80 EUR payment was processed on Cash on Delivery (COD).</span>
-<div class="_1oXo0 _182xi"><span class="Polaris-Icon_yj27d Polaris-Icon--colorBase_nqlaq Polaris-Icon--isColored_uhqnf Polaris-Icon--newDesignLanguage_1rik8"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
-<path d="M5 8l5 5 5-5H5z"></path>
-</svg></span></div>
-</button>
-<p class="_3X8e9">3:47 PM</p>
-</div>
-</div>
-</div>
-</li>
-<li class="_2uqdv">
-<div class="qUtBd _3ohI1">
-<div class="pUfF9">
-<div class="_1WAyL _2253w"></div>
-<p class="_2f2zg">You added the email asas to this order.</p>
-<p class="_3NuG1">3:46 PM</p>
-</div>
-</div>
-</li>
-<li class="_2uqdv"></li>
-<li class="_2uqdv">
-<div class="_3Gh76">
-<div class="bBN3t _3UEGX">
-<div class="pcrSk"></div>
-<div class="_1SlAd"><button class="_1r-F9" type="button"><span class="">A €542,80 EUR payment is pending on Cash on Delivery (COD).</span>
-<div class="_1oXo0 _182xi"><span class="Polaris-Icon_yj27d Polaris-Icon--colorBase_nqlaq Polaris-Icon--isColored_uhqnf Polaris-Icon--newDesignLanguage_1rik8"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
-<path d="M5 8l5 5 5-5H5z"></path>
-</svg></span></div>
-</button>
-<p class="_3X8e9">3:46 PM</p>
-</div>
-</div>
-</div>
-</li>
-<li class="_2uqdv">
-<div class="qUtBd _3ohI1">
-<div class="pUfF9">
-<div class="_1WAyL _2253w"></div>
-<p class="_2f2zg">You created this order from draft order <a href="https://akeneo-shop.myshopify.com/admin/draft_orders/582511263793">#D72</a>.</p>
-<p class="_3NuG1">3:46 PM</p>
-</div>
-</div>
-</li>
+
+    @if ($comment == 0)
+                        <li class="_2uqdv">
+                            <div class="qUtBd _3ohI1">
+                                <div class="pUfF9">
+                                    <div class="_1WAyL _2253w"></div>
+                                    <p class="_2f2zg">No Comments to display!</p>
+                                    <p class="_3NuG1">0:00</p>
+                                </div>
+                            </div>
+                        </li>        
+                        @else
+                                                                @foreach ($comments as $comment)
+                                                                <li class="_2uqdv">
+                                                                    <div class="qUtBd _3ohI1">
+                                                                        <div class="pUfF9">
+                                                                            <div class="_1WAyL _2253w"></div>
+                                                                            <p class="_2f2zg">{{$comment->comment}}</p>
+                                                                            <p class="_3NuG1">{{$comment->created_at->format('i:s')}}</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                                @endforeach
+@endif
+
 </ul>
 </div>
 </div>
 </div>
 </div>
+
+</form>
+
 <div class="_1OP6w"></div>
 </div>
 <div class="_3lXCK">

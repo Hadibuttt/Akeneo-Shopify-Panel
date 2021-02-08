@@ -9,6 +9,7 @@ use App\Models\order_details;
 use App\Models\products;
 use App\Models\AdminLogin;
 use Auth;
+use App\Models\otimeline;
 
 class OrderDetailsController extends Controller
 {
@@ -24,13 +25,17 @@ class OrderDetailsController extends Controller
         $order_items = order_items::all();
         $order_details = order_details::all();
         $products = products::all();
+        $comments = otimeline::where('o_id',$id)->get();
+        $comment = otimeline::where('o_id',$id)->count();
 
         if(Auth::user()->OrderDetailsPage == 1)
         return view('orderdetails')->with([
             'orders'=> $orders,
             'order_items'=> $order_items,
             'order_details'=> $order_details,
-            'products' => $products
+            'products' => $products,
+            'comments' => $comments,
+            'comment' => $comment
         ]);
         else    
             return view('restricted');
@@ -67,6 +72,19 @@ class OrderDetailsController extends Controller
         'phone'=> $phone]);
 
         return redirect("/orderdetails/$id");
+    }
+
+    public function CommentAdded(Request $req,$id)
+    {
+        $timeline= new otimeline;
+        $timeline->comment = $req->comment;
+        $timeline->o_id = $id;
+        $timeline->u_id = Auth::user()->id;
+
+        $timeline->save();
+
+        return redirect("/orderdetails/$id");
+
     }
 
 }
