@@ -17,7 +17,7 @@ class AddPageController extends Controller
 
     public function pages()
     {
-        $cpages = cpages::all();
+        $cpages = cpages::orderBy('id', 'desc')->get();
         return view('pages')->with([
             'cpages'=> $cpages
         ]);    

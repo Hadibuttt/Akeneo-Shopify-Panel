@@ -358,7 +358,15 @@
                                                                             @foreach ($users as $user)
                                                                             @if (Auth::user()->email == $user->email)    
                                                                             @if ($user->AboutCustomerPage == 1) 
-                                                                            href="about-customer/{{$order_detail->order_id}}"
+
+                                                                            @foreach ($orders as $order)
+                                                                            @if ($order_detail->order_id == $order->id)
+                                                                            
+                                                                            href="about-customer/{{$order_detail->order_id}}/{{$order->user_id}}"   
+                                                                            @endif
+                                                                        @endforeach
+
+                                                                           
                                                                             @else
                                                                             href="/restricted"
                                                                             @endif

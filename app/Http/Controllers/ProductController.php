@@ -24,7 +24,7 @@ class ProductController extends Controller
         $categorys = categories::all();
         $sub_categorys = sub_categories::all();
         $collections = cat_items::all();
-        $products = products::all();
+        $products = products::orderBy('id', 'desc')->get();
         $users = AdminLogin::all();
 
         if(Auth::user()->ProductPage == 1)

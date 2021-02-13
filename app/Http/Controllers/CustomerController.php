@@ -38,7 +38,7 @@ class CustomerController extends Controller
             return view('restricted');
     }
 
-    public function about($id)
+    public function about($id,$uid)
     {
         $orders = orders::all();
         $order_items = order_items::all();
@@ -46,8 +46,10 @@ class CustomerController extends Controller
         $order_details = order_details::all();
         $detail = order_details::where('order_id',$id)->first();
         $products = products::all();
-        $comments = ctimeline::where('c_id',$id)->get();
+        $comments = ctimeline::where('c_id',$id)->orderByDesc('id')->get();
         $comment = ctimeline::where('c_id',$id)->count();
+
+        $ords = orders::where('user_id', $uid)->get();
 
         if(Auth::user()->AboutCustomerPage == 1)
         return view('about-customer')->with([
@@ -58,22 +60,23 @@ class CustomerController extends Controller
             'item' => $item,
             'detail' => $detail,
             'comments' => $comments,
-            'comment' => $comment
+            'comment' => $comment,
+            'ords' => $ords
         ]);
         else    
             return view('restricted');
     }
 
-    public function CustomerUpdated(Request $req,$id)
+    public function CustomerUpdated(Request $req,$id,$uid)
     {
         $email = $req->email;
         $name = $req->name;
         order_details::where('order_id',$id)->update(['email'=> $email,'name'=> $name]);
 
-        return redirect("/about-customer/$id");
+        return redirect("/about-customer/$id/$uid");
     }
 
-    public function AddressUpdated(Request $req,$id)
+    public function AddressUpdated(Request $req,$id,$uid)
     {
         $address = $req->address;
         $name = $req->name;
@@ -85,11 +88,11 @@ class CustomerController extends Controller
 
         order_details::where('order_id',$id)->update(['address'=> $address,'name'=> $name,'city'=> $city,'state'=> $state,'phone'=> $phone]);
 
-        return redirect("/about-customer/$id");
+        return redirect("/about-customer/$id/$uid");
     }
 
 
-    public function CommentAdded(Request $req,$id)
+    public function CommentAdded(Request $req,$id,$uid)
     {
         $timeline= new ctimeline;
         $timeline->comment = $req->comment;
@@ -98,7 +101,7 @@ class CustomerController extends Controller
 
         $timeline->save();
 
-        return redirect("/about-customer/$id");
+        return redirect("/about-customer/$id/$uid");
     }
 
 }

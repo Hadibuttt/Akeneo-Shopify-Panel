@@ -81,11 +81,11 @@ Route::post('/orderdetails/{id}/updated', [App\Http\Controllers\OrderDetailsCont
 
 Route::post('/orderdetails/{id}/comment/added', [App\Http\Controllers\OrderDetailsController::class, 'CommentAdded'] );
 
-Route::post('/about-customer/{id}/updated', [App\Http\Controllers\CustomerController::class, 'CustomerUpdated'] );
+Route::post('/about-customer/{id}/{uid}/updated', [App\Http\Controllers\CustomerController::class, 'CustomerUpdated'] );
 
-Route::post('/about-customer/{id}/address/updated', [App\Http\Controllers\CustomerController::class, 'AddressUpdated']);
+Route::post('/about-customer/{id}/{uid}/address/updated', [App\Http\Controllers\CustomerController::class, 'AddressUpdated']);
 
-Route::post('about-customer/{id}/comment/added', [App\Http\Controllers\CustomerController::class, 'CommentAdded']);
+Route::post('about-customer/{id}/{uid}/comment/added', [App\Http\Controllers\CustomerController::class, 'CommentAdded']);
 
 Route::post('/update-category/{cat_id}/updated', [App\Http\Controllers\CategoryController::class, 'updated'] );
 
@@ -146,7 +146,7 @@ Route::get('/general', [App\Http\Controllers\GeneralController::class, 'index'])
 
 Route::get('/tax', [App\Http\Controllers\TaxController::class, 'index']);
 
-Route::get('/about-customer/{id}', [App\Http\Controllers\CustomerController::class, 'about']);
+Route::get('/about-customer/{id}/{uid}', [App\Http\Controllers\CustomerController::class, 'about']);
 
 Route::get('/order', [App\Http\Controllers\OrderController::class, 'index']);
 

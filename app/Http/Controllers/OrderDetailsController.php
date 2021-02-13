@@ -25,7 +25,7 @@ class OrderDetailsController extends Controller
         $order_items = order_items::all();
         $order_details = order_details::all();
         $products = products::all();
-        $comments = otimeline::where('o_id',$id)->get();
+        $comments = otimeline::where('o_id',$id)->orderByDesc('id')->get();
         $comment = otimeline::where('o_id',$id)->count();
 
         if(Auth::user()->OrderDetailsPage == 1)

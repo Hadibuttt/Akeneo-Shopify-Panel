@@ -162,6 +162,7 @@
                                         </div>
                                         <?php 
                                         $c_id = request('id');
+                                        $u_id = request('uid');
                                         ?>
 
 @foreach ($order_details as $order_detail)
@@ -274,25 +275,28 @@
                                             @if ($order_item->order_id == $c_id)
                                                 
                                            
-                                                <div class="Polaris-Card__Section_1b1h1">
-                                                    <div class="Polaris-Stack_32wu2 Polaris-Stack--vertical_uiuuj">
-                                                        <div class="Polaris-Stack__Item_yiyol">
-                                                            <div class="Polaris-Stack_32wu2 Polaris-Stack--distributionEqualSpacing_x9cqm">
-                                                                @foreach ($orders as $order)
-                                                                @if ($order->id == $c_id)
-                                                                    
+                                                <div class="Polaris-Card__Section_1b1h1" >
+                                                    <div class="Polaris-Stack_32wu2 Polaris-Stack--vertical_uiuuj" style="flex: none;">
+                                                        <div class="Polaris-Stack__Item_yiyol" >
+                                                            
+                                                                @foreach ($ords as $ord)
                                                                 
+                                                                <div class="Polaris-Stack_32wu2 Polaris-Stack--distributionEqualSpacing_x9cqm" style="margin-bottom: 20px;margin-left: 7px;">
                                                                     
+                                                                <div style="display: inline;">
+                                                                <div class="Polaris-Stack__Item_yiyol" style="display: inline;"><a data-polaris-unstyled="true" class="Polaris-Link_yj5sy" href="/orderdetails/{{$ord->id}}">Order #{{$ord->id}}</a></div>
+                                                                <div class="Polaris-Stack__Item_yiyol" style="display: inline;"><span class="Polaris-TextStyle--variationSubdued_1segu" style="margin-left: 350px;">Created at {{$ord->created_at->toTimeString()}}</span></div>
+                                                                </div>
+
+                                                                </div>
+
                                                                 
-                                                                <div class="Polaris-Stack__Item_yiyol"><a data-polaris-unstyled="true" class="Polaris-Link_yj5sy" href="/orderdetails/{{$order_item->order_id}}">Order #{{$order_item->order_id}}</a></div>
-                                                                <div class="Polaris-Stack__Item_yiyol"><span class="Polaris-TextStyle--variationSubdued_1segu">Created at {{$order_item->created_at->toTimeString()}}</span></div>
-                                                                @endif
                                                                 @endforeach
-                                                            </div>
+                                                            
                                                         </div>
-                                                        <div class="Polaris-Stack__Item_yiyol">
+                                                        <div class="Polaris-Stack__Item_yiyol" style="margin-top: 0">
                                                             <div class="Polaris-Stack_32wu2 Polaris-Stack--vertical_uiuuj Polaris-Stack--spacingExtraTight_gv6hw">
-                                                                <div class="Polaris-Stack__Item_yiyol"><span class="">€{{$order_item->total}} from this Order</span></div>
+                                                                <!--<div class="Polaris-Stack__Item_yiyol"><span class="">€{{$order_item->total}} from this Order</span></div>-->
                                                                 
                                                                 @foreach ($orders as $order)
                                                                     
@@ -313,7 +317,7 @@
                                                         <div class="Polaris-Stack__Item_yiyol">
                                                             <div class="Polaris-Stack_32wu2 Polaris-Stack--distributionFillEvenly_aehjo">
                                                                 <div class="Polaris-Stack__Item_yiyol">
-                                                                    <div class="Polaris-Stack_32wu2 Polaris-Stack--distributionLeading_rudtn">
+                                                                    {{-- <div class="Polaris-Stack_32wu2 Polaris-Stack--distributionLeading_rudtn">
                                                                         <div class="Polaris-Stack__Item_yiyol">
                                                                             <div class="awDZq _21KaY"><svg viewBox="0 0 20 20" class="_1nZTW _2QX6Y">
                                                                                     <path d="M2.5 1A1.5 1.5 0 0 0 1 2.5v15A1.5 1.5 0 0 0 2.5 19h15a1.5 1.5 0 0 0 1.5-1.5v-15A1.5 1.5 0 0 0 17.5 1h-15zm5 3.5c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zM16.499 17H3.497c-.41 0-.64-.46-.4-.79l3.553-4.051c.19-.21.52-.21.72-.01L9 14l3.06-4.781a.5.5 0 0 1 .84.02l4.039 7.011c.18.34-.06.75-.44.75z"></path>
@@ -335,7 +339,7 @@
                                                                         </div>
                                                                         @endif
                                                                         @endforeach
-                                                                    </div>
+                                                                    </div> --}}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -435,7 +439,7 @@
                                                 <h2 class="Polaris-Heading_1brcv">Timeline</h2>
                                                
                                             </div>
-                                            <form action="/about-customer/{{$c_id}}/comment/added" method="post">
+                                            <form action="/about-customer/{{$c_id}}/{{$u_id}}/comment/added" method="post">
                                                 @csrf
                                             <div class="pxnRY _1ErHn">
                                                 <div class="PMONs _1ErHn _36KPg">
@@ -676,7 +680,7 @@
                                     <div class="Polaris-Modal__Body_yjdx1 Polaris-Scrollable_1ed9o Polaris-Scrollable--vertical_uiuuj" data-polaris-scrollable="true">
                                         <section class="Polaris-Modal-Section_1b1h1">
     
-    <form method="post" action="/about-customer/{{$c_id}}/updated">
+    <form method="post" action="/about-customer/{{$c_id}}/{{$u_id}}/updated">
         @csrf
     <div class="Polaris-FormLayout_1wntl">
         <div role="group" class="Polaris-FormLayout--grouped_17srt">
@@ -775,7 +779,7 @@
                                     <div class="Polaris-Modal__Body_yjdx1 Polaris-Scrollable_1ed9o Polaris-Scrollable--vertical_uiuuj Polaris-Scrollable--hasBottomShadow_all2n Polaris-Scrollable--verticalHasScrolling_1n2r8" data-polaris-scrollable="true">
                                         <section class="Polaris-Modal-Section_1b1h1">
                                             
-                                            <form method="post" action="/about-customer/{{$c_id}}/address/updated">
+                                            <form method="post" action="/about-customer/{{$c_id}}/{{$u_id}}/address/updated">
                                                 @csrf
                                                 <div class="Polaris-FormLayout_1wntl">
                                                     <div class="Polaris-FormLayout__Item_yiyol">
