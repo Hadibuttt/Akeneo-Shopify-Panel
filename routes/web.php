@@ -31,7 +31,7 @@ Route::get('/home', [App\Http\Controllers\IndexController::class, 'index']);
 
 Route::get('/product', [App\Http\Controllers\ProductController::class, 'index']);
 
-Route::get('/category', [App\Http\Controllers\CategoryController::class, 'index']);
+Route::get('/category', [App\Http\Controllers\CategoryController::class, 'index'])->name('category');
 
 Route::get('/orderdetails/{id}', [App\Http\Controllers\OrderDetailsController::class, 'index']);
 

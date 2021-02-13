@@ -23,12 +23,12 @@ class CategoryController extends Controller
         $image=$req->image->move(public_path().'/assets/img/', $name); 
         $category->cat_img = $name;
         $category->save();
-        return view('category');
+        return redirect()->route('category');
     }
 
     public function index()
     {
-        $categorys = categories::all();
+        $categorys = categories::orderBy('cat_id', 'desc')->get();
         $users = AdminLogin::all();
         if(Auth::user()->CategoryPage == 1)
         return view('category')->with([
