@@ -20,7 +20,7 @@ class SubCategoryController extends Controller
     public function index()
     {
         $categorys = categories::all();
-        $sub_categorys = sub_categories::all();
+        $sub_categorys = sub_categories::orderBy('subcat_id', 'desc')->get();
         $users = AdminLogin::all();
         if(Auth::user()->SubcategoryPage == 1)
         return view('subcategory')->with([
@@ -57,7 +57,7 @@ class SubCategoryController extends Controller
         $image=$req->image->move(public_path().'/assets/img/', $name); 
         $sub_category->subcat_img = $name;
         $sub_category->save();
-        return view('subcategory');
+        return redirect('subcategory');
     }
 
     public function update($id)

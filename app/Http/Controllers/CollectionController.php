@@ -20,7 +20,7 @@ class CollectionController extends Controller
     
     public function index()
     {
-        $collections = cat_items::all();
+        $collections = cat_items::orderBy('cat_item_id', 'desc')->get();
         $users = AdminLogin::all();
         if(Auth::user()->CollectionPage == 1)
         return view('collection')->with([
@@ -59,7 +59,8 @@ class CollectionController extends Controller
         $collection->cat_item_img = $name;
         $collection->save();
 
-        return view('collection');
+        return redirect('collection');
+
     }
 
     public function update($id)
