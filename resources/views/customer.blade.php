@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <?php use App\Models\addresses; ?>
+<?php use App\Models\orders; ?>
 
 <link data-react-html="true" rel="mask-icon" href="https://cdn.shopify.com/shopifycloud/web/assets/v1/e028fc80f1cd644ff3f327769b407fd9.svg" color="#000000">
     <link data-react-html="true" rel="shortcut icon" type="image/x-icon" href="https://cdn.shopify.com/shopifycloud/web/assets/v1/favicon-default-0c50a58978abc08c03f89d0309d84583.ico">
@@ -343,18 +344,31 @@
                                                                             </div>
                                                                             <div class="Polaris-Stack__Item_yiyol">
                                                                                 <div class="Polaris-Stack_32wu2 Polaris-Stack--spacingExtraLoose_1ptvt Polaris-Stack--distributionTrailing_z5d5z">
+                                                                                    
                                                                                     <div class="Polaris-Stack__Item_yiyol">
                                                                                         <div class="_3pr6R"><span class="Polaris-Badge_2qgie Polaris-Badge--statusSuccess_pc5rl"><span class="Polaris-VisuallyHidden_yrtt5">Success </span>Subscribed</span></div>
                                                                                     </div>
-                                                                                    {{-- @foreach ($orders as $order)
-                                                                                @if ($order_detail->order_id == $order->id)
-                                                                                
-                                                                                <div class="Polaris-Stack__Item_yiyol">
-                                                                                  <p class="k-NcH"> <?php echo $TotalOrders = orders::where('user_id',"$order->user_id")->count(); ?> orders</p>
-                                                                              </div> 
-                                                                                @endif
-                                                                            @endforeach --}}
 
+                                                                <?php $TotalOrders = orders::where('user_id',$customer->id)->count(); ?>
+
+                                                                @if ($TotalOrders == 0)
+                                                                                        <div class="Polaris-Stack__Item_yiyol">
+                                                                                            <p class="k-NcH">No orders</p>
+                                                                                        </div>  
+                                                                                        
+                                                                @else
+                                                                                        
+                                                                @foreach ($orders as $order)
+                                                                    @if ($customer->id == $order->user_id)
+                                                                      <div class="Polaris-Stack__Item_yiyol">
+                                                                            <p class="k-NcH">{{$TotalOrders}} orders</p>
+                                                                        @break
+                                                                      </div> 
+                                                                     @endif
+                                                                @endforeach
+                                                                @endif
+
+                                                                                
                                                                             {{-- @foreach ($order_items as $order_item)
                                                                                 
                                                                             @if ($order_item->order_id == $order_detail->order_id)
