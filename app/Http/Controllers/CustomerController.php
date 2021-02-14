@@ -9,8 +9,10 @@ use App\Models\order_details;
 use App\Models\User;
 use App\Models\products;
 use App\Models\ctimeline;
+use App\Models\addresses;
 use App\Models\AdminLogin;
 use Auth;
+
 
 class CustomerController extends Controller
 {
@@ -26,13 +28,17 @@ class CustomerController extends Controller
         $order_items = order_items::all();
         $order_details = order_details::all();
         $users = AdminLogin::all();
+        $customers = User::all();
+        $addresses = addresses::all();
 
         if(Auth::user()->CustomerPage == 1)
         return view('customer')->with([
             'orders'=> $orders,
             'order_items'=> $order_items,
             'order_details'=> $order_details,
-            'users' => $users
+            'users' => $users,
+            'customers' => $customers,
+            'addresses' => $addresses
         ]);
         else    
             return view('restricted');

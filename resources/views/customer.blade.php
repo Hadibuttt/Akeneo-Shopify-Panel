@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<?php use App\Models\orders; ?>
+<?php use App\Models\addresses; ?>
 
 <link data-react-html="true" rel="mask-icon" href="https://cdn.shopify.com/shopifycloud/web/assets/v1/e028fc80f1cd644ff3f327769b407fd9.svg" color="#000000">
     <link data-react-html="true" rel="shortcut icon" type="image/x-icon" href="https://cdn.shopify.com/shopifycloud/web/assets/v1/favicon-default-0c50a58978abc08c03f89d0309d84583.ico">
@@ -263,7 +263,7 @@
                                             </div>
                                             <ul class="Polaris-ResourceList_r589e" aria-live="polite" aria-busy="false">
                                                
-                                              @foreach ($order_details as $order_detail)
+                                              @foreach ($customers as $customer)
 
                                                   
                                                 <li class="Polaris-ResourceItem__ListItem_wxd2m Polaris-ResourceItem--newDesignLanguage_1rik8">
@@ -287,16 +287,21 @@
                                                                             <div class="Polaris-Stack__Item_yiyol">
                                                                                 <div class="Polaris-Stack_32wu2 Polaris-Stack--distributionEqualSpacing_x9cqm Polaris-Stack--noWrap_vecks">
                                                                                     <div class="Polaris-Stack__Item_yiyol"><span class="Polaris-TextStyle--variationStrong_rpyvj">
-                                                                                            <div class="_3enmF">{{$order_detail->name}}</div>
+                                                                                            <div class="_3enmF">{{$customer->name}}</div>
                                                                                         </span></div>
                                                                                     <div class="Polaris-Stack__Item_yiyol">
                                                                                         <div class="_3pr6R"><span class="Polaris-Badge_2qgie Polaris-Badge--statusSuccess_pc5rl"><span class="Polaris-VisuallyHidden_yrtt5">Success </span>Subscribed</span></div>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
-                                                                            <div class="Polaris-Stack__Item_yiyol">
-                                                                                <p class="_2JgJn">{{$order_detail->city}}, {{$order_detail->state}}</p>
-                                                                            </div>
+                                                                            @foreach ($addresses as $address)
+                                                                            @if ($address->user_id == $customer->id)
+                                                                               <div class="Polaris-Stack__Item_yiyol">
+                                                                                <p class="_2JgJn">{{$address->city}}, {{$address->state}}</p>
+                                                                            </div> 
+                                                                            @endif    
+                                                                            @endforeach
+                                                                            
                                                                             
                                                                             
                                                                             <div class="Polaris-Stack__Item_yiyol">
@@ -314,11 +319,26 @@
                                                                             <div class="Polaris-Stack__Item_yiyol">
                                                                                 <div class="Polaris-Stack_32wu2 Polaris-Stack--vertical_uiuuj Polaris-Stack--spacingExtraTight_gv6hw Polaris-Stack--distributionLeading_rudtn">
                                                                                     <div class="Polaris-Stack__Item_yiyol"><span class="Polaris-TextStyle--variationStrong_rpyvj">
-                                                                                            <div class="_3enmF">{{$order_detail->name}}</div>
+                                                                                            <div class="_3enmF">{{$customer->name}}</div>
                                                                                         </span></div>
-                                                                                    <div class="Polaris-Stack__Item_yiyol">
-                                                                                        <p class="_2JgJn">{{$order_detail->city}}, {{$order_detail->state}}</p>
-                                                                                    </div>
+
+                                                                                        <?php $count = addresses::where('user_id',$customer->id)->count(); ?>
+                                                                                        
+                                                                                        @if ($count == 0)
+                                                                                        <div class="Polaris-Stack__Item_yiyol">
+                                                                                            <p class="_2JgJn">No Address Added</p>
+                                                                                        </div>  
+                                                                                        
+                                                                                        @else
+                                                                                        
+                                                                                        @foreach ($addresses as $address)
+                                                                                        @if ($address->user_id == $customer->id)
+                                                                                           <div class="Polaris-Stack__Item_yiyol">
+                                                                                            <p class="_2JgJn">{{$address->city}}, {{$address->state}}</p>
+                                                                                        </div> 
+                                                                                        @endif    
+                                                                                        @endforeach
+                                                                                        @endif
                                                                                 </div>
                                                                             </div>
                                                                             <div class="Polaris-Stack__Item_yiyol">
@@ -326,16 +346,16 @@
                                                                                     <div class="Polaris-Stack__Item_yiyol">
                                                                                         <div class="_3pr6R"><span class="Polaris-Badge_2qgie Polaris-Badge--statusSuccess_pc5rl"><span class="Polaris-VisuallyHidden_yrtt5">Success </span>Subscribed</span></div>
                                                                                     </div>
-                                                                                    @foreach ($orders as $order)
+                                                                                    {{-- @foreach ($orders as $order)
                                                                                 @if ($order_detail->order_id == $order->id)
                                                                                 
                                                                                 <div class="Polaris-Stack__Item_yiyol">
                                                                                   <p class="k-NcH"> <?php echo $TotalOrders = orders::where('user_id',"$order->user_id")->count(); ?> orders</p>
                                                                               </div> 
                                                                                 @endif
-                                                                            @endforeach
+                                                                            @endforeach --}}
 
-                                                                            @foreach ($order_items as $order_item)
+                                                                            {{-- @foreach ($order_items as $order_item)
                                                                                 
                                                                             @if ($order_item->order_id == $order_detail->order_id)
                                                                                     <div class="Polaris-Stack__Item_yiyol">
@@ -344,7 +364,7 @@
                                                                                     </div>
                                                                                       @endif
                                                                                        
-                                                                                    @endforeach
+                                                                                    @endforeach --}}
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -360,10 +380,12 @@
                                                                             @if ($user->AboutCustomerPage == 1) 
 
                                                                             @foreach ($orders as $order)
+                                                                            @foreach ($order_details as $order_detail)
                                                                             @if ($order_detail->order_id == $order->id)
                                                                             
                                                                             href="about-customer/{{$order_detail->order_id}}/{{$order->user_id}}"   
                                                                             @endif
+                                                                            @endforeach
                                                                         @endforeach
 
                                                                            
