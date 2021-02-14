@@ -418,13 +418,10 @@
                                                                             @if ($user->AboutCustomerPage == 1) 
 
                                                                             @foreach ($orders as $order)
-                                                                            @foreach ($order_details as $order_detail)
-                                                                            @if ($order_detail->order_id == $order->id)
-                                                                            
-                                                                            href="about-customer/{{$order_detail->order_id}}/{{$order->user_id}}"   
-                                                                            @endif
+                                                                            @if ($customer->id == $order->user_id)
+                                                                            href="about-customer/{{$order->id}}/{{$customer->id}}"   
+                                                                            @endif                                                                            
                                                                             @endforeach
-                                                                        @endforeach
 
                                                                            
                                                                             @else
