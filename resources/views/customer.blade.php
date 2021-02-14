@@ -2,6 +2,8 @@
 @section('content')
 <?php use App\Models\addresses; ?>
 <?php use App\Models\orders; ?>
+<?php use App\Models\order_items; ?>
+
 
 <link data-react-html="true" rel="mask-icon" href="https://cdn.shopify.com/shopifycloud/web/assets/v1/e028fc80f1cd644ff3f327769b407fd9.svg" color="#000000">
     <link data-react-html="true" rel="shortcut icon" type="image/x-icon" href="https://cdn.shopify.com/shopifycloud/web/assets/v1/favicon-default-0c50a58978abc08c03f89d0309d84583.ico">
@@ -353,7 +355,7 @@
 
                                                                 @if ($TotalOrders == 0)
                                                                                         <div class="Polaris-Stack__Item_yiyol">
-                                                                                            <p class="k-NcH">No orders</p>
+                                                                                            <p class="k-NcH" >0 orders</p>
                                                                                         </div>  
                                                                                         
                                                                 @else
@@ -368,17 +370,39 @@
                                                                 @endforeach
                                                                 @endif
 
-                                                                                
-                                                                            {{-- @foreach ($order_items as $order_item)
-                                                                                
-                                                                            @if ($order_item->order_id == $order_detail->order_id)
-                                                                                    <div class="Polaris-Stack__Item_yiyol">
-                                                                                      
-                                                                                      <p class="_1k247">€{{$order_item->total}} spent</p>
-                                                                                    </div>
-                                                                                      @endif
-                                                                                       
-                                                                                    @endforeach --}}
+                                                                   
+                                                                <?php 
+                                                                $Orders = orders::where('user_id',$customer->id)->get();
+                                                                ?>
+
+                                                        @foreach ($Orders as $Order)
+                                                            
+                                                            <?php 
+                                                            $prices = order_items::where('order_id',$Order->id)->get();
+                                                            ?>
+                                                        
+                                                    <?php    
+                                                        $total = 0;
+                                                        foreach($prices as $price)
+                                                        {
+                                                            $total = $total + $price->total;
+                                                        } 
+                                        
+                                                    ?>
+				                                        @endforeach  
+                                                        
+                                                        @if ($TotalOrders == 0)
+                                                        <div class="Polaris-Stack__Item_yiyol">                              
+                                                            <p class="_1k247">€0 spent</p>
+                                                        </div>         
+                                                        
+                                                        @else
+                                                        <div class="Polaris-Stack__Item_yiyol">                              
+                                                            <p class="_1k247" style="margin-top:-18px;">€{{$total}} spent</p>
+                                                        </div>        
+                                                        
+                                                        @endif
+                                            
                                                                                 </div>
                                                                             </div>
                                                                         </div>
