@@ -228,8 +228,7 @@
                                                             </div>
 
 
-                                                        @foreach ($order_items as $order_item)
-                                                        @if ($order_item->order_id == $c_id)
+                                                        
                                                             
                                                         
                                                             <div class="Polaris-Stack__Item_yiyol">
@@ -250,12 +249,11 @@
                                                                     <div class="Polaris-Stack__Item_yiyol">
                                                                         <div class="Polaris-TextContainer_szg8b Polaris-TextContainer--spacingTight_1o4d6">
                                                                             <p><span class="Polaris-TextStyle--variationSubdued_1segu">Average order value</span></p>
-                                                                            <h3 class="Polaris-Heading_1brcv"><span class="Polaris-TextStyle--variationStrong_rpyvj">€{{$order_item->total/$TotalOrders}}</span></h3>
+                                                                            <h3 class="Polaris-Heading_1brcv"><span class="Polaris-TextStyle--variationStrong_rpyvj">€{{$TotalSpent/$TotalOrders}}</span></h3>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                @endif
-                                                    @endforeach
+                                                               
                                                             </div>
                                                         </div>
                                                     </div>
@@ -267,37 +265,43 @@
                                                     <h2 class="Polaris-Heading_1brcv">Orders placed</h2>
                                                 </div>
 
-                                                @foreach ($order_items as $order_item)
-                                            @if ($order_item->order_id == $c_id)
+                                                
                                                 
                                            
                                                 <div class="Polaris-Card__Section_1b1h1" >
                                                     <div class="Polaris-Stack_32wu2 Polaris-Stack--vertical_uiuuj" style="flex: none;">
                                                         <div class="Polaris-Stack__Item_yiyol" >
                                                             
-                                                                @foreach ($ords as $ord)
+                                                                
                                                                 
                                                                 <div class="Polaris-Stack_32wu2 Polaris-Stack--distributionEqualSpacing_x9cqm" style="margin-bottom: 20px;margin-left: 7px;">
                                                                     
                                                                 <div style="display: inline;">
-                                                                <div class="Polaris-Stack__Item_yiyol" style="display: inline;"><a data-polaris-unstyled="true" class="Polaris-Link_yj5sy" href="/orderdetails/{{$ord->id}}">Order #{{$ord->id}}</a></div>
-                                                                <div class="Polaris-Stack__Item_yiyol" style="display: inline;"><span class="Polaris-TextStyle--variationSubdued_1segu" style="margin-left: 350px;">Created at {{$ord->created_at->toTimeString()}}</span></div>
+                     @foreach ($ks as $k)
+
+                 <div class="Polaris-Stack__Item_yiyol" style="display: inline;"><a data-polaris-unstyled="true" class="Polaris-Link_yj5sy" 
+                                                                    
+                                                                
+                    href="/orderdetails/{{$k->id}}">Order #{{$k->id}}</a></div>                                    
+ 
+                                                                <div class="Polaris-Stack__Item_yiyol" style="display: inline;"><span class="Polaris-TextStyle--variationSubdued_1segu" style="margin-left: 350px;">Created at {{$k->created_at->toTimeString()}}</span></div>
+                    @endforeach
                                                                 </div>
 
                                                                 </div>
 
                                                                 
-                                                                @endforeach
+                                                                
                                                             
                                                         </div>
                                                         <div class="Polaris-Stack__Item_yiyol" style="margin-top: 0">
                                                             <div class="Polaris-Stack_32wu2 Polaris-Stack--vertical_uiuuj Polaris-Stack--spacingExtraTight_gv6hw">
-                                                                <!--<div class="Polaris-Stack__Item_yiyol"><span class="">€{{$order_item->total}} from this Order</span></div>-->
+                                                                <!--<div class="Polaris-Stack__Item_yiyol"><span class="">€ from this Order</span></div>-->
                                                                 
-                                                                @foreach ($orders as $order)
+                                                               
                                                                     
-                                                                @if ($order->id == $c_id)
-                                                                @if ($order->status == 0)
+                                                                
+                                                                @if ($k->status == 0)
 
                                                                 <div class="Polaris-Stack__Item_yiyol"><span class="Polaris-Badge_2qgie Polaris-Badge--statusAttention_i61kn Polaris-Badge--progressIncomplete_1jg92"><span class="Polaris-Badge__Pip_375sr"><span class="Polaris-VisuallyHidden_yrtt5">Attention Incomplete</span></span>Unfulfilled</span></div>
                                                                 @else
@@ -305,8 +309,7 @@
                                                                 @endif
                                                                
 
-                                                                @endif
-                                                                @endforeach
+                                                                
 
                                                             </div>
                                                         </div>
@@ -341,9 +344,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                @endif
                                                 
-                                                @endforeach
                                             </div>
                                         </div>
                                         <div class="Polaris-Layout__Section_1b1h1 Polaris-Layout__Section--secondary_1sx8i">

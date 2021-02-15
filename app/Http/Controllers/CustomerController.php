@@ -65,7 +65,7 @@ class CustomerController extends Controller
     {
         $ps = order_items::where('order_id',$k->id)->get();
         
-        
+    }    
         $TotalSpent=0;
 
         foreach($ps as $p)
@@ -73,7 +73,7 @@ class CustomerController extends Controller
             $TotalSpent = $TotalSpent + $p->total;
         }
 
-    }
+    
 
         $TotalOrders = orders::where('user_id',$uid)->count();
 
@@ -94,7 +94,8 @@ class CustomerController extends Controller
             'address' => $address,
             'LastOrder' => $LastOrder,
             'TotalSpent' => $TotalSpent,
-            'TotalOrders' => $TotalOrders
+            'TotalOrders' => $TotalOrders,
+            'ks' => $ks
         ]);
         else    
             return view('restricted');
