@@ -361,18 +361,16 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                @foreach ($order_details as $order_detail)
-                                                    @if ($order_detail->order_id == $c_id)
+                                                
                                                         
                                                     
                                                 <div class="Polaris-Card__Section_1b1h1">
                                                     <div class="Polaris-Stack_32wu2 Polaris-Stack--vertical_uiuuj Polaris-Stack--spacingExtraTight_gv6hw">
-                                                        <div class="Polaris-Stack__Item_yiyol">{{$order_detail->email}}</div>
+                                                        <div class="Polaris-Stack__Item_yiyol">{{$customer->email}}</div>
                                                     </div>
                                                 </div>
 
-                                                @endif
-                                                @endforeach
+                                                
                                                 <div class="Polaris-Card__Section_1b1h1">
                                                     <div class="Polaris-Card__SectionHeader_1aytf">
                                                         <div class="Polaris-Stack_32wu2 Polaris-Stack--alignmentBaseline_aupj5">
@@ -394,10 +392,10 @@
                                                             <div class="Polaris-Stack_32wu2 Polaris-Stack--vertical_uiuuj">
                                                                 <div class="Polaris-Stack__Item_yiyol">
                                                                     <div class="Polaris-Stack_32wu2 Polaris-Stack--vertical_uiuuj Polaris-Stack--spacingNone_1b3d3">
-                                                                        <div class="Polaris-Stack__Item_yiyol"><span data-key="0">{{$order_detail->name}}<br></span></div>
-                                                                        <div class="Polaris-Stack__Item_yiyol"><span data-key="2">{{$order_detail->address}}<br></span></div>
-                                                                        <div class="Polaris-Stack__Item_yiyol"><span data-key="4">{{$order_detail->city}}, {{$order_detail->state}}<br></span></div>
-                                                                        <div class="Polaris-Stack__Item_yiyol"><span data-key="5">+{{$order_detail->phone}}<br></span></div>
+                                                                        <div class="Polaris-Stack__Item_yiyol"><span data-key="0">{{$customer->name}}<br></span></div>
+                                                                        <div class="Polaris-Stack__Item_yiyol"><span data-key="2">{{$address->address}}<br></span></div>
+                                                                        <div class="Polaris-Stack__Item_yiyol"><span data-key="4">{{$address->city}}, {{$address->state}}<br></span></div>
+                                                                        <div class="Polaris-Stack__Item_yiyol"><span data-key="5">+{{$address->phone}}<br></span></div>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -422,7 +420,11 @@
                                                     <div class="Polaris-Stack_32wu2 Polaris-Stack--vertical_uiuuj Polaris-Stack--spacingTight_1o4d6">
                                                         <div class="Polaris-Stack__Item_yiyol">
                                                             <div class="Polaris-Stack_32wu2 Polaris-Stack--vertical_uiuuj Polaris-Stack--spacingTight_1o4d6">
-                                                                <div class="Polaris-Stack__Item_yiyol"><span class="Polaris-Badge_2qgie">Subscribed</span></div>
+
+                                                                <div class="Polaris-Stack__Item_yiyol">
+                                                                    <span class="Polaris-Badge_2qgie">Subscribed</span>
+                                                                </div>
+                                                                
                                                                 <div class="Polaris-Stack__Item_yiyol"><span class="Polaris-TextStyle--variationSubdued_1segu">Customer has provided their email.</span></div>
                                                             </div>
                                                         </div>
