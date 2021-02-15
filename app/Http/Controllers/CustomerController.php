@@ -55,6 +55,28 @@ class CustomerController extends Controller
         $comments = ctimeline::where('c_id',$id)->orderByDesc('id')->get();
         $comment = ctimeline::where('c_id',$id)->count();
 
+        $customer = User::where('id', $uid)->first();
+        $address = addresses::where('user_id', $uid)->first();
+        $LastOrder = orders::where('user_id',$uid)->orderByDesc('id')->first();
+
+        $ks = orders::where('user_id',$uid)->get();
+
+        foreach($ks as $k)
+    {
+        $ps = order_items::where('order_id',$k->id)->get();
+        
+        
+        $TotalSpent=0;
+
+        foreach($ps as $p)
+        {
+            $TotalSpent = $TotalSpent + $p->total;
+        }
+
+    }
+
+        $TotalOrders = orders::where('user_id',$uid)->count();
+
         $ords = orders::where('user_id', $uid)->get();
 
         if(Auth::user()->AboutCustomerPage == 1)
@@ -67,7 +89,12 @@ class CustomerController extends Controller
             'detail' => $detail,
             'comments' => $comments,
             'comment' => $comment,
-            'ords' => $ords
+            'ords' => $ords,
+            'customer' => $customer,
+            'address' => $address,
+            'LastOrder' => $LastOrder,
+            'TotalSpent' => $TotalSpent,
+            'TotalOrders' => $TotalOrders
         ]);
         else    
             return view('restricted');

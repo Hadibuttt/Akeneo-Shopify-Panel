@@ -4,7 +4,7 @@
 
 <style type="text/css" data-tag-name="trix-editor">
     trix-editor {
-        display: block;
+        display: block:
     }
 
     trix-editor:empty:not(:focus)::before {
@@ -165,13 +165,11 @@
                                         $u_id = request('uid');
                                         ?>
 
-@foreach ($order_details as $order_detail)
-@if ($order_detail->order_id == $c_id)
                                         <div class="Polaris-Page-Header__TitleWrapper_bejfn">
                                             <div>
                                                 <div class="Polaris-Header-Title__TitleAndSubtitleWrapper_40sxf">
                                                     <div class="Polaris-Header-Title_2qj8j">
-                                                        <h1 class="Polaris-Header-Title--newDesignLanguageTitle_1wh8d">{{$order_detail->name}}</h1>
+                            <h1 class="Polaris-Header-Title--newDesignLanguageTitle_1wh8d">{{$customer->name}}</h1>
                                                     </div>
                                                 </div>
                                             </div>
@@ -198,16 +196,19 @@
                                                     
                                                        
                                                                 
-                                                            
+                   
+                        
+                                                          
                                                         <div class="Polaris-Stack__Item_yiyol">
                                                             <div class="Polaris-TextContainer_szg8b Polaris-TextContainer--spacingTight_1o4d6">
                                                                 <div class="_1qu9s">
-                                                                    <h3 class="Polaris-Heading_1brcv">{{$order_detail->name}}</h3>
-                                                                    <p><span class="Polaris-TextStyle--variationSubdued_1segu">{{$order_detail->city}}, {{$order_detail->state}}</span></p>
-                                                                    <p><span class="Polaris-TextStyle--variationSubdued_1segu">Customer since {{$order_detail->created_at->format('l j F Y')}}</span></p>
+                                                                    <h3 class="Polaris-Heading_1brcv">{{$customer->name}}</h3>
+                                                                    <p><span class="Polaris-TextStyle--variationSubdued_1segu">{{$address->city}}, {{$address->state}}</span></p>
+                                                                    <p><span class="Polaris-TextStyle--variationSubdued_1segu">Customer since {{$customer->created_at->format('l j F Y')}}</span></p>
                                                                 </div>
                                                             </div>
                                                         </div>
+                        
                                                         
                                                     </div>
                                                 </div>
@@ -219,14 +220,13 @@
                                                                     <div class="Polaris-Stack__Item_yiyol">
                                                                         <div class="Polaris-TextContainer_szg8b Polaris-TextContainer--spacingTight_1o4d6">
                                                                            <p><span class="Polaris-TextStyle--variationSubdued_1segu">Last Order</span></p>
-                                                                            <h3 class="Polaris-Heading_1brcv"><span class="Polaris-TextStyle--variationStrong_rpyvj">{{$order_detail->created_at->toTimeString()}}</span></h3>
+                                                                            <h3 class="Polaris-Heading_1brcv"><span class="Polaris-TextStyle--variationStrong_rpyvj">{{$LastOrder->created_at->toTimeString()}}</span></h3>
                                                                             
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            @endif
-                                                        @endforeach
+
 
                                                         @foreach ($order_items as $order_item)
                                                         @if ($order_item->order_id == $c_id)
@@ -237,18 +237,14 @@
                                                                     <div class="Polaris-Stack__Item_yiyol">
                                                                         <div class="Polaris-TextContainer_szg8b Polaris-TextContainer--spacingTight_1o4d6">
                                                                             <p><span class="Polaris-TextStyle--variationSubdued_1segu">Total spent to date</span></p>
-                                                                            <h3 class="Polaris-Heading_1brcv"><span class="Polaris-TextStyle--variationStrong_rpyvj">€{{$order_item->total}}</span></h3>
-                                                                            <p>
-                                                                                @foreach ($orders as $order)
-                                                        @if ($order_item->order_id == $order->id)
-         <span class="Polaris-TextStyle--variationSubdued_1segu"><?php echo $TotalOrders = orders::where('user_id',"$order->user_id")->count(); ?> orders</span></p>
+                                                                            <h3 class="Polaris-Heading_1brcv"><span class="Polaris-TextStyle--variationStrong_rpyvj">€{{$TotalSpent}}</span></h3>
+                                                        <p>                        
+         <span class="Polaris-TextStyle--variationSubdued_1segu">{{$TotalOrders}} orders</span></p>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            @endif
-                                                                            @endforeach
-                                                         
+                                                            
                                                             <div class="Polaris-Stack__Item_yiyol">
                                                                 <div class="Polaris-Stack_32wu2 Polaris-Stack--vertical_uiuuj">
                                                                     <div class="Polaris-Stack__Item_yiyol">
