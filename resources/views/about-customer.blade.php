@@ -375,7 +375,7 @@
                                                     <div class="Polaris-Card__SectionHeader_1aytf">
                                                         <div class="Polaris-Stack_32wu2 Polaris-Stack--alignmentBaseline_aupj5">
                                                             <div class="Polaris-Stack__Item_yiyol Polaris-Stack__Item--fill_vpuzt">
-                                                                <h3 aria-label="Default address" class="Polaris-Subheading_syouu">Default address</h3>
+                                                                <h3 aria-label="Default address" class="Polaris-Subheading_syouu">Shipping address</h3>
                                                             </div>
                                                             <div class="Polaris-Stack__Item_yiyol">
                                                                 <div class="Polaris-ButtonGroup_yy85z">
@@ -384,27 +384,78 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    @foreach ($order_details as $order_detail)
-                                                    @if ($order_detail->order_id == $c_id)
-
                                                     <div class="Polaris-TextContainer_szg8b Polaris-TextContainer--spacingTight_1o4d6">
                                                         <div class="_2gzRy">
                                                             <div class="Polaris-Stack_32wu2 Polaris-Stack--vertical_uiuuj">
                                                                 <div class="Polaris-Stack__Item_yiyol">
                                                                     <div class="Polaris-Stack_32wu2 Polaris-Stack--vertical_uiuuj Polaris-Stack--spacingNone_1b3d3">
-                                                                        <div class="Polaris-Stack__Item_yiyol"><span data-key="0">{{$customer->name}}<br></span></div>
-                                                                        <div class="Polaris-Stack__Item_yiyol"><span data-key="2">{{$address->address}}<br></span></div>
-                                                                        <div class="Polaris-Stack__Item_yiyol"><span data-key="4">{{$address->city}}, {{$address->state}}<br></span></div>
-                                                                        <div class="Polaris-Stack__Item_yiyol"><span data-key="5">+{{$address->phone}}<br></span></div>
+                                                                        <div class="Polaris-Stack__Item_yiyol"><span data-key="0">First Name<br></span></div>
+                                                                        <div class="Polaris-Stack__Item_yiyol"><span data-key="1">Last Name<br></span></div>
+                                                                        <div class="Polaris-Stack__Item_yiyol"><span data-key="1">Company<br></span></div>
+                                                                        <div class="Polaris-Stack__Item_yiyol"><span data-key="2">Address</span></div>
+                                                                        <div class="Polaris-Stack__Item_yiyol"><span data-key="3">ZIP CODE and City</span></div>
+                                                                        <div class="Polaris-Stack__Item_yiyol"><span data-key="4">Country<br></span></div>
+                                                                        <div class="Polaris-Stack__Item_yiyol"><span data-key="5">Number<br></span></div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    @endif
-                                                    @endforeach
+                                                    
+                                                    <div class="Polaris-TextContainer_szg8b Polaris-TextContainer--spacingTight_1o4d6" style="margin-top: 20px;">
+                                                    <label><input type="checkbox" id="add_billing_address"><div style="display: inline">Shipping address is same as billling address</div></label>
+                                                    </div>
+                                                    <script>
+                                                    $('#add_billing_address').change(function() {
+                                                        if(this.checked) {
+                                                            $('#Polaris-Card__Section_1b1h1_billing_box').hide();
+                                                        }
+                                                        else
+                                                            {
+                                                                
+                                                            $('#Polaris-Card__Section_1b1h1_billing_box').show();
+                                                            }
+                                                        
+                                                    });
+                                                    
+                                                    </script>
+                                                </div>
+                                                
+                                                <div class="Polaris-Card__Section_1b1h1" id="Polaris-Card__Section_1b1h1_billing_box">
+                                                    <div class="Polaris-Card__SectionHeader_1aytf">
+                                                        <div class="Polaris-Stack_32wu2 Polaris-Stack--alignmentBaseline_aupj5">
+                                                            <div class="Polaris-Stack__Item_yiyol Polaris-Stack__Item--fill_vpuzt">
+                                                                <h3 aria-label="Default address" class="Polaris-Subheading_syouu">Billing address</h3>
+                                                            </div>
+                                                            <div class="Polaris-Stack__Item_yiyol">
+                                                                <div class="Polaris-ButtonGroup_yy85z">
+                                                                    <div class="Polaris-ButtonGroup__Item_yiyol Polaris-ButtonGroup__Item--plain_1lavi"><button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--plain_2z97r" aria-label="Manage" type="button" onclick="Display_billing()"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Manage</span></span></button></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="Polaris-TextContainer_szg8b Polaris-TextContainer--spacingTight_1o4d6">
+                                                        <div class="_2gzRy">
+                                                            <div class="Polaris-Stack_32wu2 Polaris-Stack--vertical_uiuuj">
+                                                                <div class="Polaris-Stack__Item_yiyol">
+                                                                    <div class="Polaris-Stack_32wu2 Polaris-Stack--vertical_uiuuj Polaris-Stack--spacingNone_1b3d3">
+                                                                        <div class="Polaris-Stack__Item_yiyol"><span data-key="0">First Name<br></span></div>
+                                                                        <div class="Polaris-Stack__Item_yiyol"><span data-key="1">Last Name<br></span></div>
+                                                                        <div class="Polaris-Stack__Item_yiyol"><span data-key="1">Company<br></span></div>
+                                                                        <div class="Polaris-Stack__Item_yiyol"><span data-key="2">Address</span></div>
+                                                                        <div class="Polaris-Stack__Item_yiyol"><span data-key="3">ZIP CODE and City</span></div>
+                                                                        <div class="Polaris-Stack__Item_yiyol"><span data-key="4">Country<br></span></div>
+                                                                        <div class="Polaris-Stack__Item_yiyol"><span data-key="5">Number<br></span></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
                                                 </div>
                                             </div>
+
+
                                             <div class="Polaris-Card_yis1o Polaris-Card--newDesignLanguage_1rik8">
                                                 <div class="Polaris-Card__Header_z4uwg">
                                                     <div class="Polaris-Stack_32wu2 Polaris-Stack--alignmentBaseline_aupj5">
@@ -961,6 +1012,269 @@
         </div>
     </div>
     <!--Shipping Editor-->
+
+    <!--BillingEditor-->
+    <div id="PolarisPortalsContainer-billing" style="visibility: hidden;">
+        <div data-portal-id="popover-Polarisportal3"></div>
+        <div data-portal-id="modal-Polarisportal4">
+            <div></div>
+        </div>
+        <div data-portal-id="modal-Polarisportal5">
+            <div></div>
+        </div>
+        <div data-portal-id="modal-Polarisportal6">
+            <div></div>
+        </div>
+        <div data-portal-id="modal-Polarisportal7">
+            <div>
+                <div class="Polaris-Modal-Dialog__Container_13mbo" data-polaris-layer="true" data-polaris-overlay="true">
+                    <div>
+                        <div role="dialog" aria-labelledby="Polarismodal-header5" tabindex="-1" class="Polaris-Modal-Dialog_n3qgo">
+                            <div class="Polaris-Modal-Dialog__Modal_2v9yc">
+                                <div class="Polaris-Modal-Header_z4uwg">
+                                    <div id="Polarismodal-header5" class="Polaris-Modal-Header__Title_2qj8j">
+                                        <h2 class="Polaris-DisplayText_1u0t8 Polaris-DisplayText--sizeSmall_7647q">Edit billing address</h2>
+                                    </div><button class="Polaris-Modal-CloseButton_bl13t" aria-label="Close" onclick="Close_billing()"><span class="Polaris-Icon_yj27d Polaris-Icon--colorInkLighter_2s08r Polaris-Icon--isColored_uhqnf Polaris-Icon--newDesignLanguage_1rik8"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
+                                                <path d="M11.414 10l6.293-6.293a1 1 0 1 0-1.414-1.414L10 8.586 3.707 2.293a1 1 0 0 0-1.414 1.414L8.586 10l-6.293 6.293a1 1 0 1 0 1.414 1.414L10 11.414l6.293 6.293A.998.998 0 0 0 18 17a.999.999 0 0 0-.293-.707L11.414 10z"></path>
+                                            </svg></span></button>
+                                </div>
+                                <div class="Polaris-Modal__BodyWrapper_1kb1f">
+                                    <div class="Polaris-Modal__Body_yjdx1 Polaris-Scrollable_1ed9o Polaris-Scrollable--vertical_uiuuj Polaris-Scrollable--hasBottomShadow_all2n Polaris-Scrollable--verticalHasScrolling_1n2r8" data-polaris-scrollable="true">
+                                        <section class="Polaris-Modal-Section_1b1h1">
+                                            <form method="post">
+                                                <div class="Polaris-FormLayout_1wntl">
+                                                    <div class="Polaris-FormLayout__Item_yiyol">
+                                                        <div class="Polaris-FormLayout_1wntl">
+                                                            <div role="group" class="Polaris-FormLayout--condensed_b60cb">
+                                                                <div class="Polaris-FormLayout__Items_38lvu">
+                                                                    <div class="Polaris-FormLayout__Item_yiyol">
+                                                                        <div class="Polaris-FormLayout_1wntl">
+                                                                            <div role="group" class="Polaris-FormLayout--grouped_17srt">
+                                                                                <div class="Polaris-FormLayout__Items_38lvu">
+                                                                                    <div class="Polaris-FormLayout__Item_yiyol">
+                                                                                        <div class="">
+                                                                                            <div class="Polaris-Labelled__LabelWrapper_bf6ys">
+                                                                                                <div class="Polaris-Label_2vd36"><label id="PolarisTextField2Label" for="PolarisTextField2" class="Polaris-Label__Text_yj3uv">First name</label></div>
+                                                                                            </div>
+                                                                                            <div class="Polaris-Connected_wopc9 Polaris-Connected--newDesignLanguage_1rik8" style="border: 1px solid #AEB4B9;border-radius: 5px;">
+                                                                                                <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
+                                                                                                    <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8"><input name="firstName" id="PolarisTextField2" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField2Label" aria-invalid="false" aria-multiline="false" value="">
+                                                                                                        <div class="Polaris-TextField__Backdrop_1x2i2"></div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="Polaris-FormLayout__Item_yiyol">
+                                                                                        <div class="">
+                                                                                            <div class="Polaris-Labelled__LabelWrapper_bf6ys">
+                                                                                                <div class="Polaris-Label_2vd36"><label id="PolarisTextField3Label" for="PolarisTextField3" class="Polaris-Label__Text_yj3uv">Last name</label></div>
+                                                                                            </div>
+                                                                                            <div class="Polaris-Connected_wopc9 Polaris-Connected--newDesignLanguage_1rik8" style="border: 1px solid #AEB4B9;border-radius: 5px;">
+                                                                                                <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
+                                                                                                    <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8"><input name="lastName" id="PolarisTextField3" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField3Label" aria-invalid="false" aria-multiline="false" value="">
+                                                                                                        <div class="Polaris-TextField__Backdrop_1x2i2"></div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="Polaris-FormLayout__Item_yiyol">
+                                                        <div class="Polaris-FormLayout_1wntl">
+                                                            <div role="group" class="Polaris-FormLayout--condensed_b60cb">
+                                                                <div class="Polaris-FormLayout__Items_38lvu">
+                                                                    <div class="Polaris-FormLayout__Item_yiyol">
+                                                                        <div class="">
+                                                                            <div class="Polaris-Labelled__LabelWrapper_bf6ys">
+                                                                                <div class="Polaris-Label_2vd36"><label id="PolarisTextField4Label" for="PolarisTextField4" class="Polaris-Label__Text_yj3uv">Company</label></div>
+                                                                            </div>
+                                                                            <div class="Polaris-Connected_wopc9 Polaris-Connected--newDesignLanguage_1rik8" style="border: 1px solid #AEB4B9;border-radius: 5px;">
+                                                                                <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
+                                                                                    <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8"><input name="company" id="PolarisTextField4" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField4Label" aria-invalid="false" aria-multiline="false" value="">
+                                                                                        <div class="Polaris-TextField__Backdrop_1x2i2"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="Polaris-FormLayout__Item_yiyol">
+                                                        <div class="Polaris-FormLayout_1wntl">
+                                                            <div role="group" class="Polaris-FormLayout--condensed_b60cb">
+                                                                <div class="Polaris-FormLayout__Items_38lvu">
+                                                                    <div class="Polaris-FormLayout__Item_yiyol">
+                                                                        <div role="combobox" aria-expanded="false" aria-owns="PolarisComboBox2" aria-controls="PolarisComboBox2" aria-haspopup="true" tabindex="-1">
+                                                                            <div>
+                                                                                <div class="">
+                                                                                    <div class="Polaris-Labelled__LabelWrapper_bf6ys">
+                                                                                        <div class="Polaris-Label_2vd36"><label id="PolarisTextField5Label" for="PolarisTextField5" class="Polaris-Label__Text_yj3uv">Address</label></div>
+                                                                                    </div>
+                                                                                    <div class="Polaris-Connected_wopc9 Polaris-Connected--newDesignLanguage_1rik8" style="border: 1px solid #AEB4B9;border-radius: 5px;">
+                                                                                        <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
+                                                                                            <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8"><input name="address1" id="PolarisTextField5" autocomplete="no" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField5Label" aria-invalid="false" aria-multiline="false" value="" tabindex="0" aria-controls="Polarispopover12" aria-owns="Polarispopover12" aria-expanded="false">
+                                                                                                <div class="Polaris-TextField__Backdrop_1x2i2"></div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="Polaris-FormLayout__Item_yiyol">
+                                                        <div class="Polaris-FormLayout_1wntl">
+                                                            <div role="group" class="Polaris-FormLayout--condensed_b60cb">
+                                                                <div class="Polaris-FormLayout__Items_38lvu">
+                                                                    <div class="Polaris-FormLayout__Item_yiyol">
+                                                                        <div class="">
+                                                                            <div class="Polaris-Labelled__LabelWrapper_bf6ys">
+                                                                                <div class="Polaris-Label_2vd36"><label id="PolarisTextField6Label" for="PolarisTextField6" class="Polaris-Label__Text_yj3uv">Zip Code</label></div>
+                                                                            </div>
+                                                                            <div class="Polaris-Connected_wopc9 Polaris-Connected--newDesignLanguage_1rik8" style="border: 1px solid #AEB4B9;border-radius: 5px;">
+                                                                                <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
+                                                                                    <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8"><input name="address2" id="PolarisTextField6" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField6Label" aria-invalid="false" aria-multiline="false" value="">
+                                                                                        <div class="Polaris-TextField__Backdrop_1x2i2"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="Polaris-FormLayout__Item_yiyol">
+                                                        <div class="Polaris-FormLayout_1wntl">
+                                                            <div role="group" class="Polaris-FormLayout--condensed_b60cb">
+                                                                <div class="Polaris-FormLayout__Items_38lvu">
+                                                                    <div class="Polaris-FormLayout__Item_yiyol">
+                                                                        <div class="">
+                                                                            <div class="Polaris-Labelled__LabelWrapper_bf6ys">
+                                                                                <div class="Polaris-Label_2vd36"><label id="PolarisTextField7Label" for="PolarisTextField7" class="Polaris-Label__Text_yj3uv">City</label></div>
+                                                                            </div>
+                                                                            <div class="Polaris-Connected_wopc9 Polaris-Connected--newDesignLanguage_1rik8" style="border: 1px solid #AEB4B9;border-radius: 5px;">
+                                                                                <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
+                                                                                    <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8"><input name="city" id="PolarisTextField7" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField7Label" aria-invalid="false" aria-multiline="false" value="">
+                                                                                        <div class="Polaris-TextField__Backdrop_1x2i2"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="Polaris-FormLayout_1wntl">
+                                                    <div class="Polaris-FormLayout__Item_yiyol">
+                                                        <div class="Polaris-FormLayout_1wntl">
+                                                            <div role="group" class="Polaris-FormLayout--condensed_b60cb">
+                                                                <div class="Polaris-FormLayout__Items_38lvu">
+                                                                    <div class="Polaris-FormLayout__Item_yiyol">
+                                                                        <div class="">
+                                                                            <div class="Polaris-Labelled__LabelWrapper_bf6ys">
+                                                                                <div class="Polaris-Label_2vd36"><label id="PolarisSelect1Label" for="PolarisSelect1" class="Polaris-Label__Text_yj3uv">Country/Region</label></div>
+                                                                            </div>
+                                                                            
+                                                                            <div class="Polaris-Connected_wopc9 Polaris-Connected--newDesignLanguage_1rik8" style="border: 1px solid #AEB4B9;border-radius: 5px;">
+                                                                                <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
+                                                                                    <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8"><input name="city" id="PolarisTextField7" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField7Label" aria-invalid="false" aria-multiline="false" value="">
+                                                                                        <div class="Polaris-TextField__Backdrop_1x2i2"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="Polaris-FormLayout_1wntl">
+                                                    <div class="Polaris-FormLayout__Item_yiyol">
+                                                        <div class="Polaris-FormLayout_1wntl">
+                                                            <div role="group" class="Polaris-FormLayout--condensed_b60cb">
+                                                                <div class="Polaris-FormLayout__Items_38lvu">
+                                                                    <div class="Polaris-FormLayout__Item_yiyol">
+                                                                        <div>
+                                                                            <div class="">
+                                                                                <div class="Polaris-Labelled__LabelWrapper_bf6ys">
+                                                                                    <div class="Polaris-Label_2vd36"><label id="PolarisTextField8Label" for="PolarisTextField8" class="Polaris-Label__Text_yj3uv">Phone</label></div>
+                                                                                </div>
+                                                                                <div class="Polaris-Connected_wopc9 Polaris-Connected--newDesignLanguage_1rik8" style="border: 1px solid #AEB4B9;border-radius: 5px;">
+                                                                                    <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
+                                                                                        <div class="Polaris-TextField_1spwi Polaris-TextField--newDesignLanguage_1rik8"><input id="PolarisTextField8" placeholder="" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField8Label" aria-invalid="false" aria-multiline="false" value="">
+                                                                                            <div class="Polaris-TextField__Backdrop_1x2i2"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div><span class="Polaris-VisuallyHidden_yrtt5"><button type="submit" aria-hidden="true" tabindex="-1">Submit</button></span>
+                                            </form>
+                                        </section>
+                                    </div>
+                                </div>
+                                <div class="Polaris-Modal-Footer_z4ij5">
+                                    <div class="Polaris-Modal-Footer__FooterContent_pymp5">
+                                        <div class="Polaris-Stack_32wu2 Polaris-Stack--alignmentCenter_1rtaw">
+                                            <div class="Polaris-Stack__Item_yiyol Polaris-Stack__Item--fill_vpuzt"></div>
+                                            <div class="Polaris-Stack__Item_yiyol">
+                                                <div class="Polaris-ButtonGroup_yy85z">
+                                                    <div class="Polaris-ButtonGroup__Item_yiyol"><button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8" type="button" onclick="Close_billing()"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv" >Cancel</span></span></button></div>
+                                                    <div class="Polaris-ButtonGroup__Item_yiyol"><button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--primary_7k9zs" type="button"onclick="Close_Shipping()"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Save</span></span></button></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Polaris-Backdrop_1x2i2"></div>
+        </div>
+        <div data-portal-id="modal-Polarisportal8">
+            <div></div>
+        </div>
+        <div data-portal-id="modal-Polarisportal9">
+            <div></div>
+        </div>
+        <div data-portal-id="modal-Polarisportal10">
+            <div></div>
+        </div>
+        <div data-portal-id="modal-Polarisportal11">
+            <div></div>
+        </div>
+        <div data-portal-id="modal-Polarisportal1">
+            <div></div>
+        </div>
+        <div data-portal-id="Polarisportal2">
+            <div class="Polaris-Frame-ToastManager_1utvc" aria-live="polite"></div>
+        </div>
+    </div>
+    <!--Shipping Editor-->
     
     <script>
         function Display_Ad() {
@@ -991,6 +1305,13 @@
 
         function Display_Shipping() {
             var x = document.getElementById('PolarisPortalsContainer-Shipping').style.visibility = "visible";
+        }
+        function Close_billing() {
+            var x = document.getElementById('PolarisPortalsContainer-billing').style.visibility = "hidden";
+        }
+
+        function Display_billing() {
+            var x = document.getElementById('PolarisPortalsContainer-billing').style.visibility = "visible";
         }
 
     </script>
