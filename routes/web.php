@@ -27,6 +27,8 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\IndexController::class, 'index']);
 
+Route::get('/notification', [App\Http\Controllers\NotificationController::class, 'index']);
+
 Route::get('/home', [App\Http\Controllers\IndexController::class, 'index']);
 
 Route::get('/product', [App\Http\Controllers\ProductController::class, 'index']);
