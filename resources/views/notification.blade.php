@@ -187,7 +187,7 @@
                                 <dl class="Polaris-DescriptionList">
                                     <dt class="Polaris-DescriptionList__Term">Orders</dt>
                                     <dd class="Polaris-DescriptionList__Description"></dd>
-                                    <dt class="Polaris-DescriptionList__Term"><button class="Polaris-Button Polaris-Button--plain" type="button"><span class="Polaris-Button__Content"><span class="Polaris-Button__Text" style="text-align: left;">Order confirmation</span></span></button></dt>
+                                    <dt class="Polaris-DescriptionList__Term"><button class="Polaris-Button Polaris-Button--plain" type="button"><span class="Polaris-Button__Content"><span class="Polaris-Button__Text" style="text-align: left;"><a href="about-notification" style="color: #006fbb;text-decoration:none;">Order confirmation</a></span></span></button></dt>
                                     <dd class="Polaris-DescriptionList__Description">Sent automatically to the customer after they place their order.</dd>
                                     <dt class="Polaris-DescriptionList__Term"><button class="Polaris-Button Polaris-Button--plain" type="button"><span class="Polaris-Button__Content"><span class="Polaris-Button__Text" style="text-align: left;">Order confirmation</span></span></button></dt>
                                     <dd class="Polaris-DescriptionList__Description">Sent automatically to the customer after they place their order.</dd>

@@ -10,4 +10,10 @@ class NotificationController extends Controller
     {
         return view('notification');
     }
+
+    public function notification()
+    {
+        return view('about-notification');
+    }
+
 }
