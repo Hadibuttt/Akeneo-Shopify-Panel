@@ -40,19 +40,30 @@
 <div class="Polaris-Page-Header_z4uwg Polaris-Page-Header--hasNavigation_gfpa8 Polaris-Page-Header--hasActionMenu_1wx04 Polaris-Page-Header--newDesignLanguage_1rik8 Polaris-Page-Header--mediumTitle_bfol6">
 <div class="Polaris-Page-Header__Row_375v7 Polaris-Page-Header__RowCondensed_1gexu">
 <div class="Polaris-Page-Header__BreadcrumbWrapper_1tgwk Polaris-Page-Header--newDesignLanguage_1rik8">
-<nav role="navigation"><a href="https://akeneo-shop.myshopify.com/admin/pages" data-polaris-unstyled="true" class="Polaris-Breadcrumbs__Breadcrumb_llsun Polaris-Breadcrumbs--newDesignLanguage_1rik8"><span class="Polaris-Breadcrumbs__ContentWrapper_1yvfo"><span class="Polaris-Breadcrumbs__Icon_yj27d"><span class="Polaris-Icon_yj27d Polaris-Icon--newDesignLanguage_1rik8"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
+<nav role="navigation"><a href="/notification" data-polaris-unstyled="true" class="Polaris-Breadcrumbs__Breadcrumb_llsun Polaris-Breadcrumbs--newDesignLanguage_1rik8"><span class="Polaris-Breadcrumbs__ContentWrapper_1yvfo"><span class="Polaris-Breadcrumbs__Icon_yj27d"><span class="Polaris-Icon_yj27d Polaris-Icon--newDesignLanguage_1rik8"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
 <path d="M17 9H5.414l3.293-3.293a.999.999 0 1 0-1.414-1.414l-5 5a.999.999 0 0 0 0 1.414l5 5a.997.997 0 0 0 1.414 0 .999.999 0 0 0 0-1.414L5.414 11H17a1 1 0 1 0 0-2z"></path>
 </svg></span></span><span class="Polaris-VisuallyHidden_yrtt5">Pages</span></span></a></nav>
 </div>
+
+
+
 <div class="Polaris-Page-Header__TitleWrapper_bejfn">
 <div>
 <div class="Polaris-Header-Title__TitleAndSubtitleWrapper_40sxf">
+    
+    <form action="" method="post">
+        @csrf
+    
 <div class="Polaris-Header-Title_2qj8j">
-<h1 class="Polaris-Header-Title--newDesignLanguageTitle_1wh8d">Email</h1>
+<h1 class="Polaris-Header-Title--newDesignLanguageTitle_1wh8d" style="margin-top: 4px;">Email</h1>
 </div>
 </div>
 </div>
 </div>
+
+
+
+
 <div class="Polaris-Page-Header__RightAlign_1ok1p">
 <div class="Polaris-Page-Header__Actions_17m67">
 <div class="Polaris-ActionMenu_1hlnt Polaris-ActionMenu--newDesignLanguage_1rik8">
@@ -62,8 +73,10 @@
 <div class="Polaris-ButtonGroup__Item_yiyol"><span class="Polaris-ActionMenu-SecondaryAction_1dl4i Polaris-ActionMenu-SecondaryAction--newDesignLanguage_1rik8"><a href="https://akeneo-shop.myshopify.com/pages/faq" data-polaris-unstyled="true" class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8" target="_blank" rel="noopener noreferrer"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Icon_yj27d"><span class="Polaris-Icon_yj27d Polaris-Icon--newDesignLanguage_1rik8"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
 <path d="M17.928 9.628C17.837 9.399 15.611 4 10 4S2.162 9.399 2.07 9.628a1.017 1.017 0 0 0 0 .744C2.163 10.601 4.389 16 10 16s7.837-5.399 7.928-5.628a1.017 1.017 0 0 0 0-.744zM10 14a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-6a2 2 0 1 0 .002 4.001A2 2 0 0 0 9.999 8z"></path>
 </svg></span></span><span class="Polaris-Button__Text_yj3uv">View email</span></span></a></span></div>
+
+
 <div class="Polaris-ButtonGroup__Item_yiyol">
-<div><span class="Polaris-ActionMenu-SecondaryAction_1dl4i "><button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8" type="button" tabindex="0" aria-controls="Polarispopover49" aria-owns="Polarispopover49" aria-expanded="false"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Save</span></span></button></span></div>
+<div><span class="Polaris-ActionMenu-SecondaryAction_1dl4i "><button type="submit" class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8" type="button" tabindex="0" aria-controls="Polarispopover49" aria-owns="Polarispopover49" aria-expanded="false"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Save</span></span></button></span></div>
 </div>
 </div>
 </div>
@@ -74,7 +87,7 @@
 </div>
 <div class="Polaris-Page__Content_xd1mk">
 <div class="_1j4h2">
-<form autocomplete="off" method="post">
+
 <div class="Polaris-Layout_sl20u Polaris-Layout--newDesignLanguage_1rik8">
 <div class="Polaris-Layout__Section_1b1h1"></div>
 <div class="Polaris-Layout__Section_1b1h1">
@@ -88,7 +101,10 @@
 </div>
 <div class="Polaris-Connected_wopc9 Polaris-Connected--newDesignLanguage_1rik8">
 <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
-<div class="Polaris-TextField_1spwi Polaris-TextField--hasValue_1mx8d Polaris-TextField--newDesignLanguage_1rik8"><input name="title" id="PolarisTextField1" value="3M MicroTouch™ Chassis 1123988" placeholder="Short sleeve t-shirt" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField1Label" aria-invalid="false" aria-multiline="false">
+<div class="Polaris-TextField_1spwi Polaris-TextField--hasValue_1mx8d Polaris-TextField--newDesignLanguage_1rik8">
+    
+    <input name="title" id="PolarisTextField1" value="3M MicroTouch™ Chassis 1123988" placeholder="Short sleeve t-shirt" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField1Label" aria-invalid="false" aria-multiline="false">
+
     <div class="Polaris-TextField__Backdrop_1x2i2"></div>
 </div>
 </div>
@@ -105,7 +121,7 @@
 
 <div class="_1K4u4">
 <div id="product-description_parent">
-</div><textarea id="product-description" class="_2LZUF" aria-hidden="true" >
+</div><textarea name="description" id="product-description" class="_2LZUF" aria-hidden="true" >
 
 
 
