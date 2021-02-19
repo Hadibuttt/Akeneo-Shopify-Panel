@@ -28,11 +28,6 @@ class NotificationController extends Controller
         notifications::create($validatedData);
         return redirect('/notification');
     }
-    
-    public function notification()
-    {
-        return view('about-notification');
-    }
 
     public function update($id)
     {
@@ -46,7 +41,7 @@ class NotificationController extends Controller
             'title' => 'required|max:255',
             'description' => 'required|max:255'
         ]);
-        $notification = notifications::find($id)->update($validatedData);
+        notifications::find($id)->update($validatedData);
         return redirect('/notification');
     }
 
