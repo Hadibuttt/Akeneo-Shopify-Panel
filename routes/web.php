@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MollieController;
+use App\Mail\WelcomeEmail;
+// use Illuminate\Support\Facades\Mail;
 
 
 /*
@@ -22,6 +24,10 @@ Route::get('/forgot', function () {
 Route::get('/reset', function () {
     return view('auth.reset');
 });
+
+Route::get('/customized-email', function () {
+        return new WelcomeEmail();
+    });
 
 Auth::routes();
 
