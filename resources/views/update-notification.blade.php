@@ -51,7 +51,7 @@
 <div>
 <div class="Polaris-Header-Title__TitleAndSubtitleWrapper_40sxf">
     
-    <form action="/create-notification/success" method="post">
+    <form action="/update-notification/{{$notification->id}}/success" method="post">
         @csrf
     
 <div class="Polaris-Header-Title_2qj8j">
@@ -76,7 +76,7 @@
 
 
 <div class="Polaris-ButtonGroup__Item_yiyol">
-<div><span class="Polaris-ActionMenu-SecondaryAction_1dl4i "><button type="submit" class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8" type="button" tabindex="0" aria-controls="Polarispopover49" aria-owns="Polarispopover49" aria-expanded="false"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Save</span></span></button></span></div>
+<div><span class="Polaris-ActionMenu-SecondaryAction_1dl4i "><button type="submit" class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8" type="button" tabindex="0" aria-controls="Polarispopover49" aria-owns="Polarispopover49" aria-expanded="false"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Update</span></span></button></span></div>
 </div>
 </div>
 </div>
@@ -103,7 +103,7 @@
 <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
 <div class="Polaris-TextField_1spwi Polaris-TextField--hasValue_1mx8d Polaris-TextField--newDesignLanguage_1rik8">
     
-    <input name="title" required="" id="PolarisTextField1" value="3M MicroTouch™ Chassis 1123988" placeholder="Short sleeve t-shirt" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField1Label" aria-invalid="false" aria-multiline="false">
+    <input name="title" required="" id="PolarisTextField1" value="{{$notification->title}}" placeholder="Short sleeve t-shirt" class="Polaris-TextField__Input_30ock" aria-labelledby="PolarisTextField1Label" aria-invalid="false" aria-multiline="false">
 
     <div class="Polaris-TextField__Backdrop_1x2i2"></div>
 </div>
@@ -121,7 +121,7 @@
 
 <div class="_1K4u4">
 <div id="product-description_parent">
-</div><textarea name="description" required="" id="product-description" class="_2LZUF"></textarea>
+</div><textarea name="description" required="" id="product-description" class="_2LZUF">{{$notification->description}}</textarea>
 </div>
 </div>
 </div>

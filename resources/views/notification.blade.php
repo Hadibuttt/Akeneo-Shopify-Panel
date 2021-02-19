@@ -156,7 +156,7 @@
                                                 <div class="Polaris-Header-Title__TitleAndSubtitleWrapper_40sxf">
                                                     <div class="Polaris-Header-Title_2qj8j">
                                                         <h1 class="Polaris-Header-Title--newDesignLanguageTitle_1wh8d">Accounts</h1>
-                                                         <div class="Polaris-Page-Header__PrimaryActionWrapper_w8or9" style="position: absolute;top: 10px;right: 0px;"><a data-polaris-unstyled="true" class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--primary_7k9zs" href="/add-notification"><span class="Polaris-Button__Content_xd1mk">    <span class="Polaris-Button__Text_yj3uv">Add Notification</span></span></a></div>
+                                                         <div class="Polaris-Page-Header__PrimaryActionWrapper_w8or9" style="position: absolute;top: 10px;right: 0px;"><a data-polaris-unstyled="true" class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--primary_7k9zs" href="/create-notification"><span class="Polaris-Button__Content_xd1mk">    <span class="Polaris-Button__Text_yj3uv">Add Notification</span></span></a></div>
                                                         
                                                     </div>
                                                 </div>
@@ -181,19 +181,16 @@
                 <div class="Polaris-FormLayout">
                     <div class="Polaris-FormLayout__Item">
 
-
                         <div class="Polaris-DataTable">
                             <div class="Polaris-DataTable__ScrollContainer">
                                 <dl class="Polaris-DescriptionList">
-                                    <dt class="Polaris-DescriptionList__Term">Orders</dt>
+                                    <dt class="Polaris-DescriptionList__Term">Order</dt>
                                     <dd class="Polaris-DescriptionList__Description"></dd>
-                                    <dt class="Polaris-DescriptionList__Term"><button class="Polaris-Button Polaris-Button--plain" type="button"><span class="Polaris-Button__Content"><span class="Polaris-Button__Text" style="text-align: left;"><a href="about-notification" style="color: #006fbb;text-decoration:none;">Order confirmation</a></span></span></button></dt>
+                                    @foreach ($notifications as $notification)
+                                    <dt class="Polaris-DescriptionList__Term"><button class="Polaris-Button Polaris-Button--plain" type="button"><span class="Polaris-Button__Content"><span class="Polaris-Button__Text" style="text-align: left;"><a href="update-notification/{{$notification->id}}" style="color: #006fbb;text-decoration:none;">{{$notification->title}}</a></span></span></button></dt>
                                     <dd class="Polaris-DescriptionList__Description">Sent automatically to the customer after they place their order.</dd>
-                                    <dt class="Polaris-DescriptionList__Term"><button class="Polaris-Button Polaris-Button--plain" type="button"><span class="Polaris-Button__Content"><span class="Polaris-Button__Text" style="text-align: left;">Order confirmation</span></span></button></dt>
-                                    <dd class="Polaris-DescriptionList__Description">Sent automatically to the customer after they place their order.</dd>
-                                    <dt class="Polaris-DescriptionList__Term"><button class="Polaris-Button Polaris-Button--plain" type="button"><span class="Polaris-Button__Content"><span class="Polaris-Button__Text" style="text-align: left;">Order confirmation</span></span></button></dt>
-                                    <dd class="Polaris-DescriptionList__Description">Sent automatically to the customer after they place their order.</dd>
-
+                                    @endforeach
+                                    
                                 </dl>
                                 <div id="PolarisPortalsContainer"></div>
                             </div>

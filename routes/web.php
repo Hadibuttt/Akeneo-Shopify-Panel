@@ -29,7 +29,13 @@ Route::get('/', [App\Http\Controllers\IndexController::class, 'index']);
 
 Route::get('/notification', [App\Http\Controllers\NotificationController::class, 'index']);
 
-Route::get('about-notification', [App\Http\Controllers\NotificationController::class, 'notification']);
+Route::get('/create-notification', [App\Http\Controllers\NotificationController::class, 'create']);
+
+Route::post('/create-notification/success', [App\Http\Controllers\NotificationController::class, 'save'] );
+
+Route::get('/update-notification/{id}', [App\Http\Controllers\NotificationController::class, 'update']);
+
+Route::post('/update-notification/{id}/success', [App\Http\Controllers\NotificationController::class, 'updated'] );
 
 Route::get('/home', [App\Http\Controllers\IndexController::class, 'index']);
 
