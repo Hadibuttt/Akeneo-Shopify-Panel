@@ -136,8 +136,6 @@ class CustomerController extends Controller
         $zip = $req->zip;
         $phone = $req->phone;
 
-
-
         addresses::where('user_id',$uid)->update(['address'=> $address,'name'=> $name,'city'=> $city,'zip'=> $zip,'phone'=> $phone]);
 
         return redirect("/about-customer/$id/$uid");
