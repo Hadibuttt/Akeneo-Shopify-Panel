@@ -55,6 +55,7 @@ class CustomerController extends Controller
         $comments = ctimeline::where('c_id',$id)->orderByDesc('id')->get();
         $comment = ctimeline::where('c_id',$id)->count();
 
+
         $customer = User::where('id', $uid)->first();
         $address = addresses::where('user_id', $uid)->first();
         $LastOrder = orders::where('user_id',$uid)->orderByDesc('id')->first();
@@ -124,6 +125,24 @@ class CustomerController extends Controller
 
         return redirect("/about-customer/$id/$uid");
     }
+
+
+
+    public function BAddressUpdated(Request $req,$id,$uid)
+    {
+        $address = $req->address;
+        $name = $req->name;
+        $city = $req->city;
+        $zip = $req->zip;
+        $phone = $req->phone;
+
+
+
+        addresses::where('user_id',$uid)->update(['address'=> $address,'name'=> $name,'city'=> $city,'zip'=> $zip,'phone'=> $phone]);
+
+        return redirect("/about-customer/$id/$uid");
+    }
+
 
 
     public function CommentAdded(Request $req,$id,$uid)

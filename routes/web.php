@@ -101,6 +101,8 @@ Route::post('/about-customer/{id}/{uid}/updated', [App\Http\Controllers\Customer
 
 Route::post('/about-customer/{id}/{uid}/address/updated', [App\Http\Controllers\CustomerController::class, 'AddressUpdated']);
 
+Route::post('/about-customer/{id}/{uid}/billing-address/updated', [App\Http\Controllers\CustomerController::class, 'BAddressUpdated']);
+
 Route::post('about-customer/{id}/{uid}/comment/added', [App\Http\Controllers\CustomerController::class, 'CommentAdded']);
 
 Route::post('/update-category/{cat_id}/updated', [App\Http\Controllers\CategoryController::class, 'updated'] );
