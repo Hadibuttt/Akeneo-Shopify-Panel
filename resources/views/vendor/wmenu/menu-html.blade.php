@@ -1,7 +1,5 @@
 <?php
 $currentUrl = url()->current();
-use App\Models\categories;
-$categorys = categories::all();
 ?>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -43,15 +41,8 @@ $categorys = categories::all();
 														<div class="inside">
 															<div class="customlinkdiv" id="customlinkdiv">
 																<p id="menu-item-url-wrap">
-																	<label class="howto" for="custom-menu-item-url"> <span>URL</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-																		{{-- <input id="custom-menu-item-url" name="url" type="text" class="menu-item-textbox " placeholder="url"> --}}
-
-																<select id="custom-menu-item-url" name="url" class="menu-item-textbox">
-																	<option value="0">Please Select URL</option>
-																	@foreach ($categorys as $category)
-																	<option value="/category/{{$category->cat_id}}">{{$category->cat_title}}</option>
-																	@endforeach	
-																</select>		
+																	<label class="howto" for="custom-menu-item-url"> <span>URL</span>&nbsp;&nbsp;&nbsp;
+																		<input id="custom-menu-item-url" name="url" type="text" class="menu-item-textbox " placeholder="url">
 																	</label>
 																</p>
 
@@ -169,15 +160,7 @@ $categorys = categories::all();
 																	<p class="field-css-url description description-wide">
 																		<label for="edit-menu-item-url-{{$m->id}}"> Url
 																			<br>
-																			{{-- <input type="text" id="url_menu_{{$m->id}}" class="widefat code edit-menu-item-url" id="url_menu_{{$m->id}}" value="{{$m->link}}"> --}}
-				<select class="widefat code edit-menu-item-url" name="url" id="url_menu_{{$m->id}}">
-					<option value="">Please Select URL</option>
-					@foreach ($categorys as $category)
-					<option value="/category/{{$category->cat_id}}">{{$category->cat_title}}</option>
-					@endforeach
-	
-				</select>
-																		
+																			<input type="text" id="url_menu_{{$m->id}}" class="widefat code edit-menu-item-url" id="url_menu_{{$m->id}}" value="{{$m->link}}">
 																		</label>
 																	</p>
 
