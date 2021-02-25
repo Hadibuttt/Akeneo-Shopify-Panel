@@ -21,6 +21,10 @@ Route::get('/language', function () {
     return view('language');
 });
 
+Route::get('/shipping', function () {
+    return view('shipping');
+});
+
 Route::get('/forgot', function () {
     return view('auth.forgot');
 });
