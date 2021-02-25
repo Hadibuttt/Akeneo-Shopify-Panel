@@ -17,6 +17,10 @@ use App\Mail\WelcomeEmail;
 |
 */
 
+Route::get('/language', function () {
+    return view('language');
+});
+
 Route::get('/forgot', function () {
     return view('auth.forgot');
 });
