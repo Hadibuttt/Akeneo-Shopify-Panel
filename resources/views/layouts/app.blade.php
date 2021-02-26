@@ -507,7 +507,7 @@ $store = store::orderBy('id', 'DESC')->first();
                         <div class="Polaris-Navigation__ItemWrapper_1kbav"><a data-polaris-unstyled="true" class="Polaris-Navigation__Item_yiyol  Polaris-Navigation--subNavigationActive_e2t9x" tabindex="0" aria-disabled="false" href="/pages"><span class="Polaris-Navigation__Text_yj3uv">Pages</span></a></div>
                     </li>
                     <li class="Polaris-Navigation__ListItem_wxd2m">
-                        <div class="Polaris-Navigation__ItemWrapper_1kbav"><a data-polaris-unstyled="true" class="Polaris-Navigation__Item_yiyol" tabindex="0" aria-disabled="false" href="/menu"><span class="Polaris-Navigation__Text_yj3uv">Navigation</span></a></div>
+                        <div class="Polaris-Navigation__ItemWrapper_1kbav"><a data-polaris-unstyled="true" class="Polaris-Navigation__Item_yiyol" tabindex="0" aria-disabled="false" href="/navigation"><span class="Polaris-Navigation__Text_yj3uv">Navigation</span></a></div>
                     </li>
                 </ul>
             </div>

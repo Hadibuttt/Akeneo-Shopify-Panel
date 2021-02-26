@@ -151,7 +151,7 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
                                                 <div class="Polaris-Header-Title__TitleAndSubtitleWrapper_40sxf">
                                                     <div class="Polaris-Header-Title_2qj8j">
                                                         <h1 class="Polaris-Header-Title--newDesignLanguageTitle_1wh8d">Accounts</h1>
-                                                         <div class="Polaris-Page-Header__PrimaryActionWrapper_w8or9" style="position: absolute;top: 10px;right: 0px;"><a data-polaris-unstyled="true" class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--primary_7k9zs" href="menu.html"><span class="Polaris-Button__Content_xd1mk">    <span class="Polaris-Button__Text_yj3uv">Add Menu</span></span></a></div>
+                                                         <div class="Polaris-Page-Header__PrimaryActionWrapper_w8or9" style="position: absolute;top: 10px;right: 0px;"><a data-polaris-unstyled="true" class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8 Polaris-Button--primary_7k9zs" href="/add-menu"><span class="Polaris-Button__Content_xd1mk">    <span class="Polaris-Button__Text_yj3uv">Add Menu</span></span></a></div>
                                                         
                                                     </div>
                                                 </div>
