@@ -713,9 +713,10 @@
                     }
                 </style> --}}
 
-                <br><br>
 
-                <?php 
+<!-- List Showing of Menu-->
+
+                {{-- <?php 
                 use Harimayco\Menu\Facades\Menu;
                 $public_menu = Menu::getByName('Testing');
                 ?>
@@ -745,7 +746,7 @@
                 
                         </ul>
                     </nav>
-                 </div>
+                 </div> --}}
 
 
 @endsection
