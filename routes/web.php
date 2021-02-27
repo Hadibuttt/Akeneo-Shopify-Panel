@@ -155,9 +155,9 @@ Route::get('/pages', [App\Http\Controllers\AddPageController::class, 'pages']);
 
 Route::get('/custom-pages/{id}/show', [App\Http\Controllers\AddPageController::class, 'CustomPages']);
 
-Route::get('/navigation', [App\Http\Controllers\NavigationController::class, 'index']);
+// Route::get('/navigation', [App\Http\Controllers\NavigationController::class, 'index']);
 
-Route::get('/add-menu', [App\Http\Controllers\NavigationController::class, 'create']);
+Route::get('/navigation', [App\Http\Controllers\NavigationController::class, 'create']);
 
 Route::get('/custom-pages/{id}/show', [App\Http\Controllers\AddPageController::class, 'CustomPages']);
 
