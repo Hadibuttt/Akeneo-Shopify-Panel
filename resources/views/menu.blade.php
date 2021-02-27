@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+{{-- <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.shopify.com/shopifycloud/web/assets/v1/latest/vendors~Admin~internal~section-flow~section-flow-summary~section-flow-template-installer~section-flo~67560caa-da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdn.shopify.com/shopifycloud/web/assets/v1/latest/vendors~Admin~internal~section-apps~section-apps-app-details~section-flow~section-flow-connector~sec~886ec812-d399c7a88b9def638f0e6090adbf93c63487fd48f111f883b928fd01a9f7724f.css" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdn.shopify.com/shopifycloud/web/assets/v1/latest/vendors~Admin~section-flow-summary~section-flow-v2-editor~section-flow-v2-list~section-flow-v2-run~s~d6dd756b-8f934264b5990bad39c9d00ea1bfb28899a1804c3fab899829947dd05d994554.css" crossorigin="anonymous">
@@ -147,9 +147,9 @@
 
 .socialite { display: block; float: left; height: 35px; }
 
-    </style>
+    </style> --}}
 
-{{-- <div class="Polaris-Frame__ContextualSaveBar_14m7v Polaris-Frame-CSSAnimation--startFade_1gu4x"></div>
+<div class="Polaris-Frame__ContextualSaveBar_14m7v Polaris-Frame-CSSAnimation--startFade_1gu4x"></div>
                     <main class="Polaris-Frame__Main_yj28s Polaris-Frame__Main--newDesignLanguage_129jf" id="AppFrameMain" data-has-global-ribbon="false"><a id="AppFrameMainContent" tabindex="-1"></a>
                         <div class="Polaris-Frame__Content_xd1mk">
                             <div class="Polaris-Page_yisnh Polaris-Page--newDesignLanguage_1rik8">
@@ -172,9 +172,9 @@
                                     </div>
                                 </div>
 
-                                {!! Menu::render() !!}                         --}}
+                                {!! Menu::render() !!}                        
 
-                                <div class="Polaris-Frame__ContextualSaveBar_14m7v Polaris-Frame-CSSAnimation--startFade_1gu4x"></div>
+                                {{-- <div class="Polaris-Frame__ContextualSaveBar_14m7v Polaris-Frame-CSSAnimation--startFade_1gu4x"></div>
                                 <main class="Polaris-Frame__Main_yj28s Polaris-Frame__Main--newDesignLanguage_129jf" id="AppFrameMain" data-has-global-ribbon="false"><a id="AppFrameMainContent" tabindex="-1"></a>
                                     <div class="Polaris-Frame__Content_xd1mk">
                                         <div class="Polaris-Page_yisnh Polaris-Page--newDesignLanguage_1rik8">
@@ -711,9 +711,45 @@
                         padding: 2px;
                         margin: 0px
                     }
-                </style>
+                </style> --}}
+
+                <br><br>
+
+                <?php 
+                use Harimayco\Menu\Facades\Menu;
+                $public_menu = Menu::getByName('Testing');
+                ?>
+                
+                
+                <div class="nav-wrap">
+                    <div class="btn-menu">
+                        <span></span>
+                    </div>
+                    <nav id="mainnav" class="mainnav">
+                
+                        @if($public_menu)
+                        <ul class="menu">
+                            @foreach($public_menu as $menu)
+                            <li class="">
+                                <a href="{{ $menu['link'] }}" title="">{{ $menu['label'] }}</a>
+                                @if( $menu['child'] )
+                                <ul class="sub-menu">
+                                    @foreach( $menu['child'] as $child )
+                                        <li class=""><a href="{{ $child['link'] }}" title="">{{ $child['label'] }}</a></li>
+                                    @endforeach
+                                </ul>
+                                @endif
+                            </li>
+                            @endforeach
+                        @endif
+                
+                        </ul>
+                    </nav>
+                 </div>
+
+
 @endsection
 
-{{-- @push('scripts')
+@push('scripts')
     {!! Menu::scripts() !!}
-@endpush --}}
+@endpush

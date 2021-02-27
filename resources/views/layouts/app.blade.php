@@ -47,7 +47,10 @@ $store = store::orderBy('id', 'DESC')->first();
     <link rel="stylesheet" type="text/css" href="https://cdn.shopify.com/shopifycloud/web/assets/v1/latest/TopBarDestinationsSwitcherNext-785b116924b00e6e8e93268ac907b8f5d5de8d0694983b884ecfbfc52584c7a2.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
-    <script src="{{asset('js/app.js')}}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
+    {{-- <script src="{{ asset('js/menu.js') }}"></script>
+    <script src="{{ asset('js/scripts.js') }}"></script>
+    <script src="{{ asset('js/scripts2.js') }}"></script> --}}
     
     <!-- <link rel="stylesheet" href="{{asset('css/app.css')}}"> -->
 
@@ -542,7 +545,7 @@ $store = store::orderBy('id', 'DESC')->first();
                     </div>
                 
                           @yield('content')  
-    @stack('scripts')
+    
                 <!--signin-->
     <div class="Polaris-PositionedOverlay_2y1hl Polaris-PositionedOverlay--fixed_2pq5o Polaris-Popover__PopoverOverlay_emiux Polaris-Popover__PopoverOverlay--open_4ccww" style="top: 56px; right: 0px; z-index: 513;visibility: hidden;" id="Account_div">
       <div class="Polaris-Popover_mj4rb" data-polaris-overlay="true">
@@ -642,4 +645,6 @@ $store = store::orderBy('id', 'DESC')->first();
           margin: 0px
       }
   </style>
-</body></html>
+  @stack('scripts')
+</body>
+</html>
