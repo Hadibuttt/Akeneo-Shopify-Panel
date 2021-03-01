@@ -184,11 +184,11 @@
                         <div class="Polaris-DataTable">
                             <div class="Polaris-DataTable__ScrollContainer">
                                 <dl class="Polaris-DescriptionList">
-                                    <dt class="Polaris-DescriptionList__Term">Order</dt>
+                                    <dt class="Polaris-DescriptionList__Term">Notifications</dt>
                                     <dd class="Polaris-DescriptionList__Description"></dd>
                                     @foreach ($notifications as $notification)
                                     <dt class="Polaris-DescriptionList__Term"><button class="Polaris-Button Polaris-Button--plain" type="button"><span class="Polaris-Button__Content"><span class="Polaris-Button__Text" style="text-align: left;"><a href="update-notification/{{$notification->id}}" style="color: #006fbb;text-decoration:none;">{{$notification->title}}</a></span></span></button></dt>
-                                    <dd class="Polaris-DescriptionList__Description">Sent automatically to the customer after they place their order.</dd>
+                                    <dd class="Polaris-DescriptionList__Description">Sent automatically to the customer.</dd>
                                     @endforeach
                                     
                                 </dl>
