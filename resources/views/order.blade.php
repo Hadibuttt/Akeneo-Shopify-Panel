@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('content')
 
+<?php use App\Models\order_items; ?>
+
 <?php 
 $view = request('view');
 ?>
@@ -844,8 +846,17 @@ $view = request('view');
                                                     </td>
            @foreach ($order_items as $order_item)
            @if ($order_item->order_id == $order->id)
-                                                    <td class="_2ROf4">
-                                                        <div><span title="€271.40"><span class="Polaris-Truncate_4qxoo">€{{$order_item->total}}</span></span></div>
+
+           @php
+            $prices = order_items::where('order_id',$order->id)->get();
+            $total = 0;
+            foreach($prices as $price)
+            {
+                $total = $total + $price->total;
+            }
+           @endphp
+                                                  <td class="_2ROf4">
+                                                        <div><span title="€271.40"><span class="Polaris-Truncate_4qxoo">€{{$total}}</span></span></div>
                                                     </td>
                                                     @if ($order->status == 0 )
                                                     <td class="_2ROf4"> 
@@ -874,11 +885,21 @@ $view = request('view');
                                                       </div>
                                                   </td>
                                                   @endif
+                                                  @php
+                                                  $qtys = order_items::where('order_id',$order->id)->get();
+                                                  $total = 0;
+                                                  foreach($qtys as $qty)
+                                                  {
+                                                      $total = $total + $qty->qty;
+                                                  }
+                                                     
+                                                 @endphp                                          
                                                     <td class="_2ROf4 _1rOTG">
                                                         <div class="_1f2FU">
                                                             <div><button class="knAxF _3IERU" type="button" tabindex="0" aria-controls="Polarispopover83" aria-owns="Polarispopover83" aria-expanded="false">
-                                                                    <div class="_23Wnx">{{$order_item->qty}} items</div>
-                                                                    @endif
+                                                                    <div class="_23Wnx">{{$total}} items</div>
+                        @break
+                        @endif
                         @endforeach
                                                                     <div class="NM9pT"><span class="Polaris-Icon_yj27d Polaris-Icon--colorInkLighter_2s08r Polaris-Icon--isColored_uhqnf Polaris-Icon--newDesignLanguage_1rik8"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
                                                                                 <path d="M5 8l5 5 5-5H5z"></path>
@@ -890,7 +911,8 @@ $view = request('view');
                                                     <td class="_2ROf4">
                                                         <div class="Polaris-Stack_32wu2 Polaris-Stack--spacingExtraTight_gv6hw Polaris-Stack--noWrap_vecks"></div>
                                                     </td>
-                                                    @endif
+                        
+                        @endif
                         @endforeach
                                                 </tr>
                                                 @endforeach
