@@ -259,6 +259,7 @@
 
 
 <p class="_3EYSM">#{{$order_item->order_id}}</p>
+@break
 </div>
     
   @foreach ($order_details as $order_detail)
