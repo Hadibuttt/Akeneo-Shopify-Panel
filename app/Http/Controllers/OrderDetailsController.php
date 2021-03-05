@@ -21,9 +21,16 @@ class OrderDetailsController extends Controller
     
     public function index($id)
     {
-        $orders = orders::all();
-        $order_items = order_items::all();
-        $order_details = order_details::all();
+        $orders = orders::where('id',$id)->first();
+        $order_items = order_items::where('order_id',$id)->get();
+        $qtytotal = 0;
+
+    foreach ($order_items as $order_item) 
+{
+    $qtytotal = $qtytotal + $order_item->qty;
+}
+
+        $order_details = order_details::where('order_id',$id)->first();
         $products = products::all();
         $comments = otimeline::where('o_id',$id)->orderByDesc('id')->get();
         $comment = otimeline::where('o_id',$id)->count();
@@ -35,7 +42,8 @@ class OrderDetailsController extends Controller
             'order_details'=> $order_details,
             'products' => $products,
             'comments' => $comments,
-            'comment' => $comment
+            'comment' => $comment,
+            'qtytotal' => $qtytotal
         ]);
         else    
             return view('restricted');

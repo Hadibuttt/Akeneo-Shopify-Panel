@@ -190,14 +190,13 @@
 <div class="Polaris-Header-Title__TitleWithMetadataWrapper_pdqv7 Polaris-Header-Title--newDesignLanguage_1rik8">
 <div class="Polaris-Header-Title_2qj8j">
     
-    @foreach ($orders as $order)
-        @if ($order->id == $o_id)
+
             
         
-<h1 class="Polaris-Header-Title--newDesignLanguageTitle_1wh8d">#{{$order->id}}</h1>
+<h1 class="Polaris-Header-Title--newDesignLanguageTitle_1wh8d">#{{$orders->id}}</h1>
 
 </div>
-@if ($order->status == 0)
+@if ($orders->status == 0)
 <div class="Polaris-Stack_32wu2 Polaris-Stack--spacingExtraTight_gv6hw Polaris-Stack--alignmentCenter_1rtaw Polaris-Stack--noWrap_vecks">
     <div class="Polaris-Stack__Item_yiyol"><span class="Polaris-Badge_2qgie Polaris-Badge--progressComplete_189p5"><span class="Polaris-Badge__Pip_375sr"><span class="Polaris-VisuallyHidden_yrtt5"> Complete</span></span>Unfulfilled</span></div>
 </div>    
@@ -223,7 +222,7 @@
 </div>
 <div class="Polaris-Page-Header__Row_375v7">
 <div class="Polaris-Page-Header__LeftAlign_1d6sz">
-<div class="Polaris-Page-Header__AdditionalMetaData_1isxr"><span class="Polaris-TextStyle--variationSubdued_1segu">Order Created at {{$order->created_at}}</span></div>
+<div class="Polaris-Page-Header__AdditionalMetaData_1isxr"><span class="Polaris-TextStyle--variationSubdued_1segu">Order Created at {{$orders->created_at}}</span></div>
 </div>
 
 <div class="Polaris-Page-Header__RightAlign_1ok1p">
@@ -246,35 +245,21 @@
 <path class="halo-success_svg__cls-2" d="M7.66 11.09a.82.82 0 01-.59-.24L5.4 9.18A.84.84 0 015.45 8a.82.82 0 011.13 0l1.08 1.08 2.75-2.75a.83.83 0 011.18 1.18l-3.34 3.34a.82.82 0 01-.59.24z"></path>
 </svg></span></span>
 <div class="_1UHYc">
-    @foreach ($order_items as $order_item)
-     @if ($order_item->order_id == $o_id)
+
   
-    @if ($order->status == 0)
-    <h2 class="Polaris-Heading_1brcv">Unfulfilled ({{$order_item->qty}})</h2>
+    @if ($orders->status == 0)
+    <h2 class="Polaris-Heading_1brcv">Unfulfilled ({{$qtytotal}})</h2>
     
     @else
-    <h2 class="Polaris-Heading_1brcv">Fulfilled ({{$order_item->qty}})</h2>
+    <h2 class="Polaris-Heading_1brcv">Fulfilled ({{$qtytotal}})</h2>
     @endif
     
 
 
-<p class="_3EYSM">#{{$order_item->order_id}}</p>
-@break
+<p class="_3EYSM">#{{$orders->id}}</p>
 </div>
-    
-  @foreach ($order_details as $order_detail)
-      
-    @if ($order_detail->order_id == $o_id)
-      <div class="_3BwLE">{{$order_detail->city}} {{$order_detail->state}}</div> 
-      @endif
-  
-
-@endforeach
-@endif
-@endforeach
-
-@endif
-@endforeach
+          
+      <div class="_3BwLE">{{$order_details->city}} {{$order_details->state}}</div> 
 
 </div>
 </div>
@@ -283,7 +268,6 @@
 <div class="Polaris-Card__Subsection_197ob">
 <ul class="_1107R">
     @foreach ($order_items as $order_item)
-      @if ($order_item->order_id == $o_id)
           @foreach ($products as $product)
               @if ($product->pro_title == $order_item->product_title )
                   
@@ -314,8 +298,7 @@
 </div>
 </div>
 </div>
-</li>
-@endif  
+</li> 
 @endforeach
 </ul>
 </div>
@@ -354,7 +337,6 @@
 <div class="_3umNZ">
 <div class="_1BtPd">
     @foreach ($order_items as $order_item)
-      @if ($order_item->order_id == $o_id)
       @foreach ($products as $product)
       @if ($product->pro_title == $order_item->product_title )
 <p><span class="Polaris-TextStyle--variationSubdued_1segu">{{$order_item->qty}} items</span></p>
@@ -385,7 +367,6 @@ $total=$order_item->total*$tax;
 <div class="_1BtPd">
 <p><span class="Polaris-TextStyle--variationSubdued_1segu"></span></p>
 <div class="uQ1bp"><span class="Polaris-TextStyle--variationStrong_rpyvj">€{{$order_item->total+$total}}</span></div>
-@endif
     @endforeach
 </div>
 </div>
