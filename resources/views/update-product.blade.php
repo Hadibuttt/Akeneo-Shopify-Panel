@@ -1,10 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-<script src="assets/ckeditor/ckeditor.js" type="text/javascript"></script>
-<script>
-    CKEDITOR.replace( 'article-ckeditor' );
-</script>
+<script src="//cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
 
 <?php 
     $p_id = request('id');
@@ -115,7 +112,7 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
 <div class="Polaris-Labelled__LabelWrapper_bf6ys">
 <div class="Polaris-Label_2vd36"><label id="PolarisTextField16Label" for="PolarisTextField16" class="Polaris-Label__Text_yj3uv">Description</label></div>
 </div>
-<textarea name="description" id="article-ckeditor" placeholder="" class="Polaris-TextField__Input_30ock ckeditor" aria-describedby="PolarisTextField16HelpText" aria-labelledby="PolarisTextField16Label" aria-invalid="false" aria-multiline="true" style="height: 108px;">{!!$product->description!!}</textarea>
+<textarea name="description" id="summary-ckeditor" placeholder="" class="Polaris-TextField__Input_30ock ckeditor" aria-describedby="PolarisTextField16HelpText" aria-labelledby="PolarisTextField16Label" aria-invalid="false" aria-multiline="true" style="height: 108px;">{!!$product->description!!}</textarea>
 <div class="Polaris-Connected_wopc9 Polaris-Connected--newDesignLanguage_1rik8">
 <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
 <div class="Polaris-TextField_1spwi Polaris-TextField--multiline_1jgfe Polaris-TextField--newDesignLanguage_1rik8">
@@ -550,7 +547,7 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
 <div class="Polaris-Labelled__LabelWrapper_bf6ys">
 <div class="Polaris-Label_2vd36"><label id="PolarisTextField16Label" for="PolarisTextField16" class="Polaris-Label__Text_yj3uv">Description</label></div>
 </div>
-<textarea name="SEOdescription" id="article-ckeditor" placeholder="" class="Polaris-TextField__Input_30ock ckeditor" aria-describedby="PolarisTextField16HelpText" aria-labelledby="PolarisTextField16Label" aria-invalid="false" aria-multiline="true" style="height: 108px;">{!!$product->SEOdesc!!}</textarea>
+<textarea name="SEOdescription" id="summary-ckeditor" placeholder="" class="Polaris-TextField__Input_30ock ckeditor" aria-describedby="PolarisTextField16HelpText" aria-labelledby="PolarisTextField16Label" aria-invalid="false" aria-multiline="true" style="height: 108px;">{!!$product->SEOdesc!!}</textarea>
 <div class="Polaris-Connected_wopc9 Polaris-Connected--newDesignLanguage_1rik8">
 <div class="Polaris-Connected__Item_yiyol Polaris-Connected__Item--primary_rmh5m">
 <div class="Polaris-TextField_1spwi Polaris-TextField--multiline_1jgfe Polaris-TextField--newDesignLanguage_1rik8">
@@ -1107,6 +1104,9 @@ da74327255a921063014b93a350cde95232ab12445903cd4c054dd790b472f56.css" crossorigi
     }
 </script>
 
+<script>
+    CKEDITOR.replace( 'summary-ckeditor' );
+  </script>
 
 
 @endsection
