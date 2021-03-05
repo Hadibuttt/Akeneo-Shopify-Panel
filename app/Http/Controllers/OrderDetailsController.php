@@ -24,10 +24,12 @@ class OrderDetailsController extends Controller
         $orders = orders::where('id',$id)->first();
         $order_items = order_items::where('order_id',$id)->get();
         $qtytotal = 0;
+        $pricetotal = 0;
 
     foreach ($order_items as $order_item) 
 {
     $qtytotal = $qtytotal + $order_item->qty;
+    $pricetotal = $pricetotal + $order_item->total;
 }
 
         $order_details = order_details::where('order_id',$id)->first();
@@ -43,7 +45,8 @@ class OrderDetailsController extends Controller
             'products' => $products,
             'comments' => $comments,
             'comment' => $comment,
-            'qtytotal' => $qtytotal
+            'qtytotal' => $qtytotal,
+            'pricetotal' => $pricetotal
         ]);
         else    
             return view('restricted');
