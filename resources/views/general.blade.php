@@ -659,7 +659,110 @@ Your primary business location could affect which apps can be used on your store
                               
 <div style="--top-bar-background:#00848e; --top-bar-background-lighter:#1d9ba4; --top-bar-color:#f9fafb; --p-frame-offset:0px;margin-top: 40px;">
   
-   
+    <div class="Polaris-Layout">
+        <div class="Polaris-Layout__AnnotatedSection">
+          <div class="Polaris-Layout__AnnotationWrapper">
+            <div class="Polaris-Layout__Annotation">
+              <div class="Polaris-TextContainer">
+                <h2 class="Polaris-Heading">Site Identity</h2>
+                <div class="Polaris-Layout__AnnotationDescription">
+                  <p>Your logo </p>
+                </div>
+              </div>
+            </div>
+            <div class="Polaris-Layout__AnnotationContent">
+              <div class="Polaris-Card">
+                <div class="Polaris-Card__Section">
+                  <div class="Polaris-FormLayout" style="margin-right: 0;">
+                    
+            <div role="group" class="Polaris-FormLayout--grouped_17srt">
+                <div class="Polaris-FormLayout__Items_38lvu">
+                    <div class="Polaris-FormLayout__Item_yiyol">
+                      <div style="margin-bottom: 5px;">
+                          <label id="InventoryCardBarcodeLabel" for="InventoryCardBarcode" class="Polaris-Label__Text_yj3uv">Site Logo</label>
+                      </div>
+                       <div>
+      <div class="Polaris-Labelled--hidden">
+        <div class="Polaris-Labelled__LabelWrapper">
+          <div class="Polaris-Label"><label id="PolarisDropZone2Label" for="PolarisDropZone2" class="Polaris-Label__Text">Upload file</label></div>
+        </div>
+        <div class="Polaris-DropZone Polaris-DropZone--hasOutline Polaris-DropZone--sizeExtraLar" aria-disabled="false">
+          <div class="Polaris-DropZone__Container">
+            <div class="Polaris-DropZone-FileUpload">
+              <div class="Polaris-Stack Polaris-Stack--vertical">
+                <div class="Polaris-Stack__Item">
+                  <div class="Polaris-DropZone-FileUpload__Button">Add file</div>
+                </div>
+                <div class="Polaris-Stack__Item"><span class="Polaris-TextStyle--variationSubdued">or drop files to upload</span></div>
+              </div>
+            </div>
+          </div><span class="Polaris-VisuallyHidden"><input id="PolarisDropZone2" type="file" multiple="" autocomplete="off"></span>
+        </div>
+      </div>
+      <div id="PolarisPortalsContainer"></div>
+    </div>
+                      <div style="margin-bottom: 5px; margin-top: 20px">
+                          <label id="InventoryCardBarcodeLabel" for="InventoryCardBarcode" class="Polaris-Label__Text_yj3uv">Admin Logo</label>
+                      </div>
+                       <div>
+      <div class="Polaris-Labelled--hidden">
+        <div class="Polaris-Labelled__LabelWrapper">
+          <div class="Polaris-Label"><label id="PolarisDropZone2Label" for="PolarisDropZone2" class="Polaris-Label__Text">Upload file</label></div>
+        </div>
+        <div class="Polaris-DropZone Polaris-DropZone--hasOutline Polaris-DropZone--sizeExtraLar" aria-disabled="false">
+          <div class="Polaris-DropZone__Container">
+            <div class="Polaris-DropZone-FileUpload">
+              <div class="Polaris-Stack Polaris-Stack--vertical">
+                <div class="Polaris-Stack__Item">
+                  <div class="Polaris-DropZone-FileUpload__Button">Add file</div>
+                </div>
+                <div class="Polaris-Stack__Item"><span class="Polaris-TextStyle--variationSubdued">or drop files to upload</span></div>
+              </div>
+            </div>
+          </div><span class="Polaris-VisuallyHidden"><input id="PolarisDropZone2" type="file" multiple="" autocomplete="off"></span>
+        </div>
+      </div>
+      <div id="PolarisPortalsContainer"></div>
+    </div>
+                      <div style="margin-bottom: 5px; margin-top: 20px;">
+                          <label id="InventoryCardBarcodeLabel" for="InventoryCardBarcode" class="Polaris-Label__Text_yj3uv">Favicon</label>
+                      </div>
+                       <div>
+      <div class="Polaris-Labelled--hidden">
+        <div class="Polaris-Labelled__LabelWrapper">
+          <div class="Polaris-Label"><label id="PolarisDropZone2Label" for="PolarisDropZone2" class="Polaris-Label__Text">Upload file</label></div>
+        </div>
+        <div class="Polaris-DropZone Polaris-DropZone--hasOutline Polaris-DropZone--sizeExtraLar" aria-disabled="false">
+          <div class="Polaris-DropZone__Container">
+            <div class="Polaris-DropZone-FileUpload">
+              <div class="Polaris-Stack Polaris-Stack--vertical">
+                <div class="Polaris-Stack__Item">
+                  <div class="Polaris-DropZone-FileUpload__Button">Add file</div>
+                </div>
+                <div class="Polaris-Stack__Item"><span class="Polaris-TextStyle--variationSubdued">or drop files to upload</span></div>
+              </div>
+            </div>
+          </div><span class="Polaris-VisuallyHidden"><input id="PolarisDropZone2" type="file" multiple="" autocomplete="off"></span>
+        </div>
+      </div>
+      <div id="PolarisPortalsContainer"></div>
+    </div>
+                    </div>
+                   
+                </div>
+            </div>
+                </div>
+              </div>   
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="PolarisPortalsContainer"></div>
+      <div id="PolarisPortalsContainer"></div>
+    </div>
+    <br>
+    <br>
+
    <div class="Polaris-Layout">
     <div class="Polaris-Layout__AnnotatedSection">
       <div class="Polaris-Layout__AnnotationWrapper">
