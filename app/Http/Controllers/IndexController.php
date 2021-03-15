@@ -27,11 +27,13 @@ class IndexController extends Controller
         $user = User::where('id', '16')->first();
         $orders = orders::all();
         $PendingOrders = orders::where('status','0')->count();
+        $FullfiledOrders = orders::where('status', 1)->count();
         // Mail::to($user['email'])->send(new WelcomeEmail);
 
         return view('index')->with([
             'orders'=> $orders,
-            'PendingOrders' => $PendingOrders   
+            'PendingOrders' => $PendingOrders,
+            'FullfiledOrders' => $FullfiledOrders   
         ]);
 
         

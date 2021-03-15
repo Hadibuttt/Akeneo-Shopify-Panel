@@ -21,11 +21,11 @@
                                                         <div class="_3WdC8">
                                                             <div class="_1VUFI">
                                                                 <h3 aria-label="Total Sales" class="Polaris-Subheading_syouu">Total Sales</h3>
-                                                            </div><span class="Polaris-TextStyle--variationSubdued_1segu">No sales yet</span>
+                                                            </div><span class="Polaris-TextStyle--variationSubdued_1segu">{{$FullfiledOrders}} sales</span>
                                                         </div>
                                                         <hr class="_3r5Vb">
                                                         <div class="Polaris-Stack_32wu2 Polaris-Stack--spacingExtraTight_gv6hw Polaris-Stack--distributionEqualSpacing_x9cqm">
-                                                            <div class="Polaris-Stack__Item_yiyol"><span class="Polaris-TextStyle--variationSubdued_1segu">No orders yet</span></div>
+                                                            <div class="Polaris-Stack__Item_yiyol"><span class="Polaris-TextStyle--variationSubdued_1segu">{{$PendingOrders}} orders</span></div>
 <!--
                                                             <div class="Polaris-Stack__Item_yiyol">
                                                                 <div class="_3AfaN">View report</div>
