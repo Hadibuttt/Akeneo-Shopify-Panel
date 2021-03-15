@@ -1,9 +1,11 @@
 <?php 
 use App\Models\AdminLogin; 
 use App\Models\store; 
+use App\Models\orders; 
 
 $users = AdminLogin::all();
 $store = store::orderBy('id', 'DESC')->first();
+$totalorders = orders::where('status', 0)->count();
 ?>
 
 <html lang="en-US" style="--global-ribbon-height:0px;">
@@ -381,7 +383,7 @@ $store = store::orderBy('id', 'DESC')->first();
                                                                 <path d="M11 1a1 1 0 1 0-2 0v7.586L7.707 7.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l3-3a1 1 0 0 0-1.414-1.414L11 8.586V1z"></path>
                                                                 <path d="M3 14V3h4V1H2.5A1.5 1.5 0 0 0 1 2.5v15A1.5 1.5 0 0 0 2.5 19h15a1.5 1.5 0 0 0 1.5-1.5v-15A1.5 1.5 0 0 0 17.5 1H13v2h4v11h-3.5c-.775 0-1.388.662-1.926 1.244l-.11.12A1.994 1.994 0 0 1 10 16a1.994 1.994 0 0 1-1.463-.637l-.111-.12C7.888 14.664 7.275 14 6.5 14H3z"></path>
                                                             </svg></span></div><span class="Polaris-Navigation__Text_yj3uv">Orders</span>
-                                                    <div class="Polaris-Navigation__Badge_2qgie"><span class="Polaris-Badge_2qgie Polaris-Badge--statusNew_cj8gz Polaris-Badge--sizeSmall_7647q"><span class="Polaris-VisuallyHidden_yrtt5">New </span>11</span></div>
+                                                    <div class="Polaris-Navigation__Badge_2qgie"><span class="Polaris-Badge_2qgie Polaris-Badge--statusNew_cj8gz Polaris-Badge--sizeSmall_7647q"><span class="Polaris-VisuallyHidden_yrtt5">New </span>{{$totalorders}}</span></div>
                                                 </a></div>
                                         </li>
                                         
