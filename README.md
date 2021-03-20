@@ -33,8 +33,8 @@ Email: `admin@admin.com`
 Password: `password`
 
 ## Contributors:
-1. @UmairMalik24
-2. @Hadibuttt
+1. [Hadi Butt](https://github.com/Hadibuttt)
+2. [Umair Malik](https://github.com/UmairMalik24)
 
 ## Screenshots:
 ![1](https://user-images.githubusercontent.com/58470182/111870785-8a231c80-89a8-11eb-8886-86aa78544672.PNG)
