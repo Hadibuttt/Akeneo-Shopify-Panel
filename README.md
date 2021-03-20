@@ -37,6 +37,9 @@ Password: `password`
 2. [Umair Malik](https://github.com/UmairMalik24)
 3. [![](https://github.com/UmairMalik24.png?size=50)](https://github.com/UmairMalik24)
 
+  <a href="url" style="color:black"><img src="https://github.com/UmairMalik24.png" height="auto" width="200" style="border-radius:50%">Umair Malik</a>
+
+
 
 ## Screenshots:
 ![1](https://user-images.githubusercontent.com/58470182/111870785-8a231c80-89a8-11eb-8886-86aa78544672.PNG)
