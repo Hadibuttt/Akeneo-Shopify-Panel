@@ -28,11 +28,11 @@ This repository is a replica of [Akeno Shopify Admin Panel](https://akeneo-shop.
 4. `php artisan serve`
 
 ## Login Credentials:
-Email: `admin@admin.com`
+Email: `admin@example.com`
 
-Password: `password`
+Password: `P@ssword1`
 
 ## Screenshots:
-![1](https://user-images.githubusercontent.com/58470182/111870785-8a231c80-89a8-11eb-8886-86aa78544672.PNG)
+![1](https://user-images.githubusercontent.com/58470182/111871914-5b0fa980-89ae-11eb-9a7e-b3a8536d98d1.PNG)
 ![2](https://user-images.githubusercontent.com/58470182/111870713-1aad2d00-89a8-11eb-82b6-0f88e6829af9.PNG)
 ![3](https://user-images.githubusercontent.com/58470182/111870722-2698ef00-89a8-11eb-9234-b46dd487c78b.PNG)
