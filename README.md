@@ -1,5 +1,5 @@
 # Akeno Shopify Admin 
-This repository is a replica of 'Akeno Shopify Admin Panel' integrated at the back-end of an e-commerce project.
+This repository is a replica of [Akeno Shopify Admin Panel](https://akeneo-shop.myshopify.com/admin) integrated at the Back-End of an E-Commerce Project.
 
 ## Features:
 - Admin can add Category/Subcategory/Product
@@ -22,14 +22,19 @@ This repository is a replica of 'Akeno Shopify Admin Panel' integrated at the ba
 - Open the project in your VS Code
 - Edit .env file according to your Database Configuration
 - In the Terminal run the following commands:
-1. 'php artisan composer install'
-2. 'npm install'
-3. 'npm run dev'
-4. 'php artisan serve'
+1. `php artisan composer install`
+2. `npm install`
+3. `npm run dev`
+4. `php artisan serve`
 
 ## Login Credentials:
-'Email: admin@admin.com'
-'Password: password'
+Email: `admin@admin.com`
+
+Password: `password`
+
+## Contributors:
+1. @UmairMalik24
+2. @Hadibuttt
 
 ## Screenshots:
 ![1](https://user-images.githubusercontent.com/58470182/111870785-8a231c80-89a8-11eb-8886-86aa78544672.PNG)
