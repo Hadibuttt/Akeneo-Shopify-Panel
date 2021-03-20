@@ -35,7 +35,8 @@ Password: `password`
 ## Contributors:
 1. [Hadi Butt](https://github.com/Hadibuttt)
 2. [Umair Malik](https://github.com/UmairMalik24)
-3. https://avatars.githubusercontent.com/u/56812698?s=50&u=2317a2b49c6b37ddc13b271317f7dee478940039&v=4
+3. [![](https://github.com/UmairMalik24.png?size=50)](https://github.com/UmairMalik24)
+
 
 ## Screenshots:
 ![1](https://user-images.githubusercontent.com/58470182/111870785-8a231c80-89a8-11eb-8886-86aa78544672.PNG)
