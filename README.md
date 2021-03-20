@@ -19,7 +19,7 @@ This repository is a replica of [Akeno Shopify Admin Panel](https://akeneo-shop.
 - Clone this repository on your Local Machine
 - Make sure you've Latest Version of Composer, Node.Js, PHP, Xaamp(Local Host) installed
 - Import the zpanel.sql file in your database
-- Open the project in your VS Code
+- Open the project in VS Code
 - Edit .env file according to your Database Configuration
 - In the Terminal run the following commands:
 1. `php artisan composer install`
