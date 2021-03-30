@@ -33,7 +33,7 @@ $view = request('view');
                         </div><div class="">
                             <div class="Polaris-ActionMenu-Actions__ActionsLayout_w56ri Polaris-ActionMenu-Actions--newDesignLanguage_1rik8">
                                 <div class="Polaris-ButtonGroup_yy85z Polaris-ButtonGroup--extraTight_1xh3x">
-                                    <div class="Polaris-ButtonGroup__Item_yiyol"><span class="Polaris-ActionMenu-SecondaryAction_1dl4i Polaris-ActionMenu-SecondaryAction--newDesignLanguage_1rik8"><button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8" type="button" onclick="Display_export()"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Export</span></span></button></span></div>
+                                    <div class="Polaris-ButtonGroup__Item_yiyol"><span class="Polaris-ActionMenu-SecondaryAction_1dl4i Polaris-ActionMenu-SecondaryAction--newDesignLanguage_1rik8"><a href="/export" style="text-decoration:none;color:black;"><button class="Polaris-Button_r99lw Polaris-Button--newDesignLanguage_1rik8" type="button"><span class="Polaris-Button__Content_xd1mk"><span class="Polaris-Button__Text_yj3uv">Export</span></span></button></a></span></div>
                                 </div>
                             </div>
                         </div>

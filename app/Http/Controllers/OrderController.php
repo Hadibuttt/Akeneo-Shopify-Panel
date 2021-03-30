@@ -8,6 +8,8 @@ use App\Models\order_items;
 use App\Models\order_details;
 use App\Models\AdminLogin;
 use Auth;
+use App\Exports\OrderExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class OrderController extends Controller
 {
@@ -45,9 +47,9 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function export() 
     {
-        //
+        return Excel::download(new OrderExport, 'Orders.xlsx');
     }
 
     /**

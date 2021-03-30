@@ -21,6 +21,10 @@ Route::get('/language', function () {
     return view('language');
 });
 
+Route::get('/OrderList', function () {
+    return view('OrderList');
+});
+
 Route::get('/shipping', function () {
     return view('shipping');
 });
@@ -177,6 +181,8 @@ Route::get('/tax', [App\Http\Controllers\TaxController::class, 'index']);
 Route::get('/about-customer/{id}/{uid}', [App\Http\Controllers\CustomerController::class, 'about']);
 
 Route::get('/order', [App\Http\Controllers\OrderController::class, 'index']);
+
+Route::get('/export', [App\Http\Controllers\OrderController::class, 'export']);
 
 Route::get('/mollie-paymnet',[MollieController::Class,'preparePayment'])->name('mollie.payment');
 Route::get('/payment-success',[MollieController::Class, 'paymentSuccess'])->name('payment.success');
