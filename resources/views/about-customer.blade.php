@@ -471,12 +471,24 @@
                                                     <div class="Polaris-Stack_32wu2 Polaris-Stack--vertical_uiuuj Polaris-Stack--spacingTight_1o4d6">
                                                         <div class="Polaris-Stack__Item_yiyol">
                                                             <div class="Polaris-Stack_32wu2 Polaris-Stack--vertical_uiuuj Polaris-Stack--spacingTight_1o4d6">
-
-                                                                <div class="Polaris-Stack__Item_yiyol">
-                                                                    <span class="Polaris-Badge_2qgie">Subscribed</span>
-                                                                </div>
-                                                                
-                                                                <div class="Polaris-Stack__Item_yiyol"><span class="Polaris-TextStyle--variationSubdued_1segu">Customer has provided their email.</span></div>
+                                                            @if ($customer->newsletter == 1)
+                                                            <div class="Polaris-Stack__Item_yiyol">
+                                                                <span class="Polaris-Badge_2qgie">Subscribed</span>
+                                                            </div>        
+                                                            @else
+                                                            <div class="Polaris-Stack__Item_yiyol">
+                                                                <span class="Polaris-Badge_2qgie">Unsubscribed</span>
+                                                            </div>        
+                                                            @endif
+                                                            
+                                                            @if ($customer->newsletter == 1)
+                                                            <div class="Polaris-Stack__Item_yiyol"><span class="Polaris-TextStyle--variationSubdued_1segu">Customer has provided their email.</span></div>
+                                                                   
+                                                            @else
+                                                            <div class="Polaris-Stack__Item_yiyol"><span class="Polaris-TextStyle--variationSubdued_1segu">Customer has not provided their email.</span></div>
+                                                                   
+                                                            @endif
+                                                                 
                                                             </div>
                                                         </div>
                                                     </div>
