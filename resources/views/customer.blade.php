@@ -346,10 +346,16 @@
                                                                             </div>
                                                                             <div class="Polaris-Stack__Item_yiyol">
                                                                                 <div class="Polaris-Stack_32wu2 Polaris-Stack--spacingExtraLoose_1ptvt Polaris-Stack--distributionTrailing_z5d5z">
+                                                                        @if ($customer->newsletter == 1)
+                                                                        <div class="Polaris-Stack__Item_yiyol">
+                                                                            <div class="_3pr6R"><span class="Polaris-Badge_2qgie Polaris-Badge--statusSuccess_pc5rl"><span class="Polaris-VisuallyHidden_yrtt5">Success </span>Subscribed</span></div>
+                                                                        </div>        
+                                                                        @else
+                                                                        <div class="Polaris-Stack__Item_yiyol">
+                                                                            <div class="_3pr6R"><span class="Polaris-Badge_2qgie Polaris-Badge--statusSuccess_pc5rl"><span class="Polaris-VisuallyHidden_yrtt5">Success </span>Unsubscribed</span></div>
+                                                                        </div>        
+                                                                        @endif            
                                                                                     
-                                                                                    <div class="Polaris-Stack__Item_yiyol">
-                                                                                        <div class="_3pr6R"><span class="Polaris-Badge_2qgie Polaris-Badge--statusSuccess_pc5rl"><span class="Polaris-VisuallyHidden_yrtt5">Success </span>Subscribed</span></div>
-                                                                                    </div>
 
                                                                 <?php $TotalOrders = orders::where('user_id',$customer->id)->count(); ?>
 
