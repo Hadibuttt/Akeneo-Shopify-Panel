@@ -14,6 +14,7 @@ This repository is a replica of [Akeno Shopify Admin Panel](https://akeneo-shop.
 - Manage Taxes
 - Store Languages
 - Marketing (News Letter)
+- Import/Export data in Excel
 
 ## Usage:
 - Clone this repository on your Local Machine
