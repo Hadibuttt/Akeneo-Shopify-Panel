@@ -291,7 +291,11 @@
 <div><span class="Polaris-TextStyle--variationSubdued_1segu">Barcode: {{$product->barcode}}</span></div>
 </div>
 <div class="_15gHI">€{{$order_item->product_price}} × {{$order_item->qty}}</div>
-<div class="_2cNEq">€{{$order_item->total}}</div>
+<?php $a = $order_item->product_price; 
+      $b = $order_item->qty;
+      $t = $a * $b;
+?>
+<div class="_2cNEq">€{{$t}}</div>
 </div>
 <div>
 <ul class="Polaris-List_yj3nl"></ul>
@@ -338,7 +342,7 @@
 <div class="_1BtPd">
     
 <p><span class="Polaris-TextStyle--variationSubdued_1segu">{{$qtytotal}} items</span></p>
-<div class="uQ1bp"><span class="">€{{$pricetotal}}</span></div>
+<div class="uQ1bp"><span class="">€{{$t}}</span></div>
 </div>
 </div>
 </div>
@@ -355,7 +359,7 @@ $count = $loop->parent->count;
 $totals = new SplFixedArray($loop->parent->count); 
 $orignaltax=$product->tax;
 $tax=$product->tax/100;
-$total[$loop->parent->iteration]=$tax * $pricetotal;
+$total[$loop->parent->iteration]=$tax * $t;
     ?>
 <p><span class="Polaris-TextStyle--variationSubdued_1segu">IGST {{$product->tax}}%</span></p>
 <div class="uQ1bp"><span class="">€<?php echo $total[$loop->parent->iteration]; ?></span></div>
@@ -381,7 +385,7 @@ for ($i=1; $i<=$count  ; $i++)
 <div class="_3umNZ">
 <div class="_1BtPd">
 <p><span class="Polaris-TextStyle--variationSubdued_1segu"></span></p>
-<div class="uQ1bp"><span class="Polaris-TextStyle--variationStrong_rpyvj">€{{$pricetotal + $totals}}</span></div>
+<div class="uQ1bp"><span class="Polaris-TextStyle--variationStrong_rpyvj">€{{$t + $totals}}</span></div>
 
 
 </div>
@@ -397,7 +401,7 @@ for ($i=1; $i<=$count  ; $i++)
 <div class="_3umNZ">
 <div class="_1BtPd">
 <p><span class="Polaris-TextStyle--variationSubdued_1segu"></span></p>
-<div class="uQ1bp"><span class="">€{{$pricetotal + $totals}}</span></div>
+<div class="uQ1bp"><span class="">€{{$t + $totals}}</span></div>
 </div>
 </div>
 </div>
