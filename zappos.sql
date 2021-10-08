@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 20, 2021 at 03:01 PM
+-- Generation Time: Oct 08, 2021 at 01:31 PM
 -- Server version: 10.4.16-MariaDB
 -- PHP Version: 7.4.12
 
@@ -48,7 +48,8 @@ CREATE TABLE `addresses` (
 INSERT INTO `addresses` (`id`, `user_id`, `primary_address`, `Name`, `address`, `city`, `state`, `zip`, `phone`, `created_at`, `updated_at`) VALUES
 (12, 1, 1, 'Hadi', '128 abc street near', 'Bawa g pindi', 'NV', 4, 56, '2021-01-17 06:55:15', '2021-02-20 16:03:56'),
 (14, 13, 1, 'Hadi Butt', '128 near bank', 'Bawa g pindi ay', 'NV', 420000, 3322234556, '2021-01-17 07:08:02', '2021-01-17 07:15:20'),
-(18, 16, 1, 'Raheel', 'Airport Housing Society, Rawalpindi', 'Rawalpindi', 'Punjab', 44000, 3045260527, '2021-02-17 13:31:12', '2021-02-17 13:31:57');
+(18, 16, 1, 'Raheel', 'Airport Housing Society, Rawalpindi', 'Rawalpindi', 'Punjab', 44000, 3045260527, '2021-02-17 13:31:12', '2021-02-17 13:31:57'),
+(19, 29, 1, 'Hadi Butt', 'Airport Housing Society, Rawalpindi', 'Rawalpindi', 'Punjab', 44000, 3045260527, '2021-04-11 15:28:02', '2021-04-11 15:28:02');
 
 -- --------------------------------------------------------
 
@@ -96,7 +97,7 @@ CREATE TABLE `admin_logins` (
 --
 
 INSERT INTO `admin_logins` (`id`, `email`, `password`, `f_name`, `l_name`, `OrderPage`, `ProductPage`, `OrderDetailsPage`, `AddProductPage`, `UpdateProductPage`, `CategoryPage`, `AddCategoryPage`, `UpdateCategoryPage`, `CustomerPage`, `AboutCustomerPage`, `SubcategoryPage`, `AddSubcategoryPage`, `UpdateSubcategoryPage`, `CollectionPage`, `AddCollectionPage`, `UpdateCollectionPage`, `SettingsPage`, `GeneralPage`, `StaffAccountPage`, `StaffAreaPage`, `UpdateStaffAreaPage`, `TaxPage`, `PaymentPage`, `NotificationPage`, `TranslationPage`, `created_at`, `updated_at`) VALUES
-(1, 'admin@admin.com', '$2y$10$QsKbV7CAddqnT50ahpaYDe58r/LOUeSLXQYJDSp6kEKMaC0lmhVvm', 'Admin', 'User', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, '2021-01-16 07:25:30', '2021-01-16 07:25:30'),
+(1, 'admin@admin.com', '$2y$10$W2kgvTGLBgiGo0xSDvKw0OLDmg0Uv1WEJW.ScHmXXmgOU9S5rxMbO', 'Admin', 'User', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, '2021-01-16 07:25:30', '2021-01-16 07:25:30'),
 (3, 'admin@example.com', '$2y$10$GupWXjt1m1xmVA7DpvfTUeI/OfmDkBEoiCYj81bM7MX8O7zSAZZ8i', 'Hadi', 'Butt', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, '2021-01-16 08:35:00', '2021-03-20 08:52:25'),
 (4, 'raheel69@gmail.com', '$2y$10$MwbKdFhyUhbmKM0FDBxLDeyhWh79YdnW.no6dvtyxB6BypcuXppdi', 'Raheel', 'Khan', 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, '2021-02-13 05:52:05', '2021-02-13 05:52:22');
 
@@ -118,7 +119,8 @@ CREATE TABLE `admin_menus` (
 --
 
 INSERT INTO `admin_menus` (`id`, `name`, `created_at`, `updated_at`) VALUES
-(4, 'Testing', '2021-02-27 11:12:51', '2021-02-27 11:12:51');
+(4, 'Testing', '2021-02-27 11:12:51', '2021-02-27 11:12:51'),
+(5, 'Raheel', '2021-04-11 14:38:29', '2021-04-11 14:38:29');
 
 -- --------------------------------------------------------
 
@@ -145,10 +147,13 @@ CREATE TABLE `admin_menu_items` (
 --
 
 INSERT INTO `admin_menu_items` (`id`, `label`, `link`, `parent`, `sort`, `class`, `menu`, `depth`, `created_at`, `updated_at`, `role_id`) VALUES
-(24, 'Google', '/category/1', 0, 0, NULL, 4, 0, '2021-03-08 08:56:46', '2021-03-08 09:13:56', 0),
-(25, 'GitHub', '/category/2', 24, 1, NULL, 4, 1, '2021-03-08 08:56:54', '2021-03-08 09:15:47', 0),
-(26, 'Underwear', '/category/4', 27, 3, NULL, 4, 0, '2021-03-08 09:10:50', '2021-03-08 09:17:25', 0),
-(27, 'Underwear', '/category/6', 25, 2, NULL, 4, 2, '2021-03-08 09:11:10', '2021-03-08 09:17:25', 0);
+(24, 'Google', '0', 0, 0, NULL, 4, 0, '2021-03-08 08:56:46', '2021-04-05 09:20:12', 0),
+(25, 'GitHub', '0', 24, 1, NULL, 4, 1, '2021-03-08 08:56:54', '2021-04-05 09:20:12', 0),
+(26, 'Underwear', '0', 27, 3, NULL, 4, 3, '2021-03-08 09:10:50', '2021-10-05 09:17:49', 0),
+(27, 'Underwear', '0', 25, 2, NULL, 4, 2, '2021-03-08 09:11:10', '2021-04-05 09:20:12', 0),
+(29, 'Google', '0', 0, 0, NULL, 5, 0, '2021-04-11 14:40:36', '2021-04-11 14:41:01', 0),
+(30, 'GitHub', '0', 29, 1, NULL, 5, 1, '2021-04-11 14:40:58', '2021-04-11 14:41:15', 0),
+(31, 'Kids', '0', 0, 2, NULL, 5, 2, '2021-04-11 14:41:27', '2021-04-11 14:41:39', 0);
 
 -- --------------------------------------------------------
 
@@ -294,6 +299,26 @@ INSERT INTO `ctimeline` (`id`, `c_id`, `u_id`, `comment`, `created_at`, `updated
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `emarket`
+--
+
+CREATE TABLE `emarket` (
+  `id` int(11) NOT NULL,
+  `email` varchar(1024) NOT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `emarket`
+--
+
+INSERT INTO `emarket` (`id`, `email`, `updated_at`, `created_at`) VALUES
+(6, 'hadibutt476@gmail.com', '2021-04-05 08:29:22', '2021-04-05 08:29:22');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `failed_jobs`
 --
 
@@ -404,7 +429,9 @@ INSERT INTO `orders` (`id`, `user_id`, `status`, `created_at`, `updated_at`) VAL
 (22, 1, 1, '2020-12-21 08:03:54', '2020-12-21 08:03:54'),
 (36, 13, 1, '2021-01-28 13:57:59', '2021-01-28 13:57:59'),
 (39, 1, 1, '2021-02-13 06:32:24', '2021-02-13 06:32:24'),
-(50, 16, 0, '2021-02-17 13:39:34', '2021-02-17 13:39:34');
+(50, 16, 0, '2021-02-17 13:39:34', '2021-02-17 13:39:34'),
+(60, 29, 0, '2021-04-11 15:28:22', '2021-04-11 15:28:22'),
+(61, 29, 0, '2021-04-11 15:50:01', '2021-04-11 15:50:01');
 
 -- --------------------------------------------------------
 
@@ -434,10 +461,12 @@ CREATE TABLE `order_details` (
 --
 
 INSERT INTO `order_details` (`id`, `order_id`, `name`, `email`, `address`, `phone`, `zip`, `city`, `state`, `created_at`, `updated_at`, `dmethod`, `note`, `order_total`) VALUES
-(17, 22, 'Hadi', 'test@webkul.com', 'asdasd', 321325648, 0, 'DALLAS', 'TX', '2021-02-20 20:27:50', '2021-02-20 15:27:50', 'Local Delivery', NULL, NULL),
+(17, 22, 'Hadi', 'test@webkul.com', 'asdasd', 321325648, 0, 'DALLAS', 'TX', '2021-10-05 13:59:07', '2021-10-05 08:59:07', 'Local Delivery', 'hello', NULL),
 (19, 39, 'Hadi', 'test@webkul.com', 'asdasd', 321325648, 0, 'DALLAS', 'TX', '2021-03-04 11:36:26', '2020-12-21 08:26:20', 'Local Pickup', NULL, NULL),
 (24, 36, 'Umair', 'admin@admin.com', '123 sbc s', 9822365413211, 89101, 'Las Vagas', 'Nevada', '2021-03-05 14:36:13', '2021-03-05 09:36:13', 'Local Pickup', 'Hell', NULL),
-(30, 50, 'Raheel', 'raheel@raheel.com', 'Aasddasdfas', 3045260527, 44000, 'Rawalpindi', 'Punjab', '2021-03-04 12:42:23', '2021-02-17 13:39:34', 'Local Pickup', NULL, 34);
+(30, 50, 'Raheel', 'raheel@raheel.com', 'Aasddasdfas', 3045260527, 44000, 'Rawalpindi', 'Punjab', '2021-03-04 12:42:23', '2021-02-17 13:39:34', 'Local Pickup', NULL, 34),
+(38, 60, 'Hadi Butt', 'hammadbutt95@gmail.com', 'Aasddasdfas', 3045260527, 44000, 'Rawalpindi', 'Punjab', '2021-04-11 15:28:22', '2021-04-11 15:28:22', NULL, NULL, 68),
+(39, 61, 'Hadi Butt', 'hammadbutt95@gmail.com', 'Aasddasdfas', 3045260527, 44000, 'Rawalpindi', 'Punjab', '2021-04-11 15:50:01', '2021-04-11 15:50:01', NULL, NULL, 34);
 
 -- --------------------------------------------------------
 
@@ -464,12 +493,14 @@ CREATE TABLE `order_items` (
 --
 
 INSERT INTO `order_items` (`id`, `order_id`, `product_title`, `product_image`, `product_color`, `product_size`, `product_price`, `qty`, `total`, `created_at`, `updated_at`) VALUES
-(13, 22, 'Shoes', '1.jpg', 'White', 'lg', 10, '2', 10, '2020-12-21 08:03:54', '2020-12-21 08:03:54'),
-(14, 39, 'Nike Joggers', '1.jpg', 'White', 'lg', 11.5, '2', 23, '2020-12-21 08:05:04', '2020-12-21 08:05:04'),
-(15, 39, 'Shoes', '1.jpg', 'White', 'lg', 22, '2', 44, '2020-12-21 08:26:20', '2020-12-21 08:26:20'),
-(24, 36, 'Sleveless Skirts', '1.jpg', 'Breeze/Black', 'SM', 30, '1', 30, '2021-01-28 13:57:35', '2021-01-28 13:57:35'),
-(25, 39, 'Sleveless Skirts', '1.jpg', 'Breeze/Black', 'SM', 30, '1', 23, '2021-01-28 13:57:59', '2021-01-28 13:57:59'),
-(39, 50, 'Shoes', '1.jpg', 'Carrer Grey/Black', 'SM', 34, '1', 34, '2021-02-17 13:39:34', '2021-02-17 13:39:34');
+(13, 22, 'Black Shoes', '1.jpg', 'White', 'lg', 10, '2', 10, '2020-12-21 08:03:54', '2020-12-21 08:03:54'),
+(14, 39, 'Black Shoes', '1.jpg', 'White', 'lg', 11.5, '2', 23, '2020-12-21 08:05:04', '2020-12-21 08:05:04'),
+(15, 39, 'Black Shoes', '1.jpg', 'White', 'lg', 22, '2', 44, '2020-12-21 08:26:20', '2020-12-21 08:26:20'),
+(24, 36, 'Black Shoes', '1.jpg', 'Breeze/Black', 'SM', 30, '1', 30, '2021-01-28 13:57:35', '2021-01-28 13:57:35'),
+(25, 39, 'Black Shoes', '1.jpg', 'Breeze/Black', 'SM', 30, '1', 23, '2021-01-28 13:57:59', '2021-01-28 13:57:59'),
+(39, 50, 'Black Shoes', '1.jpg', 'Carrer Grey/Black', 'SM', 34, '1', 34, '2021-02-17 13:39:34', '2021-02-17 13:39:34'),
+(46, 60, 'Diamond Earrings', '1.jpg', 'Breeze/Black', 'SM', 34, '2', 68, '2021-04-11 15:28:22', '2021-04-11 15:28:22'),
+(47, 61, 'Black Shoes', '1.jpg', 'Breeze/Black', 'SM', 34, '1', 34, '2021-04-11 15:50:01', '2021-04-11 15:50:01');
 
 -- --------------------------------------------------------
 
@@ -499,7 +530,8 @@ INSERT INTO `otimeline` (`id`, `o_id`, `u_id`, `comment`, `created_at`, `updated
 (6, 35, 1, 'Bad Dad', '2021-02-13 04:35:32', '2021-02-13 04:35:32'),
 (7, 35, 1, 'sadd', '2021-02-13 04:51:19', '2021-02-13 04:51:19'),
 (8, 36, 1, 'Bad Dad', '2021-03-05 08:35:28', '2021-03-05 08:35:28'),
-(9, 39, 1, 'hrllo', '2021-03-05 09:33:12', '2021-03-05 09:33:12');
+(9, 39, 1, 'hrllo', '2021-03-05 09:33:12', '2021-03-05 09:33:12'),
+(10, 39, 1, 'hi', '2021-04-11 16:02:58', '2021-04-11 16:02:58');
 
 -- --------------------------------------------------------
 
@@ -538,7 +570,8 @@ INSERT INTO `payments` (`id`, `user_id`, `cardholder`, `card`, `month`, `year`, 
 (1, 12, 'Umair Malik', '1234156as4da98da', 'Jan', '2022', '2021-01-16 13:04:34', '2021-01-16 13:04:34'),
 (2, 12, 'Hadi Butt', '131s2s5d46545', 'Fed', '2021', '2021-01-16 13:05:10', '2021-01-16 13:05:10'),
 (3, 14, 'q231231355134', '123141341212', 'May', '2023', '2021-02-13 06:32:06', '2021-02-13 06:32:06'),
-(4, 16, 'Raheel', '42342343243454', 'Sept', '2024', '2021-02-17 13:34:51', '2021-02-17 13:34:51');
+(4, 16, 'Raheel', '42342343243454', 'Sept', '2024', '2021-02-17 13:34:51', '2021-02-17 13:34:51'),
+(5, 29, 'Raheel', '24324323', 'Jan', '2021', '2021-04-11 15:27:00', '2021-04-11 15:27:00');
 
 -- --------------------------------------------------------
 
@@ -577,17 +610,8 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `cat_item_id`, `pro_title`, `pro_img`, `pro_price`, `created_at`, `updated_at`, `description`, `SEOtitle`, `SEOdesc`, `SEOurl`, `status`, `tags`, `saleprice`, `purchaseprice`, `tax`, `weight`, `dimension`, `barcode`, `stock`, `vendor`, `type`, `rating`) VALUES
-(1, 1, 'Sleveless Skirts', 'product.png', 30.01, NULL, '2021-01-30 07:16:44', 'Skirt', 'Skirt', 'Skirt', 'Skirt', 'Active', 'Skirt', 23, 21, 9, 23.32, '22', '321F', 21, 'Outfitters', 'Women', 3),
-(2, 3, 'Shoes', '1.jpg', 100.70, NULL, '2021-01-11 19:41:10', 'Shoes', 'Shoes', 'Shoes', 'Shoes', 'Disabled', 'Shoes', 19, 12, 21, 32.21, '56', '213V', 43, 'Gucci', 'Men', NULL),
-(13, 4, 'Black Shoes', '1.jpg', 34.00, '2021-01-02 17:07:35', '2021-01-02 17:07:35', '<p>Kajal</p>', 'Kajal', '<p>Kajal</p>', 'Kajal', 'Archieved', 'Kajal', 32, 21, 21, 16.54, '32', '4324F', 32, 'Kylie Jenner', 'Women', NULL),
-(14, 2, 'Nike Joggers', '1.jpg', 34.00, '2021-01-02 18:29:30', '2021-01-02 18:29:30', '<p>Nike Joggers</p>', 'Nike Joggers', '<p>Nike Joggers</p>', 'Nike Joggers', 'Disabled', 'Nike Joggers', 32, 21, 9, 16.54, '32', '4324F', 21, 'Nike', 'Women', NULL),
-(33, 1, 'Diamond Earrings', '1610587216.jpg', 32.00, '2021-01-13 20:20:16', '2021-01-28 12:28:12', '<p>Diamond Earrings</p>', 'Diamond Earrings', '<p>Diamond Earrings</p>', 'Diamond Earrings', 'Active', 'Diamond Earrings', 32, 21, 9, 16.54, '32', '4324F', 45, 'Ali Jewelers', 'Women', 3),
-(34, 1, '3M MicroTouch™ Chassis 1123988', '1610587905.jpg', 34.00, '2021-01-13 20:31:45', '2021-01-13 20:31:45', '<p>dsds</p>', 'sds', '<p>dsd</p>', 'sdsd', 'Active', 'dsd', 32, 21, 9, 16.54, '32', '4324F', 3, 'sdsd', 'dsd', NULL),
-(35, 1, '3M MicroTouch™ Chassis 1123988', '1.jpg', 34.00, '2021-01-13 20:45:42', '2021-01-28 04:19:00', '<strong>sds</strong>', 'dff', '<p>dfdf</p>', 'dfd', 'Active', '434', 32, 21, 21, 16.54, '32', '4324F', 4, '3434', '3434', 2),
-(37, 5, 'Ripped Shoes', 'Image 1.png', 34.00, '2021-02-03 07:17:52', '2021-02-03 07:17:52', '<p>Ripped Shoes</p>', 'Ripped Shoes', '<p>Ripped Shoes</p>', 'Ripped Shoes', 'Active', 'Men', 2, 21, 21, 16.54, '32', '4324F', 34, 'Converse', 'Men', NULL),
-(38, 4, 'Lava Eyeliner', 'Image 1 - Copy.png', 32.00, '2021-02-03 07:23:45', '2021-02-03 07:23:45', '<p>Lava Eyeliner</p>', 'Lava Eyeliner', '<p>Lava Eyeliner</p>', 'Lava Eyeliner', 'Active', 'Makeup, Fashion', 2, 21, 21, 16.54, '32', '4324F', 32, 'Lava', 'Women', NULL),
-(39, 6, 'Hadi', 'Image 1 - Copy.png', 34.00, '2021-02-13 04:22:08', '2021-02-13 04:25:23', '<ol>\r\n	<li><s><em><strong>tahhdsd</strong></em></s></li>\r\n	<li><s><em><strong>4wewqda</strong></em></s></li>\r\n	<li><em><strong>sfaasf</strong></em></li>\r\n</ol>', 'Testing', '<p>Testing</p>', 'Testing', 'Disabled', 'dfsfd', 32, 21, 9, 16.54, '32', '4324F', 43, 'rtert', 'rtert', NULL),
-(40, 6, 'Mancy Nancy', 'MY DP.jfif', 34.00, '2021-03-05 09:54:32', '2021-03-05 09:54:32', '<p><em><strong>Mancy Nancy</strong></em></p>', 'Mancy Nancy', '<p>Mancy Nancy</p>', 'Mancy Nancy', 'Active', 'Mancy Nancy', 2, 21, 23, 16.54, '32', '4324F', 332, 'Mancy Nancy', 'Mancy Nancy', NULL);
+(33, 1, 'Black Shoes', '1610587216.jpg', 32.00, '2021-01-13 20:20:16', '2021-01-28 12:28:12', '<p>Diamond Earrings</p>', 'Diamond Earrings', '<p>Diamond Earrings</p>', 'Diamond Earrings', 'Active', 'Diamond Earrings', 32, 21, 9, 16.54, '32', '4324F', 45, 'Ali Jewelers', 'Women', 3),
+(35, 1, 'Nike Joggers', '1.jpg', 34.00, '2021-01-13 20:45:42', '2021-01-28 04:19:00', '<strong>sds</strong>', 'dff', '<p>dfdf</p>', 'dfd', 'Active', '434', 32, 21, 21, 16.54, '32', '4324F', 4, '3434', '3434', 2);
 
 -- --------------------------------------------------------
 
@@ -626,17 +650,8 @@ CREATE TABLE `product_images` (
 --
 
 INSERT INTO `product_images` (`img_id`, `pro_id`, `pro_img2`, `pro_img3`, `pro_img4`, `pro_img5`) VALUES
-(4, 29, 'C:\\xampp\\htdocs\\xampp\\Zappos-Admin-Panel\\public\\assets\\img\\1610577939.jpg', 'C:\\xampp\\htdocs\\xampp\\Zappos-Admin-Panel\\public\\assets\\img\\1610577939.jpg', 'C:\\xampp\\htdocs\\xampp\\Zappos-Admin-Panel\\public\\assets\\img\\1610577939.jpg', 'C:\\xampp\\htdocs\\xampp\\Zappos-Admin-Panel\\public\\assets\\img\\1610577939.jpg'),
-(5, 30, '1610584871.jpg', '1610584871.jpg', '1610584871.jpg', '1610584871.jpg'),
-(6, 31, '1610585044.jpg', '1610585044.jpg', '1610585044.jpg', '1610585044.jpg'),
-(7, 32, '1610585497.jpg', '1610585497.jpg', '1610585497.jpg', '1610585497.jpg'),
 (8, 33, '1610587217.jpg', '1610587217.jpg', '1610587217.jpg', '1610587217.jpg'),
-(9, 34, 'jpg', 'jpg', 'jpg', 'jpg'),
-(10, 35, '1610588742.jpg', '1610588742.jpg', '1610588742.jpg', '1610588743.jpg'),
-(11, 1, 'product.png', 'women.png', 'product.png', 'product.png'),
-(12, 38, 'Image 1 - Copy.png', 'Image 1 - Copy.png', 'Image 1 - Copy.png', 'Image 1 - Copy.png'),
-(13, 39, 'Image 1 - Copy.png', 'Image 1 - Copy.png', 'Image 1 - Copy.png', 'Image 1 - Copy.png'),
-(14, 40, 'MY DP.jfif', 'MY DP.jfif', 'MY DP.jfif', 'MY DP.jfif');
+(10, 35, '1610588742.jpg', '1610588742.jpg', '1610588742.jpg', '1610588743.jpg');
 
 -- --------------------------------------------------------
 
@@ -888,6 +903,7 @@ CREATE TABLE `users` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `name` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `newsletter` tinyint(1) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -896,11 +912,12 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `email`, `password`, `name`, `created_at`, `updated_at`) VALUES
-(1, 'admin@admin.com', '$2y$10$YMPOHozYtT/fOPzUiAnm0OU9VQvrd4RT/aCpPSNGet/7VXIvOOeFO', 'Hadi Butt', '2021-02-01 10:01:24', '2021-03-02 07:37:35'),
-(13, 'test@test.com', '$2y$10$7bo7SATKda8CKqBIzzY4BO2EHrOrRkTVjYJxlFkUjM3vpuDH1egLW', 'Zubair Qureshi', '2021-01-30 05:37:26', '2021-01-30 05:37:26'),
-(15, 'test@zappos.com', '$2y$10$PfDi97i0RBOK2.KCUFe49ugMdF1R29pXjFTeL.QWOrdcB7YiVR4MC', 'Testing', '2021-02-14 15:57:09', '2021-02-14 15:57:09'),
-(16, 'raheel@raheel.com', '$2y$10$URnIPT0HVzx5ClP7wzXvEO714jqxeUjnmsJJHAgMOZIsDUhVSxvKq', 'Raheel Khan', '2021-02-17 13:28:58', '2021-02-17 13:28:58');
+INSERT INTO `users` (`id`, `email`, `password`, `name`, `newsletter`, `created_at`, `updated_at`) VALUES
+(1, 'admin@admin.com', '$2y$10$YMPOHozYtT/fOPzUiAnm0OU9VQvrd4RT/aCpPSNGet/7VXIvOOeFO', 'Hadi Butt', 1, '2021-02-01 10:01:24', '2021-03-02 07:37:35'),
+(13, 'test@test.com', '$2y$10$7bo7SATKda8CKqBIzzY4BO2EHrOrRkTVjYJxlFkUjM3vpuDH1egLW', 'Zubair Qureshi', 1, '2021-01-30 05:37:26', '2021-04-05 08:29:23'),
+(15, 'test@zappos.com', '$2y$10$PfDi97i0RBOK2.KCUFe49ugMdF1R29pXjFTeL.QWOrdcB7YiVR4MC', 'Testing', NULL, '2021-02-14 15:57:09', '2021-02-14 15:57:09'),
+(16, 'raheel@raheel.com', '$2y$10$URnIPT0HVzx5ClP7wzXvEO714jqxeUjnmsJJHAgMOZIsDUhVSxvKq', 'Raheel Khan', NULL, '2021-02-17 13:28:58', '2021-02-17 13:28:58'),
+(29, 'hammadbutt95@gmail.com', '$2y$10$iKd29rueu/7Mc96a/C8Bde.7KCQvBgPGOamknEsra111nuLZAC6CW', 'Hammad Butt', NULL, '2021-04-11 14:53:20', '2021-04-11 14:53:20');
 
 -- --------------------------------------------------------
 
@@ -1002,7 +1019,8 @@ INSERT INTO `views` (`id`, `user_id`, `product_id`, `created_at`, `updated_at`) 
 (79, 1, 100, '2021-03-01 07:36:02', '2021-03-01 07:36:02'),
 (80, 1, 35, '2021-03-01 07:40:03', '2021-03-01 07:40:03'),
 (81, 1, 35, '2021-03-01 07:48:52', '2021-03-01 07:48:52'),
-(82, 1, 35, '2021-03-01 07:59:01', '2021-03-01 07:59:01');
+(82, 1, 35, '2021-03-01 07:59:01', '2021-03-01 07:59:01'),
+(83, 29, 14, '2021-04-11 15:23:04', '2021-04-11 15:23:04');
 
 --
 -- Indexes for dumped tables
@@ -1064,6 +1082,12 @@ ALTER TABLE `cpages`
 -- Indexes for table `ctimeline`
 --
 ALTER TABLE `ctimeline`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `emarket`
+--
+ALTER TABLE `emarket`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1222,7 +1246,7 @@ ALTER TABLE `views`
 -- AUTO_INCREMENT for table `addresses`
 --
 ALTER TABLE `addresses`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `admin_logins`
@@ -1234,19 +1258,19 @@ ALTER TABLE `admin_logins`
 -- AUTO_INCREMENT for table `admin_menus`
 --
 ALTER TABLE `admin_menus`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `admin_menu_items`
 --
 ALTER TABLE `admin_menu_items`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `carts`
 --
 ALTER TABLE `carts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -1273,6 +1297,12 @@ ALTER TABLE `ctimeline`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
+-- AUTO_INCREMENT for table `emarket`
+--
+ALTER TABLE `emarket`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -1294,37 +1324,37 @@ ALTER TABLE `notifications`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
 -- AUTO_INCREMENT for table `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `otimeline`
 --
 ALTER TABLE `otimeline`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `payments`
 --
 ALTER TABLE `payments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `product_colors`
@@ -1336,7 +1366,7 @@ ALTER TABLE `product_colors`
 -- AUTO_INCREMENT for table `product_images`
 --
 ALTER TABLE `product_images`
-  MODIFY `img_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `img_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `product_sizes`
@@ -1396,13 +1426,13 @@ ALTER TABLE `tax`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `views`
 --
 ALTER TABLE `views`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
 
 --
 -- Constraints for dumped tables
