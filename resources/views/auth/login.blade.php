@@ -27,7 +27,7 @@
 
 								<div class="form-group">
 									<label for="email">E-Mail Address</label>
-								<input id="email " type="email" class="form-control @error('email') is-invalid @enderror"  name="email" value="" required autofocus ><!--Email-->
+								<input id="email " type="email" class="form-control @error('email') is-invalid @enderror"  name="email" value="admin@admin.com" required autofocus ><!--Email-->
 									@error('email')
 									<span class="invalid-feedback">
 										{{ $message }}
@@ -42,7 +42,7 @@
 											Forgot Password?
 										</a>
 									</label>
-									<input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required data-eye>
+									<input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" value="P@ssword1" required data-eye>
 								    @error('password')
 									<span class="invalid-feedback">
 										{{ $message }}
